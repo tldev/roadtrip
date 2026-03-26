@@ -1,0 +1,2098 @@
+{
+  "routes": [
+    {
+      "id": 1,
+      "name": "The Desert Crossing",
+      "theme": "Route 66 heritage and red rock country through the Southwest",
+      "total_days": 7,
+      "total_driving_hours": 25,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Tehachapi, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [35.1322, -118.4490],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles Wine Country",
+              "coords": [35.6265, -120.6910],
+              "description": "Charming Central Coast wine town with hundreds of wineries and tasting rooms",
+              "type": "town"
+            },
+            {
+              "name": "Tehachapi Loop Railroad",
+              "coords": [35.1240, -118.5050],
+              "description": "Famous engineering marvel where trains loop over themselves to gain elevation",
+              "type": "attraction"
+            },
+            {
+              "name": "Wind Farm Fields",
+              "coords": [35.0780, -118.3710],
+              "description": "Dramatic landscape of thousands of wind turbines across the Tehachapi Pass",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Tehachapi, CA",
+          "end": "Kingman, AZ",
+          "start_coords": [35.1322, -118.4490],
+          "end_coords": [35.1894, -114.0530],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Roy's Cafe Amboy",
+              "coords": [34.5585, -115.7454],
+              "description": "Iconic Route 66 roadside cafe and gas station in the middle of the Mojave Desert",
+              "type": "attraction"
+            },
+            {
+              "name": "Route 66 Museum Kingman",
+              "coords": [35.1894, -114.0530],
+              "description": "Comprehensive museum celebrating the Mother Road's history and culture",
+              "type": "attraction"
+            },
+            {
+              "name": "Hualapai Mountain Park",
+              "coords": [35.0800, -113.8970],
+              "description": "Pine-forested mountain park rising above the desert with hiking trails and cooler temps",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Kingman, AZ",
+          "end": "Sedona, AZ",
+          "start_coords": [35.1894, -114.0530],
+          "end_coords": [34.8697, -111.7610],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Oak Creek Canyon Scenic Drive",
+              "coords": [34.9370, -111.7370],
+              "description": "Stunning descent through a red rock canyon often called Arizona's Little Grand Canyon",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Bell Rock Pathway",
+              "coords": [34.8097, -111.7652],
+              "description": "Easy dog-friendly trail around one of Sedona's most iconic red rock formations",
+              "type": "attraction"
+            },
+            {
+              "name": "Tlaquepaque Arts Village",
+              "coords": [34.8620, -111.7630],
+              "description": "Charming arts and crafts village modeled after a traditional Mexican town",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Sedona, AZ",
+          "end": "Sedona, AZ",
+          "start_coords": [34.8697, -111.7610],
+          "end_coords": [34.8697, -111.7610],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "West Fork Oak Creek Trail",
+              "coords": [34.9879, -111.7437],
+              "description": "One of Arizona's most beautiful canyon hikes through lush forest along a creek",
+              "type": "attraction"
+            },
+            {
+              "name": "Airport Mesa Overlook",
+              "coords": [34.8566, -111.7842],
+              "description": "Panoramic 360-degree views of Sedona's red rock formations, especially stunning at sunset",
+              "type": "attraction"
+            },
+            {
+              "name": "Rancho Sedona RV Park",
+              "coords": [34.8740, -111.7560],
+              "description": "Dog-friendly campground along Oak Creek with shade trees and creek access",
+              "type": "camping"
+            },
+            {
+              "name": "Page Springs Cellars",
+              "coords": [34.7539, -111.8994],
+              "description": "Award-winning winery in the Verde Valley with a dog-friendly patio and creek views",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Sedona, AZ",
+          "end": "Gallup, NM",
+          "start_coords": [34.8697, -111.7610],
+          "end_coords": [35.5281, -108.7426],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Standin' on the Corner Park Winslow",
+              "coords": [35.0241, -110.6974],
+              "description": "Iconic Eagles song tribute on historic Route 66 — a must-stop photo op",
+              "type": "attraction"
+            },
+            {
+              "name": "Petrified Forest National Park",
+              "coords": [34.9100, -109.7870],
+              "description": "Ancient petrified wood and painted desert landscapes spanning 225 million years",
+              "type": "national_park"
+            },
+            {
+              "name": "El Rancho Hotel Gallup",
+              "coords": [35.5281, -108.7426],
+              "description": "Historic Route 66 hotel where classic Hollywood stars stayed during Western film shoots",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Gallup, NM",
+          "end": "Trinidad, CO",
+          "start_coords": [35.5281, -108.7426],
+          "end_coords": [37.1694, -104.5006],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Albuquerque Old Town",
+              "coords": [35.0967, -106.6695],
+              "description": "Historic adobe plaza with galleries, shops, and New Mexican cuisine dating to 1706",
+              "type": "town"
+            },
+            {
+              "name": "Petroglyph National Monument",
+              "coords": [35.1362, -106.7612],
+              "description": "Over 24,000 ancient petroglyphs carved into volcanic rock along Albuquerque's west mesa",
+              "type": "national_park"
+            },
+            {
+              "name": "Fishers Peak State Park",
+              "coords": [37.1100, -104.5200],
+              "description": "Colorado's newest state park with dramatic mesa views near the New Mexico border",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Trinidad, CO",
+          "end": "Parker, CO",
+          "start_coords": [37.1694, -104.5006],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Spanish Peaks Vista",
+              "coords": [37.3750, -104.9830],
+              "description": "Stunning views of the twin Spanish Peaks rising from the Colorado plains",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Pikes Peak View",
+              "coords": [38.8409, -105.0423],
+              "description": "America's Mountain visible from the highway — an iconic Front Range landmark",
+              "type": "scenic_drive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Grand Canyon Route",
+      "theme": "Bucket-list national monuments through Arizona's canyon country",
+      "total_days": 8,
+      "total_driving_hours": 26.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Bakersfield, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [35.3733, -119.0187],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles Wine Country",
+              "coords": [35.6265, -120.6910],
+              "description": "Renowned Central Coast wine region with over 200 wineries and excellent dining",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Bakersfield, CA",
+          "end": "Williams, AZ",
+          "start_coords": [35.3733, -119.0187],
+          "end_coords": [35.2494, -112.1871],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bearizona Wildlife Park",
+              "coords": [35.2570, -112.2130],
+              "description": "Drive-through wildlife park with bears, bison, and wolves in a ponderosa pine forest",
+              "type": "attraction"
+            },
+            {
+              "name": "Route 66 Historic Downtown Williams",
+              "coords": [35.2494, -112.1871],
+              "description": "Last town on Route 66 to be bypassed by the interstate, full of retro charm",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Williams, AZ",
+          "end": "Grand Canyon South Rim, AZ",
+          "start_coords": [35.2494, -112.1871],
+          "end_coords": [36.0544, -112.1401],
+          "driving_hours": 1,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Mather Point",
+              "coords": [36.0580, -112.1075],
+              "description": "The first and most iconic Grand Canyon viewpoint with sweeping canyon panoramas",
+              "type": "national_park"
+            },
+            {
+              "name": "Rim Trail",
+              "coords": [36.0544, -112.1401],
+              "description": "Paved, dog-friendly trail along the South Rim with continuous canyon views",
+              "type": "national_park"
+            },
+            {
+              "name": "Desert View Watchtower",
+              "coords": [36.0413, -111.8265],
+              "description": "Mary Colter-designed 70-foot stone tower with panoramic views of the canyon and Painted Desert",
+              "type": "attraction"
+            },
+            {
+              "name": "Shoshone Point",
+              "coords": [36.0535, -112.0753],
+              "description": "Secluded viewpoint reached by a peaceful mile-long forested walk — far fewer crowds",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Grand Canyon South Rim, AZ",
+          "end": "Grand Canyon South Rim, AZ",
+          "start_coords": [36.0544, -112.1401],
+          "end_coords": [36.0544, -112.1401],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Mather Campground",
+              "coords": [36.0510, -112.1170],
+              "description": "Well-shaded campground within walking distance of the South Rim and village amenities",
+              "type": "camping"
+            },
+            {
+              "name": "Hopi Point Sunset",
+              "coords": [36.0711, -112.1540],
+              "description": "One of the best sunset viewpoints on the South Rim with wide western exposure",
+              "type": "attraction"
+            },
+            {
+              "name": "Grand Canyon Dark Sky Park",
+              "coords": [36.0544, -112.1401],
+              "description": "Incredible stargazing at one of the darkest skies near a major national park",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Grand Canyon South Rim, AZ",
+          "end": "Kayenta, AZ",
+          "start_coords": [36.0544, -112.1401],
+          "end_coords": [36.7276, -110.2544],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Cameron Trading Post",
+              "coords": [35.8530, -111.4270],
+              "description": "Historic Navajo trading post with a gallery, dining, and views of the Little Colorado River gorge",
+              "type": "attraction"
+            },
+            {
+              "name": "Moenkopi Dinosaur Tracks",
+              "coords": [36.1170, -111.2010],
+              "description": "Well-preserved dinosaur footprints displayed by Navajo guides along the roadside",
+              "type": "attraction"
+            },
+            {
+              "name": "Monument Valley",
+              "coords": [36.9985, -110.0985],
+              "description": "Iconic sandstone buttes of the Navajo Nation — one of the most photographed landscapes on Earth",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Kayenta, AZ",
+          "end": "Durango, CO",
+          "start_coords": [36.7276, -110.2544],
+          "end_coords": [37.2753, -107.8801],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Four Corners Monument",
+              "coords": [36.9990, -109.0452],
+              "description": "The only place in the US where four states meet — a fun roadside bucket-list stop",
+              "type": "attraction"
+            },
+            {
+              "name": "Mesa Verde National Park",
+              "coords": [37.1838, -108.4889],
+              "description": "Remarkable 700-year-old Ancestral Puebloan cliff dwellings carved into sandstone alcoves",
+              "type": "national_park"
+            },
+            {
+              "name": "Durango Dog Park",
+              "coords": [37.2667, -107.8580],
+              "description": "Off-leash dog park along the Animas River — perfect for Sabby to stretch her legs",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Durango, CO",
+          "end": "Durango, CO",
+          "start_coords": [37.2753, -107.8801],
+          "end_coords": [37.2753, -107.8801],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Animas River Trail",
+              "coords": [37.2753, -107.8801],
+              "description": "Scenic paved riverside trail through downtown Durango, great for a morning walk with Sabby",
+              "type": "attraction"
+            },
+            {
+              "name": "Carver Brewing Company",
+              "coords": [37.2746, -107.8804],
+              "description": "Popular Durango brewpub with a dog-friendly patio and hearty mountain fare",
+              "type": "town"
+            },
+            {
+              "name": "Smelter Mountain Trail",
+              "coords": [37.2570, -107.8750],
+              "description": "Short hike with panoramic views of the Animas Valley and surrounding San Juan peaks",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Durango, CO",
+          "end": "Parker, CO",
+          "start_coords": [37.2753, -107.8801],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 6.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Million Dollar Highway",
+              "coords": [37.8900, -107.7100],
+              "description": "One of America's most dramatic mountain drives with hairpin turns and 10,000-foot passes",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Silverton",
+              "coords": [37.8119, -107.6645],
+              "description": "Authentic 1880s mining town nestled in a high mountain valley at 9,318 feet",
+              "type": "town"
+            },
+            {
+              "name": "Black Canyon of the Gunnison",
+              "coords": [38.5754, -107.7416],
+              "description": "Sheer 2,000-foot dark canyon walls carved by the Gunnison River — awe-inspiring overlooks",
+              "type": "national_park"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Utah's Mighty Five",
+      "theme": "Epic tour of Utah's national parks with Eastern Sierra gateway",
+      "total_days": 7,
+      "total_driving_hours": 29,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Lone Pine, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [36.6063, -118.0629],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Alabama Hills",
+              "coords": [36.6080, -118.1170],
+              "description": "Surreal rounded boulders framing Mt. Whitney — a Hollywood filming location for decades",
+              "type": "attraction"
+            },
+            {
+              "name": "Mobius Arch",
+              "coords": [36.6073, -118.1225],
+              "description": "Natural rock arch perfectly framing Mt. Whitney, reached by a short dog-friendly trail",
+              "type": "attraction"
+            },
+            {
+              "name": "Mt. Whitney Portal Road",
+              "coords": [36.5863, -118.0924],
+              "description": "Scenic drive climbing toward the tallest peak in the Lower 48 with stunning Sierra views",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Lone Pine, CA",
+          "end": "Tonopah, NV",
+          "start_coords": [36.6063, -118.0629],
+          "end_coords": [38.0672, -117.2301],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bishop, CA",
+              "coords": [37.3635, -118.3946],
+              "description": "Gateway to the Eastern Sierra with great bakeries and mountain culture",
+              "type": "town"
+            },
+            {
+              "name": "Mountain Rambler Brewery",
+              "coords": [37.3635, -118.3940],
+              "description": "Dog-friendly brewery in Bishop with outdoor seating and Sierra Nevada views",
+              "type": "attraction"
+            },
+            {
+              "name": "Tonopah Stargazing Park",
+              "coords": [38.0680, -117.2290],
+              "description": "One of the darkest skies in America — designated dark sky community for incredible stargazing",
+              "type": "attraction"
+            },
+            {
+              "name": "Mizpah Hotel",
+              "coords": [38.0672, -117.2301],
+              "description": "Beautifully restored 1907 hotel known as one of the most haunted in Nevada",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Tonopah, NV",
+          "end": "Springdale, UT",
+          "start_coords": [38.0672, -117.2301],
+          "end_coords": [37.1900, -112.9980],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Zion National Park",
+              "coords": [37.2080, -112.9850],
+              "description": "Towering sandstone cliffs and narrow canyons — one of America's most stunning national parks",
+              "type": "national_park"
+            },
+            {
+              "name": "Pa'rus Trail",
+              "coords": [37.2010, -112.9870],
+              "description": "Paved, flat, dog-friendly trail along the Virgin River with views of the Watchman and Towers",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Springdale, UT",
+          "end": "Torrey, UT",
+          "start_coords": [37.1900, -112.9980],
+          "end_coords": [38.3015, -111.4196],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bryce Canyon National Park",
+              "coords": [37.5930, -112.1871],
+              "description": "Thousands of red, orange, and pink hoodoos in the world's largest collection of natural amphitheaters",
+              "type": "national_park"
+            },
+            {
+              "name": "Scenic Byway 12",
+              "coords": [37.7840, -111.4380],
+              "description": "One of America's most scenic roads winding through red rock canyons and alpine forests",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Red Canyon",
+              "coords": [37.7460, -112.3050],
+              "description": "Brilliant red rock tunnel and spires along Highway 12 — a mini Bryce with fewer crowds",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Capitol Reef National Park",
+              "coords": [38.2833, -111.2616],
+              "description": "Hidden gem park with the Waterpocket Fold, historic orchards, and colorful rock layers",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Torrey, UT",
+          "end": "Moab, UT",
+          "start_coords": [38.3015, -111.4196],
+          "end_coords": [38.5733, -109.5498],
+          "driving_hours": 2.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Goblin Valley State Park",
+              "coords": [38.5667, -110.7060],
+              "description": "Otherworldly landscape of mushroom-shaped rock formations perfect for exploring",
+              "type": "national_park"
+            },
+            {
+              "name": "Dead Horse Point State Park",
+              "coords": [38.4823, -109.7388],
+              "description": "Dramatic overlook 2,000 feet above the Colorado River — rivals Grand Canyon views",
+              "type": "national_park"
+            },
+            {
+              "name": "Corona Arch Trail",
+              "coords": [38.5790, -109.6160],
+              "description": "Short hike to a massive freestanding arch larger than most in Arches National Park",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Moab, UT",
+          "end": "Moab, UT",
+          "start_coords": [38.5733, -109.5498],
+          "end_coords": [38.5733, -109.5498],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Arches National Park",
+              "coords": [38.7331, -109.5925],
+              "description": "Over 2,000 natural stone arches including the iconic Delicate Arch",
+              "type": "national_park"
+            },
+            {
+              "name": "Canyonlands Island in the Sky",
+              "coords": [38.4590, -109.8207],
+              "description": "Mesa-top district of Canyonlands with sweeping views of canyon country for hundreds of miles",
+              "type": "national_park"
+            },
+            {
+              "name": "Grandstaff Trail",
+              "coords": [38.6130, -109.5310],
+              "description": "Beautiful canyon hike to Morning Glory Bridge along a creek — dog-friendly",
+              "type": "attraction"
+            },
+            {
+              "name": "Moab KOA",
+              "coords": [38.5420, -109.5750],
+              "description": "Well-equipped campground with pool and mountain views, close to park entrances",
+              "type": "camping"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Moab, UT",
+          "end": "Parker, CO",
+          "start_coords": [38.5733, -109.5498],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "12 miles of dramatic canyon walls along I-70 — the most scenic interstate stretch in America",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Vail",
+              "coords": [39.6403, -106.3742],
+              "description": "World-class alpine village with charming Bavarian architecture and mountain scenery",
+              "type": "town"
+            },
+            {
+              "name": "Eisenhower Tunnel",
+              "coords": [39.6792, -105.9139],
+              "description": "The highest point on the US Interstate system at 11,158 feet under the Continental Divide",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The Vegas & Red Rock Route",
+      "theme": "Desert playgrounds and red rock canyons from Vegas to the Rockies",
+      "total_days": 7,
+      "total_driving_hours": 25.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Bakersfield, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [35.3733, -119.0187],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles",
+              "coords": [35.6265, -120.6910],
+              "description": "Central Coast wine hub with tree-lined downtown square and excellent restaurants",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Bakersfield, CA",
+          "end": "Las Vegas, NV",
+          "start_coords": [35.3733, -119.0187],
+          "end_coords": [36.1699, -115.1398],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Tehachapi",
+              "coords": [35.1322, -118.4490],
+              "description": "Mountain town with historic railroad loop and massive wind farm corridor",
+              "type": "town"
+            },
+            {
+              "name": "Red Rock Canyon",
+              "coords": [36.1358, -115.4276],
+              "description": "Stunning 13-mile scenic loop through towering red sandstone formations just outside Vegas",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Las Vegas, NV",
+          "end": "Springdale, UT",
+          "start_coords": [36.1699, -115.1398],
+          "end_coords": [37.1900, -112.9980],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Valley of Fire State Park",
+              "coords": [36.4418, -114.5260],
+              "description": "Nevada's oldest state park with brilliant red Aztec sandstone formations and ancient petroglyphs",
+              "type": "national_park"
+            },
+            {
+              "name": "Fire Wave Trail",
+              "coords": [36.4370, -114.5030],
+              "description": "Stunning striped sandstone formation resembling frozen waves of fire",
+              "type": "attraction"
+            },
+            {
+              "name": "White Domes Trail",
+              "coords": [36.4780, -114.5460],
+              "description": "Loop trail through colorful sandstone with a slot canyon and old movie set ruins",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Springdale, UT",
+          "end": "Springdale, UT",
+          "start_coords": [37.1900, -112.9980],
+          "end_coords": [37.1900, -112.9980],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Zion Pa'rus Trail",
+              "coords": [37.2010, -112.9870],
+              "description": "Paved dog-friendly riverside trail with towering canyon wall views — Sabby-approved",
+              "type": "national_park"
+            },
+            {
+              "name": "Watchman Campground",
+              "coords": [37.1990, -112.9860],
+              "description": "Prime campground at Zion's south entrance with Watchman views and river access",
+              "type": "camping"
+            },
+            {
+              "name": "Snow Canyon State Park",
+              "coords": [37.2040, -113.6400],
+              "description": "Red and white Navajo sandstone cliffs with lava tubes and petrified sand dunes near St. George",
+              "type": "national_park"
+            },
+            {
+              "name": "Best Friends Animal Sanctuary Kanab",
+              "coords": [37.0450, -112.5340],
+              "description": "The nation's largest no-kill animal sanctuary offering free tours — a must for dog lovers",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Springdale, UT",
+          "end": "Moab, UT",
+          "start_coords": [37.1900, -112.9980],
+          "end_coords": [38.5733, -109.5498],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bryce Canyon",
+              "coords": [37.5930, -112.1871],
+              "description": "Otherworldly amphitheaters filled with thousands of delicate red rock hoodoo spires",
+              "type": "national_park"
+            },
+            {
+              "name": "Scenic Byway 12",
+              "coords": [37.7840, -111.4380],
+              "description": "One of America's most beautiful drives crossing hogback ridges with sheer drop-offs on both sides",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Capitol Reef",
+              "coords": [38.2833, -111.2616],
+              "description": "Utah's most underrated park with colorful cliffs, historic orchards, and the Waterpocket Fold",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Moab, UT",
+          "end": "Glenwood Springs, CO",
+          "start_coords": [38.5733, -109.5498],
+          "end_coords": [39.5505, -107.3248],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Corona Arch Trail",
+              "coords": [38.5790, -109.6160],
+              "description": "Short morning hike to a massive natural arch — one of Moab's best free attractions",
+              "type": "attraction"
+            },
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "Spectacular 12-mile canyon carved by the Colorado River along I-70",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Iron Mountain Hot Springs",
+              "coords": [39.5460, -107.3290],
+              "description": "16 natural hot spring pools along the Colorado River — perfect after a day of driving",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Glenwood Springs, CO",
+          "end": "Parker, CO",
+          "start_coords": [39.5505, -107.3248],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 2.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Vail Village",
+              "coords": [39.6403, -106.3742],
+              "description": "Pedestrian-friendly Bavarian-style village with shops, restaurants, and mountain views",
+              "type": "town"
+            },
+            {
+              "name": "Booth Falls Trail",
+              "coords": [39.6460, -106.3440],
+              "description": "Popular 3-mile round trip hike to a 60-foot waterfall in the Gore Range",
+              "type": "attraction"
+            },
+            {
+              "name": "Eisenhower Tunnel",
+              "coords": [39.6792, -105.9139],
+              "description": "Crossing the Continental Divide at 11,158 feet through the highest vehicular tunnel in the world",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "The Colorado Scenic Byways",
+      "theme": "Million Dollar Highway and alpine hot springs through Colorado's high country",
+      "total_days": 6,
+      "total_driving_hours": 27,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Tonopah, NV",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [38.0672, -117.2301],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles",
+              "coords": [35.6265, -120.6910],
+              "description": "Wine country stopover on the Central Coast with charming town square",
+              "type": "town"
+            },
+            {
+              "name": "Tonopah Stargazing Park",
+              "coords": [38.0680, -117.2290],
+              "description": "Designated dark sky community — some of the best stargazing in the continental US",
+              "type": "attraction"
+            },
+            {
+              "name": "Tonopah Brewing Company",
+              "coords": [38.0670, -117.2295],
+              "description": "Small-town brewery in a historic mining town with craft beers and desert vibes",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Tonopah, NV",
+          "end": "Richfield, UT",
+          "start_coords": [38.0672, -117.2301],
+          "end_coords": [38.7724, -112.0841],
+          "driving_hours": 7.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Great Basin National Park",
+              "coords": [39.0050, -114.2190],
+              "description": "Nevada's only national park with ancient bristlecone pines, marble caves, and a glacier",
+              "type": "national_park"
+            },
+            {
+              "name": "Wheeler Peak Scenic Drive",
+              "coords": [38.9868, -114.3117],
+              "description": "Winding road climbing to 10,000 feet with stunning views of the Great Basin",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Richfield, UT",
+          "end": "Ouray, CO",
+          "start_coords": [38.7724, -112.0841],
+          "end_coords": [38.0228, -107.6714],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Black Canyon of the Gunnison",
+              "coords": [38.5754, -107.7416],
+              "description": "Narrow, deep canyon with 2,000-foot sheer walls — some of the oldest exposed rock on Earth",
+              "type": "national_park"
+            },
+            {
+              "name": "Uncompahgre Gorge",
+              "coords": [38.0250, -107.6720],
+              "description": "Deep canyon cutting through the heart of Ouray with rushing waterfalls",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Ouray, CO",
+          "end": "Ouray, CO",
+          "start_coords": [38.0228, -107.6714],
+          "end_coords": [38.0228, -107.6714],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Million Dollar Highway to Silverton",
+              "coords": [37.8900, -107.7100],
+              "description": "America's most dramatic mountain drive with cliffside hairpins and 11,000-foot passes",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Silverton",
+              "coords": [37.8119, -107.6645],
+              "description": "Authentic silver mining town frozen in the 1880s at 9,318 feet elevation",
+              "type": "town"
+            },
+            {
+              "name": "Ouray Hot Springs Pool",
+              "coords": [38.0228, -107.6714],
+              "description": "Million-gallon natural hot springs pool in the 'Switzerland of America'",
+              "type": "attraction"
+            },
+            {
+              "name": "Box Canon Falls",
+              "coords": [38.0180, -107.6780],
+              "description": "Thundering 285-foot waterfall in a narrow box canyon with suspended walkways",
+              "type": "attraction"
+            },
+            {
+              "name": "Molas Lake Campground",
+              "coords": [37.7430, -107.6890],
+              "description": "High-altitude lakeside camping at 10,515 feet with San Juan Mountain panoramas",
+              "type": "camping"
+            },
+            {
+              "name": "Red Mountain Pass",
+              "coords": [37.8940, -107.7130],
+              "description": "11,018-foot mountain pass with blood-red mineral-stained peaks on all sides",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Ouray, CO",
+          "end": "Glenwood Springs, CO",
+          "start_coords": [38.0228, -107.6714],
+          "end_coords": [39.5505, -107.3248],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Redstone",
+              "coords": [39.2012, -107.2326],
+              "description": "Tiny, picturesque hamlet along the Crystal River with a historic castle and coke ovens",
+              "type": "town"
+            },
+            {
+              "name": "Crystal River Valley",
+              "coords": [39.1750, -107.2200],
+              "description": "Lush green valley drive along a crystal-clear river framed by red cliff walls",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Two Rivers Park Off-Leash",
+              "coords": [39.5460, -107.3280],
+              "description": "Off-leash dog area at the confluence of the Colorado and Roaring Fork rivers",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Glenwood Springs, CO",
+          "end": "Parker, CO",
+          "start_coords": [39.5505, -107.3248],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "Engineering marvel of a highway through 1,800-foot canyon walls along the Colorado River",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Vail",
+              "coords": [39.6403, -106.3742],
+              "description": "Iconic ski village with summer hiking, gondola rides, and alpine wildflowers",
+              "type": "town"
+            },
+            {
+              "name": "Georgetown",
+              "coords": [39.7061, -105.6975],
+              "description": "Charming Victorian-era silver mining town with the Georgetown Loop Railroad",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Death Valley & Beyond",
+      "theme": "Extreme desert crossing from the lowest point in North America through Navajo country — WARNING: Death Valley reaches 110°F+ in June, limiting outdoor time with a dog",
+      "total_days": 7,
+      "total_driving_hours": 27,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Ridgecrest, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [35.6225, -117.6709],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Trona Pinnacles",
+              "coords": [35.6175, -117.3680],
+              "description": "Over 500 tufa spires rising from a dry lake bed — an alien landscape used in sci-fi films",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Ridgecrest, CA",
+          "end": "Las Vegas, NV",
+          "start_coords": [35.6225, -117.6709],
+          "end_coords": [36.1699, -115.1398],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Death Valley - Zabriskie Point",
+              "coords": [36.4200, -116.8116],
+              "description": "Iconic badlands viewpoint with golden mudstone hills — arrive at dawn to beat the heat",
+              "type": "national_park"
+            },
+            {
+              "name": "Death Valley - Badwater Basin",
+              "coords": [36.2296, -116.7675],
+              "description": "The lowest point in North America at 282 feet below sea level with vast salt flats",
+              "type": "national_park"
+            },
+            {
+              "name": "Wildrose Charcoal Kilns",
+              "coords": [36.2727, -117.0800],
+              "description": "Ten beehive-shaped stone kilns from the 1870s at 6,800 feet with cooler mountain air",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Las Vegas, NV",
+          "end": "Page, AZ",
+          "start_coords": [36.1699, -115.1398],
+          "end_coords": [36.9147, -111.4558],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Vermilion Cliffs",
+              "coords": [36.8100, -111.7430],
+              "description": "Towering red and orange cliff face stretching for miles along the Arizona Strip",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Navajo Bridge",
+              "coords": [36.8115, -111.6350],
+              "description": "Historic bridge spanning Marble Canyon 470 feet above the Colorado River — often spot condors",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Page, AZ",
+          "end": "Page, AZ",
+          "start_coords": [36.9147, -111.4558],
+          "end_coords": [36.9147, -111.4558],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Horseshoe Bend",
+              "coords": [36.8791, -111.5105],
+              "description": "Iconic 1,000-foot overlook of the Colorado River's dramatic horseshoe-shaped meander",
+              "type": "attraction"
+            },
+            {
+              "name": "Lake Powell",
+              "coords": [36.9380, -111.4860],
+              "description": "Massive reservoir with red rock canyons, blue water, and countless hidden inlets",
+              "type": "attraction"
+            },
+            {
+              "name": "Wahweap Campground",
+              "coords": [36.9920, -111.4880],
+              "description": "Lakeside campground near Page with full hookups and Lake Powell access",
+              "type": "camping"
+            },
+            {
+              "name": "Glen Canyon Dam",
+              "coords": [36.9375, -111.4841],
+              "description": "710-foot concrete arch dam creating Lake Powell — impressive engineering and visitor center",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Page, AZ",
+          "end": "Durango, CO",
+          "start_coords": [36.9147, -111.4558],
+          "end_coords": [37.2753, -107.8801],
+          "driving_hours": 5.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Four Corners Monument",
+              "coords": [36.9990, -109.0452],
+              "description": "Stand in four states at once — the only quadripoint in the United States",
+              "type": "attraction"
+            },
+            {
+              "name": "Mesa Verde National Park",
+              "coords": [37.1838, -108.4889],
+              "description": "Remarkable cliff dwellings built by Ancestral Puebloans over 700 years ago",
+              "type": "national_park"
+            },
+            {
+              "name": "Durango Animas River Trail",
+              "coords": [37.2753, -107.8801],
+              "description": "Scenic riverside trail through downtown Durango — great for an evening walk with Sabby",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Durango, CO",
+          "end": "Durango, CO",
+          "start_coords": [37.2753, -107.8801],
+          "end_coords": [37.2753, -107.8801],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Smelter Mountain Off-Leash",
+              "coords": [37.2570, -107.8750],
+              "description": "Off-leash hiking area with valley views — Sabby can run free on the mountain trails",
+              "type": "attraction"
+            },
+            {
+              "name": "Carver Brewing Company",
+              "coords": [37.2746, -107.8804],
+              "description": "Award-winning Durango brewpub with dog-friendly patio and hearty food",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Durango, CO",
+          "end": "Parker, CO",
+          "start_coords": [37.2753, -107.8801],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 6.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Wolf Creek Pass",
+              "coords": [37.4830, -106.7970],
+              "description": "10,857-foot mountain pass through the San Juans with stunning alpine scenery",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "San Luis Valley",
+              "coords": [37.5750, -105.9250],
+              "description": "Vast high-altitude valley floor at 7,600 feet with mountain views in every direction",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Great Sand Dunes (distant view)",
+              "coords": [37.7333, -105.5127],
+              "description": "North America's tallest sand dunes visible against the Sangre de Cristo Mountains",
+              "type": "national_park"
+            },
+            {
+              "name": "Fairplay/South Park",
+              "coords": [39.2247, -105.9997],
+              "description": "The real South Park — a historic mining town that inspired the TV show",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "The Yosemite Gateway",
+      "theme": "Through Yosemite's high country and across America's Loneliest Road — NOTE: Tioga Pass (~50/50 chance of being open in early June)",
+      "total_days": 6,
+      "total_driving_hours": 25.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Lee Vining, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [37.9577, -119.1208],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Yosemite Tioga Road",
+              "coords": [37.8732, -119.2577],
+              "description": "Spectacular high-elevation road crossing Yosemite's granite high country at 9,945 feet",
+              "type": "national_park"
+            },
+            {
+              "name": "Olmsted Point",
+              "coords": [37.8107, -119.4856],
+              "description": "Stunning granite overlook with views of Tenaya Canyon, Half Dome, and Clouds Rest",
+              "type": "attraction"
+            },
+            {
+              "name": "Tenaya Lake",
+              "coords": [37.8333, -119.4500],
+              "description": "Crystal-clear alpine lake surrounded by granite domes — gorgeous picnic spot",
+              "type": "attraction"
+            },
+            {
+              "name": "Tuolumne Meadows",
+              "coords": [37.8733, -119.3376],
+              "description": "Yosemite's high country subalpine meadow at 8,600 feet with dome peaks all around",
+              "type": "national_park"
+            },
+            {
+              "name": "Mono Lake South Tufa",
+              "coords": [37.9390, -119.0300],
+              "description": "Ancient calcium-carbonate towers rising from an alkaline lake — otherworldly landscape",
+              "type": "attraction"
+            },
+            {
+              "name": "Whoa Nellie Deli",
+              "coords": [37.9577, -119.1208],
+              "description": "Famous gas station deli serving gourmet food with stunning Mono Lake views",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Lee Vining, CA",
+          "end": "Austin, NV",
+          "start_coords": [37.9577, -119.1208],
+          "end_coords": [39.4933, -117.0683],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Grimes Point Petroglyphs",
+              "coords": [39.4360, -118.4680],
+              "description": "Free self-guided trail through 8,000-year-old rock art along the Loneliest Road",
+              "type": "attraction"
+            },
+            {
+              "name": "Sand Mountain",
+              "coords": [39.3170, -118.0360],
+              "description": "600-foot singing sand dune in the middle of the Nevada desert — a surreal sight",
+              "type": "attraction"
+            },
+            {
+              "name": "Middlegate Station",
+              "coords": [39.4700, -117.6500],
+              "description": "Legendary Loneliest Road bar and grill known for its Monster Burger challenge",
+              "type": "attraction"
+            },
+            {
+              "name": "Spencer Hot Springs",
+              "coords": [39.3260, -116.8530],
+              "description": "Free natural hot springs in the desert with mountain views — a hidden gem",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Austin, NV",
+          "end": "Ely, NV",
+          "start_coords": [39.4933, -117.0683],
+          "end_coords": [39.2474, -114.8886],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Eureka Opera House",
+              "coords": [39.5127, -115.9608],
+              "description": "Beautifully restored 1880 opera house in a well-preserved Nevada mining town",
+              "type": "attraction"
+            },
+            {
+              "name": "Eureka Historic Town",
+              "coords": [39.5127, -115.9608],
+              "description": "Remarkably intact Victorian mining town with original brick buildings and courthouse",
+              "type": "town"
+            },
+            {
+              "name": "Cave Lake State Park",
+              "coords": [39.1640, -114.7440],
+              "description": "Quiet mountain lake at 7,300 feet with fishing, hiking, and pine-shaded campsites",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Ely, NV",
+          "end": "Ely, NV",
+          "start_coords": [39.2474, -114.8886],
+          "end_coords": [39.2474, -114.8886],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Great Basin NP Wheeler Peak Drive",
+              "coords": [38.9868, -114.3117],
+              "description": "Scenic drive climbing to 10,000 feet through diverse ecosystems to ancient bristlecone pines",
+              "type": "national_park"
+            },
+            {
+              "name": "Lehman Caves",
+              "coords": [39.0090, -114.2210],
+              "description": "Stunning marble caverns with rare shield formations — guided tours available",
+              "type": "attraction"
+            },
+            {
+              "name": "Nevada Northern Railway",
+              "coords": [39.2474, -114.8886],
+              "description": "Ride a historic steam train through the Nevada desert — a National Historic Landmark",
+              "type": "attraction"
+            },
+            {
+              "name": "Cave Lake Campground",
+              "coords": [39.1640, -114.7440],
+              "description": "Peaceful mountain campground at 7,300 feet with lakeside sites and cool pines",
+              "type": "camping"
+            },
+            {
+              "name": "Ward Charcoal Ovens",
+              "coords": [39.0844, -114.9310],
+              "description": "Six massive beehive-shaped stone ovens from the 1870s silver smelting era",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Ely, NV",
+          "end": "Richfield, UT",
+          "start_coords": [39.2474, -114.8886],
+          "end_coords": [38.7724, -112.0841],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Fremont Indian State Park",
+              "coords": [38.5767, -112.3269],
+              "description": "Thousands of rock art panels and artifacts from the ancient Fremont people in Clear Creek Canyon",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Richfield, UT",
+          "end": "Parker, CO",
+          "start_coords": [38.7724, -112.0841],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "San Rafael Swell",
+              "coords": [38.8700, -110.6800],
+              "description": "Vast geological uplift with colorful canyons and mesas visible from I-70",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "Dramatic 12-mile canyon drive along the Colorado River on I-70",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Glenwood Springs",
+              "coords": [39.5505, -107.3248],
+              "description": "Hot springs town at the confluence of the Colorado and Roaring Fork rivers",
+              "type": "town"
+            },
+            {
+              "name": "Eisenhower Tunnel",
+              "coords": [39.6792, -105.9139],
+              "description": "Crossing the Continental Divide at over 11,000 feet through the world's highest vehicular tunnel",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Eastern Sierra Scenic",
+      "theme": "Mt. Whitney, ancient bristlecone pines, and California's alpine lake country",
+      "total_days": 6,
+      "total_driving_hours": 23,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Lone Pine, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [36.6063, -118.0629],
+          "driving_hours": 6.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Alabama Hills",
+              "coords": [36.6080, -118.1170],
+              "description": "Rounded granite boulders creating a surreal landscape with Mt. Whitney as backdrop",
+              "type": "attraction"
+            },
+            {
+              "name": "Mobius Arch Trail",
+              "coords": [36.6073, -118.1225],
+              "description": "Easy loop trail to a natural arch perfectly framing Mt. Whitney — great photo op",
+              "type": "attraction"
+            },
+            {
+              "name": "Movie Road",
+              "coords": [36.6200, -118.1150],
+              "description": "Scenic dirt road through Alabama Hills where hundreds of Western films were shot",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Whitney Portal Road",
+              "coords": [36.5863, -118.0924],
+              "description": "Dramatic winding road climbing 5,000 feet toward the tallest peak in the Lower 48",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Lone Pine, CA",
+          "end": "Mammoth Lakes, CA",
+          "start_coords": [36.6063, -118.0629],
+          "end_coords": [37.6485, -118.9721],
+          "driving_hours": 2,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Manzanar National Historic Site",
+              "coords": [36.7284, -118.1547],
+              "description": "Preserved WWII Japanese American internment camp — powerful and important history",
+              "type": "attraction"
+            },
+            {
+              "name": "Erick Schat's Bakkery Bishop",
+              "coords": [37.3635, -118.3946],
+              "description": "Famous family bakery since 1938 — the Original Sheepherder Bread is a must-try",
+              "type": "attraction"
+            },
+            {
+              "name": "Ancient Bristlecone Pine Forest",
+              "coords": [37.3850, -118.1750],
+              "description": "Home to the oldest living trees on Earth — some over 4,800 years old",
+              "type": "national_park"
+            },
+            {
+              "name": "Wild Willy's Hot Spring",
+              "coords": [37.5870, -118.6520],
+              "description": "Free natural hot spring with boardwalk access and Sierra Nevada views",
+              "type": "attraction"
+            },
+            {
+              "name": "Convict Lake",
+              "coords": [37.5885, -118.8561],
+              "description": "Stunning alpine lake beneath dramatic sawtooth peaks — easy shoreline trail",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Mammoth Lakes, CA",
+          "end": "Mammoth Lakes, CA",
+          "start_coords": [37.6485, -118.9721],
+          "end_coords": [37.6485, -118.9721],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Mammoth Mountain Scenic Gondola",
+              "coords": [37.6306, -119.0326],
+              "description": "Ride to 11,053 feet for panoramic views of the Minarets and Eastern Sierra",
+              "type": "attraction"
+            },
+            {
+              "name": "Horseshoe Lake Dog Beach",
+              "coords": [37.6150, -119.0180],
+              "description": "Dog-friendly alpine lake beach at 8,900 feet — Sabby can splash and swim",
+              "type": "attraction"
+            },
+            {
+              "name": "June Lake Loop",
+              "coords": [37.7747, -119.0783],
+              "description": "16-mile scenic loop past four alpine lakes with towering granite peaks",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Twin Lakes Campground",
+              "coords": [37.6280, -119.0010],
+              "description": "Beautiful lakeside camping surrounded by Jeffrey pines at 8,600 feet",
+              "type": "camping"
+            },
+            {
+              "name": "Lakes Basin Drive",
+              "coords": [37.6350, -119.0000],
+              "description": "Scenic drive past a chain of alpine lakes in the Mammoth Lakes Basin",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Mammoth Lakes, CA",
+          "end": "Tonopah, NV",
+          "start_coords": [37.6485, -118.9721],
+          "end_coords": [38.0672, -117.2301],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Mono Lake South Tufa",
+              "coords": [37.9390, -119.0300],
+              "description": "Ancient calcium-carbonate towers in a surreal alkaline lake — a geological wonder",
+              "type": "attraction"
+            },
+            {
+              "name": "Mizpah Hotel",
+              "coords": [38.0672, -117.2301],
+              "description": "Beautifully restored 1907 grand hotel — Nevada's most storied lodging",
+              "type": "attraction"
+            },
+            {
+              "name": "Tonopah Stargazing",
+              "coords": [38.0680, -117.2290],
+              "description": "Designated dark sky community with some of the best stargazing in the western US",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Tonopah, NV",
+          "end": "Ely, NV",
+          "start_coords": [38.0672, -117.2301],
+          "end_coords": [39.2474, -114.8886],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Nevada Northern Railway",
+              "coords": [39.2474, -114.8886],
+              "description": "National Historic Landmark with steam and diesel train rides through the desert",
+              "type": "attraction"
+            },
+            {
+              "name": "Cave Lake State Park",
+              "coords": [39.1640, -114.7440],
+              "description": "Mountain lake with trout fishing and forested campground at 7,300 feet",
+              "type": "national_park"
+            },
+            {
+              "name": "Ward Charcoal Ovens",
+              "coords": [39.0844, -114.9310],
+              "description": "Six perfectly preserved 30-foot beehive ovens from the silver mining era",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Ely, NV",
+          "end": "Parker, CO",
+          "start_coords": [39.2474, -114.8886],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 7.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Great Basin NP (distant view)",
+              "coords": [39.0050, -114.2190],
+              "description": "Views of Wheeler Peak and the Snake Range as you head east from Ely",
+              "type": "national_park"
+            },
+            {
+              "name": "Green River, UT",
+              "coords": [38.9957, -110.1628],
+              "description": "Small desert town known for watermelon and as a launching point for river trips",
+              "type": "town"
+            },
+            {
+              "name": "San Rafael Swell",
+              "coords": [38.8700, -110.6800],
+              "description": "Massive geological uplift with colorful cliffs and canyons visible from I-70",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "America's most scenic interstate stretch through towering canyon walls",
+              "type": "scenic_drive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "The Tahoe & Reno Route",
+      "theme": "Alpine lakes, Basque culture, and salt flats across the northern corridor",
+      "total_days": 5,
+      "total_driving_hours": 21.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Truckee, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [39.3280, -120.1833],
+          "driving_hours": 4.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Sacramento Old Town",
+              "coords": [38.5816, -121.5064],
+              "description": "Historic Gold Rush-era waterfront district with cobblestone streets and museums",
+              "type": "town"
+            },
+            {
+              "name": "Donner Memorial State Park",
+              "coords": [39.3236, -120.2373],
+              "description": "Beautiful park on Donner Lake with emigrant history museum and forested trails",
+              "type": "national_park"
+            },
+            {
+              "name": "Downtown Truckee",
+              "coords": [39.3280, -120.1833],
+              "description": "Charming mountain town with historic Commercial Row, galleries, and restaurants",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Truckee, CA",
+          "end": "Truckee, CA",
+          "start_coords": [39.3280, -120.1833],
+          "end_coords": [39.3280, -120.1833],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Donner Lake",
+              "coords": [39.3236, -120.2373],
+              "description": "Pristine alpine lake with swimming beaches and mountain backdrop — dog-friendly shores",
+              "type": "attraction"
+            },
+            {
+              "name": "Fallen Leaf Campground",
+              "coords": [38.8850, -120.0560],
+              "description": "Scenic campground near Lake Tahoe surrounded by towering peaks and alpine meadows",
+              "type": "camping"
+            },
+            {
+              "name": "Emerald Bay State Park",
+              "coords": [38.9536, -120.1097],
+              "description": "Tahoe's most photographed spot with a stunning turquoise bay and Fannette Island",
+              "type": "national_park"
+            },
+            {
+              "name": "Sawtooth Trail",
+              "coords": [39.2830, -120.1950],
+              "description": "Ridge trail with panoramic views of Donner Lake, Truckee, and the Sierra Crest",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Truckee, CA",
+          "end": "Elko, NV",
+          "start_coords": [39.3280, -120.1833],
+          "end_coords": [40.8324, -115.7631],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Martin Hotel Basque Dining Winnemucca",
+              "coords": [40.9730, -117.7356],
+              "description": "Authentic family-style Basque dinner — a unique Nevada cultural tradition since 1898",
+              "type": "attraction"
+            },
+            {
+              "name": "Lamoille Canyon / Ruby Mountains",
+              "coords": [40.6330, -115.4700],
+              "description": "Nevada's Alps — a glacially-carved canyon with waterfalls and alpine scenery",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Star Hotel Basque Dinner Elko",
+              "coords": [40.8324, -115.7631],
+              "description": "Legendary communal Basque dining with multi-course family-style meals",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Elko, NV",
+          "end": "Park City, UT",
+          "start_coords": [40.8324, -115.7631],
+          "end_coords": [40.6461, -111.4980],
+          "driving_hours": 4.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bonneville Salt Flats",
+              "coords": [40.7578, -113.8323],
+              "description": "Vast white salt pan stretching to the horizon — land speed record site and surreal landscape",
+              "type": "attraction"
+            },
+            {
+              "name": "Antelope Island State Park",
+              "coords": [40.9612, -112.2055],
+              "description": "Bison herds and pronghorn on a Great Salt Lake island with panoramic mountain views",
+              "type": "national_park"
+            },
+            {
+              "name": "Run-a-Muk Dog Park Park City",
+              "coords": [40.6560, -111.5100],
+              "description": "Premier off-leash dog park in Park City — perfect stop for Sabby",
+              "type": "attraction"
+            },
+            {
+              "name": "Historic Main Street Park City",
+              "coords": [40.6461, -111.4980],
+              "description": "Charming former silver mining town turned ski resort with galleries and dining",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Park City, UT",
+          "end": "Parker, CO",
+          "start_coords": [40.6461, -111.4980],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 7.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Rawlins, WY",
+              "coords": [41.7911, -107.2387],
+              "description": "Historic frontier town on the Lincoln Highway — good midway fuel and stretch stop",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "The Mountain Express",
+      "theme": "Yosemite high country to Colorado hot springs via the most scenic interstate in America — NOTE: Tioga Pass (~50/50 chance of being open in early June)",
+      "total_days": 5,
+      "total_driving_hours": 21.25,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Lee Vining, CA",
+          "start_coords": [36.5554, -121.9233],
+          "end_coords": [37.9577, -119.1208],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Yosemite Tioga Road",
+              "coords": [37.8732, -119.2577],
+              "description": "Yosemite's stunning high-elevation crossing at nearly 10,000 feet through granite wilderness",
+              "type": "national_park"
+            },
+            {
+              "name": "Tuolumne Meadows",
+              "coords": [37.8733, -119.3376],
+              "description": "Vast subalpine meadow at 8,600 feet with granite domes and the Tuolumne River",
+              "type": "national_park"
+            },
+            {
+              "name": "Olmsted Point",
+              "coords": [37.8107, -119.4856],
+              "description": "Roadside overlook with sweeping views of Tenaya Canyon and the back of Half Dome",
+              "type": "attraction"
+            },
+            {
+              "name": "Mono Lake South Tufa",
+              "coords": [37.9390, -119.0300],
+              "description": "Otherworldly tufa towers rising from an ancient saline lake at the base of the Sierra",
+              "type": "attraction"
+            },
+            {
+              "name": "Whoa Nellie Deli",
+              "coords": [37.9577, -119.1208],
+              "description": "Legendary gas station deli with gourmet food and panoramic Mono Lake views",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Lee Vining, CA",
+          "end": "Ely, NV",
+          "start_coords": [37.9577, -119.1208],
+          "end_coords": [39.2474, -114.8886],
+          "driving_hours": 5.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Tonopah Historic Mining Park",
+              "coords": [38.0672, -117.2301],
+              "description": "Open-air museum at the site of Nevada's richest silver strike with original mine equipment",
+              "type": "attraction"
+            },
+            {
+              "name": "Clown Motel",
+              "coords": [38.0680, -117.2300],
+              "description": "Famously creepy motel next to a cemetery filled with thousands of clown figurines",
+              "type": "attraction"
+            },
+            {
+              "name": "International Car Forest Goldfield",
+              "coords": [37.7080, -117.2350],
+              "description": "Dozens of cars buried nose-down in the desert and covered in vibrant street art",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Ely, NV",
+          "end": "Glenwood Springs, CO",
+          "start_coords": [39.2474, -114.8886],
+          "end_coords": [39.5505, -107.3248],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Great Basin National Park",
+              "coords": [39.0050, -114.2190],
+              "description": "Nevada's only national park with bristlecone pines, a glacier, and Lehman Caves",
+              "type": "national_park"
+            },
+            {
+              "name": "San Rafael Swell",
+              "coords": [38.8700, -110.6800],
+              "description": "Massive geological uplift with colorful layered cliffs visible from I-70",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Glenwood Canyon",
+              "coords": [39.5680, -107.2180],
+              "description": "12 miles of soaring canyon walls along the Colorado River — America's most scenic interstate",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Glenwood Springs, CO",
+          "end": "Glenwood Springs, CO",
+          "start_coords": [39.5505, -107.3248],
+          "end_coords": [39.5505, -107.3248],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Glenwood Hot Springs Pool",
+              "coords": [39.5505, -107.3248],
+              "description": "World's largest natural hot springs pool — over two blocks long at 90-104°F",
+              "type": "attraction"
+            },
+            {
+              "name": "Iron Mountain Hot Springs",
+              "coords": [39.5460, -107.3290],
+              "description": "16 individual geothermal pools along the Colorado River with mountain views",
+              "type": "attraction"
+            },
+            {
+              "name": "Glenwood Canyon Recreation Trail",
+              "coords": [39.5680, -107.2180],
+              "description": "Paved 16-mile trail through the canyon along the Colorado River — dog-friendly",
+              "type": "attraction"
+            },
+            {
+              "name": "Two Rivers Park Dog Area",
+              "coords": [39.5460, -107.3280],
+              "description": "Off-leash dog park at the confluence of the Colorado and Roaring Fork rivers",
+              "type": "attraction"
+            },
+            {
+              "name": "Ami's Acres Campground",
+              "coords": [39.5610, -107.3470],
+              "description": "Quiet riverside campground just outside town with mountain views and shade",
+              "type": "camping"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Glenwood Springs, CO",
+          "end": "Parker, CO",
+          "start_coords": [39.5505, -107.3248],
+          "end_coords": [39.5186, -104.7614],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Booth Falls Vail",
+              "coords": [39.6460, -106.3440],
+              "description": "Popular 3-mile round trip hike to a 60-foot waterfall in the Gore Range",
+              "type": "attraction"
+            },
+            {
+              "name": "Vail Village",
+              "coords": [39.6403, -106.3742],
+              "description": "Pedestrian-only Bavarian-style village with summer wildflower hikes and gondola rides",
+              "type": "town"
+            },
+            {
+              "name": "Betty Ford Alpine Gardens",
+              "coords": [39.6424, -106.3756],
+              "description": "World's highest botanical garden at 8,200 feet — free admission and dog-friendly paths",
+              "type": "attraction"
+            },
+            {
+              "name": "Georgetown",
+              "coords": [39.7061, -105.6975],
+              "description": "Victorian silver mining town with the Georgetown Loop Railroad and mountain views",
+              "type": "town"
+            },
+            {
+              "name": "Idaho Springs",
+              "coords": [39.7422, -105.5153],
+              "description": "Historic mining town with natural hot springs, Beau Jo's pizza, and mountain charm",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
