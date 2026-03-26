@@ -233,9 +233,13 @@
     }
     .hl-img {
       width: 100%; aspect-ratio: 16/9;
-      background-size: cover; background-position: center;
-      background-color: #14142e;
+      overflow: hidden; background-color: #14142e;
     }
+    .hl-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .hl-card:hover .hl-img img { transform: scale(1.05); }
     .hl-body { padding: 16px 18px 18px; }
     .hl-tag {
       display: inline-block; font-size: 10px; font-weight: 700;
@@ -343,6 +347,20 @@
     .pn-btn .pn-name  { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
     .pn-btn.next { text-align: right; margin-left: auto; }
 
+    /* Focus indicators */
+    .route-card:focus-visible,
+    .pn-btn:focus-visible,
+    .btn:focus-visible,
+    .back-btn:focus-visible,
+    .nav-right a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .route-card:focus-visible {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+    }
+
     /* Loading */
     .loading {
       display: flex; align-items: center; justify-content: center;
@@ -359,7 +377,6 @@
       .sum-stats { gap: 28px; }
       .sum-val { font-size: 40px; }
       .day-sec { padding: 70px 20px 50px; }
-      .hero { background-attachment: scroll !important; }
     }
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
@@ -388,18 +405,106 @@
 <main id="app"><div class="loading">Loading routes&hellip;</div></main>
 
 <script>
-/* ── colour themes per route ── */
+/* ── colour themes + curated Unsplash photo IDs per route ── */
 const THEMES = {
-  1:  { c1:'#3a1505', c2:'#5a2010', q:'desert+highway+sunset+road' },
-  2:  { c1:'#3a1a00', c2:'#6a3000', q:'grand+canyon+arizona+landscape' },
-  3:  { c1:'#3a2500', c2:'#6a4500', q:'arches+national+park+utah' },
-  4:  { c1:'#3a3010', c2:'#5a4a1a', q:'white+sands+new+mexico+desert' },
-  5:  { c1:'#0a2a20', c2:'#1a4a3a', q:'yellowstone+national+park+geyser' },
-  6:  { c1:'#2a1510', c2:'#4a2a1a', q:'death+valley+desert+dunes' },
-  7:  { c1:'#0a2a1a', c2:'#1a4030', q:'oregon+cascade+mountains+forest' },
-  8:  { c1:'#1a1540', c2:'#2a2060', q:'sierra+nevada+alpine+lake' },
-  9:  { c1:'#0a1a2a', c2:'#152a40', q:'california+coast+ocean+cliffs' },
-  10: { c1:'#151a30', c2:'#253050', q:'montana+mountain+big+sky' },
+  1:  { c1:'#3a1505', c2:'#5a2010', hero:'photo-1765871320020-4dc601d61f72', rest:'photo-1617771237523-3ddd29d5d8aa' },
+  2:  { c1:'#3a1a00', c2:'#6a3000', hero:'photo-1687121341815-f9cd1d924fc7', rest:'photo-1771504942910-ca803b7928c4' },
+  3:  { c1:'#3a2500', c2:'#6a4500', hero:'photo-1763793927668-27bc207703d8', rest:'photo-1763793927668-27bc207703d8' },
+  4:  { c1:'#3a3010', c2:'#5a4a1a', hero:'photo-1741567348603-0bef4612bea2', rest:'photo-1691099080503-ca7848496197' },
+  5:  { c1:'#0a2a20', c2:'#1a4a3a', hero:'photo-1466024760775-91c6530fc877', rest:'photo-1687373604074-5d3149e452cf' },
+  6:  { c1:'#2a1510', c2:'#4a2a1a', hero:'photo-1689420930976-cd8994c24e73', rest:'photo-1620360715768-c3f6b4462d07' },
+  7:  { c1:'#0a2a1a', c2:'#1a4030', hero:'photo-1569906023803-f64b6b7a1e05', rest:'photo-1680989124634-37ff0ba975e8' },
+  8:  { c1:'#1a1540', c2:'#2a2060', hero:'photo-1746035970501-32a61836ddfc', rest:'photo-1724269964896-7817e9209815' },
+  9:  { c1:'#0a1a2a', c2:'#152a40', hero:'photo-1565010504847-94f9e1c9c57c', rest:'photo-1525536442945-13bd56f1f3ce' },
+  10: { c1:'#151a30', c2:'#253050', hero:'photo-1626129347681-2eb74cb9b1f2', rest:'photo-1609364376289-9642c391b30b' },
+};
+
+/* ── hand-picked Unsplash photos for well-known highlights ── */
+const PHOTOS = {
+  'Paso Robles Wine Country':'photo-1506377247377-2a5b3b417ebb',
+  'Wind Farm Fields':'photo-1693393786227-2ba7c3a4dc88',
+  'Tehachapi Loop Railroad':'photo-1693393786227-2ba7c3a4dc88',
+  "Roy's Cafe Amboy":'photo-1727475304324-67d01396b4e8',
+  'Oak Creek Canyon Scenic Drive':'photo-1721497369493-51e32495a5a8',
+  'Mather Point':'photo-1771504942910-ca803b7928c4',
+  'Rim Trail':'photo-1771504942910-ca803b7928c4',
+  'Desert View Watchtower':'photo-1687121341815-f9cd1d924fc7',
+  'Monument Valley':'photo-1746294856246-7d0be0f7a992',
+  'Bryce Canyon National Park':'photo-1729595670984-7e6e51e55e77',
+  'Zion National Park':'photo-1689085765033-f7d7eecfff5f',
+  'Capitol Reef National Park':'photo-1673325241724-609db65ce698',
+  'Arches National Park':'photo-1763793927668-27bc207703d8',
+  'Canyonlands Island in the Sky':'photo-1763793927668-27bc207703d8',
+  'Dead Horse Point State Park':'photo-1763793927668-27bc207703d8',
+  'Saguaro National Park West':'photo-1728026088449-53241459e276',
+  'White Sands National Park':'photo-1741813203115-e4a83fc6e9d5',
+  'Garden of the Gods':'photo-1633712151902-d29018f73b63',
+  'Pikes Peak View':'photo-1731527183816-39c6ea45e114',
+  'Petrified Forest National Park':'photo-1705358358215-dce6d98c0a1b',
+  'Death Valley - Zabriskie Point':'photo-1709422018769-8a74f47878c3',
+  'Death Valley - Badwater Basin':'photo-1689420930976-cd8994c24e73',
+  'Horseshoe Bend':'photo-1531694402898-042bd3957f41',
+  'Lake Powell':'photo-1620360715768-c3f6b4462d07',
+  'Vermilion Cliffs':'photo-1656042687688-78bb8b1b6a31',
+  'Crater Lake National Park':'photo-1589401782841-c760e3bf47e5',
+  'Donner Memorial State Park':'photo-1711283993455-f41fc915f8ac',
+  'Old Faithful & Upper Geyser Basin':'photo-1687373604074-5d3149e452cf',
+  'Grand Canyon of the Yellowstone (Artist Point)':'photo-1466024760775-91c6530fc877',
+  'Grand Prismatic Spring (roadside view)':'photo-1466024760775-91c6530fc877',
+  'Grand Teton NP - Mormon Row':'photo-1689445246150-e6467834a27a',
+  'Shoshone Falls':'photo-1507217882817-0231ce6ccd71',
+  'Shoshone Falls (en route, Twin Falls)':'photo-1507217882817-0231ce6ccd71',
+  'Perrine Bridge & Snake River Canyon':'photo-1734903251891-3b1ba4e4e463',
+  'Craters of the Moon National Monument (optional detour)':'photo-1709422018769-8a74f47878c3',
+  'Craters of the Moon':'photo-1709422018769-8a74f47878c3',
+  'Bighorn Scenic Byway (US-14 over Big Horns)':'photo-1603813760873-b97927ad7023',
+  'Bighorn Scenic Byway (US-14)':'photo-1603813760873-b97927ad7023',
+  'Shell Falls':'photo-1603813760873-b97927ad7023',
+  'Mono Lake South Tufa':'photo-1583820960592-9951d987a3d4',
+  'Ancient Bristlecone Pine Forest':'photo-1763760243463-cbfb66c7fcc3',
+  'Mammoth Mountain Scenic Gondola':'photo-1724269964896-7817e9209815',
+  'Convict Lake':'photo-1724269964896-7817e9209815',
+  'June Lake Loop':'photo-1724269964896-7817e9209815',
+  'Reno Riverwalk District':'photo-1686283374227-68c9fc5b57d9',
+  'Route 66 Museum Kingman':'photo-1543373072-69f3d4788832',
+  'Route 66 Dog Park Kingman':'photo-1543373072-69f3d4788832',
+  'Arizona Route 66 Museum':'photo-1543373072-69f3d4788832',
+  'Route 66 Historic Downtown Williams':'photo-1543373072-69f3d4788832',
+  'Route 66 Mother Road Museum':'photo-1543373072-69f3d4788832',
+  'Route 66 Seligman':'photo-1543373072-69f3d4788832',
+  'Flagstaff Historic Downtown':'photo-1525536442945-13bd56f1f3ce',
+  'Sunset Crater Lava Flow Trail':'photo-1525536442945-13bd56f1f3ce',
+  'Painted Hills':'photo-1705358358215-dce6d98c0a1b',
+  'John Day Fossil Beds - Sheep Rock Unit':'photo-1705358358215-dce6d98c0a1b',
+  'Mesa Verde National Park':'photo-1728026088449-53241459e276',
+  'Black Canyon of the Gunnison':'photo-1728026088449-53241459e276',
+  'Million Dollar Highway':'photo-1741790966255-aa769e7d77da',
+  'Glenwood Canyon':'photo-1741790966255-aa769e7d77da',
+  'Mount Lemmon Scenic Drive':'photo-1741790966255-aa769e7d77da',
+  'US-82 Cloudcroft Highway':'photo-1691099080503-ca7848496197',
+  'Great Sand Dunes (distant view)':'photo-1741567348603-0bef4612bea2',
+  'Pinnacles National Park':'photo-1728026088449-53241459e276',
+  'Pinnacles National Park (West Entrance)':'photo-1728026088449-53241459e276',
+  'Alabama Hills':'photo-1746035970501-32a61836ddfc',
+  'Mt. Whitney Portal Road':'photo-1746035970501-32a61836ddfc',
+  'Whitney Portal Road':'photo-1746035970501-32a61836ddfc',
+  'Galena Summit Overlook':'photo-1741790966255-aa769e7d77da',
+  'Togwotee Pass':'photo-1689445246150-e6467834a27a',
+  'Hyalite Canyon Recreation Area':'photo-1609364376289-9642c391b30b',
+  'Red Rock Canyon':'photo-1656042687688-78bb8b1b6a31',
+  'Feather River Canyon (en route)':'photo-1741790966255-aa769e7d77da',
+  'Rattlesnake National Recreation Area':'photo-1429189096272-e07dc6aff539',
+  'Little Bighorn Battlefield National Monument (en route)':'photo-1603813760873-b97927ad7023',
+  'Boise River Greenbelt':'photo-1734903251891-3b1ba4e4e463',
+};
+
+/* ── type-based fallback photos ── */
+const TYPE_PHOTOS = {
+  national_park: 'photo-1728026088449-53241459e276',
+  scenic_drive:  'photo-1741790966255-aa769e7d77da',
+  town:          'photo-1761850648640-2ee5870ee883',
+  attraction:    'photo-1523593631961-cf7adf46f3ea',
+  camping:       'photo-1470246973918-29a93221c455',
 };
 
 const TYPE_LABEL = {
@@ -407,15 +512,11 @@ const TYPE_LABEL = {
   town:'Town', attraction:'Attraction', camping:'Camping',
 };
 
-let routes = [], curIdx = -1, observer;
+let routes = [], curIdx = -1, observer, rafId = null;
 
 /* ── helpers ── */
-function imgUrl(query, w=1600, h=900) {
-  return `https://loremflickr.com/${w}/${h}/${encodeURIComponent(query.replace(/\+/g,','))}`;
-}
-function hlQuery(h) {
-  const clean = h.name.replace(/\(.*?\)/g,'').replace(/[^a-zA-Z\s]/g,'').trim();
-  return clean || TYPE_LABEL[h.type] || 'landscape';
+function imgUrl(photoId, w=1600, h=900) {
+  return `https://images.unsplash.com/${photoId}?w=${w}&h=${h}&fit=crop&auto=format`;
 }
 function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
 
@@ -435,6 +536,7 @@ async function init(){
 
 /* ── GRID VIEW ── */
 function showGrid(){
+  if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
   curIdx=-1;
   document.getElementById('backBtn').style.display='none';
   document.getElementById('navTitle').style.display='';
@@ -449,8 +551,9 @@ function showGrid(){
   routes.forEach((r,i)=>{
     const t=THEMES[r.id]||THEMES[1];
     const grad=`linear-gradient(135deg,${t.c1},${t.c2})`;
-    const bg=`linear-gradient(180deg,rgba(0,0,0,0) 15%,rgba(0,0,0,0.75) 100%),url('${imgUrl(t.q)}')`;
-    h+=`<div class="route-card" onclick="showRoute(${i})"
+    const bg=`linear-gradient(180deg,rgba(0,0,0,0) 15%,rgba(0,0,0,0.75) 100%),url('${imgUrl(t.hero)}')`;
+    h+=`<div class="route-card" tabindex="0" role="button" aria-label="${esc(r.name)}"
+          onclick="showRoute(${i})" onkeydown="if(event.key==='Enter')showRoute(${i})"
           style="background:${grad};background-image:${bg};background-size:cover;background-position:center">
       <div class="card-overlay">
         <div class="card-num">Route ${r.id}</div>
@@ -487,7 +590,7 @@ function showRoute(idx){
   /* ── Hero ── */
   h+=`<div class="hero" id="hero"
         style="background:${heroGrad}"
-        data-img="${imgUrl(t.q,1920,1080)}">
+        data-img="${imgUrl(t.hero,1920,1080)}">
     <div class="hero-overlay"></div>
     <div class="hero-body">
       <div class="hero-num">Route ${route.id}</div>
@@ -513,9 +616,8 @@ function showRoute(idx){
     if(day.is_rest_day){
       /* Rest / camping breather */
       const camp=day.highlights.find(x=>x.type==='camping');
-      const rq=day.end.replace(/,.*$/,'').replace(/\s+/g,'+')+'+nature+landscape';
       const rGrad=`linear-gradient(135deg,${t.c1},${t.c2})`;
-      h+=`<div class="rest-sec reveal" style="background:${rGrad}" data-img="${imgUrl(rq,1920,1080)}">
+      h+=`<div class="rest-sec reveal" style="background:${rGrad}" data-img="${imgUrl(t.rest,1920,1080)}">
         <div class="rest-overlay"></div>
         <div class="rest-body">
           <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
@@ -588,11 +690,13 @@ function showRoute(idx){
 
 /* ── highlight card builder ── */
 function hlCard(h,t){
-  const q=hlQuery(h);
-  const src=imgUrl(q,640,360);
+  const photoId=PHOTOS[h.name]||TYPE_PHOTOS[h.type]||TYPE_PHOTOS.attraction;
+  const src=imgUrl(photoId,640,360);
   const tag=TYPE_LABEL[h.type]||h.type;
   return `<div class="hl-card">
-    <div class="hl-img" style="background-image:url('${src}');background-color:${t.c1}"></div>
+    <div class="hl-img">
+      <img src="${src}" alt="${esc(h.name)}" loading="lazy">
+    </div>
     <div class="hl-body">
       <span class="hl-tag ${h.type}">${tag}</span>
       <div class="hl-name">${esc(h.name)}</div>
@@ -633,18 +737,19 @@ function wireObserver(){
 
 /* ── parallax on hero ── */
 function wireParallax(){
+  if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
   if(window.innerWidth<769) return;          // skip on mobile
   const hero=document.getElementById('hero');
   if(!hero) return;
   function tick(){
-    if(curIdx<0) return;                     // back to grid
+    if(curIdx<0){ rafId=null; return; }      // back to grid
     const y=window.scrollY;
     if(y<window.innerHeight){
       hero.style.backgroundPositionY=`${y*0.35}px`;
     }
-    requestAnimationFrame(tick);
+    rafId=requestAnimationFrame(tick);
   }
-  requestAnimationFrame(tick);
+  rafId=requestAnimationFrame(tick);
 }
 
 /* ── keyboard navigation ── */
