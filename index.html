@@ -107,7 +107,7 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    let map, tripData, proposalData, sidebarOpen = true;
+    let map, tripData, proposalData, geoData, sidebarOpen = true;
     let routeLayer = null;
 
     const LEG_COLORS = ['#53d8fb', '#f5a623'];
@@ -169,13 +169,17 @@
         maxZoom: 19
       }).addTo(map);
 
-      const [tripResp, proposalResp] = await Promise.all([
+      const [tripResp, proposalResp, geoResp] = await Promise.all([
         fetch('data/trip.json'),
-        fetch('data/route-proposals.json').catch(() => null)
+        fetch('data/route-proposals.json').catch(() => null),
+        fetch('data/route-geometries.json').catch(() => null)
       ]);
       tripData = await tripResp.json();
       if (proposalResp && proposalResp.ok) {
         proposalData = await proposalResp.json();
+      }
+      if (geoResp && geoResp.ok) {
+        geoData = await geoResp.json();
       }
 
       document.getElementById('dates').textContent = tripData.dates;
@@ -190,11 +194,18 @@
 
       tripData.legs.forEach((leg, li) => {
         const color = LEG_COLORS[li % LEG_COLORS.length];
-        const coords = leg.stops.map(s => [s.lat, s.lng]);
-        allCoords.push(...coords);
-
         const dashArray = leg.status === 'draft' ? '8, 8' : null;
-        L.polyline(coords, { color, weight: 3, opacity: 0.7, dashArray }).addTo(map);
+
+        // Draw road-following segments between consecutive stops
+        const stops = leg.stops;
+        for (let si = 0; si < stops.length - 1; si++) {
+          const geoKey = `${li}-${si}`;
+          const segCoords = geoData && geoData.trip && geoData.trip[geoKey]
+            ? geoData.trip[geoKey]
+            : [[stops[si].lat, stops[si].lng], [stops[si+1].lat, stops[si+1].lng]];
+          L.polyline(segCoords, { color, weight: 3, opacity: 0.7, dashArray }).addTo(map);
+        }
+        stops.forEach(s => allCoords.push([s.lat, s.lng]));
 
         leg.stops.forEach((stop, si) => {
           const size = (stop.type === 'start' || stop.type === 'end') ? 12 : 10;
@@ -288,30 +299,20 @@
 
       routeLayer = L.layerGroup().addTo(map);
 
-      // Build route line from day segments
-      const routeCoords = [];
+      // Draw road-following route segments per day
       route.days.forEach(day => {
-        if (routeCoords.length === 0) {
-          routeCoords.push(day.start_coords);
-        }
-        if (day.driving_hours > 0) {
-          // Add highlight coords as waypoints for a more detailed line
-          day.highlights.forEach(h => {
-            if (h.type === 'scenic_drive' || h.type === 'national_park') {
-              routeCoords.push(h.coords);
-            }
-          });
-          routeCoords.push(day.end_coords);
-        }
+        if (day.driving_hours <= 0) return;
+        const geoKey = `${route.id}-${day.day}`;
+        const segCoords = geoData && geoData.proposals && geoData.proposals[geoKey]
+          ? geoData.proposals[geoKey]
+          : [day.start_coords, day.end_coords];
+        L.polyline(segCoords, {
+          color: PROPOSAL_COLOR,
+          weight: 3,
+          opacity: 0.8,
+          dashArray: '6, 6'
+        }).addTo(routeLayer);
       });
-
-      // Draw route line
-      L.polyline(routeCoords, {
-        color: PROPOSAL_COLOR,
-        weight: 3,
-        opacity: 0.8,
-        dashArray: '6, 6'
-      }).addTo(routeLayer);
 
       // Add stop markers
       const addedStops = new Set();
