@@ -19,7 +19,6 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html.snap-active { scroll-snap-type: y proximity; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
@@ -124,7 +123,7 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center; overflow: hidden;
       background-size: cover; background-position: center;
-      scroll-snap-align: start;
+
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -178,7 +177,7 @@
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 14px 24px;
-      scroll-snap-align: start;
+
     }
     .stats-row {
       display: flex; justify-content: center; gap: 40px;
@@ -194,7 +193,7 @@
     /* Day section */
     .day-sec {
       padding: 90px 24px 60px; max-width: 960px; margin: 0 auto;
-      scroll-snap-align: start;
+
     }
     .day-sec.reveal {
       opacity: 0; transform: translateY(48px);
@@ -265,7 +264,7 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center; margin: 20px 0;
       background-size: cover; background-position: center;
-      scroll-snap-align: start;
+
     }
     .rest-sec.reveal {
       opacity: 0; transform: scale(0.97);
@@ -540,7 +539,7 @@ function showGrid(){
   curIdx=-1;
   document.getElementById('backBtn').style.display='none';
   document.getElementById('navTitle').style.display='';
-  document.documentElement.classList.remove('snap-active');
+
   history.replaceState(null,'','routes.html');
 
   let h='<div class="grid-view">';
@@ -578,7 +577,7 @@ function showRoute(idx){
   const t=THEMES[route.id]||THEMES[1];
   document.getElementById('backBtn').style.display='flex';
   document.getElementById('navTitle').style.display='none';
-  document.documentElement.classList.add('snap-active');
+
   history.replaceState(null,'',`#route-${route.id}`);
 
   const drivingDays=route.days.filter(d=>!d.is_rest_day).length;
