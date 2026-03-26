@@ -1,0 +1,46 @@
+{
+  "title": "Sabby Roadtrip",
+  "dates": "May 9 - June 14, 2026",
+  "legs": [
+    {
+      "name": "Home to First Campsite",
+      "status": "planned",
+      "stops": [
+        { "name": "Home", "address": "791 Spring Lake Dr, Destin, FL", "lat": 30.4055, "lng": -86.4855, "type": "start" },
+        { "name": "Baton Rouge", "address": "Baton Rouge, LA", "lat": 30.4515, "lng": -91.1871, "type": "stop" },
+        { "name": "Houston", "address": "Houston, TX", "lat": 29.7604, "lng": -95.3698, "type": "stop" },
+        { "name": "Fredericksburg", "address": "Fredericksburg, TX", "lat": 30.2752, "lng": -98.8720, "type": "stop" },
+        { "name": "Fort Davis", "address": "Fort Davis, TX", "lat": 30.5885, "lng": -103.8946, "type": "stop" },
+        { "name": "Santa Fe", "address": "Santa Fe, NM", "lat": 35.6870, "lng": -105.9378, "type": "stop" },
+        { "name": "Flagstaff", "address": "Flagstaff, AZ", "lat": 35.1983, "lng": -111.6513, "type": "stop" },
+        { "name": "San Diego", "address": "San Diego, CA", "lat": 32.7157, "lng": -117.1611, "type": "stop" },
+        { "name": "Los Angeles", "address": "Los Angeles, CA", "lat": 34.0522, "lng": -118.2437, "type": "stop" },
+        { "name": "Cambria", "address": "Cambria, CA", "lat": 35.5641, "lng": -121.0808, "type": "end" }
+      ]
+    },
+    {
+      "name": "First Campsite to Home",
+      "status": "draft",
+      "notes": "Leg from Carmel-by-the-Sea to Parker, CO is not finalized",
+      "stops": [
+        { "name": "Cambria", "address": "Cambria, CA", "lat": 35.5641, "lng": -121.0808, "type": "start" },
+        { "name": "Carmel-by-the-Sea", "address": "Carmel-by-the-Sea, CA", "lat": 36.5554, "lng": -121.9233, "type": "stop" },
+        { "name": "Las Vegas", "address": "Las Vegas, NV", "lat": 36.1699, "lng": -115.1398, "type": "stop", "finalized": false },
+        { "name": "Page", "address": "Page, AZ", "lat": 36.9147, "lng": -111.4558, "type": "stop", "finalized": false },
+        { "name": "Silverton", "address": "Silverton, CO", "lat": 37.8119, "lng": -107.6645, "type": "stop", "finalized": false },
+        { "name": "Parker", "address": "Parker, CO", "lat": 39.5186, "lng": -104.7614, "type": "stop", "finalized": false },
+        { "name": "Hastings", "address": "Hastings, NE", "lat": 40.5861, "lng": -98.3887, "type": "stop" },
+        { "name": "Little Rock", "address": "Little Rock, AR", "lat": 34.7465, "lng": -92.2896, "type": "stop" },
+        { "name": "Destin", "address": "Destin, FL", "lat": 30.3935, "lng": -86.4958, "type": "end" }
+      ]
+    }
+  ],
+  "daytrips": [
+    { "name": "Santa Barbara", "lat": 34.4208, "lng": -119.6982, "nearStop": "Los Angeles" },
+    { "name": "Big Sur", "lat": 36.2704, "lng": -121.8081, "nearStop": "Cambria" },
+    { "name": "Los Altos", "lat": 37.3852, "lng": -122.1141, "nearStop": "Carmel-by-the-Sea" },
+    { "name": "Boulder", "lat": 40.0150, "lng": -105.2705, "nearStop": "Parker" },
+    { "name": "Austin", "lat": 30.2672, "lng": -97.7431, "nearStop": "Houston" }
+  ],
+  "ideas": []
+}

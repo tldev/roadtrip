@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabby Roadtrip</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; }
+    #map { width: 100%; height: 100vh; }
+    .sidebar { position: fixed; top: 0; left: 0; width: 360px; height: 100vh; background: #16213e; z-index: 1000; overflow-y: auto; border-right: 1px solid #0f3460; transition: transform 0.3s; }
+    .sidebar.collapsed { transform: translateX(-360px); }
+    .sidebar-toggle { position: fixed; top: 12px; left: 12px; z-index: 1001; background: #0f3460; color: #e94560; border: none; width: 40px; height: 40px; border-radius: 8px; cursor: pointer; font-size: 20px; transition: left 0.3s; }
+    .sidebar-toggle.open { left: 372px; }
+    .sidebar h1 { padding: 20px; font-size: 22px; color: #e94560; border-bottom: 1px solid #0f3460; }
+    .sidebar h1 span { display: block; font-size: 13px; color: #888; font-weight: normal; margin-top: 4px; }
+    .leg { padding: 16px 20px; border-bottom: 1px solid #0f3460; }
+    .leg-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; cursor: pointer; }
+    .leg-header h2 { font-size: 15px; color: #e94560; }
+    .leg-header .status { font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+    .status.planned { background: #0f3460; color: #53d8fb; }
+    .status.draft { background: #3d1f00; color: #f5a623; }
+    .stop-list { list-style: none; padding-left: 12px; border-left: 2px solid #0f3460; }
+    .stop-list li { padding: 6px 0 6px 12px; font-size: 13px; position: relative; cursor: pointer; }
+    .stop-list li:hover { color: #53d8fb; }
+    .stop-list li::before { content: ''; position: absolute; left: -7px; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: #0f3460; border: 2px solid #53d8fb; }
+    .stop-list li.draft-stop::before { border-color: #f5a623; border-style: dashed; }
+    .stop-list li.start::before { background: #4caf50; border-color: #4caf50; }
+    .stop-list li.end::before { background: #e94560; border-color: #e94560; }
+    .daytrips { padding: 16px 20px; }
+    .daytrips h2 { font-size: 15px; color: #f5a623; margin-bottom: 10px; }
+    .daytrip-item { padding: 6px 0; font-size: 13px; cursor: pointer; }
+    .daytrip-item:hover { color: #f5a623; }
+    .daytrip-item span { color: #666; font-size: 11px; }
+    .ideas { padding: 16px 20px; border-top: 1px solid #0f3460; }
+    .ideas h2 { font-size: 15px; color: #53d8fb; margin-bottom: 10px; }
+    .ideas p { font-size: 12px; color: #666; }
+    .note { font-size: 11px; color: #f5a623; font-style: italic; margin-top: 4px; padding-left: 12px; }
+    .leaflet-popup-content-wrapper { background: #16213e; color: #e0e0e0; border-radius: 8px; }
+    .leaflet-popup-tip { background: #16213e; }
+    .leaflet-popup-content { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .popup-title { font-size: 14px; font-weight: 600; color: #e94560; }
+    .popup-detail { font-size: 12px; color: #aaa; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <h1>Sabby Roadtrip <span id="dates"></span></h1>
+    <div id="legs"></div>
+    <div class="daytrips">
+      <h2>Daytrips</h2>
+      <div id="daytrips"></div>
+    </div>
+    <div class="ideas">
+      <h2>Brainstorm</h2>
+      <p id="ideas-empty">No ideas yet. Add stops, routes, and notes to plan the unfinalized leg.</p>
+      <div id="ideas-list"></div>
+    </div>
+  </div>
+  <button class="sidebar-toggle open" id="toggle" onclick="toggleSidebar()">&#9776;</button>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    let map, tripData, sidebar = true;
+
+    const LEG_COLORS = ['#53d8fb', '#f5a623'];
+    const DAYTRIP_COLOR = '#e94560';
+
+    function toggleSidebar() {
+      sidebar = !sidebar;
+      document.getElementById('sidebar').classList.toggle('collapsed');
+      document.getElementById('toggle').classList.toggle('open');
+      setTimeout(() => map.invalidateSize(), 300);
+    }
+
+    function createStopIcon(color, size = 10) {
+      return L.divIcon({
+        className: '',
+        html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.5);"></div>`,
+        iconSize: [size, size],
+        iconAnchor: [size/2, size/2]
+      });
+    }
+
+    function createDaytripIcon() {
+      return L.divIcon({
+        className: '',
+        html: '<div style="width:8px;height:8px;transform:rotate(45deg);background:#e94560;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.5);"></div>',
+        iconSize: [8, 8],
+        iconAnchor: [4, 4]
+      });
+    }
+
+    async function init() {
+      map = L.map('map', {
+        center: [34.5, -104],
+        zoom: 5,
+        zoomControl: false
+      });
+
+      L.control.zoom({ position: 'topright' }).addTo(map);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO',
+        maxZoom: 19
+      }).addTo(map);
+
+      const resp = await fetch('data/trip.json');
+      tripData = await resp.json();
+
+      document.getElementById('dates').textContent = tripData.dates;
+      renderLegs();
+      renderDaytrips();
+    }
+
+    function renderLegs() {
+      const container = document.getElementById('legs');
+      const allCoords = [];
+
+      tripData.legs.forEach((leg, li) => {
+        const color = LEG_COLORS[li % LEG_COLORS.length];
+        const coords = leg.stops.map(s => [s.lat, s.lng]);
+        allCoords.push(...coords);
+
+        const dashArray = leg.status === 'draft' ? '8, 8' : null;
+        L.polyline(coords, { color, weight: 3, opacity: 0.7, dashArray }).addTo(map);
+
+        leg.stops.forEach((stop, si) => {
+          const size = (stop.type === 'start' || stop.type === 'end') ? 12 : 10;
+          const iconColor = stop.type === 'start' ? '#4caf50' : stop.type === 'end' ? '#e94560' : color;
+          const marker = L.marker([stop.lat, stop.lng], { icon: createStopIcon(iconColor, size) }).addTo(map);
+          marker.bindPopup(`<div class="popup-title">${stop.name}</div><div class="popup-detail">${stop.address}</div><div class="popup-detail">${leg.name} - Stop ${si + 1}</div>`);
+        });
+
+        const div = document.createElement('div');
+        div.className = 'leg';
+        div.innerHTML = `
+          <div class="leg-header">
+            <h2 style="color:${color}">${leg.name}</h2>
+            <span class="status ${leg.status}">${leg.status}</span>
+          </div>
+          ${leg.notes ? `<div class="note">${leg.notes}</div>` : ''}
+          <ul class="stop-list">
+            ${leg.stops.map(s => `<li class="${s.type}${s.finalized === false ? ' draft-stop' : ''}" onclick="flyTo(${s.lat},${s.lng})">${s.name}${s.finalized === false ? ' *' : ''}</li>`).join('')}
+          </ul>
+        `;
+        container.appendChild(div);
+      });
+
+      if (allCoords.length) map.fitBounds(allCoords, { padding: [50, 400] });
+    }
+
+    function renderDaytrips() {
+      const container = document.getElementById('daytrips');
+      tripData.daytrips.forEach(dt => {
+        const marker = L.marker([dt.lat, dt.lng], { icon: createDaytripIcon() }).addTo(map);
+        marker.bindPopup(`<div class="popup-title">${dt.name}</div><div class="popup-detail">Daytrip near ${dt.nearStop}</div>`);
+
+        const div = document.createElement('div');
+        div.className = 'daytrip-item';
+        div.innerHTML = `${dt.name} <span>near ${dt.nearStop}</span>`;
+        div.onclick = () => flyTo(dt.lat, dt.lng);
+        container.appendChild(div);
+      });
+    }
+
+    function flyTo(lat, lng) {
+      map.flyTo([lat, lng], 10, { duration: 1 });
+    }
+
+    init();
+  </script>
+</body>
+</html>
