@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route Showcase — Sabby Roadtrip</title>
+  <style>
+    :root {
+      --bg: #0a0a1a;
+      --bg-card: #12122a;
+      --bg-glass: rgba(12, 12, 30, 0.85);
+      --text: #f0f0f0;
+      --text-dim: #8890a0;
+      --accent: #e94560;
+      --border: rgba(255,255,255,0.08);
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html.snap-active { scroll-snap-type: y proximity; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 56px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(10, 10, 26, 0.82);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .back-btn {
+      display: none; align-items: center; gap: 4px;
+      background: none; border: none; color: var(--accent);
+      font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+      padding: 6px 10px; border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(233, 69, 96, 0.1); }
+    .back-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .nav-title {
+      font-size: 15px; font-weight: 700; color: var(--accent);
+      text-decoration: none; letter-spacing: -0.3px;
+    }
+    .nav-right a {
+      font-size: 13px; color: var(--text-dim); text-decoration: none;
+      padding: 6px 14px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-right a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+
+    /* ===== GRID VIEW ===== */
+    .grid-view {
+      padding: 112px 24px 80px; max-width: 1200px; margin: 0 auto;
+    }
+    .grid-heading {
+      font-size: clamp(36px, 7vw, 64px); font-weight: 800;
+      letter-spacing: -2px; line-height: 1.05; margin-bottom: 8px;
+    }
+    .grid-sub {
+      font-size: clamp(15px, 2vw, 20px); color: var(--text-dim);
+      font-weight: 400; margin-bottom: 52px; max-width: 520px;
+    }
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .route-card {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      cursor: pointer; aspect-ratio: 16/10;
+      background-size: cover; background-position: center;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      will-change: transform;
+    }
+    .route-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+    }
+    .card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0.88) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px;
+    }
+    .card-num {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2.5px; color: var(--accent); margin-bottom: 6px;
+    }
+    .card-name {
+      font-size: 24px; font-weight: 700; letter-spacing: -0.5px;
+      line-height: 1.15; margin-bottom: 6px;
+    }
+    .card-theme {
+      font-size: 13px; color: var(--text-dim); line-height: 1.45;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .card-stats {
+      display: flex; gap: 16px; font-size: 12px;
+      color: rgba(255,255,255,0.6); font-weight: 500;
+    }
+
+    /* ===== SHOWCASE VIEW ===== */
+    .showcase { display: none; }
+    .showcase.active { display: block; }
+
+    /* Hero */
+    .hero {
+      position: relative; height: 100vh; min-height: 560px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+      background-size: cover; background-position: center;
+      scroll-snap-align: start;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10,10,26,0.55) 0%,
+        rgba(10,10,26,0.25) 35%,
+        rgba(10,10,26,0.7) 75%,
+        var(--bg) 100%
+      );
+    }
+    .hero-body {
+      position: relative; z-index: 1; padding: 0 24px; max-width: 760px;
+      animation: heroFadeUp 1s ease-out both;
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-num {
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 4px; color: var(--accent); margin-bottom: 18px;
+    }
+    .hero-name {
+      font-size: clamp(42px, 10vw, 84px); font-weight: 800;
+      letter-spacing: -2.5px; line-height: 1.02; margin-bottom: 22px;
+    }
+    .hero-theme {
+      font-size: clamp(15px, 2.5vw, 21px); color: var(--text-dim);
+      font-weight: 400; line-height: 1.55; max-width: 580px; margin: 0 auto;
+    }
+    .scroll-cue {
+      position: absolute; bottom: 36px; left: 50%;
+      transform: translateX(-50%); z-index: 1;
+      color: var(--text-dim); font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: cueBounce 2.4s ease-in-out infinite;
+    }
+    @keyframes cueBounce {
+      0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+      50%     { transform: translateX(-50%) translateY(10px); opacity: 1; }
+    }
+    .scroll-cue svg { width: 22px; height: 22px; opacity: 0.5; }
+
+    /* Sticky stats */
+    .stats-bar {
+      position: sticky; top: 56px; z-index: 50;
+      background: rgba(10,10,26,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      scroll-snap-align: start;
+    }
+    .stats-row {
+      display: flex; justify-content: center; gap: 40px;
+      max-width: 700px; margin: 0 auto;
+    }
+    .stats-row .st { text-align: center; }
+    .st-val { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+    .st-lbl {
+      font-size: 10px; color: var(--text-dim); text-transform: uppercase;
+      letter-spacing: 1.2px; margin-top: 2px;
+    }
+
+    /* Day section */
+    .day-sec {
+      padding: 90px 24px 60px; max-width: 960px; margin: 0 auto;
+      scroll-snap-align: start;
+    }
+    .day-sec.reveal {
+      opacity: 0; transform: translateY(48px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .day-sec.reveal.vis { opacity: 1; transform: translateY(0); }
+
+    .day-num {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2.5px; color: var(--accent); margin-bottom: 10px;
+    }
+    .day-title {
+      font-size: clamp(26px, 5vw, 46px); font-weight: 700;
+      letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px;
+    }
+    .day-meta {
+      font-size: 15px; color: var(--text-dim); margin-bottom: 44px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .day-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-dim); }
+
+    /* Highlights */
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 16px;
+    }
+    .hl-card {
+      border-radius: var(--radius-sm); overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .hl-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+    .hl-img {
+      width: 100%; aspect-ratio: 16/9;
+      overflow: hidden; background-color: #14142e;
+    }
+    .hl-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .hl-card:hover .hl-img img { transform: scale(1.05); }
+    .hl-body { padding: 16px 18px 18px; }
+    .hl-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 3px 9px; border-radius: 5px; margin-bottom: 8px;
+    }
+    .hl-tag.national_park { background: #0e2e24; color: #4ecdc4; }
+    .hl-tag.scenic_drive   { background: #2e2a14; color: #d4a832; }
+    .hl-tag.town            { background: #0e1e2e; color: #5dade2; }
+    .hl-tag.attraction      { background: #2e0e1e; color: #e94560; }
+    .hl-tag.camping         { background: #142e14; color: #6ab04c; }
+    .hl-name {
+      font-size: 16px; font-weight: 600; letter-spacing: -0.3px;
+      margin-bottom: 6px; line-height: 1.25;
+    }
+    .hl-desc {
+      font-size: 13px; color: var(--text-dim); line-height: 1.55;
+    }
+
+    /* Rest day breather */
+    .rest-sec {
+      position: relative; min-height: 75vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; margin: 20px 0;
+      background-size: cover; background-position: center;
+      scroll-snap-align: start;
+    }
+    .rest-sec.reveal {
+      opacity: 0; transform: scale(0.97);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .rest-sec.reveal.vis { opacity: 1; transform: scale(1); }
+    .rest-overlay {
+      position: absolute; inset: 0;
+      background: rgba(10,10,26,0.72);
+      backdrop-filter: blur(2px);
+    }
+    .rest-body {
+      position: relative; z-index: 1; padding: 60px 24px; max-width: 560px;
+    }
+    .rest-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3.5px; color: var(--accent); margin-bottom: 18px;
+    }
+    .rest-place {
+      font-size: clamp(30px, 6vw, 54px); font-weight: 700;
+      letter-spacing: -1px; line-height: 1.1; margin-bottom: 22px;
+    }
+    .rest-desc {
+      font-size: 16px; color: var(--text-dim); line-height: 1.7;
+    }
+
+    /* Summary */
+    .summary-sec {
+      padding: 100px 24px 60px; max-width: 760px; margin: 0 auto;
+      text-align: center; scroll-snap-align: start;
+    }
+    .summary-sec.reveal {
+      opacity: 0; transform: translateY(48px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .summary-sec.reveal.vis { opacity: 1; transform: translateY(0); }
+    .sum-label {
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2.5px; color: var(--accent); margin-bottom: 36px;
+    }
+    .sum-stats {
+      display: flex; justify-content: center; gap: 52px;
+      flex-wrap: wrap; margin-bottom: 52px;
+    }
+    .sum-val { font-size: 52px; font-weight: 800; letter-spacing: -2px; }
+    .sum-lbl { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+    .sum-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; border-radius: 50px; font-size: 15px;
+      font-weight: 600; text-decoration: none; cursor: pointer;
+      border: none; font-family: inherit; transition: all 0.2s;
+    }
+    .btn-accent { background: var(--accent); color: #fff; }
+    .btn-accent:hover { background: #d13a52; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.18); }
+
+    /* Route prev / next */
+    .route-pn {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      max-width: 760px; margin: 0 auto;
+      padding: 48px 24px 100px;
+      border-top: 1px solid var(--border);
+    }
+    .pn-btn {
+      display: flex; flex-direction: column; gap: 3px;
+      background: none; border: none; color: var(--text);
+      font-family: inherit; cursor: pointer; transition: opacity 0.2s;
+      max-width: 45%;
+    }
+    .pn-btn:hover { opacity: 0.65; }
+    .pn-btn .pn-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
+    .pn-btn .pn-name  { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+    .pn-btn.next { text-align: right; margin-left: auto; }
+
+    /* Focus indicators */
+    .route-card:focus-visible,
+    .pn-btn:focus-visible,
+    .btn:focus-visible,
+    .back-btn:focus-visible,
+    .nav-right a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .route-card:focus-visible {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+    }
+
+    /* Loading */
+    .loading {
+      display: flex; align-items: center; justify-content: center;
+      height: 100vh; font-size: 15px; color: var(--text-dim);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .route-grid { grid-template-columns: 1fr; }
+      .route-card { aspect-ratio: 16/9; }
+      .stats-row { gap: 20px; }
+      .st-val { font-size: 18px; }
+      .hl-grid { grid-template-columns: 1fr; }
+      .sum-stats { gap: 28px; }
+      .sum-val { font-size: 40px; }
+      .day-sec { padding: 70px 20px 50px; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 16px; }
+      .grid-view { padding: 96px 16px 60px; }
+      .stats-row { gap: 14px; }
+      .st-val { font-size: 16px; }
+      .st-lbl { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <button class="back-btn" id="backBtn" onclick="showGrid()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Routes
+    </button>
+    <a class="nav-title" id="navTitle" href="routes.html">Sabby Roadtrip</a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">Map View</a>
+  </div>
+</nav>
+
+<main id="app"><div class="loading">Loading routes&hellip;</div></main>
+
+<script>
+/* ── colour themes + curated Unsplash photo IDs per route ── */
+const THEMES = {
+  1:  { c1:'#3a1505', c2:'#5a2010', hero:'photo-1765871320020-4dc601d61f72', rest:'photo-1617771237523-3ddd29d5d8aa' },
+  2:  { c1:'#3a1a00', c2:'#6a3000', hero:'photo-1687121341815-f9cd1d924fc7', rest:'photo-1771504942910-ca803b7928c4' },
+  3:  { c1:'#3a2500', c2:'#6a4500', hero:'photo-1763793927668-27bc207703d8', rest:'photo-1763793927668-27bc207703d8' },
+  4:  { c1:'#3a3010', c2:'#5a4a1a', hero:'photo-1741567348603-0bef4612bea2', rest:'photo-1691099080503-ca7848496197' },
+  5:  { c1:'#0a2a20', c2:'#1a4a3a', hero:'photo-1466024760775-91c6530fc877', rest:'photo-1687373604074-5d3149e452cf' },
+  6:  { c1:'#2a1510', c2:'#4a2a1a', hero:'photo-1689420930976-cd8994c24e73', rest:'photo-1620360715768-c3f6b4462d07' },
+  7:  { c1:'#0a2a1a', c2:'#1a4030', hero:'photo-1569906023803-f64b6b7a1e05', rest:'photo-1680989124634-37ff0ba975e8' },
+  8:  { c1:'#1a1540', c2:'#2a2060', hero:'photo-1746035970501-32a61836ddfc', rest:'photo-1724269964896-7817e9209815' },
+  9:  { c1:'#0a1a2a', c2:'#152a40', hero:'photo-1565010504847-94f9e1c9c57c', rest:'photo-1525536442945-13bd56f1f3ce' },
+  10: { c1:'#151a30', c2:'#253050', hero:'photo-1626129347681-2eb74cb9b1f2', rest:'photo-1609364376289-9642c391b30b' },
+};
+
+/* ── hand-picked Unsplash photos for well-known highlights ── */
+const PHOTOS = {
+  'Paso Robles Wine Country':'photo-1506377247377-2a5b3b417ebb',
+  'Wind Farm Fields':'photo-1693393786227-2ba7c3a4dc88',
+  'Tehachapi Loop Railroad':'photo-1693393786227-2ba7c3a4dc88',
+  "Roy's Cafe Amboy":'photo-1727475304324-67d01396b4e8',
+  'Oak Creek Canyon Scenic Drive':'photo-1721497369493-51e32495a5a8',
+  'Mather Point':'photo-1771504942910-ca803b7928c4',
+  'Rim Trail':'photo-1771504942910-ca803b7928c4',
+  'Desert View Watchtower':'photo-1687121341815-f9cd1d924fc7',
+  'Monument Valley':'photo-1746294856246-7d0be0f7a992',
+  'Bryce Canyon National Park':'photo-1729595670984-7e6e51e55e77',
+  'Zion National Park':'photo-1689085765033-f7d7eecfff5f',
+  'Capitol Reef National Park':'photo-1673325241724-609db65ce698',
+  'Arches National Park':'photo-1763793927668-27bc207703d8',
+  'Canyonlands Island in the Sky':'photo-1763793927668-27bc207703d8',
+  'Dead Horse Point State Park':'photo-1763793927668-27bc207703d8',
+  'Saguaro National Park West':'photo-1728026088449-53241459e276',
+  'White Sands National Park':'photo-1741813203115-e4a83fc6e9d5',
+  'Garden of the Gods':'photo-1633712151902-d29018f73b63',
+  'Pikes Peak View':'photo-1731527183816-39c6ea45e114',
+  'Petrified Forest National Park':'photo-1705358358215-dce6d98c0a1b',
+  'Death Valley - Zabriskie Point':'photo-1709422018769-8a74f47878c3',
+  'Death Valley - Badwater Basin':'photo-1689420930976-cd8994c24e73',
+  'Horseshoe Bend':'photo-1531694402898-042bd3957f41',
+  'Lake Powell':'photo-1620360715768-c3f6b4462d07',
+  'Vermilion Cliffs':'photo-1656042687688-78bb8b1b6a31',
+  'Crater Lake National Park':'photo-1589401782841-c760e3bf47e5',
+  'Donner Memorial State Park':'photo-1711283993455-f41fc915f8ac',
+  'Old Faithful & Upper Geyser Basin':'photo-1687373604074-5d3149e452cf',
+  'Grand Canyon of the Yellowstone (Artist Point)':'photo-1466024760775-91c6530fc877',
+  'Grand Prismatic Spring (roadside view)':'photo-1466024760775-91c6530fc877',
+  'Grand Teton NP - Mormon Row':'photo-1689445246150-e6467834a27a',
+  'Shoshone Falls':'photo-1507217882817-0231ce6ccd71',
+  'Shoshone Falls (en route, Twin Falls)':'photo-1507217882817-0231ce6ccd71',
+  'Perrine Bridge & Snake River Canyon':'photo-1734903251891-3b1ba4e4e463',
+  'Craters of the Moon National Monument (optional detour)':'photo-1709422018769-8a74f47878c3',
+  'Craters of the Moon':'photo-1709422018769-8a74f47878c3',
+  'Bighorn Scenic Byway (US-14 over Big Horns)':'photo-1603813760873-b97927ad7023',
+  'Bighorn Scenic Byway (US-14)':'photo-1603813760873-b97927ad7023',
+  'Shell Falls':'photo-1603813760873-b97927ad7023',
+  'Mono Lake South Tufa':'photo-1583820960592-9951d987a3d4',
+  'Ancient Bristlecone Pine Forest':'photo-1763760243463-cbfb66c7fcc3',
+  'Mammoth Mountain Scenic Gondola':'photo-1724269964896-7817e9209815',
+  'Convict Lake':'photo-1724269964896-7817e9209815',
+  'June Lake Loop':'photo-1724269964896-7817e9209815',
+  'Reno Riverwalk District':'photo-1686283374227-68c9fc5b57d9',
+  'Route 66 Museum Kingman':'photo-1543373072-69f3d4788832',
+  'Route 66 Dog Park Kingman':'photo-1543373072-69f3d4788832',
+  'Arizona Route 66 Museum':'photo-1543373072-69f3d4788832',
+  'Route 66 Historic Downtown Williams':'photo-1543373072-69f3d4788832',
+  'Route 66 Mother Road Museum':'photo-1543373072-69f3d4788832',
+  'Route 66 Seligman':'photo-1543373072-69f3d4788832',
+  'Flagstaff Historic Downtown':'photo-1525536442945-13bd56f1f3ce',
+  'Sunset Crater Lava Flow Trail':'photo-1525536442945-13bd56f1f3ce',
+  'Painted Hills':'photo-1705358358215-dce6d98c0a1b',
+  'John Day Fossil Beds - Sheep Rock Unit':'photo-1705358358215-dce6d98c0a1b',
+  'Mesa Verde National Park':'photo-1728026088449-53241459e276',
+  'Black Canyon of the Gunnison':'photo-1728026088449-53241459e276',
+  'Million Dollar Highway':'photo-1741790966255-aa769e7d77da',
+  'Glenwood Canyon':'photo-1741790966255-aa769e7d77da',
+  'Mount Lemmon Scenic Drive':'photo-1741790966255-aa769e7d77da',
+  'US-82 Cloudcroft Highway':'photo-1691099080503-ca7848496197',
+  'Great Sand Dunes (distant view)':'photo-1741567348603-0bef4612bea2',
+  'Pinnacles National Park':'photo-1728026088449-53241459e276',
+  'Pinnacles National Park (West Entrance)':'photo-1728026088449-53241459e276',
+  'Alabama Hills':'photo-1746035970501-32a61836ddfc',
+  'Mt. Whitney Portal Road':'photo-1746035970501-32a61836ddfc',
+  'Whitney Portal Road':'photo-1746035970501-32a61836ddfc',
+  'Galena Summit Overlook':'photo-1741790966255-aa769e7d77da',
+  'Togwotee Pass':'photo-1689445246150-e6467834a27a',
+  'Hyalite Canyon Recreation Area':'photo-1609364376289-9642c391b30b',
+  'Red Rock Canyon':'photo-1656042687688-78bb8b1b6a31',
+  'Feather River Canyon (en route)':'photo-1741790966255-aa769e7d77da',
+  'Rattlesnake National Recreation Area':'photo-1429189096272-e07dc6aff539',
+  'Little Bighorn Battlefield National Monument (en route)':'photo-1603813760873-b97927ad7023',
+  'Boise River Greenbelt':'photo-1734903251891-3b1ba4e4e463',
+};
+
+/* ── type-based fallback photos ── */
+const TYPE_PHOTOS = {
+  national_park: 'photo-1728026088449-53241459e276',
+  scenic_drive:  'photo-1741790966255-aa769e7d77da',
+  town:          'photo-1761850648640-2ee5870ee883',
+  attraction:    'photo-1523593631961-cf7adf46f3ea',
+  camping:       'photo-1470246973918-29a93221c455',
+};
+
+const TYPE_LABEL = {
+  national_park:'National Park', scenic_drive:'Scenic Drive',
+  town:'Town', attraction:'Attraction', camping:'Camping',
+};
+
+let routes = [], curIdx = -1, observer, rafId = null;
+
+/* ── helpers ── */
+function imgUrl(photoId, w=1600, h=900) {
+  return `https://images.unsplash.com/${photoId}?w=${w}&h=${h}&fit=crop&auto=format`;
+}
+function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+/* ── init ── */
+async function init(){
+  try {
+    const r = await fetch('data/route-proposals.json');
+    routes = (await r.json()).routes;
+    // check URL hash
+    const m = location.hash.match(/^#route-(\d+)$/);
+    if(m){ const i=routes.findIndex(r=>r.id===+m[1]); if(i>=0){showRoute(i);return;} }
+    showGrid();
+  } catch(e){
+    document.getElementById('app').innerHTML='<div class="loading">Failed to load route data.</div>';
+  }
+}
+
+/* ── GRID VIEW ── */
+function showGrid(){
+  if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
+  curIdx=-1;
+  document.getElementById('backBtn').style.display='none';
+  document.getElementById('navTitle').style.display='';
+  document.documentElement.classList.remove('snap-active');
+  history.replaceState(null,'','routes.html');
+
+  let h='<div class="grid-view">';
+  h+='<h1 class="grid-heading">Route Proposals</h1>';
+  h+='<p class="grid-sub">10 ways from Carmel-by-the-Sea to Parker, CO. Choose your adventure.</p>';
+  h+='<div class="route-grid">';
+
+  routes.forEach((r,i)=>{
+    const t=THEMES[r.id]||THEMES[1];
+    const grad=`linear-gradient(135deg,${t.c1},${t.c2})`;
+    const bg=`linear-gradient(180deg,rgba(0,0,0,0) 15%,rgba(0,0,0,0.75) 100%),url('${imgUrl(t.hero)}')`;
+    h+=`<div class="route-card" tabindex="0" role="button" aria-label="${esc(r.name)}"
+          onclick="showRoute(${i})" onkeydown="if(event.key==='Enter')showRoute(${i})"
+          style="background:${grad};background-image:${bg};background-size:cover;background-position:center">
+      <div class="card-overlay">
+        <div class="card-num">Route ${r.id}</div>
+        <div class="card-name">${esc(r.name)}</div>
+        <div class="card-theme">${esc(r.theme)}</div>
+        <div class="card-stats">
+          <span>${r.total_days} days</span>
+          <span>${r.total_driving_hours}h driving</span>
+        </div>
+      </div>
+    </div>`;
+  });
+  h+='</div></div>';
+  document.getElementById('app').innerHTML=h;
+  window.scrollTo(0,0);
+}
+
+/* ── ROUTE SHOWCASE ── */
+function showRoute(idx){
+  curIdx=idx;
+  const route=routes[idx];
+  const t=THEMES[route.id]||THEMES[1];
+  document.getElementById('backBtn').style.display='flex';
+  document.getElementById('navTitle').style.display='none';
+  document.documentElement.classList.add('snap-active');
+  history.replaceState(null,'',`#route-${route.id}`);
+
+  const drivingDays=route.days.filter(d=>!d.is_rest_day).length;
+  const restDays=route.days.filter(d=>d.is_rest_day).length;
+  const heroGrad=`linear-gradient(135deg,${t.c1},${t.c2})`;
+
+  let h='<div class="showcase active">';
+
+  /* ── Hero ── */
+  h+=`<div class="hero" id="hero"
+        style="background:${heroGrad}"
+        data-img="${imgUrl(t.hero,1920,1080)}">
+    <div class="hero-overlay"></div>
+    <div class="hero-body">
+      <div class="hero-num">Route ${route.id}</div>
+      <h1 class="hero-name">${esc(route.name)}</h1>
+      <p class="hero-theme">${esc(route.theme)}</p>
+    </div>
+    <div class="scroll-cue">
+      Scroll to explore
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10l5 5 5-5"/></svg>
+    </div>
+  </div>`;
+
+  /* ── Stats bar ── */
+  h+=`<div class="stats-bar"><div class="stats-row">
+    <div class="st"><div class="st-val">${route.total_days}</div><div class="st-lbl">Days</div></div>
+    <div class="st"><div class="st-val">${route.total_driving_hours}h</div><div class="st-lbl">Driving</div></div>
+    <div class="st"><div class="st-val">${drivingDays}</div><div class="st-lbl">Drive Days</div></div>
+    <div class="st"><div class="st-val">${restDays}</div><div class="st-lbl">Rest ${restDays===1?'Day':'Days'}</div></div>
+  </div></div>`;
+
+  /* ── Days ── */
+  route.days.forEach(day=>{
+    if(day.is_rest_day){
+      /* Rest / camping breather */
+      const camp=day.highlights.find(x=>x.type==='camping');
+      const rGrad=`linear-gradient(135deg,${t.c1},${t.c2})`;
+      h+=`<div class="rest-sec reveal" style="background:${rGrad}" data-img="${imgUrl(t.rest,1920,1080)}">
+        <div class="rest-overlay"></div>
+        <div class="rest-body">
+          <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
+          <h2 class="rest-place">${esc(day.end)}</h2>
+          <p class="rest-desc">${esc(camp?camp.description:'A day to rest, recharge, and explore at your own pace.')}</p>
+        </div>
+      </div>`;
+
+      /* Non-camping highlights for rest day */
+      const others=day.highlights.filter(x=>x.type!=='camping');
+      if(others.length){
+        h+='<div class="day-sec reveal"><div class="hl-grid">';
+        others.forEach(x=>{ h+=hlCard(x,t); });
+        h+='</div></div>';
+      }
+    } else {
+      /* Driving day */
+      const from=day.start.replace(/,.*$/,'');
+      const to=day.end.replace(/,.*$/,'');
+      h+=`<div class="day-sec reveal">
+        <div class="day-hdr">
+          <div class="day-num">Day ${day.day}</div>
+          <h2 class="day-title">${esc(from)} to ${esc(to)}</h2>
+          <div class="day-meta">
+            <span>${day.driving_hours} hours driving</span>
+          </div>
+        </div>
+        <div class="hl-grid">`;
+      day.highlights.forEach(x=>{ h+=hlCard(x,t); });
+      h+=`</div></div>`;
+    }
+  });
+
+  /* ── Summary ── */
+  h+=`<div class="summary-sec reveal">
+    <div class="sum-label">Route Summary</div>
+    <div class="sum-stats">
+      <div><div class="sum-val">${route.total_days}</div><div class="sum-lbl">Total Days</div></div>
+      <div><div class="sum-val">${route.total_driving_hours}h</div><div class="sum-lbl">Driving</div></div>
+      <div><div class="sum-val">${drivingDays}</div><div class="sum-lbl">Drive Days</div></div>
+    </div>
+    <div class="sum-actions">
+      <a href="index.html" class="btn btn-accent">View on Map</a>
+      <button class="btn btn-outline" onclick="showGrid()">All Routes</button>
+    </div>
+  </div>`;
+
+  /* ── Prev / Next ── */
+  const pIdx=idx>0?idx-1:null;
+  const nIdx=idx<routes.length-1?idx+1:null;
+  h+='<div class="route-pn">';
+  if(pIdx!==null)
+    h+=`<button class="pn-btn prev" onclick="showRoute(${pIdx})">
+      <span class="pn-label">Previous</span><span class="pn-name">${esc(routes[pIdx].name)}</span></button>`;
+  else h+='<div></div>';
+  if(nIdx!==null)
+    h+=`<button class="pn-btn next" onclick="showRoute(${nIdx})">
+      <span class="pn-label">Next</span><span class="pn-name">${esc(routes[nIdx].name)}</span></button>`;
+  else h+='<div></div>';
+  h+='</div>';
+
+  h+='</div>'; // /showcase
+  document.getElementById('app').innerHTML=h;
+  window.scrollTo(0,0);
+
+  loadImages();
+  wireObserver();
+  wireParallax();
+}
+
+/* ── highlight card builder ── */
+function hlCard(h,t){
+  const photoId=PHOTOS[h.name]||TYPE_PHOTOS[h.type]||TYPE_PHOTOS.attraction;
+  const src=imgUrl(photoId,640,360);
+  const tag=TYPE_LABEL[h.type]||h.type;
+  return `<div class="hl-card">
+    <div class="hl-img">
+      <img src="${src}" alt="${esc(h.name)}" loading="lazy">
+    </div>
+    <div class="hl-body">
+      <span class="hl-tag ${h.type}">${tag}</span>
+      <div class="hl-name">${esc(h.name)}</div>
+      <div class="hl-desc">${esc(h.description)}</div>
+    </div>
+  </div>`;
+}
+
+/* ── lazy-ish background images (hero + rest) ── */
+function loadImages(){
+  document.querySelectorAll('[data-img]').forEach(el=>{
+    const url=el.dataset.img;
+    const img=new Image();
+    img.onload=()=>{
+      if(el.classList.contains('hero')){
+        el.style.backgroundImage=`url('${url}')`;
+        el.style.backgroundSize='cover';
+        el.style.backgroundPosition='center';
+      } else {
+        /* rest-sec: keep overlay, add image */
+        el.style.backgroundImage=`url('${url}')`;
+        el.style.backgroundSize='cover';
+        el.style.backgroundPosition='center';
+      }
+    };
+    img.src=url;
+  });
+}
+
+/* ── scroll-triggered reveal ── */
+function wireObserver(){
+  if(observer) observer.disconnect();
+  observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); });
+  },{ threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}
+
+/* ── parallax on hero ── */
+function wireParallax(){
+  if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
+  if(window.innerWidth<769) return;          // skip on mobile
+  const hero=document.getElementById('hero');
+  if(!hero) return;
+  function tick(){
+    if(curIdx<0){ rafId=null; return; }      // back to grid
+    const y=window.scrollY;
+    if(y<window.innerHeight){
+      hero.style.backgroundPositionY=`${y*0.35}px`;
+    }
+    rafId=requestAnimationFrame(tick);
+  }
+  rafId=requestAnimationFrame(tick);
+}
+
+/* ── keyboard navigation ── */
+document.addEventListener('keydown',e=>{
+  if(curIdx<0) return;
+  if(e.key==='ArrowLeft'  && curIdx>0)               showRoute(curIdx-1);
+  if(e.key==='ArrowRight' && curIdx<routes.length-1)  showRoute(curIdx+1);
+  if(e.key==='Escape')                                 showGrid();
+});
+
+init();
+</script>
+</body>
+</html>
