@@ -1,0 +1,3739 @@
+{
+  "routes": [
+    {
+      "id": 1,
+      "name": "The Desert Crossing",
+      "theme": "Route 66 heritage and red rock country through the Southwest",
+      "total_days": 7,
+      "total_driving_hours": 23.75,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Tehachapi, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            35.1322,
+            -118.449
+          ],
+          "driving_hours": 4.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles Wine Country",
+              "coords": [
+                35.6265,
+                -120.691
+              ],
+              "description": "Central Coast wine town with 200+ wineries and dog-friendly tasting patios",
+              "type": "town"
+            },
+            {
+              "name": "Tehachapi Loop Railroad",
+              "coords": [
+                35.124,
+                -118.505
+              ],
+              "description": "National Historic Landmark where freight trains spiral over themselves \u2014 viewable from Woodford-Tehachapi Road",
+              "type": "attraction"
+            },
+            {
+              "name": "Wind Farm Fields",
+              "coords": [
+                35.078,
+                -118.371
+              ],
+              "description": "Thousands of wind turbines stretching across the Tehachapi Pass mountain ridges",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Tehachapi, CA",
+          "end": "Kingman, AZ",
+          "start_coords": [
+            35.1322,
+            -118.449
+          ],
+          "end_coords": [
+            35.1894,
+            -114.053
+          ],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Roy's Cafe Amboy",
+              "coords": [
+                34.5585,
+                -115.7454
+              ],
+              "description": "Iconic Route 66 neon sign and gas station in the middle of the Mojave Desert",
+              "type": "attraction"
+            },
+            {
+              "name": "Route 66 Museum Kingman",
+              "coords": [
+                35.19,
+                -114.056
+              ],
+              "description": "Life-size dioramas and vintage autos celebrating the Mother Road's heyday",
+              "type": "attraction"
+            },
+            {
+              "name": "Hualapai Mountain Park",
+              "coords": [
+                35.08,
+                -113.897
+              ],
+              "description": "Pine-forested mountain park at elevation with dog-friendly hiking trails and cooler temps",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Kingman, AZ",
+          "end": "Sedona, AZ",
+          "start_coords": [
+            35.1894,
+            -114.053
+          ],
+          "end_coords": [
+            34.8697,
+            -111.761
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Oak Creek Canyon Scenic Drive",
+              "coords": [
+                34.937,
+                -111.737
+              ],
+              "description": "4,500-foot descent through Arizona's Little Grand Canyon with red rock walls and forest",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Bell Rock Pathway",
+              "coords": [
+                34.8097,
+                -111.7652
+              ],
+              "description": "Easy dog-friendly trail with panoramic views of Sedona's most iconic red rock formations",
+              "type": "attraction"
+            },
+            {
+              "name": "Tlaquepaque Arts Village",
+              "coords": [
+                34.862,
+                -111.763
+              ],
+              "description": "Charming outdoor arts village modeled after a Mexican town \u2014 many shops welcome dogs",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Sedona, AZ",
+          "end": "Sedona, AZ",
+          "start_coords": [
+            34.8697,
+            -111.761
+          ],
+          "end_coords": [
+            34.8697,
+            -111.761
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "West Fork Oak Creek Trail",
+              "coords": [
+                34.9879,
+                -111.7437
+              ],
+              "description": "Shaded forest canyon hike with stream crossings \u2014 dogs welcome on leash, one of Sedona's best",
+              "type": "attraction"
+            },
+            {
+              "name": "Airport Mesa Overlook",
+              "coords": [
+                34.8566,
+                -111.7842
+              ],
+              "description": "360-degree sunset viewpoint over Sedona's red rock formations and Verde Valley",
+              "type": "attraction"
+            },
+            {
+              "name": "Rancho Sedona RV Park",
+              "coords": [
+                34.874,
+                -111.756
+              ],
+              "description": "Creek-side camping at Rancho Sedona RV Park on the banks of Oak Creek. Wake up surrounded by red rock cathedrals, hike Bell Rock or West Fork Trail with the dog in the morning, wade in Oak Creek in the afternoon, and watch sunset paint the rocks from Airport Mesa. Wine tasting at dog-friendly Page Springs Cellars nearby.",
+              "type": "camping"
+            },
+            {
+              "name": "Page Springs Cellars",
+              "coords": [
+                34.7539,
+                -111.8994
+              ],
+              "description": "Dog-friendly wine tasting with covered patio in the Verde Valley wine region",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Sedona, AZ",
+          "end": "Gallup, NM",
+          "start_coords": [
+            34.8697,
+            -111.761
+          ],
+          "end_coords": [
+            35.5281,
+            -108.7426
+          ],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Standin' on the Corner Park Winslow",
+              "coords": [
+                35.0241,
+                -110.6974
+              ],
+              "description": "Eagles 'Take It Easy' tribute with Glenn Frey statue and red flatbed Ford \u2014 quick photo stop off I-40",
+              "type": "attraction"
+            },
+            {
+              "name": "Petrified Forest National Park",
+              "coords": [
+                34.91,
+                -109.787
+              ],
+              "description": "The most dog-friendly national park in the US \u2014 dogs allowed on ALL trails, plus BARK Ranger program",
+              "type": "national_park"
+            },
+            {
+              "name": "El Rancho Hotel Gallup",
+              "coords": [
+                35.5281,
+                -108.7426
+              ],
+              "description": "Historic Route 66 hotel where John Wayne, Humphrey Bogart, and Katherine Hepburn stayed",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Gallup, NM",
+          "end": "Trinidad, CO",
+          "start_coords": [
+            35.5281,
+            -108.7426
+          ],
+          "end_coords": [
+            37.1694,
+            -104.5006
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Albuquerque Old Town",
+              "coords": [
+                35.0967,
+                -106.6695
+              ],
+              "description": "Historic 1706 adobe plaza with galleries, restaurants, and the dog-friendly ABQ Trolley",
+              "type": "town"
+            },
+            {
+              "name": "Petroglyph National Monument",
+              "coords": [
+                35.1362,
+                -106.7612
+              ],
+              "description": "Thousands of ancient rock carvings on dog-friendly trails along volcanic escarpments",
+              "type": "national_park"
+            },
+            {
+              "name": "Fishers Peak State Park",
+              "coords": [
+                37.11,
+                -104.52
+              ],
+              "description": "Colorado's newest state park with 16+ miles of trails and 9,633-foot summit views",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Trinidad, CO",
+          "end": "Parker, CO",
+          "start_coords": [
+            37.1694,
+            -104.5006
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Spanish Peaks Vista",
+              "coords": [
+                37.375,
+                -104.983
+              ],
+              "description": "Twin volcanic peaks sacred to the Ute people, visible rising above the plains from I-25",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Pikes Peak View",
+              "coords": [
+                38.8409,
+                -105.0423
+              ],
+              "description": "America's Mountain emerges on the horizon approaching Colorado Springs on I-25",
+              "type": "scenic_drive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Grand Canyon Route",
+      "theme": "Bucket-list national monuments through Arizona's canyon country",
+      "total_days": 8,
+      "total_driving_hours": 23.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Bakersfield, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            35.3733,
+            -119.0187
+          ],
+          "driving_hours": 3.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Paso Robles Wine Country",
+              "coords": [
+                35.6265,
+                -120.691
+              ],
+              "description": "200+ wineries with dog-friendly tasting patios along the rolling golden hills of Highway 46",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Bakersfield, CA",
+          "end": "Williams, AZ",
+          "start_coords": [
+            35.3733,
+            -119.0187
+          ],
+          "end_coords": [
+            35.2494,
+            -112.1871
+          ],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bearizona Wildlife Park",
+              "coords": [
+                35.257,
+                -112.213
+              ],
+              "description": "Drive-through wildlife park with bears, wolves, bison \u2014 dogs allowed in vehicles (windows up)",
+              "type": "attraction"
+            },
+            {
+              "name": "Route 66 Historic Downtown Williams",
+              "coords": [
+                35.2494,
+                -112.1871
+              ],
+              "description": "Last town on Route 66 bypassed by the interstate \u2014 six blocks of neon-lit diners and vintage motels",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Williams, AZ",
+          "end": "Grand Canyon South Rim, AZ",
+          "start_coords": [
+            35.2494,
+            -112.1871
+          ],
+          "end_coords": [
+            36.0544,
+            -112.1401
+          ],
+          "driving_hours": 1,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Mather Point",
+              "coords": [
+                36.058,
+                -112.1075
+              ],
+              "description": "The most iconic Grand Canyon viewpoint \u2014 easily accessible with a dog on the paved Rim Trail",
+              "type": "national_park"
+            },
+            {
+              "name": "Rim Trail",
+              "coords": [
+                36.0544,
+                -112.1401
+              ],
+              "description": "13 miles of paved, dog-friendly trail along the canyon rim connecting all major viewpoints",
+              "type": "national_park"
+            },
+            {
+              "name": "Desert View Watchtower",
+              "coords": [
+                36.0413,
+                -111.8265
+              ],
+              "description": "70-foot stone tower at the canyon's eastern end with 360-degree panoramic views",
+              "type": "attraction"
+            },
+            {
+              "name": "Shoshone Point",
+              "coords": [
+                36.0535,
+                -112.0753
+              ],
+              "description": "Secluded 2-mile roundtrip hike through ponderosa pines to a quiet rim overlook \u2014 dogs welcome",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Grand Canyon South Rim, AZ",
+          "end": "Grand Canyon South Rim, AZ",
+          "start_coords": [
+            36.0544,
+            -112.1401
+          ],
+          "end_coords": [
+            36.0544,
+            -112.1401
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Mather Campground",
+              "coords": [
+                36.051,
+                -112.117
+              ],
+              "description": "National park campground at Mather \u2014 the ultimate bucket-list camping experience. Watch sunrise paint the 277-mile canyon in gold from Mather Point, spend the day hiking 13 miles of dog-friendly Rim Trail, join a free ranger astronomy program under one of America's certified Dark Sky Parks. Book 6 months ahead on Recreation.gov.",
+              "type": "camping"
+            },
+            {
+              "name": "Hopi Point Sunset",
+              "coords": [
+                36.0711,
+                -112.154
+              ],
+              "description": "Arguably the best sunset spot on the South Rim \u2014 watch the canyon walls change color for an hour",
+              "type": "attraction"
+            },
+            {
+              "name": "Grand Canyon Dark Sky Park",
+              "coords": [
+                36.0544,
+                -112.1401
+              ],
+              "description": "Certified International Dark Sky Park \u2014 free ranger-led evening astronomy programs with telescopes",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Grand Canyon South Rim, AZ",
+          "end": "Kayenta, AZ",
+          "start_coords": [
+            36.0544,
+            -112.1401
+          ],
+          "end_coords": [
+            36.7276,
+            -110.2544
+          ],
+          "driving_hours": 2.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Cameron Trading Post",
+              "coords": [
+                35.853,
+                -111.427
+              ],
+              "description": "Historic Navajo trading post with authentic jewelry, rugs, pottery, and excellent Navajo tacos",
+              "type": "attraction"
+            },
+            {
+              "name": "Moenkopi Dinosaur Tracks",
+              "coords": [
+                36.117,
+                -111.201
+              ],
+              "description": "200-million-year-old Jurassic dinosaur footprints you can walk on \u2014 free, with local Navajo guides",
+              "type": "attraction"
+            },
+            {
+              "name": "Monument Valley",
+              "coords": [
+                36.9985,
+                -110.0985
+              ],
+              "description": "Iconic sandstone buttes \u2014 17-mile Valley Drive spectacular in late afternoon light, dogs allowed on leash",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Kayenta, AZ",
+          "end": "Durango, CO",
+          "start_coords": [
+            36.7276,
+            -110.2544
+          ],
+          "end_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "driving_hours": 2.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Four Corners Monument",
+              "coords": [
+                36.999,
+                -109.0452
+              ],
+              "description": "Only place in the US where four states meet \u2014 Navajo vendor market with crafts and frybread",
+              "type": "attraction"
+            },
+            {
+              "name": "Mesa Verde National Park",
+              "coords": [
+                37.1838,
+                -108.4889
+              ],
+              "description": "700-year-old Puebloan cliff dwellings \u2014 dogs on paved roads and campgrounds, not on trails",
+              "type": "national_park"
+            },
+            {
+              "name": "Durango Dog Park",
+              "coords": [
+                37.2667,
+                -107.858
+              ],
+              "description": "24 acres of off-leash paradise at Smelter Mountain with Animas River swimming access",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Durango, CO",
+          "end": "Durango, CO",
+          "start_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "end_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "driving_hours": 0,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Animas River Trail",
+              "coords": [
+                37.2753,
+                -107.8801
+              ],
+              "description": "5-mile paved trail along the river through downtown \u2014 perfect morning dog walk with mountain views",
+              "type": "attraction"
+            },
+            {
+              "name": "Carver Brewing Company",
+              "coords": [
+                37.2746,
+                -107.8804
+              ],
+              "description": "Dog-friendly patio craft brewery \u2014 great burgers and house-brewed beer in historic downtown Durango",
+              "type": "town"
+            },
+            {
+              "name": "Smelter Mountain Trail",
+              "coords": [
+                37.257,
+                -107.875
+              ],
+              "description": "Moderate hike with expansive views of the Animas Valley \u2014 accessible right from the off-leash dog park",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Durango, CO",
+          "end": "Parker, CO",
+          "start_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 6.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Million Dollar Highway",
+              "coords": [
+                37.89,
+                -107.71
+              ],
+              "description": "One of America's most spectacular drives \u2014 hairpin turns, 11,000ft passes, no guardrails, mine ruins",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Silverton",
+              "coords": [
+                37.8119,
+                -107.6645
+              ],
+              "description": "Authentic silver mining town at 9,318ft with wooden boardwalks and saloons",
+              "type": "town"
+            },
+            {
+              "name": "Black Canyon of the Gunnison",
+              "coords": [
+                38.5754,
+                -107.7416
+              ],
+              "description": "Dramatic 2,000-foot sheer canyon walls \u2014 dogs allowed on rim trails and Cedar Point Nature Trail",
+              "type": "national_park"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Utah's Mighty Five",
+      "theme": "Epic tour of Utah's national parks with Eastern Sierra gateway",
+      "total_days": 7,
+      "total_driving_hours": 27.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Lone Pine, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            36.6063,
+            -118.0629
+          ],
+          "driving_hours": 6.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Alabama Hills",
+              "coords": [
+                36.608,
+                -118.117
+              ],
+              "description": "BLM recreation area with iconic boulders against Mt. Whitney \u2014 dog paradise, all trails open",
+              "type": "attraction"
+            },
+            {
+              "name": "Mobius Arch",
+              "coords": [
+                36.6073,
+                -118.1225
+              ],
+              "description": "Short hike to a natural granite arch that perfectly frames 14,505ft Mt. Whitney in its opening",
+              "type": "attraction"
+            },
+            {
+              "name": "Mt. Whitney Portal Road",
+              "coords": [
+                36.5863,
+                -118.0924
+              ],
+              "description": "13-mile climb to 8,374ft for close-up views of the tallest peak in the contiguous US",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Lone Pine, CA",
+          "end": "Tonopah, NV",
+          "start_coords": [
+            36.6063,
+            -118.0629
+          ],
+          "end_coords": [
+            38.0672,
+            -117.2301
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bishop, CA",
+              "coords": [
+                37.3635,
+                -118.3946
+              ],
+              "description": "Eastern Sierra gateway town with Mountain Rambler Brewery (dog-friendly patio) and great food",
+              "type": "town"
+            },
+            {
+              "name": "Tonopah Stargazing Park",
+              "coords": [
+                38.068,
+                -117.229
+              ],
+              "description": "Named #1 stargazing destination in America \u2014 minimal light pollution, extraordinary night skies",
+              "type": "attraction"
+            },
+            {
+              "name": "Mizpah Hotel",
+              "coords": [
+                38.0672,
+                -117.2301
+              ],
+              "description": "Beautifully restored 1907 hotel \u2014 voted most haunted hotel in America, worth a stay or a look",
+              "type": "attraction"
+            },
+            {
+              "name": "Tonopah Brewing Company",
+              "coords": [
+                38.067,
+                -117.2295
+              ],
+              "description": "26 craft beers brewed on-site in this remote Nevada mining town",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Tonopah, NV",
+          "end": "Springdale, UT",
+          "start_coords": [
+            38.0672,
+            -117.2301
+          ],
+          "end_coords": [
+            37.19,
+            -112.998
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Zion National Park",
+              "coords": [
+                37.208,
+                -112.985
+              ],
+              "description": "2,000-foot canyon walls \u2014 dogs allowed on Pa'rus Trail (3.5mi paved along the Virgin River)",
+              "type": "national_park"
+            },
+            {
+              "name": "Pa'rus Trail",
+              "coords": [
+                37.201,
+                -112.987
+              ],
+              "description": "Zion's dog-friendly trail \u2014 3.5mi paved walk through the valley floor with towering red/white cliffs",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Springdale, UT",
+          "end": "Torrey, UT",
+          "start_coords": [
+            37.19,
+            -112.998
+          ],
+          "end_coords": [
+            38.3015,
+            -111.4196
+          ],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bryce Canyon National Park",
+              "coords": [
+                37.593,
+                -112.1871
+              ],
+              "description": "Otherworldly hoodoo formations \u2014 dogs on paved Shared Use Path between Sunrise and Sunset Points",
+              "type": "national_park"
+            },
+            {
+              "name": "Scenic Byway 12",
+              "coords": [
+                37.784,
+                -111.438
+              ],
+              "description": "One of America's 10 most scenic drives \u2014 Red Canyon, the Hogsback ridge, and Boulder Mountain",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Red Canyon",
+              "coords": [
+                37.746,
+                -112.305
+              ],
+              "description": "Red rock arches spanning over the road \u2014 a stunning prelude to Bryce Canyon",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Capitol Reef National Park",
+              "coords": [
+                38.2833,
+                -111.2616
+              ],
+              "description": "Drive the 8-mile scenic road through Waterpocket Fold geology \u2014 pick fruit in historic orchards",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Torrey, UT",
+          "end": "Moab, UT",
+          "start_coords": [
+            38.3015,
+            -111.4196
+          ],
+          "end_coords": [
+            38.5733,
+            -109.5498
+          ],
+          "driving_hours": 2.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Goblin Valley State Park",
+              "coords": [
+                38.5667,
+                -110.706
+              ],
+              "description": "Surreal mushroom-shaped rock formations \u2014 dogs on leash, feels like walking on Mars",
+              "type": "national_park"
+            },
+            {
+              "name": "Dead Horse Point State Park",
+              "coords": [
+                38.4823,
+                -109.7388
+              ],
+              "description": "8 miles of dog-friendly rim trails with 2,000-foot views above the Colorado River",
+              "type": "national_park"
+            },
+            {
+              "name": "Corona Arch Trail",
+              "coords": [
+                38.579,
+                -109.616
+              ],
+              "description": "3-mile BLM trail to a massive natural arch \u2014 fully dog-friendly, most popular arch hike outside Arches NP",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Moab, UT",
+          "end": "Moab, UT",
+          "start_coords": [
+            38.5733,
+            -109.5498
+          ],
+          "end_coords": [
+            38.5733,
+            -109.5498
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Arches National Park",
+              "coords": [
+                38.7331,
+                -109.5925
+              ],
+              "description": "No timed entry in 2026 \u2014 scenic drive past Park Avenue, Balanced Rock, and Delicate Arch viewpoint",
+              "type": "national_park"
+            },
+            {
+              "name": "Canyonlands Island in the Sky",
+              "coords": [
+                38.459,
+                -109.8207
+              ],
+              "description": "Stunning canyon overlooks from a 6,000ft mesa \u2014 Grand View Point is one of the great American views",
+              "type": "national_park"
+            },
+            {
+              "name": "Grandstaff Trail",
+              "coords": [
+                38.613,
+                -109.531
+              ],
+              "description": "Creek-side canyon trail to Morning Glory Natural Bridge \u2014 dog-friendly with stream crossings for swimming",
+              "type": "attraction"
+            },
+            {
+              "name": "Moab KOA",
+              "coords": [
+                38.542,
+                -109.575
+              ],
+              "description": "Desert canyon camping at Moab KOA or Dead Horse Point \u2014 surrounded by red rock on BLM land with endless dog-friendly trail options. Morning on Grandstaff Trail (creek crossings, your dog will love the water), afternoon drive through Arches NP scenic road, evening watching sunset turn the La Sal Mountains pink from your campsite.",
+              "type": "camping"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Moab, UT",
+          "end": "Parker, CO",
+          "start_coords": [
+            38.5733,
+            -109.5498
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Glenwood Canyon",
+              "coords": [
+                39.568,
+                -107.218
+              ],
+              "description": "12.5 miles of I-70 carved through 2,000-foot canyon walls \u2014 one of America's engineering marvels",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Vail Village",
+              "coords": [
+                39.6403,
+                -106.3742
+              ],
+              "description": "European-style pedestrian village at 8,150ft \u2014 dog-friendly shops, Betty Ford Alpine Gardens",
+              "type": "town"
+            },
+            {
+              "name": "Eisenhower Tunnel",
+              "coords": [
+                39.6792,
+                -105.9139
+              ],
+              "description": "Highest point on the US Interstate system at 11,158ft \u2014 mountain views in every direction",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The Southern Sun",
+      "theme": "Saguaro cactus forests, white gypsum dunes, and mountain pine forest camping through the deep South",
+      "total_days": 7,
+      "total_driving_hours": 31.0,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Santa Barbara, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            34.4208,
+            -119.6982
+          ],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Hearst Castle Vista Point",
+              "coords": [
+                35.6856,
+                -121.1685
+              ],
+              "description": "Scenic pullout with views of the Hearst Castle estate above and elephant seals on the beach below \u2014 dogs welcome at the vista",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Morro Rock & Morro Bay",
+              "coords": [
+                35.3713,
+                -120.8683
+              ],
+              "description": "Iconic 576-foot volcanic plug \u2014 dog-friendly Morro Strand State Beach and waterfront boardwalk",
+              "type": "attraction"
+            },
+            {
+              "name": "Santa Barbara Waterfront",
+              "coords": [
+                34.4048,
+                -119.6854
+              ],
+              "description": "East Beach and Stearns Wharf \u2014 dogs welcome on the beach before 10am and after 4pm, walk the historic pier",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Santa Barbara, CA",
+          "end": "Kingman, AZ",
+          "start_coords": [
+            34.4208,
+            -119.6982
+          ],
+          "end_coords": [
+            35.1894,
+            -114.053
+          ],
+          "driving_hours": 6,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Route 66 Dog Park Kingman",
+              "coords": [
+                35.1894,
+                -114.053
+              ],
+              "description": "Themed off-leash dog park with miniature Route 66 drive-through and water features \u2014 let Sabby run",
+              "type": "attraction"
+            },
+            {
+              "name": "Arizona Route 66 Museum",
+              "coords": [
+                35.19,
+                -114.056
+              ],
+              "description": "Life-size dioramas in the 1907 Powerhouse building \u2014 the definitive Route 66 museum",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Kingman, AZ",
+          "end": "Tucson, AZ",
+          "start_coords": [
+            35.1894,
+            -114.053
+          ],
+          "end_coords": [
+            32.2217,
+            -110.9265
+          ],
+          "driving_hours": 4.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Saguaro National Park West",
+              "coords": [
+                32.25,
+                -111.2167
+              ],
+              "description": "40-foot saguaro cactus forests found nowhere else on Earth \u2014 dogs on paved Desert Discovery Trail",
+              "type": "national_park"
+            },
+            {
+              "name": "Mount Lemmon Scenic Drive",
+              "coords": [
+                32.4432,
+                -110.7886
+              ],
+              "description": "Drive from desert floor to 9,157ft pine forest \u2014 a 30-degree temperature drop in 30 miles",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Catalina State Park",
+              "coords": [
+                32.43,
+                -110.9214
+              ],
+              "description": "8 dog-friendly trails through Sonoran desert landscape under the Santa Catalina Mountains",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Tucson, AZ",
+          "end": "Cloudcroft, NM",
+          "start_coords": [
+            32.2217,
+            -110.9265
+          ],
+          "end_coords": [
+            32.9571,
+            -105.7426
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "White Sands National Park",
+              "coords": [
+                32.7872,
+                -106.3257
+              ],
+              "description": "275 sq miles of white gypsum dunes \u2014 dogs allowed on ALL trails and dunes, one of the most dog-friendly NPS sites",
+              "type": "national_park"
+            },
+            {
+              "name": "US-82 Cloudcroft Highway",
+              "coords": [
+                32.9571,
+                -105.7426
+              ],
+              "description": "19-mile climb from Chihuahuan desert floor (4,350ft) to pine forest (8,600ft) \u2014 dramatic transition",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Cloudcroft, NM",
+          "end": "Cloudcroft, NM",
+          "start_coords": [
+            32.9571,
+            -105.7426
+          ],
+          "end_coords": [
+            32.9571,
+            -105.7426
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Osha Trail",
+              "coords": [
+                32.95,
+                -105.73
+              ],
+              "description": "2.5-mile mountain loop with views looking down at White Sands dunes far below \u2014 dogs welcome",
+              "type": "attraction"
+            },
+            {
+              "name": "Dog Canyon Trail",
+              "coords": [
+                32.96,
+                -105.75
+              ],
+              "description": "Forested canyon trail in Lincoln National Forest \u2014 aptly named, dogs love the shaded cool hike",
+              "type": "attraction"
+            },
+            {
+              "name": "Rim Trail Cloudcroft",
+              "coords": [
+                32.94,
+                -105.72
+              ],
+              "description": "13.5-mile Sacramento Mountain rim trail through ponderosa pines \u2014 hike sections with the dog",
+              "type": "attraction"
+            },
+            {
+              "name": "16 Springs Canyon Campground",
+              "coords": [
+                32.955,
+                -105.735
+              ],
+              "description": "Mountain pine forest camping at 8,600ft in Lincoln National Forest \u2014 a 35-degree cool-down from the desert below. All forest trails welcome dogs. Hike the aptly-named Dog Canyon Trail in the morning, explore the Osha Trail with Sacramento Mountain rim views, then evening stargazing under dark skies. After 3 days of desert heat management, breathing cool pine-scented mountain air is pure relief.",
+              "type": "camping"
+            },
+            {
+              "name": "National Solar Observatory at Sunspot",
+              "coords": [
+                32.7876,
+                -105.8204
+              ],
+              "description": "Free self-guided tours of solar telescopes on the 17-mile Sunspot Scenic Byway south of Cloudcroft",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Cloudcroft, NM",
+          "end": "Albuquerque, NM",
+          "start_coords": [
+            32.9571,
+            -105.7426
+          ],
+          "end_coords": [
+            35.0844,
+            -106.6504
+          ],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Petroglyph National Monument",
+              "coords": [
+                35.1392,
+                -106.7614
+              ],
+              "description": "24,000+ ancient petroglyphs on dog-friendly trails \u2014 one of the most dog-friendly NPS units",
+              "type": "national_park"
+            },
+            {
+              "name": "Rio Grande Bosque Trail",
+              "coords": [
+                35.08,
+                -106.67
+              ],
+              "description": "16-mile paved trail along the Rio Grande under shady cottonwoods \u2014 perfect evening dog walk",
+              "type": "attraction"
+            },
+            {
+              "name": "Old Town Albuquerque",
+              "coords": [
+                35.0966,
+                -106.6694
+              ],
+              "description": "Historic 1706 adobe plaza with galleries, chile-heavy restaurants, and Native American art",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Albuquerque, NM",
+          "end": "Parker, CO",
+          "start_coords": [
+            35.0844,
+            -106.6504
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 6.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Santa Fe Plaza",
+              "coords": [
+                35.687,
+                -105.9378
+              ],
+              "description": "Breakfast stop \u2014 Tia Sophia's (invented the breakfast burrito) or The Shed (famous red chile)",
+              "type": "town"
+            },
+            {
+              "name": "Las Vegas, NM",
+              "coords": [
+                35.5936,
+                -105.2239
+              ],
+              "description": "900+ National Register buildings \u2014 genuine Wild West frontier town on the Santa Fe Trail",
+              "type": "attraction"
+            },
+            {
+              "name": "Raton Pass",
+              "coords": [
+                36.9917,
+                -104.86
+              ],
+              "description": "7,834-foot pass through the Sangre de Cristo Mountains on the historic Santa Fe Trail",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Garden of the Gods",
+              "coords": [
+                38.8786,
+                -104.87
+              ],
+              "description": "300-foot red sandstone formations against Pikes Peak \u2014 ALL 21 miles of trails dog-friendly, free entry",
+              "type": "national_park"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "The Yellowstone Trail",
+      "theme": "The great northern arc through Nevada's basin-and-range, Idaho's volcanic plains, Yellowstone's geothermal wonders, and Wyoming's Big Horn country \u2014 following the path of America's first transcontinental highway",
+      "total_days": 8,
+      "total_driving_hours": 30.0,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Reno, NV",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            39.5296,
+            -119.8138
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Donner Memorial State Park",
+              "coords": [
+                39.3239,
+                -120.234
+              ],
+              "description": "Historic pass at 7,056ft. Stop at the visitor center for the harrowing Donner Party story. Short nature trails through pine forest along Donner Lake. Dogs on leash on all trails. Beautiful alpine lake setting with granite peaks.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Truckee, CA (en route)",
+              "coords": [
+                39.328,
+                -120.1833
+              ],
+              "description": "Charming mountain town 30 min west of Reno. Historic downtown with dog-friendly patios. Excellent coffee at Coffeebar. Quick stretch stop before descending into Nevada.",
+              "type": "town"
+            },
+            {
+              "name": "Virginia Lake Park & Off-Leash Dog Park",
+              "coords": [
+                39.51,
+                -119.79
+              ],
+              "description": "Reno city park with a 1-mile path around a scenic lake. Dedicated off-leash dog park with separate areas for small and large dogs, agility equipment, benches, and shade. Perfect evening dog stop after the drive.",
+              "type": "attraction"
+            },
+            {
+              "name": "Reno Riverwalk District",
+              "coords": [
+                39.527,
+                -119.813
+              ],
+              "description": "Revitalized downtown along the Truckee River. Dog-friendly patios at Wild River Grille and The Eddy. Walkable with public art, river views, and evening energy. Great Basin Brewing Co. is Reno's oldest brewery with a dog-friendly patio.",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Reno, NV",
+          "end": "Twin Falls, ID",
+          "start_coords": [
+            39.5296,
+            -119.8138
+          ],
+          "end_coords": [
+            42.5558,
+            -114.4701
+          ],
+          "driving_hours": 6.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Shoshone Falls",
+              "coords": [
+                42.5932,
+                -114.3994
+              ],
+              "description": "212-foot waterfall wider than Niagara Falls (900ft across). Peak flow in spring/early June from snowmelt. $5 vehicle entry. Dogs on leash welcome throughout the park -- easy terrain, well-maintained paths, picnic areas, grills, benches, restrooms. Best viewed from the upper overlook platform in late afternoon light.",
+              "type": "attraction"
+            },
+            {
+              "name": "Perrine Bridge & Snake River Canyon",
+              "coords": [
+                42.5867,
+                -114.4526
+              ],
+              "description": "486ft above the Snake River. This is where Evel Knievel attempted his rocket-powered jump in 1974. Today it is a legal BASE jumping site -- you will likely see jumpers launching off the bridge. Pedestrian walkway with views of the canyon. Dog-friendly walkway.",
+              "type": "attraction"
+            },
+            {
+              "name": "Centennial Waterfront Park",
+              "coords": [
+                42.565,
+                -114.458
+              ],
+              "description": "Riverside park along the Snake River below the canyon rim. Walking trails, playgrounds, river access. Dogs on leash welcome. Great morning or evening walk with views up at the canyon walls.",
+              "type": "attraction"
+            },
+            {
+              "name": "Dierkes Lake",
+              "coords": [
+                42.598,
+                -114.385
+              ],
+              "description": "Adjacent to Shoshone Falls. Swimming, cliff jumping, hiking trails around a basalt-rimmed desert canyon lake. Dogs allowed on trails but not in the grassy beach area. Beautiful setting.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Twin Falls, ID",
+          "end": "Idaho Falls, ID",
+          "start_coords": [
+            42.5558,
+            -114.4701
+          ],
+          "end_coords": [
+            43.4917,
+            -112.0339
+          ],
+          "driving_hours": 2.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Craters of the Moon National Monument (optional detour)",
+              "coords": [
+                43.4167,
+                -113.5167
+              ],
+              "description": "Vast otherworldly lava field covering 750,000 acres with cinder cones, lava tubes, and spatter cones. 7-mile loop drive with short walks from pullouts. Dogs NOT allowed on trails (sharp volcanic rock cuts paws) but can ride the loop drive and visit parking areas and the campground. $20 vehicle entry. Worth 1-2 hours for the moonscape scenery.",
+              "type": "national_park"
+            },
+            {
+              "name": "Idaho Falls River Walk",
+              "coords": [
+                43.492,
+                -112.035
+              ],
+              "description": "5-mile paved path along the Snake River through downtown. Passes the Idaho Falls -- a dramatic man-made waterfall stretching across the full river width. Beautifully landscaped with benches, gardens, and river views. Dogs on leash welcome. Best in late afternoon light.",
+              "type": "attraction"
+            },
+            {
+              "name": "Freeman Park Off-Leash Dog Area",
+              "coords": [
+                43.475,
+                -112.05
+              ],
+              "description": "Fenced off-leash dog park on the south side of Idaho Falls with water stations. Perfect for letting the dog run after the drive and before heading into Yellowstone country where off-leash opportunities are limited.",
+              "type": "attraction"
+            },
+            {
+              "name": "Tautphaus Park",
+              "coords": [
+                43.48,
+                -112.02
+              ],
+              "description": "Large city park with walking paths, playground, picnic areas, and shade trees. Dog-friendly throughout. Good stretch stop with plenty of grass and open space.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Idaho Falls, ID",
+          "end": "West Yellowstone, MT",
+          "start_coords": [
+            43.4917,
+            -112.0339
+          ],
+          "end_coords": [
+            44.6621,
+            -111.1041
+          ],
+          "driving_hours": 2,
+          "is_rest_day": false,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Upper Mesa Falls (en route)",
+              "coords": [
+                44.188,
+                -111.327
+              ],
+              "description": "114-foot waterfall on the Henrys Fork river -- Idaho's last major undammed waterfall. Short boardwalk trail to a spectacular viewpoint. $5 vehicle fee. Dogs on leash welcome on the boardwalk and viewing areas. 7 miles off US-20 via Mesa Falls Scenic Byway. Do not miss this stop.",
+              "type": "attraction"
+            },
+            {
+              "name": "Rendezvous Ski Trails (Summer Hiking)",
+              "coords": [
+                44.67,
+                -111.12
+              ],
+              "description": "30+ km of groomed Nordic ski trails that become hiking/mountain biking trails in summer. Rolling terrain through lodgepole pine and meadows right from town. Dogs on leash welcome. Excellent afternoon hike -- you may see moose, deer, and elk in the meadows.",
+              "type": "attraction"
+            },
+            {
+              "name": "Grizzly & Wolf Discovery Center",
+              "coords": [
+                44.658,
+                -111.098
+              ],
+              "description": "Wildlife park in downtown West Yellowstone with rescued grizzly bears, gray wolves, and raptors. Educational non-profit. Dogs not inside but shaded outdoor waiting area. Take turns visiting while one person walks the dog.",
+              "type": "attraction"
+            },
+            {
+              "name": "Hebgen Lake",
+              "coords": [
+                44.695,
+                -111.32
+              ],
+              "description": "Scenic mountain lake 15 min north of town. Walk the shoreline at sunset. Earthquake Lake nearby (formed by the 1959 Hebgen Lake earthquake). Dogs welcome on the lakeshore. Bring fishing gear for an evening cast.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "West Yellowstone, MT",
+          "end": "West Yellowstone, MT",
+          "start_coords": [
+            44.6621,
+            -111.1041
+          ],
+          "end_coords": [
+            44.6621,
+            -111.1041
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Old Faithful & Upper Geyser Basin",
+              "coords": [
+                44.4605,
+                -110.8281
+              ],
+              "description": "45-minute drive from West Yellowstone. World's most famous geyser erupts every 60-110 minutes. Dogs must stay in the car or within 100ft of parking lot -- take turns watching the dog while one person walks the boardwalk. Upper Geyser Basin has the largest concentration of geysers on Earth. Go before 9 AM for fewer crowds and cooler temps for dog in car.",
+              "type": "national_park"
+            },
+            {
+              "name": "Grand Prismatic Spring (roadside view)",
+              "coords": [
+                44.5251,
+                -110.8382
+              ],
+              "description": "Largest hot spring in the US, third largest in the world. Rainbow colors (orange, yellow, green, blue) are most vivid on warm, calm days. The overlook trail is NOT dog-friendly, but the Midway Geyser Basin parking lot provides a close-up perspective from 100ft of the road with steam and color visible.",
+              "type": "national_park"
+            },
+            {
+              "name": "Madison River Valley Wildlife Drive",
+              "coords": [
+                44.646,
+                -110.863
+              ],
+              "description": "14-mile drive from the west entrance to Madison Junction along the Madison River through wide meadows. Bison herds grazing, elk foraging, wolves occasionally spotted at dawn and dusk. Dogs can be in the car with windows down. Multiple pullouts for photography. The most accessible Yellowstone wildlife viewing from a vehicle.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Coffin Lake Trails",
+              "coords": [
+                44.68,
+                -111.14
+              ],
+              "description": "11.3-mile trail system in Gallatin National Forest west of town. Dense forest with meadow openings. Less trafficked than Rendezvous trails. Dogs on leash welcome. Moderate terrain. Good afternoon outing while one person goes into the park.",
+              "type": "attraction"
+            },
+            {
+              "name": "Baker's Hole Campground",
+              "coords": [
+                44.685,
+                -111.115
+              ],
+              "description": "Riverside Gallatin National Forest camping on the Madison River, 3 miles north of West Yellowstone \u2014 the quintessential Yellowstone base camp. Wake to mist rising off the river with bison grazing in the meadow across the water. Morning drive into the park to see Old Faithful and Grand Prismatic, afternoon dog hike on the Rendezvous Trails through lodgepole forest, evening campfire with elk bugling in the distance. 75F days, 35F nights at 6,600ft \u2014 bring warm layers.",
+              "type": "camping"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "West Yellowstone, MT",
+          "end": "Cody, WY",
+          "start_coords": [
+            44.6621,
+            -111.1041
+          ],
+          "end_coords": [
+            44.5263,
+            -109.0565
+          ],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Grand Canyon of the Yellowstone (Artist Point)",
+              "coords": [
+                44.7198,
+                -110.4877
+              ],
+              "description": "The Yellowstone River plunges 308 feet over the Lower Falls into a dramatically colorful canyon of yellow, orange, and red rock. Artist Point provides the iconic view. Dogs must stay within 100ft of parking lot -- take turns. One of the most photographed scenes in the US national park system.",
+              "type": "national_park"
+            },
+            {
+              "name": "Hayden Valley Wildlife Viewing",
+              "coords": [
+                44.65,
+                -110.45
+              ],
+              "description": "Wide glacial valley along the Yellowstone River between Canyon Village and Fishing Bridge. Large bison herds, elk, grizzly bears, trumpeter swans. Best at dawn and dusk. Multiple pullouts for viewing from the car. Dogs in the vehicle with windows down.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Wapiti Valley -- Buffalo Bill Scenic Byway",
+              "coords": [
+                44.52,
+                -109.65
+              ],
+              "description": "52 miles from Yellowstone's east entrance to Cody through Shoshone National Forest. Teddy Roosevelt called this the most scenic 52 miles in America. Towering rock formations, North Fork Shoshone River, lodgepole pine forest. Multiple Shoshone NF trailheads where dogs are welcome on leash. Stop at Pahaska Tepee (Buffalo Bill's original hunting lodge) near the east entrance.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Buffalo Bill Center of the West",
+              "coords": [
+                44.526,
+                -109.071
+              ],
+              "description": "Five museums in one complex: Buffalo Bill Museum, Whitney Western Art Museum, Plains Indian Museum, Draper Natural History Museum, Cody Firearms Museum. One of the finest museum complexes in the American West. Dogs not inside but shaded courtyard area. $24 adult. Allow 2-3 hours if visiting.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Cody, WY",
+          "end": "Sheridan, WY",
+          "start_coords": [
+            44.5263,
+            -109.0565
+          ],
+          "end_coords": [
+            44.7972,
+            -106.9563
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Shell Falls",
+              "coords": [
+                44.575,
+                -107.431
+              ],
+              "description": "120-foot waterfall in Shell Canyon on the Bighorn Scenic Byway. Short wheelchair-accessible walk from parking to overlook platform. Interpretive signs about local geology. Dogs on leash welcome. Free. Canyon walls rise 2,500 feet around you.",
+              "type": "attraction"
+            },
+            {
+              "name": "Bighorn Scenic Byway (US-14 over Big Horns)",
+              "coords": [
+                44.65,
+                -107.2
+              ],
+              "description": "44-mile scenic drive climbing from 4,200ft to 9,033ft over Granite Pass. Transitions from sagebrush basin through red rock canyons, pine forest, alpine meadows, and back down. One of America's most underrated scenic drives. Multiple pullouts and trailheads with dog-friendly access.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Tongue River Canyon Trail",
+              "coords": [
+                44.78,
+                -107.15
+              ],
+              "description": "4.7-mile moderate trail through a limestone canyon in Bighorn National Forest. Dog-friendly on leash. The canyon walls create a cool microclimate. Stunning rock walls and river scenery. Access from the western slope near Dayton.",
+              "type": "attraction"
+            },
+            {
+              "name": "Sheridan Historic Main Street",
+              "coords": [
+                44.7972,
+                -106.9563
+              ],
+              "description": "One of the most authentic Western main streets in America. King's Saddlery (since 1946, Western saddles and ropes, free Don King Museum in the back). The Mint Bar (historic watering hole with original neon signs). Dog-friendly sidewalks throughout.",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Sheridan, WY",
+          "end": "Parker, CO",
+          "start_coords": [
+            44.7972,
+            -106.9563
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 6.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Hole in the Wall Country (near Kaycee, WY)",
+              "coords": [
+                43.57,
+                -106.55
+              ],
+              "description": "Butch Cassidy's Wild Bunch hideout. The actual Hole in the Wall is a narrow passage through the Red Wall -- a 35-mile sandstone escarpment. The town of Kaycee has the Hoofprints of the Past Museum. Quick stop off I-25 for outlaw history.",
+              "type": "attraction"
+            },
+            {
+              "name": "Morad Park Off-Leash Dog Area (Casper)",
+              "coords": [
+                42.84,
+                -106.34
+              ],
+              "description": "Beautiful unfenced off-leash dog area right next to the North Platte River in Casper. Benches, picnic table, river access for dog swimming. One of the best off-leash dog stops in Wyoming. THE midday break highlight on the long drive south.",
+              "type": "attraction"
+            },
+            {
+              "name": "Ayres Natural Bridge Park",
+              "coords": [
+                42.73,
+                -105.62
+              ],
+              "description": "One of only three natural bridges in the US with water flowing beneath it. Small county park with picnic areas, hiking paths, and LaPrele Creek. Free admission. Dogs on leash. 45 minutes east of Casper, just off I-25 near Douglas. A hidden gem stretch stop.",
+              "type": "attraction"
+            },
+            {
+              "name": "Casper, WY (lunch stop)",
+              "coords": [
+                42.8666,
+                -106.3131
+              ],
+              "description": "Wyoming's second-largest city at the North Platte River confluence. National Historic Trails Interpretive Center (Oregon, Mormon, California, Pony Express trails all crossed here). Tate Geological Museum (free, fossils). Lake McKenzie Dog Park has a fenced area with dog drinking fountains, wash hoses, and a swimming area.",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Death Valley & Beyond",
+      "theme": "Extreme desert crossing from the lowest point in North America through Navajo country \u2014 WARNING: Death Valley reaches 110F+ in June",
+      "total_days": 7,
+      "total_driving_hours": 29.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Ridgecrest, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            35.6225,
+            -117.6709
+          ],
+          "driving_hours": 6.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Trona Pinnacles",
+              "coords": [
+                35.6175,
+                -117.368
+              ],
+              "description": "500+ tufa spires rising 140ft from a dry lake bed \u2014 filming location for Star Trek V and Westworld, dog-friendly BLM land",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Ridgecrest, CA",
+          "end": "Las Vegas, NV",
+          "start_coords": [
+            35.6225,
+            -117.6709
+          ],
+          "end_coords": [
+            36.1699,
+            -115.1398
+          ],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Death Valley - Zabriskie Point",
+              "coords": [
+                36.42,
+                -116.8116
+              ],
+              "description": "Iconic eroded badlands viewpoint \u2014 magnificent at sunrise, arrive before the 110F heat",
+              "type": "national_park"
+            },
+            {
+              "name": "Death Valley - Badwater Basin",
+              "coords": [
+                36.2296,
+                -116.7675
+              ],
+              "description": "Lowest point in North America at 282ft below sea level \u2014 surreal white salt flats stretching to the horizon",
+              "type": "national_park"
+            },
+            {
+              "name": "Wildrose Charcoal Kilns",
+              "coords": [
+                36.2727,
+                -117.08
+              ],
+              "description": "Ten massive beehive-shaped 1870s kilns at higher elevation \u2014 cooler than the valley floor",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Las Vegas, NV",
+          "end": "Page, AZ",
+          "start_coords": [
+            36.1699,
+            -115.1398
+          ],
+          "end_coords": [
+            36.9147,
+            -111.4558
+          ],
+          "driving_hours": 5.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Vermilion Cliffs",
+              "coords": [
+                36.81,
+                -111.743
+              ],
+              "description": "3,000-foot walls of red and orange sandstone \u2014 California condors frequently spotted soaring above",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Navajo Bridge",
+              "coords": [
+                36.8115,
+                -111.635
+              ],
+              "description": "Walk across for views 470 feet down to the Colorado River cutting through Marble Canyon",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Page, AZ",
+          "end": "Page, AZ",
+          "start_coords": [
+            36.9147,
+            -111.4558
+          ],
+          "end_coords": [
+            36.9147,
+            -111.4558
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Horseshoe Bend",
+              "coords": [
+                36.8791,
+                -111.5105
+              ],
+              "description": "Iconic 1,000-foot-deep Colorado River meander \u2014 dogs allowed on the 1.5-mile trail, visit at sunrise for cool temps",
+              "type": "attraction"
+            },
+            {
+              "name": "Lake Powell",
+              "coords": [
+                36.938,
+                -111.486
+              ],
+              "description": "Stunning man-made lake with red rock canyons \u2014 rent kayaks at Wahweap Marina, dogs welcome on the water",
+              "type": "attraction"
+            },
+            {
+              "name": "Wahweap Campground",
+              "coords": [
+                36.992,
+                -111.488
+              ],
+              "description": "Lakeside camping at Wahweap Campground on the shore of Lake Powell \u2014 turquoise water against red sandstone cliffs. Hike Horseshoe Bend with the dog in the morning (dogs welcome on the trail), rent a kayak on the lake in the afternoon, and watch sunset turn the canyon walls crimson from your waterfront campsite. Stargazing over the lake at night.",
+              "type": "camping"
+            },
+            {
+              "name": "Glen Canyon Dam",
+              "coords": [
+                36.9375,
+                -111.4841
+              ],
+              "description": "Massive concrete dam creating Lake Powell \u2014 visitor center with views of the dam and lake",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Page, AZ",
+          "end": "Durango, CO",
+          "start_coords": [
+            36.9147,
+            -111.4558
+          ],
+          "end_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Four Corners Monument",
+              "coords": [
+                36.999,
+                -109.0452
+              ],
+              "description": "Only place in the US where four states meet \u2014 stand in Colorado, New Mexico, Arizona, and Utah at once",
+              "type": "attraction"
+            },
+            {
+              "name": "Mesa Verde National Park",
+              "coords": [
+                37.1838,
+                -108.4889
+              ],
+              "description": "700-year-old Puebloan cliff dwellings \u2014 dogs in campgrounds and on paved roads, not trails",
+              "type": "national_park"
+            },
+            {
+              "name": "Durango Animas River Trail",
+              "coords": [
+                37.2753,
+                -107.8801
+              ],
+              "description": "7-mile paved trail along the river through town \u2014 perfect arrival stroll with the dog",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Durango, CO",
+          "end": "Durango, CO",
+          "start_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "end_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "driving_hours": 0,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Smelter Mountain Off-Leash",
+              "coords": [
+                37.257,
+                -107.875
+              ],
+              "description": "24-acre off-leash dog area with river access at the base of Smelter Mountain \u2014 Sabby's paradise",
+              "type": "attraction"
+            },
+            {
+              "name": "Carver Brewing Company",
+              "coords": [
+                37.2746,
+                -107.8804
+              ],
+              "description": "Dog-friendly patio brewery in historic downtown \u2014 great craft beer and pub food after a rest day",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Durango, CO",
+          "end": "Parker, CO",
+          "start_coords": [
+            37.2753,
+            -107.8801
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 7,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Wolf Creek Pass",
+              "coords": [
+                37.483,
+                -106.797
+              ],
+              "description": "10,856-foot mountain pass with sweeping views \u2014 one of Colorado's great mountain crossings",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "San Luis Valley",
+              "coords": [
+                37.575,
+                -105.925
+              ],
+              "description": "Wide-open high desert valley rimmed by the Sangre de Cristo Mountains \u2014 Great Sand Dunes visible in distance",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Great Sand Dunes (distant view)",
+              "coords": [
+                37.7333,
+                -105.5127
+              ],
+              "description": "North America's tallest sand dunes at 750ft \u2014 visible from the highway, worth a future dedicated trip",
+              "type": "national_park"
+            },
+            {
+              "name": "Fairplay / South Park",
+              "coords": [
+                39.2247,
+                -105.9997
+              ],
+              "description": "The real South Park \u2014 high-altitude grassland basin town that inspired the TV show",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "The Pacific Northwest Loop",
+      "theme": "Cascade volcanoes, Oregon brewery culture, Idaho mountain valleys, and Wyoming's Grand Tetons",
+      "total_days": 9,
+      "total_driving_hours": 35.0,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Mount Shasta, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            41.3121,
+            -122.3106
+          ],
+          "driving_hours": 6.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Sacramento",
+              "coords": [
+                38.5816,
+                -121.5064
+              ],
+              "description": "Old Sacramento Waterfront \u2014 dog-friendly boardwalks along the river, historic buildings, Tower Bridge photo op",
+              "type": "town"
+            },
+            {
+              "name": "Lake Siskiyou",
+              "coords": [
+                41.27,
+                -122.39
+              ],
+              "description": "7-mile shoreline trail reflecting 14,179ft Mt. Shasta in the water \u2014 kayaking, swimming, camp resort with dog park",
+              "type": "attraction"
+            },
+            {
+              "name": "Mount Shasta Headwaters",
+              "coords": [
+                41.312,
+                -122.315
+              ],
+              "description": "Crystal-clear natural spring headwaters of the Sacramento River \u2014 free, short walk, dog-friendly",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Mount Shasta, CA",
+          "end": "Bend, OR",
+          "start_coords": [
+            41.3121,
+            -122.3106
+          ],
+          "end_coords": [
+            44.0582,
+            -121.3153
+          ],
+          "driving_hours": 5.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Crater Lake National Park",
+              "coords": [
+                42.945,
+                -122.109
+              ],
+              "description": "Deepest lake in the US (1,943ft) inside a collapsed volcano \u2014 impossibly blue water, dogs on Godfrey Glen Trail",
+              "type": "national_park"
+            },
+            {
+              "name": "Pilot Butte",
+              "coords": [
+                44.058,
+                -121.288
+              ],
+              "description": "1-mile hike up a cinder cone for 360-degree views of Mt. Hood, Three Sisters, and Mt. Bachelor",
+              "type": "attraction"
+            },
+            {
+              "name": "Deschutes River Trail",
+              "coords": [
+                44.045,
+                -121.32
+              ],
+              "description": "12-mile trail along the river through Bend \u2014 perfect dog walk with craft brewery stops along the way",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Bend, OR",
+          "end": "Bend, OR",
+          "start_coords": [
+            44.0582,
+            -121.3153
+          ],
+          "end_coords": [
+            44.0582,
+            -121.3153
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Tumalo Falls",
+              "coords": [
+                44.03,
+                -121.56
+              ],
+              "description": "97-foot waterfall in Deschutes National Forest, 20 minutes from town \u2014 dog-friendly trail, moderate hike",
+              "type": "attraction"
+            },
+            {
+              "name": "Crux Fermentation Project",
+              "coords": [
+                44.037,
+                -121.308
+              ],
+              "description": "Award-winning craft brewery with spacious dog patio and views of the Cascade volcanoes",
+              "type": "town"
+            },
+            {
+              "name": "Tumalo State Park Campground",
+              "coords": [
+                44.11,
+                -121.34
+              ],
+              "description": "Riverside camping at Tumalo State Park on the Deschutes River \u2014 Bend is America's outdoor brewery capital with 30+ dog-friendly brewery patios. Morning hike to 97-foot Tumalo Falls with the dog, afternoon brewery crawl (Crux, GoodLife, Worthy Brewing \u2014 all have spacious dog patios), river swimming at your campsite. 75F days, 40F nights \u2014 perfect dog weather after desert routes.",
+              "type": "camping"
+            },
+            {
+              "name": "Worthy Brewing Observatory",
+              "coords": [
+                44.04,
+                -121.28
+              ],
+              "description": "Brewery with an actual astronomical observatory \u2014 craft beer, dog patio, stargazing through a real telescope",
+              "type": "attraction"
+            },
+            {
+              "name": "Shevlin Park",
+              "coords": [
+                44.06,
+                -121.37
+              ],
+              "description": "990-acre park with off-leash areas and miles of forested trails along Tumalo Creek",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Bend, OR",
+          "end": "John Day, OR",
+          "start_coords": [
+            44.0582,
+            -121.3153
+          ],
+          "end_coords": [
+            44.416,
+            -118.953
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Painted Hills",
+              "coords": [
+                44.662,
+                -120.25
+              ],
+              "description": "One of Oregon's Seven Wonders \u2014 surreal banded volcanic ash hills in red, gold, black, dogs on ALL trails",
+              "type": "national_park"
+            },
+            {
+              "name": "John Day Fossil Beds - Sheep Rock Unit",
+              "coords": [
+                44.668,
+                -119.636
+              ],
+              "description": "40-million-year-old fossil beds in dramatic canyon scenery \u2014 Thomas Condon Paleontology Center, dogs on roads and parking areas",
+              "type": "national_park"
+            },
+            {
+              "name": "Kam Wah Chung State Heritage Site",
+              "coords": [
+                44.415,
+                -118.952
+              ],
+              "description": "Remarkably preserved 1860s Chinese medicine and general store \u2014 unique piece of Eastern Oregon frontier history",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "John Day, OR",
+          "end": "Boise, ID",
+          "start_coords": [
+            44.416,
+            -118.953
+          ],
+          "end_coords": [
+            43.615,
+            -116.2023
+          ],
+          "driving_hours": 4.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Blue Mountain Scenic Byway",
+              "coords": [
+                44.32,
+                -118.35
+              ],
+              "description": "Winding mountain highway through Malheur National Forest \u2014 old-growth ponderosa pines, elk, and wildflower meadows",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Boise River Greenbelt",
+              "coords": [
+                43.605,
+                -116.21
+              ],
+              "description": "25-mile paved pathway along the Boise River \u2014 trees, parks, swimming access, fully dog-friendly",
+              "type": "attraction"
+            },
+            {
+              "name": "Freak Alley Gallery",
+              "coords": [
+                43.616,
+                -116.203
+              ],
+              "description": "Largest outdoor mural gallery in the Pacific Northwest \u2014 free, walkable with dog",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Boise, ID",
+          "end": "Ketchum / Sun Valley, ID",
+          "start_coords": [
+            43.615,
+            -116.2023
+          ],
+          "end_coords": [
+            43.681,
+            -114.3637
+          ],
+          "driving_hours": 2.75,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Hemingway Memorial",
+              "coords": [
+                43.7,
+                -114.32
+              ],
+              "description": "Stone memorial along Trail Creek \u2014 Hemingway wrote 'For Whom the Bell Tolls' here and is buried in Ketchum",
+              "type": "attraction"
+            },
+            {
+              "name": "Draper Preserve",
+              "coords": [
+                43.66,
+                -114.37
+              ],
+              "description": "Wooded path along Big Wood River \u2014 dog swimming paradise with stick-fetching in the river, off-leash under voice control",
+              "type": "attraction"
+            },
+            {
+              "name": "Galena Summit Overlook",
+              "coords": [
+                43.87,
+                -114.71
+              ],
+              "description": "8,701ft overlook of the Sawtooth Mountains and Salmon River headwaters \u2014 one of Idaho's most iconic vistas",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Sawtooth Brewery",
+              "coords": [
+                43.681,
+                -114.36
+              ],
+              "description": "Dog-friendly patio brewery with house-brewed beers \u2014 relaxed mountain town dining",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Ketchum / Sun Valley, ID",
+          "end": "Jackson, WY",
+          "start_coords": [
+            43.681,
+            -114.3637
+          ],
+          "end_coords": [
+            43.4799,
+            -110.7624
+          ],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Craters of the Moon",
+              "coords": [
+                43.417,
+                -113.517
+              ],
+              "description": "Vast lava field with cinder cones and lava tubes \u2014 7-mile loop drive, looks like the moon's surface",
+              "type": "national_park"
+            },
+            {
+              "name": "Grand Teton NP - Mormon Row",
+              "coords": [
+                43.66,
+                -110.72
+              ],
+              "description": "Most photographed barn in America with the Teton Range rising 7,000ft behind \u2014 dogs at roadside pullouts",
+              "type": "national_park"
+            },
+            {
+              "name": "Cache Creek Trail System",
+              "coords": [
+                43.47,
+                -110.74
+              ],
+              "description": "Dog-friendly trail system in Bridger-Teton NF just east of Jackson \u2014 where locals hike with dogs",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Jackson, WY",
+          "end": "Rawlins, WY",
+          "start_coords": [
+            43.4799,
+            -110.7624
+          ],
+          "end_coords": [
+            41.7911,
+            -107.2387
+          ],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Togwotee Pass",
+              "coords": [
+                43.75,
+                -110.08
+              ],
+              "description": "9,658-foot pass through alpine meadows with views of the Absaroka and Wind River Ranges behind you",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Dubois, WY",
+              "coords": [
+                43.533,
+                -109.63
+              ],
+              "description": "Small Western town (pop. 971) with the National Bighorn Sheep Interpretive Center \u2014 good breakfast stop",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "start": "Rawlins, WY",
+          "end": "Parker, CO",
+          "start_coords": [
+            41.7911,
+            -107.2387
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Elk Mountain & Medicine Bow",
+              "coords": [
+                41.685,
+                -106.415
+              ],
+              "description": "Historic I-80 landmarks \u2014 Elk Mountain rises 11,156ft above the high plains, visible for 50 miles. The old Union Pacific railroad town of Medicine Bow inspired Owen Wister's 'The Virginian', the first Western novel",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Cheyenne",
+              "coords": [
+                41.14,
+                -104.8202
+              ],
+              "description": "Wyoming's state capital \u2014 historic downtown, Union Pacific Depot, Big Boy steam locomotive display",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Eastern Sierra Scenic",
+      "theme": "Mt. Whitney, ancient bristlecone pines, and California's alpine lake country",
+      "total_days": 8,
+      "total_driving_hours": 26.75,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Visalia, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            36.3302,
+            -119.2921
+          ],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Pinnacles National Park (West Entrance)",
+              "coords": [
+                36.4906,
+                -121.1825
+              ],
+              "description": "Volcanic spires and talus caves \u2014 dogs on Bench Trail only but the scenic approach through the Salinas Valley is beautiful",
+              "type": "national_park"
+            },
+            {
+              "name": "Sequoia Gateway",
+              "coords": [
+                36.42,
+                -118.91
+              ],
+              "description": "Visalia is the gateway to Sequoia National Park \u2014 explore charming downtown with dog-friendly patios and breweries",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Visalia, CA",
+          "end": "Lone Pine, CA",
+          "start_coords": [
+            36.3302,
+            -119.2921
+          ],
+          "end_coords": [
+            36.6063,
+            -118.0629
+          ],
+          "driving_hours": 4.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Alabama Hills",
+              "coords": [
+                36.608,
+                -118.117
+              ],
+              "description": "Iconic rounded boulders against Mt. Whitney \u2014 BLM land where Iron Man, Gladiator, Django were filmed, dogs welcome everywhere",
+              "type": "attraction"
+            },
+            {
+              "name": "Mobius Arch Trail",
+              "coords": [
+                36.6073,
+                -118.1225
+              ],
+              "description": "Short hike to a natural granite arch framing 14,505ft Mt. Whitney \u2014 one of California's most photographed spots",
+              "type": "attraction"
+            },
+            {
+              "name": "Movie Road",
+              "coords": [
+                36.62,
+                -118.115
+              ],
+              "description": "Self-guided driving tour through rock formations used in hundreds of movies \u2014 sunset here is extraordinary",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Whitney Portal Road",
+              "coords": [
+                36.5863,
+                -118.0924
+              ],
+              "description": "13-mile climb toward the Mt. Whitney trailhead at 8,374ft for close-up Sierra Nevada views",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Lone Pine, CA",
+          "end": "Mammoth Lakes, CA",
+          "start_coords": [
+            36.6063,
+            -118.0629
+          ],
+          "end_coords": [
+            37.6485,
+            -118.9721
+          ],
+          "driving_hours": 2,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Manzanar National Historic Site",
+              "coords": [
+                36.7284,
+                -118.1547
+              ],
+              "description": "Preserved WWII Japanese American internment camp with powerful museum \u2014 dogs in outdoor areas on leash",
+              "type": "attraction"
+            },
+            {
+              "name": "Erick Schat's Bakkery Bishop",
+              "coords": [
+                37.3635,
+                -118.3946
+              ],
+              "description": "Legendary bakery since 1938 \u2014 famous sheepherder bread and pastries, a Highway 395 institution",
+              "type": "attraction"
+            },
+            {
+              "name": "Ancient Bristlecone Pine Forest",
+              "coords": [
+                37.385,
+                -118.175
+              ],
+              "description": "Home to 4,500-year-old trees \u2014 oldest living organisms on Earth, dogs on leash in Inyo National Forest",
+              "type": "national_park"
+            },
+            {
+              "name": "Wild Willy's Hot Spring",
+              "coords": [
+                37.587,
+                -118.652
+              ],
+              "description": "Free natural hot springs with stunning Sierra Nevada views on both sides \u2014 dogs around springs (not in water)",
+              "type": "attraction"
+            },
+            {
+              "name": "Convict Lake",
+              "coords": [
+                37.5885,
+                -118.8561
+              ],
+              "description": "Deep cobalt-blue lake enclosed by colorful 12,000ft cliffs \u2014 3-mile dog-friendly loop trail",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Mammoth Lakes, CA",
+          "end": "Mammoth Lakes, CA",
+          "start_coords": [
+            37.6485,
+            -118.9721
+          ],
+          "end_coords": [
+            37.6485,
+            -118.9721
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Mammoth Mountain Scenic Gondola",
+              "coords": [
+                37.6306,
+                -119.0326
+              ],
+              "description": "Ride to 11,053ft summit for panoramic Sierra views \u2014 leashed dogs welcome on the gondola in summer",
+              "type": "attraction"
+            },
+            {
+              "name": "Horseshoe Lake Dog Beach",
+              "coords": [
+                37.615,
+                -119.018
+              ],
+              "description": "Unofficial dog swimming spot where locals bring their dogs \u2014 flat loop trail through lodgepole pines",
+              "type": "attraction"
+            },
+            {
+              "name": "June Lake Loop",
+              "coords": [
+                37.7747,
+                -119.0783
+              ],
+              "description": "16-mile scenic loop with four alpine lakes \u2014 stunning half-day drive with swimming and fishing stops",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Twin Lakes Campground",
+              "coords": [
+                37.628,
+                -119.001
+              ],
+              "description": "Mountain lake camping at Twin Lakes Campground (8,600ft) in the Mammoth Lakes Basin. Mammoth is arguably the most dog-friendly mountain town in California \u2014 dogs ride the scenic gondola to 11,053ft, swim at Horseshoe Lake's unofficial dog beach, and roam off-leash in wilderness areas. 65F days, cool nights, six alpine lakes within walking distance. After the high desert, this is an alpine paradise.",
+              "type": "camping"
+            },
+            {
+              "name": "Lakes Basin Drive",
+              "coords": [
+                37.635,
+                -119.0
+              ],
+              "description": "Drive past six pristine alpine lakes \u2014 Twin Lakes, Lake Mary, Lake Mamie, Lake George, Horseshoe Lake",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Mammoth Lakes, CA",
+          "end": "Tonopah, NV",
+          "start_coords": [
+            37.6485,
+            -118.9721
+          ],
+          "end_coords": [
+            38.0672,
+            -117.2301
+          ],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Mono Lake South Tufa",
+              "coords": [
+                37.939,
+                -119.03
+              ],
+              "description": "Otherworldly calcium-carbonate towers rising from an ancient alkaline lake \u2014 best at sunset, dog-friendly",
+              "type": "attraction"
+            },
+            {
+              "name": "Mizpah Hotel",
+              "coords": [
+                38.0672,
+                -117.2301
+              ],
+              "description": "Beautifully restored 1907 hotel \u2014 voted #1 Haunted Hotel in America, pet-friendly rooms",
+              "type": "attraction"
+            },
+            {
+              "name": "Tonopah Stargazing",
+              "coords": [
+                38.068,
+                -117.229
+              ],
+              "description": "#1 stargazing destination in America \u2014 designated dark sky community with extraordinary night skies",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Tonopah, NV",
+          "end": "Ely, NV",
+          "start_coords": [
+            38.0672,
+            -117.2301
+          ],
+          "end_coords": [
+            39.2474,
+            -114.8886
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Nevada Northern Railway",
+              "coords": [
+                39.2474,
+                -114.8886
+              ],
+              "description": "Ride a historic steam locomotive through the Nevada desert \u2014 one of America's best-preserved railroad museums",
+              "type": "attraction"
+            },
+            {
+              "name": "Cave Lake State Park",
+              "coords": [
+                39.164,
+                -114.744
+              ],
+              "description": "32-acre reservoir with trout fishing, hiking trails, and shoreline walks \u2014 dogs welcome on leash",
+              "type": "national_park"
+            },
+            {
+              "name": "Ward Charcoal Ovens",
+              "coords": [
+                39.0844,
+                -114.931
+              ],
+              "description": "Six massive beehive-shaped stone charcoal ovens from 1876 \u2014 hiking trails through pinyon-juniper forest",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Ely, NV",
+          "end": "Green River, UT",
+          "start_coords": [
+            39.2474,
+            -114.8886
+          ],
+          "end_coords": [
+            38.9957,
+            -110.1628
+          ],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Great Basin NP (distant view)",
+              "coords": [
+                39.005,
+                -114.219
+              ],
+              "description": "70 miles from Ely \u2014 optional detour for Wheeler Peak Scenic Drive to 10,000ft and Lehman Caves",
+              "type": "national_park"
+            },
+            {
+              "name": "San Rafael Swell",
+              "coords": [
+                38.87,
+                -110.68
+              ],
+              "description": "Dramatic eroded red rock formations, canyons, and mesas visible from I-70 through central Utah",
+              "type": "scenic_drive"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Green River, UT",
+          "end": "Parker, CO",
+          "start_coords": [
+            38.9957,
+            -110.1628
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Glenwood Canyon",
+              "coords": [
+                39.568,
+                -107.218
+              ],
+              "description": "12.5 miles of I-70 carved through 2,000-foot canyon walls along the Colorado River",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Glenwood Springs",
+              "coords": [
+                39.5505,
+                -107.3248
+              ],
+              "description": "Walk the dog on the Glenwood Canyon Recreation Trail (paved, 16mi) \u2014 grab lunch at Bluebird Cafe",
+              "type": "town"
+            },
+            {
+              "name": "Eisenhower Tunnel",
+              "coords": [
+                39.6792,
+                -105.9139
+              ],
+              "description": "Highest point on the US Interstate system at 11,158ft \u2014 crossing the Continental Divide",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Coastal & I-40 Corridor",
+      "theme": "California coast start, Petrified Forest dog paradise, Coconino pine forest camping, and Garden of the Gods",
+      "total_days": 8,
+      "total_driving_hours": 26,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "San Luis Obispo, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            35.2828,
+            -120.6596
+          ],
+          "driving_hours": 3.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Pinnacles National Park",
+              "coords": [
+                36.4906,
+                -121.1825
+              ],
+              "description": "Volcanic spires and talus caves \u2014 dogs restricted to Bench Trail only but the drive-through is spectacular",
+              "type": "national_park"
+            },
+            {
+              "name": "San Luis Obispo Downtown",
+              "coords": [
+                35.2828,
+                -120.6596
+              ],
+              "description": "Charming college town with Thursday farmers market, creek walk, and mission \u2014 many dog-friendly patios",
+              "type": "town"
+            },
+            {
+              "name": "Morro Rock",
+              "coords": [
+                35.3713,
+                -120.8683
+              ],
+              "description": "Iconic 576-foot volcanic plug \u2014 dog-friendly Morro Strand State Beach for an evening walk",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "San Luis Obispo, CA",
+          "end": "Barstow, CA",
+          "start_coords": [
+            35.2828,
+            -120.6596
+          ],
+          "end_coords": [
+            34.8958,
+            -117.0173
+          ],
+          "driving_hours": 4.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Route 66 Mother Road Museum",
+              "coords": [
+                34.8958,
+                -117.0173
+              ],
+              "description": "Housed in the restored 1911 Casa del Desierto Harvey House \u2014 free museum of Route 66 history",
+              "type": "attraction"
+            },
+            {
+              "name": "Calico Ghost Town",
+              "coords": [
+                34.945,
+                -116.868
+              ],
+              "description": "1880s silver mining ghost town with original buildings \u2014 walking tours, dog-friendly on leash",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Barstow, CA",
+          "end": "Flagstaff, AZ",
+          "start_coords": [
+            34.8958,
+            -117.0173
+          ],
+          "end_coords": [
+            35.1983,
+            -111.6513
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Snow Cap Drive-In Seligman",
+              "coords": [
+                35.328,
+                -112.878
+              ],
+              "description": "Quirky Route 66 roadside diner with fake mustard bottles and classic cars \u2014 photo-op institution",
+              "type": "attraction"
+            },
+            {
+              "name": "Route 66 Seligman",
+              "coords": [
+                35.328,
+                -112.878
+              ],
+              "description": "The birthplace of the Route 66 preservation movement \u2014 inspired the Cars movie town of Radiator Springs",
+              "type": "town"
+            },
+            {
+              "name": "Flagstaff Historic Downtown",
+              "coords": [
+                35.1983,
+                -111.6513
+              ],
+              "description": "World's first International Dark Sky City \u2014 craft breweries, Northern Arizona University, ponderosa pine forest",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Flagstaff, AZ",
+          "end": "Flagstaff, AZ",
+          "start_coords": [
+            35.1983,
+            -111.6513
+          ],
+          "end_coords": [
+            35.1983,
+            -111.6513
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Sunset Crater Lava Flow Trail",
+              "coords": [
+                35.365,
+                -111.54
+              ],
+              "description": "Surreal black volcanic cinder landscape \u2014 1,000-year-old lava fields, dog-friendly on leash",
+              "type": "national_park"
+            },
+            {
+              "name": "Bonito Campground",
+              "coords": [
+                35.362,
+                -111.538
+              ],
+              "description": "Ponderosa pine forest camping at Bonito Campground (6,900ft) in Coconino National Forest \u2014 next to Sunset Crater volcano. Wake to elk wandering through camp, hike the surreal black lava Sunset Crater trail with the dog, explore Walnut Canyon cliff dwellings (Rim Trail is dog-friendly), and stargaze under the world's first Dark Sky City. The ponderosa bark smells like butterscotch in the warm sun. 78F days, 40F nights \u2014 a forest oasis after desert driving.",
+              "type": "camping"
+            },
+            {
+              "name": "Walnut Canyon National Monument",
+              "coords": [
+                35.1714,
+                -111.5098
+              ],
+              "description": "800-year-old cliff dwellings \u2014 Rim Trail (0.9mi) is dog-friendly with canyon views",
+              "type": "national_park"
+            },
+            {
+              "name": "Fatman's Loop Trail",
+              "coords": [
+                35.21,
+                -111.59
+              ],
+              "description": "Dog-friendly mountain trail with panoramic views of Flagstaff and the San Francisco Peaks",
+              "type": "attraction"
+            },
+            {
+              "name": "Lake Mary",
+              "coords": [
+                34.98,
+                -111.52
+              ],
+              "description": "Two alpine lakes 15 minutes from Flagstaff \u2014 dog swimming, fishing, forest picnicking at 7,000ft",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Flagstaff, AZ",
+          "end": "Holbrook, AZ",
+          "start_coords": [
+            35.1983,
+            -111.6513
+          ],
+          "end_coords": [
+            34.9024,
+            -110.1579
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Meteor Crater",
+              "coords": [
+                35.028,
+                -111.022
+              ],
+              "description": "550-foot-deep, mile-wide impact crater \u2014 Apollo astronauts trained here. Pet Ramada and off-leash dog runs",
+              "type": "attraction"
+            },
+            {
+              "name": "Petrified Forest National Park",
+              "coords": [
+                34.91,
+                -109.787
+              ],
+              "description": "The most dog-friendly NPS site \u2014 dogs on ALL trails. Ancient petrified wood across Painted Desert badlands. BARK Ranger program",
+              "type": "national_park"
+            },
+            {
+              "name": "Standin' on the Corner Park Winslow",
+              "coords": [
+                35.0241,
+                -110.6974
+              ],
+              "description": "Eagles 'Take It Easy' tribute with Glenn Frey statue and red flatbed Ford truck",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Holbrook, AZ",
+          "end": "Santa Fe, NM",
+          "start_coords": [
+            34.9024,
+            -110.1579
+          ],
+          "end_coords": [
+            35.687,
+            -105.9378
+          ],
+          "driving_hours": 4.25,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Route 66 Neon Arch Grants",
+              "coords": [
+                35.1472,
+                -107.8514
+              ],
+              "description": "Iconic neon arch spanning Route 66 \u2014 classic Americana photo stop in this uranium mining town",
+              "type": "attraction"
+            },
+            {
+              "name": "Canyon Road Santa Fe",
+              "coords": [
+                35.682,
+                -105.928
+              ],
+              "description": "Half-mile of 80+ art galleries, many welcoming dogs \u2014 the art capital of the American Southwest",
+              "type": "attraction"
+            },
+            {
+              "name": "Frank Ortiz Dog Park",
+              "coords": [
+                35.705,
+                -105.978
+              ],
+              "description": "138 acres of off-leash paradise with mountain views \u2014 one of the best dog parks in the Southwest",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Santa Fe, NM",
+          "end": "Colorado Springs, CO",
+          "start_coords": [
+            35.687,
+            -105.9378
+          ],
+          "end_coords": [
+            38.8339,
+            -104.8214
+          ],
+          "driving_hours": 4.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Raton Pass",
+              "coords": [
+                36.9917,
+                -104.86
+              ],
+              "description": "7,834-foot Santa Fe Trail pass through the Sangre de Cristo Mountains into Colorado",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Spanish Peaks",
+              "coords": [
+                37.375,
+                -104.983
+              ],
+              "description": "Sacred twin volcanic peaks rising above the plains \u2014 dramatic views from I-25",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Garden of the Gods",
+              "coords": [
+                38.8786,
+                -104.87
+              ],
+              "description": "300-foot red sandstone formations against Pikes Peak \u2014 ALL 21 miles of trails dog-friendly, free entry",
+              "type": "national_park"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Colorado Springs, CO",
+          "end": "Parker, CO",
+          "start_coords": [
+            38.8339,
+            -104.8214
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 1,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Cherry Creek State Park",
+              "coords": [
+                39.6333,
+                -104.85
+              ],
+              "description": "107-acre off-leash dog area \u2014 perfect victory lap for Sabby after 8 days on the road",
+              "type": "attraction"
+            },
+            {
+              "name": "Palmer Park",
+              "coords": [
+                38.858,
+                -104.787
+              ],
+              "description": "Dog-friendly mesa-top park in Colorado Springs with red rock formations and mountain views",
+              "type": "attraction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Montana Big Sky",
+      "theme": "Lewis & Clark history, Montana big sky country, mountain town culture, Bighorn Mountains, and Wyoming ranch country",
+      "total_days": 8,
+      "total_driving_hours": 35.5,
+      "days": [
+        {
+          "day": 1,
+          "start": "Carmel-by-the-Sea, CA",
+          "end": "Chico, CA",
+          "start_coords": [
+            36.5554,
+            -121.9233
+          ],
+          "end_coords": [
+            39.7285,
+            -121.8375
+          ],
+          "driving_hours": 5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Bidwell Park -- Upper Park",
+              "coords": [
+                39.76,
+                -121.75
+              ],
+              "description": "3,670-acre municipal park, 3rd largest in the US. Upper Park has swimming holes in Big Chico Creek, basalt formations, and oak woodlands. The swimming scene from the 1938 Robin Hood was filmed at Bear Hole. Dogs allowed on leash throughout; off-leash in designated areas.",
+              "type": "attraction"
+            },
+            {
+              "name": "Bidwell Park -- Lower Park & One-Mile Recreation Area",
+              "coords": [
+                39.735,
+                -121.82
+              ],
+              "description": "Paved paths under massive sycamores and oaks along Big Chico Creek. Sycamore Pool for swimming. Flat, easy walking with the dog. One of the most beautiful urban creekside parks in California.",
+              "type": "attraction"
+            },
+            {
+              "name": "Sierra Nevada Brewing Company",
+              "coords": [
+                39.7244,
+                -121.8147
+              ],
+              "description": "Iconic craft brewery campus with taproom, restaurant, extensive gardens, and dog-friendly patio. One of the most important craft breweries in American history. Self-guided garden tour.",
+              "type": "attraction"
+            },
+            {
+              "name": "Downtown Chico",
+              "coords": [
+                39.7296,
+                -121.8375
+              ],
+              "description": "Walkable downtown with galleries, bookshops, cafes, and restaurants. Thursday Night Market in summer. Dog-friendly patios at Madison Bear Garden, The Banshee, and The Handlebar.",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "start": "Chico, CA",
+          "end": "Winnemucca, NV",
+          "start_coords": [
+            39.7285,
+            -121.8375
+          ],
+          "end_coords": [
+            40.973,
+            -117.7357
+          ],
+          "driving_hours": 5.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Feather River Canyon (en route)",
+              "coords": [
+                39.95,
+                -121.3
+              ],
+              "description": "CA-70 follows the Feather River through a deep canyon for 80+ miles. Railroad bridges, tunnels visible across the gorge, river swimming holes. One of NorCal's most underrated scenic drives. Multiple pullouts for dog walks.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Winnemucca Sand Dunes",
+              "coords": [
+                41.02,
+                -117.68
+              ],
+              "description": "BLM-managed sand dunes just north of town. Open for walking, OHV riding, photography. Dogs welcome off-leash on BLM land. Unexpected desert landscape.",
+              "type": "attraction"
+            },
+            {
+              "name": "Martin Hotel -- Basque Dining",
+              "coords": [
+                40.973,
+                -117.735
+              ],
+              "description": "Historic 1898 Basque boardinghouse serving family-style Basque dinners. Lamb chops, Picon punch, communal tables. An authentic slice of Northern Nevada's Basque heritage.",
+              "type": "attraction"
+            },
+            {
+              "name": "Humboldt River Walk",
+              "coords": [
+                40.97,
+                -117.74
+              ],
+              "description": "Paved riverwalk along the Humboldt River through town. Evening dog walk with cottonwood shade. Connected to Winnemucca city parks.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "start": "Winnemucca, NV",
+          "end": "Boise, ID",
+          "start_coords": [
+            40.973,
+            -117.7357
+          ],
+          "end_coords": [
+            43.615,
+            -116.2023
+          ],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Shoshone Falls (en route, Twin Falls)",
+              "coords": [
+                42.593,
+                -114.399
+              ],
+              "description": "212-foot waterfall on the Snake River -- taller than Niagara Falls. Called the 'Niagara of the West.' $5 vehicle fee. Dogs welcome on leash throughout the park. Canyon Rim Trail (9 miles) connects to the falls. Best flow in May-June from snowmelt.",
+              "type": "attraction"
+            },
+            {
+              "name": "Boise River Greenbelt",
+              "coords": [
+                43.605,
+                -116.21
+              ],
+              "description": "25-mile paved pathway along the Boise River through the heart of the city. Mature cottonwoods, parks, river swimming access. Fully dog-friendly. Best urban river trail in the Mountain West.",
+              "type": "attraction"
+            },
+            {
+              "name": "Camel's Back Park & Ridge to Rivers Trails",
+              "coords": [
+                43.635,
+                -116.21
+              ],
+              "description": "11-acre park connecting to 190+ miles of foothill trails. Off-leash dog area. Views of the city and the Boise Front mountain range. Perfect sunset hike spot.",
+              "type": "attraction"
+            },
+            {
+              "name": "Freak Alley Gallery",
+              "coords": [
+                43.6155,
+                -116.203
+              ],
+              "description": "Largest outdoor mural gallery in the Pacific Northwest. Downtown alleyway covered in murals by local artists. Free, walkable with dog. Between 8th and 9th Streets.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "start": "Boise, ID",
+          "end": "Missoula, MT",
+          "start_coords": [
+            43.615,
+            -116.2023
+          ],
+          "end_coords": [
+            46.8721,
+            -113.994
+          ],
+          "driving_hours": 7.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Traveler's Rest State Park",
+              "coords": [
+                46.7485,
+                -114.0837
+              ],
+              "description": "The ONLY Lewis & Clark campsite with confirmed archaeological evidence. The expedition camped here Sept 9-11, 1805 before crossing the Bitterroots, and again June 30 - July 3, 1806 on the return trip. Trails along Lolo Creek, 115 bird species recorded. Dogs welcome on leash throughout. $8 out-of-state.",
+              "type": "attraction"
+            },
+            {
+              "name": "Rattlesnake National Recreation Area",
+              "coords": [
+                46.94,
+                -113.95
+              ],
+              "description": "61,000-acre wilderness area just north of Missoula. Miles of dog-friendly trails through pristine forest, crystal-clear streams, and mountain meadows. Rattlesnake Creek Trail is an easy 4-mile out-and-back. Dogs off-leash under voice control in wilderness areas.",
+              "type": "attraction"
+            },
+            {
+              "name": "Mount Sentinel 'M' Trail",
+              "coords": [
+                46.858,
+                -113.975
+              ],
+              "description": "Iconic switchback trail climbing 2,000 feet above Missoula to the concrete 'M' overlooking the University of Montana. Panoramic views of the entire Missoula Valley and five surrounding mountain ranges. Dogs welcome on leash.",
+              "type": "attraction"
+            },
+            {
+              "name": "Carousel for Missoula & Caras Park",
+              "coords": [
+                46.87,
+                -113.996
+              ],
+              "description": "Hand-carved carousel downtown on the Clark Fork River. Caras Park hosts summer events along the riverfront. Leashed dogs welcome in the park area. Walk across the Higgins Avenue Bridge for river views and Clark Fork Trail access.",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "start": "Missoula, MT",
+          "end": "Bozeman, MT",
+          "start_coords": [
+            46.8721,
+            -113.994
+          ],
+          "end_coords": [
+            45.677,
+            -111.0429
+          ],
+          "driving_hours": 3,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Gates of the Mountains Viewpoint (en route, near Helena)",
+              "coords": [
+                46.78,
+                -111.95
+              ],
+              "description": "Lewis named this dramatic Missouri River canyon where 1,200-foot limestone cliffs appear to open like a gate as you approach. Boat tours available (no dogs on boats) but the viewpoint and surrounding Helena National Forest trails are dog-friendly. 20 miles north of Helena off I-15.",
+              "type": "attraction"
+            },
+            {
+              "name": "Hyalite Canyon Recreation Area",
+              "coords": [
+                45.57,
+                -111.0
+              ],
+              "description": "15 miles south of Bozeman. 30,000-acre recreation area in Gallatin National Forest with multiple waterfalls (Palisade Falls, Grotto Falls), Hyalite Reservoir, and trails to alpine lakes. Dogs welcome throughout on leash; off-leash in some backcountry areas. Three campgrounds open May 15-Sept 15.",
+              "type": "national_park"
+            },
+            {
+              "name": "Peets Hill / Burke Park",
+              "coords": [
+                45.68,
+                -111.035
+              ],
+              "description": "2-mile loop trail in the heart of Bozeman with 360-degree views of the Bridger Range, Gallatin Range, and Spanish Peaks. Popular sunset spot. Off-leash friendly. The most iconic Bozeman walk.",
+              "type": "attraction"
+            },
+            {
+              "name": "Downtown Bozeman Main Street",
+              "coords": [
+                45.6795,
+                -111.034
+              ],
+              "description": "Historic Main Street lined with independent bookshops (Country Bookshelf), galleries, outdoor gear shops (Schnee's Boots), and farm-to-table restaurants. Dog-friendly patios everywhere. The vibe of a Western town that grew up without losing its character.",
+              "type": "town"
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "start": "Bozeman, MT",
+          "end": "Bozeman, MT",
+          "start_coords": [
+            45.677,
+            -111.0429
+          ],
+          "end_coords": [
+            45.677,
+            -111.0429
+          ],
+          "driving_hours": 0,
+          "is_rest_day": true,
+          "is_camping": true,
+          "highlights": [
+            {
+              "name": "Palisade Falls",
+              "coords": [
+                45.54,
+                -111.055
+              ],
+              "description": "80-foot waterfall in Hyalite Canyon. Easy 1.2-mile round trip on a paved/gravel path through dense forest. ADA accessible. One of the most accessible waterfalls in Montana. Dogs on leash.",
+              "type": "attraction"
+            },
+            {
+              "name": "Grotto Falls",
+              "coords": [
+                45.525,
+                -111.04
+              ],
+              "description": "Beautiful waterfall at the end of a 2.5-mile forested trail in Hyalite Canyon. You can walk behind the falls. Less crowded than Palisade. Dogs on leash.",
+              "type": "attraction"
+            },
+            {
+              "name": "Hyalite Reservoir",
+              "coords": [
+                45.53,
+                -110.99
+              ],
+              "description": "Alpine reservoir camping at Hyalite Canyon (6,800ft) in Gallatin National Forest \u2014 Montana's best-kept secret. Wake to mist rising off the reservoir with the Hyalite Peaks reflected in the water. Morning hike to Palisade Falls (80ft, paved trail) or Grotto Falls (walk behind the waterfall), afternoon dog swimming from the rocky shoreline, evening campfire under the biggest sky you've ever seen. Cutthroat trout fishing, kayak rentals nearby. 75F days, 40F nights \u2014 true Big Sky Country camping.",
+              "type": "camping"
+            },
+            {
+              "name": "Beehive Basin Trail (Big Sky detour)",
+              "coords": [
+                45.28,
+                -111.4
+              ],
+              "description": "3-mile one-way hike to an alpine basin at 9,200ft with wildflower meadows and panoramic views of Lone Mountain and the Spanish Peaks. One of the best dog-friendly hikes in Montana. 50 miles south of Bozeman in Big Sky.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "start": "Bozeman, MT",
+          "end": "Sheridan, WY",
+          "start_coords": [
+            45.677,
+            -111.0429
+          ],
+          "end_coords": [
+            44.7972,
+            -106.9561
+          ],
+          "driving_hours": 4,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Little Bighorn Battlefield National Monument (en route)",
+              "coords": [
+                45.5694,
+                -107.4268
+              ],
+              "description": "Site of the 1876 Battle of the Little Bighorn where Lakota, Cheyenne, and Arapaho warriors defeated Custer's 7th Cavalry. Self-guided tour of battlefield, monuments, and national cemetery. Dogs allowed on leash in parking areas and along paved paths but NOT on the battlefield trails. One of the most significant sites in American Western history.",
+              "type": "attraction"
+            },
+            {
+              "name": "Bighorn Scenic Byway (US-14)",
+              "coords": [
+                44.75,
+                -107.3
+              ],
+              "description": "57-mile scenic byway climbing from Sheridan/Dayton through Bighorn National Forest. Prairie to alpine in 30 miles. Shell Falls (120ft waterfall with boardwalk), Burgess Junction, and Granite Pass (9,033ft). Dogs welcome on all National Forest trails on leash. 1,200 miles of trails in Bighorn NF.",
+              "type": "scenic_drive"
+            },
+            {
+              "name": "Historic Downtown Sheridan & The Mint Bar",
+              "coords": [
+                44.798,
+                -106.955
+              ],
+              "description": "Victorian-era Main Street with Western shops, galleries, and the legendary Mint Bar -- walls covered in taxidermy, saddles for barstools, Rainier neon signs. King's Saddlery next door has a museum of Western memorabilia. Authentic Western small-town America.",
+              "type": "town"
+            },
+            {
+              "name": "Tongue River Trail & Kendrick Park",
+              "coords": [
+                44.8,
+                -106.94
+              ],
+              "description": "Paved trail system along the Tongue River through Sheridan. Kendrick Park has a dog-friendly area, creek access, and mature cottonwoods. Perfect morning or evening dog walk before or after the drive.",
+              "type": "attraction"
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "start": "Sheridan, WY",
+          "end": "Parker, CO",
+          "start_coords": [
+            44.7972,
+            -106.9561
+          ],
+          "end_coords": [
+            39.5186,
+            -104.7614
+          ],
+          "driving_hours": 6.5,
+          "is_rest_day": false,
+          "is_camping": false,
+          "highlights": [
+            {
+              "name": "Buffalo, WY -- Clear Creek Trail",
+              "coords": [
+                44.3483,
+                -106.6989
+              ],
+              "description": "Charming Western town with 20+ miles of Clear Creek Trail system running through it. Dog-friendly trails along the creek with mountain views. Good coffee stop at The Busy Bee or Sagewood Cafe. Jim Gatchell Memorial Museum tells the story of the Johnson County War.",
+              "type": "town"
+            },
+            {
+              "name": "National Historic Trails Interpretive Center (Casper)",
+              "coords": [
+                42.858,
+                -106.32
+              ],
+              "description": "11,000-sq-ft museum telling the story of the Oregon, Mormon, California, and Pony Express trails -- all converged at Casper's river crossing. Interactive exhibits, film presentations. Dogs not allowed inside; partner takes turns. Free admission.",
+              "type": "attraction"
+            },
+            {
+              "name": "Ayres Natural Bridge Park",
+              "coords": [
+                42.73,
+                -105.62
+              ],
+              "description": "One of only three natural bridges in the US with water flowing beneath. Small county park with picnic areas, hiking paths, and LaPrele Creek. Free admission. Dogs on leash. 45 minutes east of Casper, just off I-25.",
+              "type": "attraction"
+            },
+            {
+              "name": "Cheyenne, WY -- State Capitol",
+              "coords": [
+                41.14,
+                -104.8202
+              ],
+              "description": "Wyoming's capital city. Walk around the gold-domed State Capitol (exterior is dog-friendly). Cheyenne Depot Museum in a beautiful railroad station. Quick stretch stop before the final 2-hour push to Parker.",
+              "type": "town"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
