@@ -424,18 +424,25 @@
       .st-val { font-size: 18px; }
       .sum-stats { gap: 28px; }
       .sum-val { font-size: 40px; }
-      .day-sec { padding: 60px 16px 30px; padding-left: 20px; }
-      .attraction { margin-bottom: 40px; }
-      .attraction-header { padding: 16px 16px 12px; }
-      .attraction-body { padding: 0 16px 20px; }
+      .day-sec { padding: 48px 16px 24px; padding-left: 20px; }
+      .day-title { margin-bottom: 10px; }
+      .day-meta { margin-bottom: 16px; }
+      .attraction { margin-bottom: 32px; }
+      .attraction-header { padding: 14px 14px 10px; gap: 8px; }
+      .attraction-body { padding: 14px 14px 18px; }
+      .attraction-name { margin-bottom: 10px; }
       .carousel-prev, .carousel-next { opacity: 1; width: 38px; height: 38px; font-size: 18px; }
       .carousel-prev { left: 10px; }
       .carousel-next { right: 10px; }
       .attraction-bullets { font-size: 15px; }
       .carousel-track img { max-height: 300px; }
-      .lodging-sec { padding: 0 16px 30px; }
+      .lodging-sec { padding: 0 16px 24px; padding-left: 20px; }
+      .lodging-wrapper { padding: 18px; }
       .lodging-grid { grid-template-columns: 1fr; }
-      .mini-map-wrap { width: 480px; height: 200px; bottom: 16px; right: 16px; }
+      .mini-map-wrap { width: 280px; height: 180px; bottom: 16px; right: 16px; }
+      .drive-badge { font-size: 9px; padding: 2px 8px; }
+      .dog-badge { font-size: 9px; padding: 2px 8px; }
+      .hl-tag { font-size: 9px; padding: 2px 7px; }
     }
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
@@ -443,11 +450,21 @@
       .stats-row { gap: 14px; }
       .st-val { font-size: 16px; }
       .st-lbl { font-size: 9px; }
-      .attraction { border-radius: 10px; }
+      .day-sec { padding: 40px 12px 20px; padding-left: 16px; }
+      .day-num { font-size: 11px; margin-bottom: 6px; }
+      .day-meta { font-size: 13px; margin-bottom: 12px; }
+      .attraction { border-radius: 10px; margin-bottom: 28px; }
+      .attraction-header { padding: 12px 12px 8px; gap: 6px; }
+      .attraction-body { padding: 12px 12px 16px; }
       .carousel-track img { max-height: 260px; }
+      .lodging-sec { padding: 0 12px 20px; padding-left: 16px; }
+      .lodging-wrapper { padding: 14px; }
       .lodging-card { padding: 16px; }
       .lodging-name { font-size: 14px; }
-      .mini-map-wrap { width: 400px; height: 160px; bottom: 12px; right: 12px; }
+      .lodging-label { font-size: 10px; letter-spacing: 1.5px; gap: 6px; }
+      .mini-map-wrap { width: calc(100vw - 24px); max-width: 360px; height: 150px; bottom: 12px; right: 12px; }
+      .rest-label { font-size: 11px; letter-spacing: 2.5px; }
+      .rest-place { font-size: clamp(24px, 5vw, 40px); }
     }
   </style>
 </head>
