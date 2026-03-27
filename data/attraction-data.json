@@ -3679,5 +3679,767 @@
       "Cheyenne Frontier Days, held annually since 1897, is the world's largest outdoor rodeo \u2014 10 days of Western celebration",
       "The Frontier Days Old West Museum, historic depot district, and Big Boy steam locomotive #4004 are all walkable from the capitol"
     ]
+  },
+  "Flagstaff Urban Trail System": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Large_Ponderosa_Pine_%287166797673%29.jpg/1280px-Large_Ponderosa_Pine_%287166797673%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836655489890%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836655489890%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911015261%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911015261%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911070041%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911070041%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Extensive network of paved and natural-surface trails through ponderosa pine forests within Flagstaff city limits",
+      "FUTS connects neighborhoods, parks, and downtown to the surrounding national forest \u2014 over 56 miles of trails",
+      "Dog-friendly and well-marked; the trails see joggers, cyclists, and dog walkers year-round at 7,000 feet elevation",
+      "A rare chance to walk through old-growth ponderosa pine forest without leaving town"
+    ]
+  },
+  "Mother Road Brewing Company": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mother_Road_Brewing_Company.jpg/1280px-Mother_Road_Brewing_Company.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mother_Road_Brewing_Co_%2829535031603%29.jpg/1280px-Mother_Road_Brewing_Co_%2829535031603%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mother_Road_Brewing_Co_%2829535027013%29.jpg/1280px-Mother_Road_Brewing_Co_%2829535027013%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Mother_Road_Brewing_Company_%2823911687701%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mother_Road_Brewing_Co_%2830049464272%29.jpg/1280px-Mother_Road_Brewing_Co_%2830049464272%29.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Craft brewery in Flagstaff's historic Southside district, named for the Route 66 corridor that runs through town",
+      "Dog-friendly patio with a rotating tap list of Arizona-brewed ales, IPAs, and seasonal specialties",
+      "A popular locals' hangout that captures Flagstaff's mix of mountain-town grit and college-town creativity",
+      "Food trucks usually parked outside; the interior has a railroad-industrial vibe fitting for a Route 66 brewery"
+    ]
+  },
+  "Red Rock Canyon": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Calico_Hills_-_panorama.jpg/1280px-Calico_Hills_-_panorama.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Red_Rock_Canyon_HDR_7.jpg/1280px-Red_Rock_Canyon_HDR_7.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Red_Rock_Canyon_HDR_5.jpg/1280px-Red_Rock_Canyon_HDR_5.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Aztec_Sandstone_-_Red_Rock_Canyon.jpg/1280px-Aztec_Sandstone_-_Red_Rock_Canyon.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Red_Rock_Canyon_National_Conservation_Area_%2832016619400%29.jpg/1280px-Red_Rock_Canyon_National_Conservation_Area_%2832016619400%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "13-mile scenic loop through towering Aztec sandstone formations just 20 minutes west of the Las Vegas Strip",
+      "The red and cream banded cliffs rise 3,000 feet from the desert floor \u2014 a dramatic geological showcase of ancient sand dunes turned to stone",
+      "Dog-friendly on the scenic drive and several connector trails; mornings are coolest for walking with pets",
+      "Petroglyphs, desert tortoises, and wild burros add to the experience; the geology rivals anything in southern Utah"
+    ]
+  },
+  "Coral Pink Sand Dunes State Park": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA9.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA9.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA11.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA11.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA4.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA8.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA8.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA5.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park%2C_Utah%2C_USA5.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "Bright coral-pink sand dunes rising up to 2,000 feet between red Navajo sandstone cliffs near Kanab, Utah",
+      "Dogs are welcome on leash throughout the park \u2014 the soft sand is easy on paws and fun to explore",
+      "The unique pink color comes from eroding Navajo sandstone; wind funneling through the notch between the Moquith and Moccasin mountains builds the dunes",
+      "Less crowded than the big national parks, with a peaceful campground tucked against the dune field"
+    ]
+  },
+  "Kanab Creek Walk": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/William_Derby_Johnson%2C_Jr.%2C_House_%28Kanab%2C_Utah%29.jpg/1280px-William_Derby_Johnson%2C_Jr.%2C_House_%28Kanab%2C_Utah%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kanab%2C_street_02.jpg/1280px-Kanab%2C_street_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kanab_Post_Office.jpg/1280px-Kanab_Post_Office.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Grand_Staircase-Escalante_National_Monument_in_U.S._89_Area_Between_Kanab%2C_Utah_and_Page_Arizona_%287235101214%29.jpg/1280px-Grand_Staircase-Escalante_National_Monument_in_U.S._89_Area_Between_Kanab%2C_Utah_and_Page_Arizona_%287235101214%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Kanab%2C_Utah_%28101365726%29.jpg/1280px-Kanab%2C_Utah_%28101365726%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Gentle stroll through the small town of Kanab, Utah \u2014 gateway to Zion, Bryce, and Grand Canyon North Rim",
+      "The town's sandstone-lined creek runs through the center with cottonwood shade and western storefronts",
+      "Kanab bills itself as 'Little Hollywood' \u2014 dozens of classic westerns were filmed in the surrounding red-rock landscape",
+      "Dog-friendly shops, caf\u00e9s, and a laid-back vibe make this a perfect overnight stop between parks"
+    ]
+  },
+  "Best Friends Animal Sanctuary Visit": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Kanab%2C_Utah_%28101365726%29.jpg/1280px-Kanab%2C_Utah_%28101365726%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Kanab%2C_Utah_%289179242265%29.jpg/1280px-Kanab%2C_Utah_%289179242265%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Kanab%2C_Utah_and_Fredonia%2C_Arizona_%289181455780%29.jpg/1280px-Kanab%2C_Utah_and_Fredonia%2C_Arizona_%289181455780%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Kanab%2C_Utah_and_Fredonia%2C_Arizona_%28101365890%29.jpg/1280px-Kanab%2C_Utah_and_Fredonia%2C_Arizona_%28101365890%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kanab%2C_Utah_and_Fredonia%2C_Arizona_%289181454714%29.jpg/1280px-Kanab%2C_Utah_and_Fredonia%2C_Arizona_%289181454714%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "The nation's largest no-kill animal sanctuary, set in Angel Canyon near Kanab with 3,700 acres of red-rock landscape",
+      "Free guided tours let you meet the animals \u2014 dogs, cats, horses, parrots, pigs, and more awaiting adoption",
+      "Dogs are welcome on the tour; the sanctuary's mission has saved hundreds of thousands of animals since 1984",
+      "Gift shop and caf\u00e9 on site; the canyon setting alone is worth the drive from Kanab"
+    ]
+  },
+  "Moqui Cave": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Moqui_Cave_3648884941_12311b930e_o_cropped.jpg/1280px-Moqui_Cave_3648884941_12311b930e_o_cropped.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Kanab%2C_Utah_01.jpg/1280px-Kanab%2C_Utah_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Moqui_Cave_3648884941_12311b930e_o.jpg/1280px-Moqui_Cave_3648884941_12311b930e_o.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Moqui_Cave1.jpg/1280px-Moqui_Cave1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Kanab%2C_Utah_%28101365726%29.jpg/1280px-Kanab%2C_Utah_%28101365726%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Natural sandstone cave turned roadside museum and gift shop on US-89 just north of Kanab, Utah",
+      "Collections include dinosaur tracks, fluorescent minerals that glow under UV light, and Native American artifacts",
+      "The cave itself stays cool year-round \u2014 a fun, quirky stop that's been operating as a tourist attraction since 1951",
+      "A classic example of the roadside Americana attractions that once dotted every western highway"
+    ]
+  },
+  "Great Sand Dunes View": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sunset_near_Great_Sand_Dunes_National_Park.jpg/1280px-Sunset_near_Great_Sand_Dunes_National_Park.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Entering_Great_Sand_Dunes_National_Park%2C_CO.jpg/1280px-Entering_Great_Sand_Dunes_National_Park%2C_CO.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Great_Sand_Dunes_National_Park_3.jpg/1280px-Great_Sand_Dunes_National_Park_3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Great_Sand_Dunes_National_Park_2.jpg/1280px-Great_Sand_Dunes_National_Park_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg/1280px-Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Distant views of North America's tallest sand dunes rising 750 feet against the Sangre de Cristo Mountains in southern Colorado",
+      "The dunes are visible from Highway 160 and the San Luis Valley floor \u2014 a surreal sight of sand at 8,000 feet elevation",
+      "The contrast between the golden dunes, dark mountain backdrop, and flat valley floor is unique in North America",
+      "Even from a distance, the scale of the dune field is dramatic \u2014 covering 30 square miles at the base of the mountains"
+    ]
+  },
+  "Tonopah Historic Mining Park": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Panoramic_view_of_the_Tonopah_Mining_Park_%28now_a_historic_site%29_and_Mount_Butler_in_the_distance%2C_Tonopah%2C_Nevada%2C_ca.1904_%28CHS-5418%29.jpg/1280px-Panoramic_view_of_the_Tonopah_Mining_Park_%28now_a_historic_site%29_and_Mount_Butler_in_the_distance%2C_Tonopah%2C_Nevada%2C_ca.1904_%28CHS-5418%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Historic_Mining_Park_2018-04-07_Tonopah_04.jpg/1280px-Historic_Mining_Park_2018-04-07_Tonopah_04.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_01.jpg/1280px-Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_03.jpg/1280px-Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_03.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_02.jpg/1280px-Historic_Mining_Park_Desert_Queen_Mine_2018-04-07_Tonopah_02.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Open-air museum at the original 1900 silver strike site that turned Tonopah into Nevada's biggest boomtown",
+      "Walk through original mine headframes, ore bins, and processing equipment perched on the hillside above town",
+      "Self-guided trails lead past mining artifacts with interpretive signs explaining the boom-and-bust cycle that shaped the town",
+      "Views from the hilltop span the entire Tonopah valley \u2014 the same view miners saw when they struck the second-richest silver deposit in Nevada history"
+    ]
+  },
+  "Bryce Canyon Rim Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bryce_Canyon%2C_Rim_Trail_06.jpg/1280px-Bryce_Canyon%2C_Rim_Trail_06.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flickr_-_brewbooks_-_Bryce_Canyon_rim_trail.jpg/1280px-Flickr_-_brewbooks_-_Bryce_Canyon_rim_trail.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Rim_Trail%2C_Bryce_Canyon_National_Park_-_40910095011.jpg/1280px-Rim_Trail%2C_Bryce_Canyon_National_Park_-_40910095011.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rim_Trail%2C_Bryce_Canyon_National_Park.jpg/1280px-Rim_Trail%2C_Bryce_Canyon_National_Park.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Rim_Trail%2C_Sunset_Point%2C_Bryce_Canyon_National_Park%2C_Utah_%2834820292094%29.jpg/1280px-Rim_Trail%2C_Sunset_Point%2C_Bryce_Canyon_National_Park%2C_Utah_%2834820292094%29.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "Paved trail along the rim of Bryce Amphitheater with nonstop views of thousands of orange-red hoodoo formations",
+      "Dogs allowed on the Rim Trail \u2014 one of the few trails in the park open to pets \u2014 with easy access from parking areas",
+      "Connects Sunrise, Sunset, Inspiration, and Bryce Points over 5.5 miles of mostly flat walking",
+      "Elevation sits above 8,000 feet, keeping temperatures comfortable even in summer heat"
+    ]
+  },
+  "Bryce Canyon Shared Use Path": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Kodachrome_Basin_State_Park%2C_Utah_%282485693700%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0b/Turkey%2C_Bryce_Canyon_National_Park%2C_Utah_%2868932445%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Explore_Bryce_Canyon_National_Park_map%2C_Oct_17.jpg/1280px-Explore_Bryce_Canyon_National_Park_map%2C_Oct_17.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e6/Thor%27s_Hammer%2C_Bryce_Canyon_National_Park%2C_Utah_%282485746786%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bryce_Point%2C_Bryce_Canyon_National_Park_%282519290513%29.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "3.6-mile paved multi-use path between the park entrance and Inspiration Point \u2014 ideal for dogs and bikes",
+      "Runs parallel to the main park road through ponderosa pine forest with glimpses of red rock through the trees",
+      "Avoids the crowded shuttle system while still connecting key viewpoints along the canyon rim",
+      "Gentle grades and wide pavement make this an easy walk with dogs; connects to the Rim Trail at multiple points"
+    ]
+  },
+  "Red Canyon Trails": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bryce_Point%2C_Bryce_Canyon_National_Park_%282519290513%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Bryce_Point%2C_Bryce_Canyon_National_Park_%282519289063%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dixie_National_Forest_-_Red_Canyon_%2852649123678%29.jpg/1280px-Dixie_National_Forest_-_Red_Canyon_%2852649123678%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dixie_National_Forest_sign%2C_Red_Canyon%2C_Oct_17.jpg/1280px-Dixie_National_Forest_sign%2C_Red_Canyon%2C_Oct_17.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/42/Dixie_National_Forest%2C_Red_Canyon_-_panoramio_-_Frans-Banja_Mulder.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Network of hiking and biking trails through brilliant red-orange hoodoos along Highway 12 west of Bryce Canyon",
+      "Often called 'Little Bryce' \u2014 similar formations but far fewer people and free to visit (Dixie National Forest)",
+      "The highway passes through two natural tunnels carved in the red rock \u2014 a stunning entrance to the area",
+      "Dog-friendly trails wind among the hoodoos and through stands of ponderosa pine at 7,400 feet"
+    ]
+  },
+  "Capitol Reef Scenic Drive": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200659637.jpg/1280px-Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200659637.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_195229595.jpg/1280px-Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_195229595.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200304458.jpg/1280px-Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200304458.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200405779.jpg/1280px-Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200405779.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200104527.jpg/1280px-Scenic_Drive_Capitol_Reef_National_Park_UT_20220405_200104527.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "8-mile paved road cutting south from the Fruita historic district into the heart of the Waterpocket Fold",
+      "Towering sandstone walls in every shade of red, orange, and cream frame the drive on both sides",
+      "Pulloffs at Capitol Gorge and Grand Wash lead to short canyon walks between 800-foot walls",
+      "One of the least-crowded scenic drives in Utah's national parks \u2014 often feels like you have the canyon to yourself"
+    ]
+  },
+  "San Rafael Swell Viewpoint": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/San_Rafael_Swell_%28I-70%29.jpg/1280px-San_Rafael_Swell_%28I-70%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Pictograph_in_Buckhorn_Draw%2C_San_Rafael_Swell%2C_Utah.jpg/1280px-Pictograph_in_Buckhorn_Draw%2C_San_Rafael_Swell%2C_Utah.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/San_Rafael_Swell_-_east_face.jpg/1280px-San_Rafael_Swell_-_east_face.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/San_Rafael_Swell_4889485947.jpg/1280px-San_Rafael_Swell_4889485947.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/A260%2C_San_Rafael_Swell%2C_Little_Grand_Canyon%2C_Utah%2C_USA%2C_2008.JPG"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Overlook along I-70 where the San Rafael Swell's tilted sandstone layers create a dramatic desert landscape",
+      "The multi-colored rock formations range from deep red to cream to gray, exposed by millions of years of erosion",
+      "Pull-off parking areas allow you to step out and take in the vast scale of this geological feature",
+      "A window into the wild, remote heart of Utah's canyon country \u2014 visible from the highway but feeling worlds away"
+    ]
+  },
+  "Mojave National Preserve": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Map_of_Mojave_National_Preserve_NPS.jpg/1280px-Map_of_Mojave_National_Preserve_NPS.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/USA_-_California_-_Mojave_National_Preserve_-_53025837170.jpg/1280px-USA_-_California_-_Mojave_National_Preserve_-_53025837170.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Desert_Cactus_Plants_at_Mojave_National_Preserve_in_California_4.jpg/1280px-Desert_Cactus_Plants_at_Mojave_National_Preserve_in_California_4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/USA_-_California_-_Mojave_National_Preserve_-_53025221469.jpg/1280px-USA_-_California_-_Mojave_National_Preserve_-_53025221469.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/USA_-_California_-_Mojave_National_Preserve_-_53025442221.jpg/1280px-USA_-_California_-_Mojave_National_Preserve_-_53025442221.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "1.6-million-acre preserve spanning the gap between Joshua Tree and Death Valley with volcanic cinder cones, sand dunes, and Joshua tree forests",
+      "Kelso Depot, a restored 1924 Spanish Revival railroad station, serves as the visitor center in the heart of the preserve",
+      "Far less visited than neighboring national parks despite having equally dramatic desert landscapes",
+      "The Kelso Dunes, Cinder Cones, and Hole-in-the-Wall offer diverse desert scenery with few other visitors around"
+    ]
+  },
+  "Grand Canyon Rim Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5848.jpg/1280px-Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5848.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5893.jpg/1280px-Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5893.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5892.jpg/1280px-Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5892.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5844.jpg/1280px-Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5844.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5895.jpg/1280px-Grand_Canyon_%28Arizona%2C_USA%29%2C_South_Rim_nahe_Tusayan_--_2012_--_5895.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "13-mile paved trail along the South Rim of the Grand Canyon \u2014 one of the few pet-friendly trails in the park",
+      "Dogs allowed on leash along the entire rim from Hermits Rest to South Kaibab Trailhead",
+      "Flat, accessible walking with continuous views into the mile-deep canyon; shuttle stops along the way for easy out-and-back segments",
+      "Sunrise and sunset from Hopi Point or Yavapai Point are among the most spectacular views in North America"
+    ]
+  },
+  "Greenway Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Train_in_Flagstaff%2C_Arizona.jpg/1280px-Train_in_Flagstaff%2C_Arizona.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836655489890%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836655489890%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911015261%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911015261%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911070041%29.jpg/1280px-Arizona_Trail-_Anderson_Mesa_AZT-30_%2836911070041%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Large_Ponderosa_Pine_%287166797673%29.jpg/1280px-Large_Ponderosa_Pine_%287166797673%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Paved urban trail weaving through Flagstaff along the Rio de Flag \u2014 part of the city's extensive FUTS trail network",
+      "Connects Wheeler Park, Thorpe Park, and downtown restaurants and shops via a tree-lined corridor",
+      "Dog-friendly and flat \u2014 perfect for a morning or evening walk through town at 7,000 feet where the air stays cool",
+      "The ponderosa pines along the trail give Flagstaff a mountain-town feel unlike any other city on Route 66"
+    ]
+  },
+  "Mojave National Preserve - Cima Road": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cima_Road-Mojave_National_Preserve.JPG/1280px-Cima_Road-Mojave_National_Preserve.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Joshua_Tree%2C_Morning_Star_Mine_Road%2C_Mojave_Desert.jpg/1280px-Joshua_Tree%2C_Morning_Star_Mine_Road%2C_Mojave_Desert.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_37.jpg/1280px-Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_37.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_07.jpg/1280px-Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_07.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_39.jpg/1280px-Yucca_brevifolia_2018-04-08_Mojave_National_Preserve_39.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Scenic drive through the world's densest Joshua tree forest along Cima Road in the Mojave National Preserve",
+      "Thousands of Joshua trees stretch across the volcanic landscape toward the Cima Dome, a gentle granitic rise",
+      "The road is paved and dog-friendly at pulloffs \u2014 great for a stretch break surrounded by desert solitude",
+      "Best in spring when Joshua trees may bloom with clusters of white flowers against the desert sky"
+    ]
+  },
+  "Seven Magic Mountains": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/One_Magic_Mountain_%28Unsplash%29.jpg/1280px-One_Magic_Mountain_%28Unsplash%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/2020-02-12_Seven_Magic_Mountains_15.jpg/1280px-2020-02-12_Seven_Magic_Mountains_15.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2020-02-12_Seven_Magic_Mountains_20.jpg/1280px-2020-02-12_Seven_Magic_Mountains_20.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/2020-02-12_Seven_Magic_Mountains_12.jpg/1280px-2020-02-12_Seven_Magic_Mountains_12.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2020-02-12_Seven_Magic_Mountains_14.jpg/1280px-2020-02-12_Seven_Magic_Mountains_14.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Art installation of seven 30-foot-tall towers of stacked, brightly painted boulders rising from the desert south of Las Vegas",
+      "Created by Swiss artist Ugo Rondinone \u2014 the fluorescent colors contrast dramatically against the muted desert landscape",
+      "Free roadside attraction just off I-15; the towers are visible from the highway and accessible via a short gravel path",
+      "One of the most photographed art installations in the American West \u2014 best in the golden hour light of early morning or late afternoon"
+    ]
+  },
+  "Valley of Fire State Park": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Aztec_Sandstone_-_Valley_of_Fire1.jpg/1280px-Aztec_Sandstone_-_Valley_of_Fire1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Valley_of_fire_State_Park.jpg/1280px-Valley_of_fire_State_Park.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Valley_of_fire_State_Park_2.jpg/1280px-Valley_of_fire_State_Park_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Valley_of_fire_State_Park_3.jpg/1280px-Valley_of_fire_State_Park_3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Desert_varnish_-_Valley_of_Fire_State_Park.JPG/1280px-Desert_varnish_-_Valley_of_Fire_State_Park.JPG"
+    ],
+    "type": "national_park",
+    "desc": [
+      "Nevada's oldest and largest state park, featuring brilliant red Aztec sandstone formations that appear to be on fire in the sunlight",
+      "2,000-year-old Ancestral Puebloan petroglyphs at Atlatl Rock and Mouse's Tank trail are easily accessible",
+      "The Fire Wave trail leads to a stunning formation of red, pink, and white banded sandstone resembling frozen waves",
+      "Dog-friendly on roads and at viewpoints; the rocks glow most intensely at sunrise and sunset"
+    ]
+  },
+  "Zion Canyon Scenic Drive": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zion_Canyon_Scenic_Drive%2C_Zion_National_Park%2C_Utah_%281028836764%29.jpg/1280px-Zion_Canyon_Scenic_Drive%2C_Zion_National_Park%2C_Utah_%281028836764%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Zion_National_Park_near_Observation_Point_2005_08_21.jpg/1280px-Zion_National_Park_near_Observation_Point_2005_08_21.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Zion_Canyon_Scenic_Drive%2C_Road_5-1-14a_%2814167725268%29.jpg/1280px-Zion_Canyon_Scenic_Drive%2C_Road_5-1-14a_%2814167725268%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Zion_Canyon_Scenic_Drive_banner.jpg/1280px-Zion_Canyon_Scenic_Drive_banner.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Grotto_Shuttle_Stop%2C_Zion_Canyon%2C_Zion_National_Park%2C_Utah_%281026359358%29.jpg/1280px-Grotto_Shuttle_Stop%2C_Zion_Canyon%2C_Zion_National_Park%2C_Utah_%281026359358%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "6-mile road following the Virgin River through the heart of Zion Canyon between 2,000-foot sandstone walls",
+      "Shuttle-only in peak season, but the road itself is a destination \u2014 every turn reveals another monumental cliff face",
+      "Major stops include the Court of the Patriarchs, Big Bend, and the Temple of Sinawava at the road's end",
+      "The scale of the canyon is hard to overstate \u2014 the Great White Throne and Angels Landing tower overhead at every viewpoint"
+    ]
+  },
+  "Springdale Town Walk": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Springdale%2C_UT_4-29-14_-_Gateway_to_Zion_NP_%2814122051332%29.jpg/1280px-Springdale%2C_UT_4-29-14_-_Gateway_to_Zion_NP_%2814122051332%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Grand_View_Ranch%2C_Springdale%2C_UT_4-14_%2816624617305%29.jpg/1280px-Grand_View_Ranch%2C_Springdale%2C_UT_4-14_%2816624617305%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Springdale%2C_Utah_2.jpg/1280px-Springdale%2C_Utah_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Looking_Towards_Eagle_Crags%2C_Canaan_Mountain%2C_Springdale%2C_Utah_%288096075762%29.jpg/1280px-Looking_Towards_Eagle_Crags%2C_Canaan_Mountain%2C_Springdale%2C_Utah_%288096075762%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/96/Roadside_signs_in_Springdale%2C_obsolete_signs._Image_is_of_an_old_building_with_sign_on_side_%27If_you_like_our_town_tell_your_%2869435446d3dc4dc1b24c1df5f2f9fbcb%29.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Gateway town to Zion National Park with galleries, restaurants, and outfitter shops lining the main street beneath towering red cliffs",
+      "The town itself feels like an extension of the park \u2014 sandstone walls rise directly behind the buildings on both sides",
+      "Dog-friendly sidewalks and patios; several restaurants have outdoor seating with views of the Watchman and other Zion formations",
+      "A pleasant evening stroll after a day in the park, with the cliffs glowing red-orange in the setting sun"
+    ]
+  },
+  "Grafton Ghost Town": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Pastoral_Utah%2C_Grafton_Ghost_Town_4-14_%2827042678566%29.jpg/1280px-Pastoral_Utah%2C_Grafton_Ghost_Town_4-14_%2827042678566%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a1/Grafton_Ghost_Town_Pasture_8-07a_%288510924294%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Grafton_Ghost_Town_Road_8-07_%288509815659%29.jpg/1280px-Grafton_Ghost_Town_Road_8-07_%288509815659%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/Grafton_Ghost_Town_Pasture_8-07b_%288510924066%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Fenced_In%2C_Grafton_Ghost_Town%2C_UT_4-14_%2828646771351%29.jpg/1280px-Fenced_In%2C_Grafton_Ghost_Town%2C_UT_4-14_%2828646771351%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Photogenic abandoned Mormon settlement near Rockville, just south of Zion, with original 1860s structures still standing",
+      "The weathered buildings against a backdrop of red cliffs and cottonwood trees have appeared in dozens of films, including Butch Cassidy and the Sundance Kid",
+      "A short dirt road leads to the townsite; dogs are welcome to explore the open area around the buildings",
+      "The cemetery on the hill tells stories of the settlers who tried to tame this beautiful but harsh landscape"
+    ]
+  },
+  "Colorado River Scenic Byway": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Rafting_Colorado_River%2C_Glenwood_Canyon%2C_CO_2012_%2827776587255%29.jpg/1280px-Rafting_Colorado_River%2C_Glenwood_Canyon%2C_CO_2012_%2827776587255%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Denver_and_Rio_Grande_Western_No._3707_along_the_Colorado_River_in_Glenwood_Canyon%2C_Colorado._Oil_painting_by_Howard_Fogg_courtesy_of_Richard_Fogg.jpg/1280px-Denver_and_Rio_Grande_Western_No._3707_along_the_Colorado_River_in_Glenwood_Canyon%2C_Colorado._Oil_painting_by_Howard_Fogg_courtesy_of_Richard_Fogg.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Glenwood_Canyon%2C_Colorado_River_8-07a_%2824616087402%29.jpg/1280px-Glenwood_Canyon%2C_Colorado_River_8-07a_%2824616087402%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/On_the_Colorado_River_through_Glenwood_Canyon_%287388308170%29.jpg/1280px-On_the_Colorado_River_through_Glenwood_Canyon_%287388308170%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Glenwood_Canyon%2C_Colorado_River_8-07_%2824438360680%29.jpg/1280px-Glenwood_Canyon%2C_Colorado_River_8-07_%2824438360680%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Scenic stretch along the Colorado River between Glenwood Springs and Grand Junction on I-70",
+      "The river carves through Glenwood Canyon with 1,800-foot walls \u2014 one of the most dramatic interstate drives in America",
+      "Rest areas and bike path access let you stop and walk along the river at several points",
+      "Bald eagles, great blue herons, and rafters share the river corridor in the narrow canyon"
+    ]
+  },
+  "Glenwood Canyon Rest Stop": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Colorado_River%2C_Glenwood_Canyon%2C_CO_8-07_%2815311604886%29.jpg/1280px-Colorado_River%2C_Glenwood_Canyon%2C_CO_8-07_%2815311604886%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Tuckin%27%2C_I-70%2C_Glenwood_Canyon%2C_CO_7-13a_%2817135091108%29.jpg/1280px-Tuckin%27%2C_I-70%2C_Glenwood_Canyon%2C_CO_7-13a_%2817135091108%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Truckin%27%2C_I-70%2C_Glenwood_Canyon%2C_CO_9-13_%2817135327180%29.jpg/1280px-Truckin%27%2C_I-70%2C_Glenwood_Canyon%2C_CO_9-13_%2817135327180%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Glenwood_Springs_and_Glenwood_Canyon%2C_CO_8-27-12_%288006897859%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Glenwood_Springs_and_Glenwood_Canyon%2C_CO_8-27-12_%288006897343%29.jpg/1280px-Glenwood_Springs_and_Glenwood_Canyon%2C_CO_8-27-12_%288006897343%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Scenic rest area carved into the narrow canyon along I-70, surrounded by 1,800-foot limestone and granite walls",
+      "Adjacent to the Glenwood Canyon Recreation Path \u2014 a paved bike and walking trail along the Colorado River",
+      "One of the most dramatic rest stop settings in the country; great for letting dogs stretch their legs",
+      "Engineered to blend with the canyon walls, the highway and rest area are an engineering marvel in their own right"
+    ]
+  },
+  "Sacramento Old Town": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Big_Four_Building%2C_Old_Sacramento-4064.jpg/1280px-Big_Four_Building%2C_Old_Sacramento-4064.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Old_Town_Sacramento_California_-_panoramio.jpg/1280px-Old_Town_Sacramento_California_-_panoramio.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Sacramento_old_town_12-25-10_%2814%29_Wiki.jpg/1280px-Sacramento_old_town_12-25-10_%2814%29_Wiki.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Sacramento_old_town_12-25-10_%289%29_Wiki.jpg/1280px-Sacramento_old_town_12-25-10_%289%29_Wiki.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sacramento_old_town_12-25-10_%2824%29_Wiki.jpg/1280px-Sacramento_old_town_12-25-10_%2824%29_Wiki.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Restored Gold Rush-era waterfront district along the Sacramento River with wooden boardwalks, brick buildings, and the Railroad Museum",
+      "The California State Railroad Museum houses 21 restored locomotives and is one of the finest railroad museums in North America",
+      "Dog-friendly patios on the boardwalk and along the riverfront promenade; street performers and horse-drawn carriages on weekends",
+      "The original western terminus of the Pony Express and transcontinental railroad \u2014 history packed into a walkable district"
+    ]
+  },
+  "Sand Mountain Recreation Area": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sand_Mountain_Recreation_Area%2C_U.S._50_Between_Fallon_and_Austin%2C_Nevada.jpg/1280px-Sand_Mountain_Recreation_Area%2C_U.S._50_Between_Fallon_and_Austin%2C_Nevada.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sand_Mountain_Recreation_Area_2.jpg/1280px-Sand_Mountain_Recreation_Area_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/2015-04-02_15_39_11_Sign_for_Sand_Mountain_Recreation_Area_with_Sand_Mountain%2C_Nevada_visible_in_the_background.JPG/1280px-2015-04-02_15_39_11_Sign_for_Sand_Mountain_Recreation_Area_with_Sand_Mountain%2C_Nevada_visible_in_the_background.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sand_Mountain_Recreation_Area.jpg/1280px-Sand_Mountain_Recreation_Area.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/2015-04-02_15_46_42_Sand_Mountain_Recreation_Area_descriptive_signs_at_Sand_Springs_Pony_Express_Station%2C_Nevada.JPG/1280px-2015-04-02_15_46_42_Sand_Mountain_Recreation_Area_descriptive_signs_at_Sand_Springs_Pony_Express_Station%2C_Nevada.JPG"
+    ],
+    "type": "attraction",
+    "desc": [
+      "600-foot-tall sand dune in Churchill County, Nevada \u2014 one of the few 'singing' sand dunes in North America",
+      "The dune produces a low booming sound when sand avalanches down the steep face, caused by the uniform grain size",
+      "Sits in the middle of the Great Basin desert surrounded by sagebrush flats and mountain ranges",
+      "A dramatic, unexpected landscape formation visible from US-50 \u2014 the Loneliest Road in America"
+    ]
+  },
+  "Cave Lake Shoreline Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_01.jpg/1280px-Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_03.jpg/1280px-Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_03.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_02.jpg/1280px-Railroad_Museum%2C_East_Ely%2C_Nevada_-_June_2017_-_02.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Easy loop trail around Cave Lake in the Schell Creek Range above Ely, Nevada at 7,300 feet elevation",
+      "Pi\u00f1on-juniper forest and limestone cliffs surround the small reservoir \u2014 a cool mountain oasis in the Great Basin",
+      "Dog-friendly trail with lake access for swimming; fall brings golden aspens along the shoreline",
+      "Quiet campground adjacent with first-come sites \u2014 one of Nevada's hidden gems away from any crowds"
+    ]
+  },
+  "Ely Renaissance Village": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Nevada_Northern_Museum.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6125.jpg/1280px-Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6125.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6099.jpg/1280px-Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6099.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6132.jpg/1280px-Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6132.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6129.jpg/1280px-Hoover_Dam%2C_Nevada_%28Arizona-Nevada%2C_USA%29_--_2012_--_6129.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Open-air heritage village showcasing the multicultural history of White Pine County through restored cabins and cottages",
+      "Buildings represent the Chinese, Greek, Basque, Italian, and other immigrant communities that built the mining town",
+      "A free, self-guided walking tour through the small village adjacent to downtown Ely",
+      "Gives context to how diverse the mining communities of rural Nevada actually were in the 19th and early 20th centuries"
+    ]
+  },
+  "Great Basin Highway Overlook": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Lake_Mead_from_Great_Basin_Highway.jpg/1280px-Lake_Mead_from_Great_Basin_Highway.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Along_Great_Basin_Highway_-_panoramio.jpg/1280px-Along_Great_Basin_Highway_-_panoramio.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Great_Basin_Highway_2.jpg/1280px-Great_Basin_Highway_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Great_Basin_Highway_1.jpg/1280px-Great_Basin_Highway_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/East_entrance_to_Boulder_City%2C_Nevada_on_US_93_%286909661476%29.jpg/1280px-East_entrance_to_Boulder_City%2C_Nevada_on_US_93_%286909661476%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Elevated viewpoint along US-93 through central Nevada's vast basin-and-range landscape",
+      "Sweeping views across empty valleys framed by parallel mountain ranges stretching to the horizon in every direction",
+      "The quintessential Great Basin panorama \u2014 big sky, sagebrush, and mountains as far as the eye can see",
+      "A good leg-stretch stop on the long drive through one of the least-populated corridors in the lower 48"
+    ]
+  },
+  "San Rafael Swell - I-70": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/I70_at_San_Rafael_swell-Green_River.jpg/1280px-I70_at_San_Rafael_swell-Green_River.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/San_Rafael_Swell_%28I-70%29.jpg/1280px-San_Rafael_Swell_%28I-70%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/San_Rafael_Swell_-_east_face.jpg/1280px-San_Rafael_Swell_-_east_face.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/San_Rafael_Swell_4889485947.jpg/1280px-San_Rafael_Swell_4889485947.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/San_Rafael_Swell_%2831009151695%29.jpg/1280px-San_Rafael_Swell_%2831009151695%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Dramatic geologic uplift visible from Interstate 70 as the highway cuts through tilted layers of sandstone, shale, and limestone",
+      "The San Rafael Reef \u2014 a jagged wall of Navajo sandstone \u2014 runs for 75 miles along the eastern edge of the Swell",
+      "Rest areas and pulloffs offer views of the Spotted Wolf Canyon and the multicolored Morrison Formation",
+      "One of the most scenic stretches of interstate in the country, yet most drivers pass through without realizing what they're seeing"
+    ]
+  },
+  "Eisenhower Tunnel Vista": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/77/East_entrance_of_the_Eisenhower_Tunnel_on_Interstate_70_west_of_Denver%2C_Colorado.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/72/Loveland_Pass%2C_Colorado_map.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/I-70_West_-_Eisenhower_Tunnel_Truckers_Gear_Down_%2852550370871%29.jpg/1280px-I-70_West_-_Eisenhower_Tunnel_Truckers_Gear_Down_%2852550370871%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/2022-09-11_08_45_58_Western_portal_of_the_Eisenhower-Johnson_tunnels_along_eastbound_Interstate_70_in_Summit_County%2C_Colorado.jpg/1280px-2022-09-11_08_45_58_Western_portal_of_the_Eisenhower-Johnson_tunnels_along_eastbound_Interstate_70_in_Summit_County%2C_Colorado.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/I-70_West%2C_east_of_the_Eisenhower%E2%80%93Johnson_Memorial_Tunnel_%281%29.jpg/1280px-I-70_West%2C_east_of_the_Eisenhower%E2%80%93Johnson_Memorial_Tunnel_%281%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "Highway pull-off near the Eisenhower-Johnson Memorial Tunnel \u2014 the highest point on the Interstate Highway System at 11,158 feet",
+      "Views of the Continental Divide and surrounding peaks of the Arapaho National Forest",
+      "The tunnel itself bores 1.7 miles through the divide; a quick stop to stretch legs at altitude before descending toward Denver",
+      "Winter snowpack can linger into June at this elevation \u2014 a dramatic alpine landscape visible right from the highway"
+    ]
+  },
+  "Tehachapi Wind Farm": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Central_part_of_Tehachapi_Wind_Resource_Area_%28Alta_Wind_Energy_Center%2C_Tehachapi_Pass_wind_farm%29%2C_California_%E2%80%93_satellite_image.jpg/1280px-Central_part_of_Tehachapi_Wind_Resource_Area_%28Alta_Wind_Energy_Center%2C_Tehachapi_Pass_wind_farm%29%2C_California_%E2%80%93_satellite_image.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Central_part_of_Tehachapi_Wind_Resource_Area_%28Alta_Wind_Energy_Center%2C_Tehachapi_Pass_wind_farm%29%2C_California_%E2%80%93_satellite_image_with_scale_bar.png/1280px-Central_part_of_Tehachapi_Wind_Resource_Area_%28Alta_Wind_Energy_Center%2C_Tehachapi_Pass_wind_farm%29%2C_California_%E2%80%93_satellite_image_with_scale_bar.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Wenco-Swiss-Italian-Tehachapi-1984-02.jpg/1280px-Wenco-Swiss-Italian-Tehachapi-1984-02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tehachapi_Wind_Turbines.jpg/1280px-Tehachapi_Wind_Turbines.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/StormMaster-Tehachapi-1984-04.jpg/1280px-StormMaster-Tehachapi-1984-04.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "One of the earliest and largest wind energy developments in the world, with thousands of turbines blanketing the Tehachapi Pass",
+      "The turbines range from small 1980s-era models to massive modern units, creating a surreal industrial landscape against golden hills",
+      "Visible from Highway 58 and the Tehachapi-Willow Springs Road \u2014 a dramatic gateway between the Central Valley and Mojave Desert",
+      "Generates enough clean energy to power 350,000 homes; the scale of the installation is best appreciated from the surrounding ridgelines"
+    ]
+  },
+  "Santa Fe Plaza Morning Walk": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Morning_at_the_plaza_-_panoramio.jpg/1280px-Morning_at_the_plaza_-_panoramio.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Adobe_in_Santa_Fe_at_the_Plaza_-_Hotel_Inn_and_Spa_at_Loretto.JPG/1280px-Adobe_in_Santa_Fe_at_the_Plaza_-_Hotel_Inn_and_Spa_at_Loretto.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Route_66%2C_Santa_Fe%2C_New_Mexico.jpg/1280px-Route_66%2C_Santa_Fe%2C_New_Mexico.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Route_66%2C_Santa_Fe%2C_New_Mexico_%28cropped%29.jpg/1280px-Route_66%2C_Santa_Fe%2C_New_Mexico_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Adobe_2.0_%283234872595%29.jpg/1280px-Adobe_2.0_%283234872595%29.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Historic heart of Santa Fe \u2014 the oldest public plaza in the United States, continuously used since 1610",
+      "Morning light turns the adobe buildings golden; Native American artisans set up jewelry and pottery under the Palace of the Governors portal",
+      "Dog-friendly walking through the plaza, past the cathedral, and along the narrow streets lined with galleries and caf\u00e9s",
+      "The 400-year-old adobe architecture and mountain-town atmosphere create a sense of place unlike anywhere else in the US"
+    ]
+  },
+  "Morro Rock Vista": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Gulls_on_Morro_Strand_State_Beach.jpg/1280px-Gulls_on_Morro_Strand_State_Beach.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Morro_Bay_2015_013.jpg/1280px-Morro_Bay_2015_013.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Morro_Bay_2015_017.jpg/1280px-Morro_Bay_2015_017.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Morro_Bay_2015_016.jpg/1280px-Morro_Bay_2015_016.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Morro_Rock%2C_Morro_Bay%2C_California_-_Stierch.jpg/1280px-Morro_Rock%2C_Morro_Bay%2C_California_-_Stierch.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "576-foot volcanic plug rising from the shoreline of Morro Bay \u2014 one of the Nine Sisters chain of ancient volcanic peaks",
+      "A paved walking path circles the rock's base with views of the harbor, fishing boats, and sea otters in the bay",
+      "Peregrine falcons nest on the rock's face; the surrounding estuary is a bird sanctuary of national significance",
+      "Dog-friendly along the base trail and adjacent Embarcadero; the town's fish-and-chips spots overlook the rock"
+    ]
+  },
+  "Wahweap Overlook Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Wahweap_Marina_-_Over_Lake_Powell.jpg/1280px-Wahweap_Marina_-_Over_Lake_Powell.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Wahweap_Marina_RVRT_942.jpg/1280px-Wahweap_Marina_RVRT_942.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Wahweap_Marina_at_Lake_Powell.jpg/1280px-Wahweap_Marina_at_Lake_Powell.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/91/Lake_Powell_Above_Wahweap_Marina.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lake_Powell_Wahweap_Marina_07-08_%2851373146462%29.jpg/1280px-Lake_Powell_Wahweap_Marina_07-08_%2851373146462%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Short trail near Wahweap Marina offering panoramic views of Lake Powell's turquoise water against red and white sandstone",
+      "The view encompasses the dam, Wahweap Bay, and the distant Kaiparowits Plateau on the horizon",
+      "Easy walking on packed earth \u2014 perfect for an evening stroll to watch sunset paint the cliffs above the lake",
+      "One of the most accessible overlooks of Lake Powell without needing a boat or backcountry permit"
+    ]
+  },
+  "Glen Canyon Dam Overlook": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/VIEW_OF_GLEN_CANYON_DAM_FROM_OVERLOOK_-_NARA_-_544150.jpg/1280px-VIEW_OF_GLEN_CANYON_DAM_FROM_OVERLOOK_-_NARA_-_544150.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Dam_Overlook%2C_Page%2C_Arizona_%2821414373595%29.jpg/1280px-Dam_Overlook%2C_Page%2C_Arizona_%2821414373595%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Dam_Overlook%2C_Page%2C_Arizona_%2821414423025%29.jpg/1280px-Dam_Overlook%2C_Page%2C_Arizona_%2821414423025%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Dam_Overlook%2C_Page%2C_Arizona_%2821422571381%29.jpg/1280px-Dam_Overlook%2C_Page%2C_Arizona_%2821422571381%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Dam_Overlook%2C_Page%2C_Arizona_%2820792645833%29.jpg/1280px-Dam_Overlook%2C_Page%2C_Arizona_%2820792645833%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Viewpoint overlooking the 710-foot concrete arch dam that created Lake Powell, visible from Highway 89 in Page, Arizona",
+      "The Carl Hayden Visitor Center offers exhibits on the dam's construction and the Colorado River system",
+      "Dramatic perspective looking down into the narrow Glen Canyon with turquoise water below",
+      "Free viewpoint accessible from the highway; the dam and bridge make for impressive photography at any time of day"
+    ]
+  },
+  "Chains Trail Area": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Waterpocket_Fold_from_above_Capitol_Reef_Scenic_Drive.jpeg/1280px-Waterpocket_Fold_from_above_Capitol_Reef_Scenic_Drive.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ca/Capitol_Reef_-_Waterpocket_Fold_-_panoramio.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2819924120939%29.jpg/1280px-Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2819924120939%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2820110720065%29.jpg/1280px-Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2820110720065%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2819922615288%29.jpg/1280px-Waterpocket_Fold_Cliffs_in_Capitol_Reef_Nat%27l_Park_-_%2819922615288%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Rugged backcountry area in Capitol Reef where the Waterpocket Fold creates dramatic tilted rock layers",
+      "Named for the chains once bolted into the slickrock to help wagons descend \u2014 now a popular hiking area",
+      "Views from the top of the fold span the entire desert basin below in a sweeping panorama",
+      "One of the most remote and least-visited areas of Capitol Reef, offering genuine solitude"
+    ]
+  },
+  "Animas River Trail Durango": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/22/Durango_Public_Library.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Animas_River_in_Durango%2C_Colorado_%2828277555863%29.jpg/1280px-Animas_River_in_Durango%2C_Colorado_%2828277555863%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Animas_River_in_Durango%2C_Colorado_%2828275396604%29.jpg/1280px-Animas_River_in_Durango%2C_Colorado_%2828275396604%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Animas_River_coming_out_of_Durango.jpg/1280px-Animas_River_coming_out_of_Durango.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Animas_River_just_north_of_downtown_Durango%2C_CO.jpg/1280px-Animas_River_just_north_of_downtown_Durango%2C_CO.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Paved riverwalk trail winding through downtown Durango along the scenic Animas River \u2014 perfect for dogs on leash",
+      "Connects to parks, bridges, and outdoor seating areas with mountain views in every direction",
+      "The river corridor attracts ducks, herons, and the occasional kayaker; great people-watching from the path",
+      "Easy 7-mile trail that passes through the heart of Durango's historic district and brewery row"
+    ]
+  },
+  "Fremont River Trail": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Fremont_River_Trail.jpg/1280px-Fremont_River_Trail.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bf/Fremont_River_Falls%2C_Capitol_Reef_National_Park%2C_Utah_%28118900701%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fremont_River_Falls%2C_Capitol_Reef_National_Park%2C_Utah_%28118900638%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Fremont_River_Canyon%2C_Capitol_Reef_National_Park%2C_Utah_%28118900528%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/32/Fremont_River_Falls%2C_Capitol_Reef_National_Park%2C_Utah_%28118900731%29.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "Easy 1.5-mile round-trip trail along the Fremont River through the Fruita historic district in Capitol Reef",
+      "Follows the cottonwood-lined river past the pioneer orchards where you can pick fruit in season (cherries, apples, peaches)",
+      "Dogs allowed on leash; the shaded riverside path stays cool even on hot Utah afternoons",
+      "Deer and wild turkeys are common along the river; the Fruita schoolhouse is a short side trip"
+    ]
+  },
+  "Panorama Point": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d4/Panorama_Point%2C_Capitol_Reef_National_Park%2C_Utah_%28118898697%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Panorama_Point%2C_Capitol_Reef_National_Park%2C_Utah_%28118898401%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Panorama_Point%2C_Capitol_Reef_National_Park%2C_Utah_%28118898614%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/02/Panorama_Point%2C_Capitol_Reef_National_Park%2C_Utah_%28118898484%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Panorama_Point%2C_Capitol_Reef_National_Park%2C_Utah_%28118898321%29.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "Sweeping viewpoint in Capitol Reef overlooking the Waterpocket Fold, a 100-mile wrinkle in the Earth's crust",
+      "From this elevation, the multi-colored layers of the fold are visible stretching south toward Lake Powell",
+      "One of the best spots to grasp the geology of Capitol Reef \u2014 the entire monocline is laid out below",
+      "Accessible via a short gravel road; the overlook itself is a quick walk from the parking area"
+    ]
+  },
+  "Capitol Reef Petroglyphs": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Petroglyphs_in_Capitol_Reef_National_Park.jpg/1280px-Petroglyphs_in_Capitol_Reef_National_Park.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Petroglyphs_in_Capitol_Reef_National_Park_dyeclan.com_-_panoramio.jpg/1280px-Petroglyphs_in_Capitol_Reef_National_Park_dyeclan.com_-_panoramio.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Petroglyphs%2C_Fruita%2C_Capitol_Reef_National_Park%2C_Utah_%2866851741%29.jpg/1280px-Petroglyphs%2C_Fruita%2C_Capitol_Reef_National_Park%2C_Utah_%2866851741%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Fremont_Petroglyphs_-_Capitol_Reef_National_Park_-_Southern_Utah%2C_USA.jpg/1280px-Fremont_Petroglyphs_-_Capitol_Reef_National_Park_-_Southern_Utah%2C_USA.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Vegetation_in_Fremont_River_Valley%2C_Fremont_Petroglyphs_Cliff_area%2C_Capitol_Reef_National_Park%2C_southern_Utah_1_%288445593880%29.jpg/1280px-Vegetation_in_Fremont_River_Valley%2C_Fremont_Petroglyphs_Cliff_area%2C_Capitol_Reef_National_Park%2C_southern_Utah_1_%288445593880%29.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Ancient Fremont culture petroglyphs pecked into dark desert-varnished rock along Highway 24 in Capitol Reef",
+      "A boardwalk viewpoint makes the rock art easy to see \u2014 human figures, bighorn sheep, and abstract designs dating back 1,000+ years",
+      "Free roadside stop with no entrance fee required; the petroglyphs are visible without any hiking",
+      "Part of a larger concentration of Fremont rock art throughout the Waterpocket Fold region"
+    ]
+  },
+  "Colorado National Monument": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/2012-11-09_01_Independent_Monument_at_Colorado_National_Monument.jpg/1280px-2012-11-09_01_Independent_Monument_at_Colorado_National_Monument.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Grand_Junction_Trip_Colorado_National_Monument_2007.JPG/1280px-Grand_Junction_Trip_Colorado_National_Monument_2007.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/A_Winery_with_the_Colorado_National_Monument_in_the_Background.jpg/1280px-A_Winery_with_the_Colorado_National_Monument_in_the_Background.jpg"
+    ],
+    "type": "national_park",
+    "desc": [
+      "2,000-foot-deep red-rock canyons carved into the Colorado Plateau just outside Grand Junction",
+      "Rim Rock Drive winds 23 miles along the canyon edge with dramatic overlooks at every pulloff",
+      "Monoliths like Independence Monument and Coke Ovens rise from the canyon floor in shades of crimson and ochre",
+      "Dog-friendly on the rim road and overlook areas; cooler mornings bring bighorn sheep sightings near the road"
+    ]
+  },
+  "Cave Lake Trails": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/360_panorama_Cave_Rock_trail_Lake_Tahoe_NV_2025-08-06_08-08-56_1.jpg/1280px-360_panorama_Cave_Rock_trail_Lake_Tahoe_NV_2025-08-06_08-08-56_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/360_panorama_Cave_Rock_trail_Lake_Tahoe_NV_2025-08-06_07-56-30_1.jpg/1280px-360_panorama_Cave_Rock_trail_Lake_Tahoe_NV_2025-08-06_07-56-30_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Cave_Rock_State_Park%2C_Lake_Tahoe%2C_Nevada%2C_20220514%2C_22.jpg/1280px-Cave_Rock_State_Park%2C_Lake_Tahoe%2C_Nevada%2C_20220514%2C_22.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/360_panorama_Cave_Rock_Lake_Tahoe_NV_2025-08-06_08-15-41_1.jpg/1280px-360_panorama_Cave_Rock_Lake_Tahoe_NV_2025-08-06_08-15-41_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/360_panorama_Cave_Rock_Lake_Tahoe_NV_2025-08-06_08-29-44_1.jpg/1280px-360_panorama_Cave_Rock_Lake_Tahoe_NV_2025-08-06_08-29-44_1.jpg"
+    ],
+    "type": "attraction",
+    "desc": [
+      "Network of trails through the Schell Creek Range around Cave Lake \u2014 from easy lakeside walks to ridge hikes",
+      "Pi\u00f1on-juniper woodland gives way to mountain mahogany at higher elevations with views across the Great Basin",
+      "Dog-friendly trails with a mix of terrain; the lake itself allows wading for hot dogs",
+      "At 7,300 feet, the air is cool and dry even when the valleys below bake in summer heat"
+    ]
+  },
+  "Ely Main Street Walk": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg/1280px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Collage_of_Landmarks_in_Richmond%2C_Virginia_v_1.jpg/1280px-Collage_of_Landmarks_in_Richmond%2C_Virginia_v_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Venetian_--_2012_--_6339.jpg/1280px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Venetian_--_2012_--_6339.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6215.jpg/1280px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6215.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Ely_Nevada_-_Hotel_Nevada.jpg/1280px-Ely_Nevada_-_Hotel_Nevada.jpg"
+    ],
+    "type": "town",
+    "desc": [
+      "Historic downtown Ely with murals, antique shops, and a preserved small-town Nevada atmosphere along Aultman Street",
+      "The Hotel Nevada anchors the strip \u2014 a 1929 landmark that was once the tallest building in the state",
+      "Dog-friendly sidewalks past the old railroad depot, courthouses, and local caf\u00e9s that feel like stepping back in time",
+      "Ely serves as the gateway to Great Basin National Park, but the town itself has genuine frontier character"
+    ]
+  },
+  "Great Basin Highway Views": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Basin_and_Range_National_Monument_in_Nevada_-_20762925629.jpg/1280px-Basin_and_Range_National_Monument_in_Nevada_-_20762925629.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Columbia_-_America%27s_Great_Highway.djvu/page1-1280px-Columbia_-_America%27s_Great_Highway.djvu.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Basin_and_Range_National_Monument.jpg/1280px-Basin_and_Range_National_Monument.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Basin_and_Range_National_Monument_-_21647562024.jpg/1280px-Basin_and_Range_National_Monument_-_21647562024.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "The long, straight stretches of US-93 through central Nevada offer some of the most dramatic basin-and-range scenery in the West",
+      "Mountain ranges rise abruptly from sagebrush valleys in a pattern that repeats for hundreds of miles",
+      "Wild horses, pronghorn, and raptors are common sightings along this remote highway corridor",
+      "Pull-offs and cattle guards mark spots where the views are especially sweeping across the wide-open Nevada landscape"
+    ]
+  },
+  "San Rafael Swell - I-70 Corridor": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/I70_at_San_Rafael_swell-Green_River.jpg/1280px-I70_at_San_Rafael_swell-Green_River.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Bridge_over_Eagle_Canyon_on_Interstate_70_inside_the_San_Rafael_Swell.jpg/1280px-Bridge_over_Eagle_Canyon_on_Interstate_70_inside_the_San_Rafael_Swell.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Utah_-_North_America_-_San_Rafael_Swell_-_Desert_%284892191245%29.jpg/1280px-Utah_-_North_America_-_San_Rafael_Swell_-_Desert_%284892191245%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/San_Rafael_Swell_4892783652.jpg/1280px-San_Rafael_Swell_4892783652.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/San_Rafael_Swell%2C_UT_7-23-13zzg_%2810519136363%29.jpg/1280px-San_Rafael_Swell%2C_UT_7-23-13zzg_%2810519136363%29.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "The I-70 corridor through the San Rafael Swell is one of the longest stretches of interstate without services \u2014 106 miles",
+      "Geological layers spanning 200 million years are exposed in the road cuts and canyon walls along the drive",
+      "Black Dragon Canyon and the Wedge Overlook are accessible via dirt roads branching off the highway",
+      "The remoteness itself is part of the experience \u2014 vast desert panoramas with almost no development visible"
+    ]
+  },
+  "Vail Pass Summit": {
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/80/I-70-Looking_Southeast.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Vail_Pass_Bike_Path.JPG/1280px-Vail_Pass_Bike_Path.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Vail_Pass_lake.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jacque_Peak_from_Vail_Pass.jpg/1280px-Jacque_Peak_from_Vail_Pass.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TRASH_ON_VAIL_PASS_ROADSIDE_-_NARA_-_543664.jpg/1280px-TRASH_ON_VAIL_PASS_ROADSIDE_-_NARA_-_543664.jpg"
+    ],
+    "type": "scenic_drive",
+    "desc": [
+      "10,666-foot mountain pass on I-70 between Copper Mountain and Vail \u2014 one of the highest points on the US Interstate system",
+      "Rest area at the summit offers stunning views of the Gore Range and surrounding White River National Forest",
+      "The Vail Pass Recreation Trail connects here \u2014 a paved bike path that descends to Vail following Ten Mile Creek",
+      "Snow can linger at the summit well into June; the alpine scenery is a dramatic contrast to the desert landscapes further west"
+    ]
   }
 }
