@@ -957,7 +957,7 @@
               ],
               "description": "Hidden viewpoint via a quiet 1-mile forest walk \u2014 peaceful, uncrowded, dogs on leash",
               "type": "national_park",
-              "dog_friendly": false
+              "dog_friendly": true
             },
             {
               "name": "Greenway Trail",
@@ -2033,7 +2033,7 @@
                 36.93,
                 -111.47
               ],
-              "description": "Short hikes in the sandstone formations near Page \u2014 slickrock walking with canyon views, dogs welcome",
+              "description": "Short hikes in the sandstone formations near Page \u2014 slickrock walking with canyon views, dogs must stay at trailhead",
               "type": "attraction",
               "dog_friendly": false
             }
