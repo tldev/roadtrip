@@ -144,7 +144,12 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .day-hdr.reveal.vis { opacity: 1; transform: translateY(0); }
-    .day-num { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 10px; }
+    .day-num { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 10px; }
+    .day-color-1 .day-num { color: #5dade2; }
+    .day-color-2 .day-num { color: #6ab04c; }
+    .day-color-3 .day-num { color: #e0a846; }
+    .day-color-4 .day-num { color: #e07bac; }
+    .day-color-5 .day-num { color: #b07de8; }
     .day-title { font-size: clamp(26px, 5vw, 46px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px; }
     .day-meta { font-size: 15px; color: var(--text-dim); margin-bottom: 20px; }
 
@@ -460,22 +465,24 @@
 <script>
 /* ── colour themes + hero/rest images per route (Wikimedia Commons) ── */
 const THEMES = {
-  1:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Route66_seligman_az.jpg/1280px-Route66_seligman_az.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/The_Peaks_%2816967306537%29.jpg/1280px-The_Peaks_%2816967306537%29.jpg' },
+  1:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/U.S._Route_66_in_Seligman%2C_Arizona.jpg/1280px-U.S._Route_66_in_Seligman%2C_Arizona.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/The_Peaks_%2816967306537%29.jpg/1280px-The_Peaks_%2816967306537%29.jpg' },
   2:  { c1:'#2a1510', c2:'#4a2a1a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Zabriskie_Point_Death_Valley_December_2013_002.jpg/1280px-Zabriskie_Point_Death_Valley_December_2013_002.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Coral_Pink_Sand_Dunes_State_Park_2.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park_2.jpg' },
   3:  { c1:'#1a1540', c2:'#2a2060', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg/1280px-Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Red_Canyon_-_Utah.jpg/1280px-Red_Canyon_-_Utah.jpg' },
   4:  { c1:'#3a1a00', c2:'#6a3000', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Grand_Canyon_South_Rim_at_Sunset.jpg/1280px-Grand_Canyon_South_Rim_at_Sunset.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg/1280px-Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg' },
   5:  { c1:'#3a2500', c2:'#6a4500', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Zion_angels_702.jpg/1280px-Zion_angels_702.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Zion_Canyon_Scenic_Drive.jpg/1280px-Zion_Canyon_Scenic_Drive.jpg' },
-  6:  { c1:'#151a30', c2:'#253050', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Loneliest_Road%2C_U.S._Route_50%2C_Nevada.jpg/1280px-The_Loneliest_Road%2C_U.S._Route_50%2C_Nevada.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
+  6:  { c1:'#151a30', c2:'#253050', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/U.S._Route_50_-_Loneliest_Road.jpg/1280px-U.S._Route_50_-_Loneliest_Road.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
   7:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Oak_Creek_Canyon_%2851030165942%29.jpg/1280px-Oak_Creek_Canyon_%2851030165942%29.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg/1280px-Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg' },
   8:  { c1:'#0a1a2a', c2:'#152a40', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/GlenCanyonDam-June2009.JPG/1280px-GlenCanyonDam-June2009.JPG', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wahweap_Formation_933.jpg/1280px-Wahweap_Formation_933.jpg' },
   9:  { c1:'#3a2500', c2:'#5a3a10', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Capitol_Reef_National_Park.jpg/1280px-Capitol_Reef_National_Park.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Fruita_Campground%2C_Capitol_Reef_NP.jpg/1280px-Fruita_Campground%2C_Capitol_Reef_NP.jpg' },
-  10: { c1:'#0a2a20', c2:'#1a4a3a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Monolake01.jpg/1280px-Monolake01.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
+  10: { c1:'#0a2a20', c2:'#1a4a3a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Mono_Lake_South_Tufa_August_2013_012.jpg/1280px-Mono_Lake_South_Tufa_August_2013_012.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
 };
 
 const TYPE_LABEL = {
   national_park:'National Park', scenic_drive:'Scenic Drive',
   town:'Town', attraction:'Attraction', camping:'Camping',
 };
+
+const DAY_COLORS = ['#5dade2','#6ab04c','#e0a846','#e07bac','#b07de8'];
 
 let routes = [], attractionData = {}, routeGeometries = {}, curIdx = -1, observer, rafId = null, carouselTimers = [];
 let miniMap = null, miniMapMarker = null, miniMapLine = null, miniMapObserver = null;
@@ -585,10 +592,11 @@ function showRoute(idx){
     if(day.is_rest_day){
       const camp=day.camping||day.highlights.find(x=>x.type==='camping');
       const campDesc=camp?(camp.description||''):'A day to rest, recharge, and explore at your own pace.';
+      const restDayColor=DAY_COLORS[(day.day-1)%DAY_COLORS.length];
       h+=`<div class="rest-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
         <div class="rest-overlay"></div>
         <div class="rest-body">
-          <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
+          <div class="rest-label" style="color:${restDayColor}">Day ${day.day} &mdash; Rest Day</div>
           <h2 class="rest-place">${esc(day.end)}</h2>
           <p class="rest-desc">${esc(campDesc)}</p>
           ${camp?`<div class="camping-card">
@@ -606,7 +614,8 @@ function showRoute(idx){
     } else {
       const from=day.start.replace(/,.*$/,'');
       const to=day.end.replace(/,.*$/,'');
-      h+=`<div class="day-sec" data-geo="${day.start_coords[0]},${day.start_coords[1]}">
+      const dayColorCls='day-color-'+day.day;
+      h+=`<div class="day-sec ${dayColorCls}" data-geo="${day.start_coords[0]},${day.start_coords[1]}">
         <div class="day-hdr reveal">
           <div class="day-num">Day ${day.day}</div>
           <h2 class="day-title">${esc(from)} to ${esc(to)}</h2>
@@ -869,28 +878,26 @@ async function initMiniMap(route){
     wrap.classList.remove('active');
   };
 
-  /* Build route polyline from real road geometries (route-geometries.json).
-     For each day, look up the driving geometry; fall back to straight line. */
-  const allLatLngs=[];
+  /* Build per-day polyline segments from real road geometries */
   const propGeos=routeGeometries.proposals||{};
+  const daySegments=[]; // [{points:[[lat,lng],...], color:'#...'}]
   route.days.forEach(day=>{
+    const color=DAY_COLORS[(day.day-1)%DAY_COLORS.length];
     const key=route.id+'-'+day.day;
     const geo=propGeos[key];
+    let pts=[];
     if(geo && geo.length>1){
-      /* Real road geometry — append all points */
-      geo.forEach(p=>allLatLngs.push([p[0],p[1]]));
+      pts=geo.map(p=>[p[0],p[1]]);
     } else if(day.driving_hours>0){
-      /* No geometry available — straight line fallback */
-      allLatLngs.push(day.start_coords);
-      allLatLngs.push(day.end_coords);
-    } else {
-      /* Rest day — just mark the location */
-      allLatLngs.push(day.end_coords);
+      pts=[day.start_coords, day.end_coords];
     }
+    if(pts.length>1) daySegments.push({points:pts, color:color, day:day.day});
   });
-
-  /* Deduplicate consecutive identical points */
-  const pts=allLatLngs.filter((p,i)=>i===0||p[0]!==allLatLngs[i-1][0]||p[1]!==allLatLngs[i-1][1]);
+  /* Collect all points for bounds calculation */
+  const allLatLngs=[];
+  daySegments.forEach(s=>s.points.forEach(p=>allLatLngs.push(p)));
+  if(allLatLngs.length===0) route.days.forEach(d=>allLatLngs.push(d.end_coords));
+  const pts=allLatLngs;
 
   /* Create map — interactive (pannable + zoomable) */
   miniMap=L.map('miniMap',{
@@ -905,11 +912,17 @@ async function initMiniMap(route){
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
   }).addTo(miniMap);
 
-  /* Route polyline */
+  /* Route polylines — one per day, color-coded */
   const latLngs=pts.map(p=>[p[0],p[1]]);
-  miniMapLine=L.polyline(latLngs,{
-    color:'#e94560', weight:2.5, opacity:0.7, smoothFactor:1
-  }).addTo(miniMap);
+  const allLines=[];
+  daySegments.forEach(seg=>{
+    const line=L.polyline(seg.points,{
+      color:seg.color, weight:3, opacity:0.8, smoothFactor:1
+    }).addTo(miniMap);
+    allLines.push(line);
+  });
+  /* Use a feature group for fitBounds */
+  miniMapLine=allLines.length?L.featureGroup(allLines).addTo(miniMap):L.polyline(latLngs).addTo(miniMap);
 
   /* Start/end markers */
   const dotIcon=function(color){
@@ -919,8 +932,10 @@ async function initMiniMap(route){
       iconSize:[12,12], iconAnchor:[6,6]
     });
   };
-  L.marker(latLngs[0],{icon:dotIcon('#6ab04c'),interactive:false}).addTo(miniMap);
-  L.marker(latLngs[latLngs.length-1],{icon:dotIcon('#e94560'),interactive:false}).addTo(miniMap);
+  if(latLngs.length>0){
+    L.marker(latLngs[0],{icon:dotIcon('#6ab04c'),interactive:false}).addTo(miniMap);
+    L.marker(latLngs[latLngs.length-1],{icon:dotIcon('#e94560'),interactive:false}).addTo(miniMap);
+  }
 
   /* Stop markers (clickable — scroll page to section) */
   const geoEls=Array.from(document.querySelectorAll('[data-geo]'));
