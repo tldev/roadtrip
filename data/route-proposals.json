@@ -31,7 +31,9 @@
               ],
               "description": "Central Coast wine town with dog-friendly patio tastings and rolling vineyard views",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.1,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Tehachapi Loop Railroad",
@@ -39,9 +41,11 @@
                 35.124,
                 -118.505
               ],
-              "description": "National Historic Landmark where freight trains spiral over themselves \u2014 viewable from roadside pulloff",
+              "description": "National Historic Landmark where freight trains spiral over themselves — viewable from roadside pulloff",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.7,
+              "drive_time_prev_name": "Paso Robles Wine Country"
             },
             {
               "name": "Calico Ghost Town",
@@ -49,9 +53,11 @@
                 34.9453,
                 -116.8678
               ],
-              "description": "Restored 1880s silver mining town with mine tours and boardwalk strolling \u2014 dogs welcome on leash",
+              "description": "Restored 1880s silver mining town with mine tours and boardwalk strolling — dogs welcome on leash",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.0,
+              "drive_time_prev_name": "Tehachapi Loop Railroad"
             }
           ],
           "lodging": [
@@ -73,7 +79,9 @@
               "dog_policy": "Classic Route 66 motel, dogs welcome with $15 fee",
               "price_range": "$65-90/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 22,
+          "lodging_drive_from": "Calico Ghost Town"
         },
         {
           "day": 2,
@@ -97,9 +105,11 @@
                 35.3269,
                 -112.8756
               ],
-              "description": "Birthplace of Route 66 preservation \u2014 vintage diners, neon signs, and the inspiration for Pixar's Cars",
+              "description": "Birthplace of Route 66 preservation — vintage diners, neon signs, and the inspiration for Pixar's Cars",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.3,
+              "drive_time_prev_name": "Barstow"
             },
             {
               "name": "Snow Cap Drive-In Seligman",
@@ -109,18 +119,22 @@
               ],
               "description": "Legendary roadside stop with joke-pulling staff and kitschy Route 66 folk art everywhere",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.0,
+              "drive_time_prev_name": "Route 66 Seligman"
             }
           ],
           "camping": {
             "name": "Bonito Campground",
             "type": "campground",
-            "description": "Forest Service campground at the base of Sunset Crater in ponderosa pines \u2014 dark skies, volcanic scenery",
+            "description": "Forest Service campground at the base of Sunset Crater in ponderosa pines — dark skies, volcanic scenery",
             "coords": [
               35.3558,
               -111.5372
             ]
-          }
+          },
+          "lodging_drive_mins": 71,
+          "lodging_drive_from": "Snow Cap Drive-In Seligman"
         },
         {
           "day": 3,
@@ -144,9 +158,11 @@
                 35.3653,
                 -111.5024
               ],
-              "description": "Walk across a 1,000-year-old lava flow with interpretive signs \u2014 dogs on leash allowed on paved trail",
+              "description": "Walk across a 1,000-year-old lava flow with interpretive signs — dogs on leash allowed on paved trail",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.7,
+              "drive_time_prev_name": "Flagstaff"
             },
             {
               "name": "Flagstaff Urban Trail System",
@@ -154,9 +170,11 @@
                 35.201,
                 -111.6348
               ],
-              "description": "50+ miles of interconnected trails through ponderosa forest right from town \u2014 all dog-friendly",
+              "description": "50+ miles of interconnected trails through ponderosa forest right from town — all dog-friendly",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.7,
+              "drive_time_prev_name": "Sunset Crater Lava Flow Trail"
             },
             {
               "name": "Mother Road Brewing Company",
@@ -166,18 +184,22 @@
               ],
               "description": "Dog-friendly patio at Flagstaff's popular Route 66-themed craft brewery",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Flagstaff Urban Trail System"
             }
           ],
           "camping": {
             "name": "Bonito Campground",
             "type": "campground",
-            "description": "Second night at Bonito \u2014 explore Sunset Crater, Walnut Canyon, and Flagstaff's trails",
+            "description": "Second night at Bonito — explore Sunset Crater, Walnut Canyon, and Flagstaff's trails",
             "coords": [
               35.3558,
               -111.5372
             ]
-          }
+          },
+          "lodging_drive_mins": 1,
+          "lodging_drive_from": "Mother Road Brewing Company"
         },
         {
           "day": 4,
@@ -201,9 +223,11 @@
                 34.91,
                 -109.7871
               ],
-              "description": "225-million-year-old petrified logs and painted desert badlands \u2014 dogs on leash on paved overlooks and roads",
+              "description": "225-million-year-old petrified logs and painted desert badlands — dogs on leash on paved overlooks and roads",
               "type": "national_park",
-              "dog_friendly": false
+              "dog_friendly": false,
+              "drive_time_from_prev": 2.1,
+              "drive_time_prev_name": "Flagstaff"
             },
             {
               "name": "Standin' on the Corner Park Winslow",
@@ -211,9 +235,11 @@
                 35.024,
                 -110.6974
               ],
-              "description": "Eagles 'Take It Easy' tribute with bronze statue and flatbed Ford \u2014 quick fun photo stop",
+              "description": "Eagles 'Take It Easy' tribute with bronze statue and flatbed Ford — quick fun photo stop",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.2,
+              "drive_time_prev_name": "Petrified Forest National Park"
             }
           ],
           "lodging": [
@@ -235,7 +261,9 @@
               "dog_policy": "Fenced yard, dog-friendly, near Bosque trail",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 236,
+          "lodging_drive_from": "Standin' on the Corner Park Winslow"
         },
         {
           "day": 5,
@@ -259,9 +287,11 @@
                 35.687,
                 -105.9378
               ],
-              "description": "Historic 1610 plaza with Native artisan market under the Palace of the Governors portal \u2014 dogs welcome outdoors",
+              "description": "Historic 1610 plaza with Native artisan market under the Palace of the Governors portal — dogs welcome outdoors",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.1,
+              "drive_time_prev_name": "Albuquerque"
             },
             {
               "name": "Raton Pass",
@@ -269,9 +299,11 @@
                 36.9914,
                 -104.6962
               ],
-              "description": "Historic Santa Fe Trail crossing at the Colorado border \u2014 scenic transition from plains to mountains",
+              "description": "Historic Santa Fe Trail crossing at the Colorado border — scenic transition from plains to mountains",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.2,
+              "drive_time_prev_name": "Santa Fe Plaza"
             }
           ]
         }
@@ -306,9 +338,11 @@
                 35.6181,
                 -117.3683
               ],
-              "description": "Over 500 ancient tufa towers rising from a dry lake bed \u2014 otherworldly landscape open to explore with dogs",
+              "description": "Over 500 ancient tufa towers rising from a dry lake bed — otherworldly landscape open to explore with dogs",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 6.6,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Death Valley - Zabriskie Point",
@@ -316,9 +350,11 @@
                 36.4208,
                 -116.8118
               ],
-              "description": "Golden badlands viewpoint \u2014 dogs allowed at the paved overlook area for this iconic desert panorama",
+              "description": "Golden badlands viewpoint — dogs allowed at the paved overlook area for this iconic desert panorama",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.8,
+              "drive_time_prev_name": "Trona Pinnacles"
             }
           ],
           "lodging": [
@@ -340,7 +376,9 @@
               "dog_policy": "Fenced yard, dog bowls provided, quiet residential area",
               "price_range": "$85-120/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 90,
+          "lodging_drive_from": "Death Valley - Zabriskie Point"
         },
         {
           "day": 2,
@@ -364,9 +402,11 @@
                 36.1357,
                 -115.4279
               ],
-              "description": "13-mile scenic loop through towering red sandstone formations outside Vegas \u2014 dogs on leash on trails",
+              "description": "13-mile scenic loop through towering red sandstone formations outside Vegas — dogs on leash on trails",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.0,
+              "drive_time_prev_name": "Pahrump"
             },
             {
               "name": "Coral Pink Sand Dunes State Park",
@@ -374,20 +414,24 @@
                 37.0357,
                 -112.6514
               ],
-              "description": "Pink-hued sand dunes formed by Navajo Sandstone erosion \u2014 dogs welcome, great for sunset romps",
+              "description": "Pink-hued sand dunes formed by Navajo Sandstone erosion — dogs welcome, great for sunset romps",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 5.3,
+              "drive_time_prev_name": "Red Rock Canyon"
             }
           ],
           "camping": {
             "name": "Coral Pink Sand Dunes Campground",
             "type": "campground",
-            "description": "Campground within the state park surrounded by pink sand dunes and red cliffs \u2014 stargazing and sunrise dune walks",
+            "description": "Campground within the state park surrounded by pink sand dunes and red cliffs — stargazing and sunrise dune walks",
             "coords": [
               37.0357,
               -112.6514
             ]
-          }
+          },
+          "lodging_drive_mins": 114,
+          "lodging_drive_from": "Coral Pink Sand Dunes State Park"
         },
         {
           "day": 3,
@@ -411,9 +455,11 @@
                 37.0475,
                 -112.5263
               ],
-              "description": "Easy creekside walk through Kanab with red cliff views \u2014 dogs love the shallow water crossings",
+              "description": "Easy creekside walk through Kanab with red cliff views — dogs love the shallow water crossings",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.0,
+              "drive_time_prev_name": "Kanab"
             },
             {
               "name": "Best Friends Animal Sanctuary Visit",
@@ -421,9 +467,11 @@
                 37.0058,
                 -112.4183
               ],
-              "description": "Nation's largest no-kill animal sanctuary in Angel Canyon \u2014 free guided tours, incredibly dog-positive",
+              "description": "Nation's largest no-kill animal sanctuary in Angel Canyon — free guided tours, incredibly dog-positive",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.2,
+              "drive_time_prev_name": "Kanab Creek Walk"
             },
             {
               "name": "Moqui Cave",
@@ -431,20 +479,24 @@
                 37.0083,
                 -112.5567
               ],
-              "description": "Roadside natural sandstone cave turned into a quirky museum and trading post \u2014 dogs welcome outside",
+              "description": "Roadside natural sandstone cave turned into a quirky museum and trading post — dogs welcome outside",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.5,
+              "drive_time_prev_name": "Best Friends Animal Sanctuary Visit"
             }
           ],
           "camping": {
             "name": "Coral Pink Sand Dunes Campground",
             "type": "campground",
-            "description": "Second night \u2014 spend the rest day exploring Kanab's trails and Best Friends sanctuary",
+            "description": "Second night — spend the rest day exploring Kanab's trails and Best Friends sanctuary",
             "coords": [
               37.0357,
               -112.6514
             ]
-          }
+          },
+          "lodging_drive_mins": 22,
+          "lodging_drive_from": "Moqui Cave"
         },
         {
           "day": 4,
@@ -468,9 +520,11 @@
                 36.9833,
                 -110.1135
               ],
-              "description": "Iconic sandstone buttes rising from the desert floor \u2014 self-drive Valley Loop is dog-friendly in your vehicle",
+              "description": "Iconic sandstone buttes rising from the desert floor — self-drive Valley Loop is dog-friendly in your vehicle",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.6,
+              "drive_time_prev_name": "Kanab"
             },
             {
               "name": "Four Corners Monument",
@@ -478,9 +532,11 @@
                 36.999,
                 -109.0452
               ],
-              "description": "Stand in four states at once \u2014 outdoor monument with Navajo vendor stalls, dogs on leash welcome",
+              "description": "Stand in four states at once — outdoor monument with Navajo vendor stalls, dogs on leash welcome",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.9,
+              "drive_time_prev_name": "Monument Valley"
             }
           ],
           "lodging": [
@@ -502,7 +558,9 @@
               "dog_policy": "Dog-friendly cabin near river trail, fenced area",
               "price_range": "$130-180/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 92,
+          "lodging_drive_from": "Four Corners Monument"
         },
         {
           "day": 5,
@@ -526,9 +584,11 @@
                 37.4864,
                 -106.7967
               ],
-              "description": "10,857-foot Continental Divide crossing through alpine meadows \u2014 pulloffs with mountain panoramas",
+              "description": "10,857-foot Continental Divide crossing through alpine meadows — pulloffs with mountain panoramas",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.5,
+              "drive_time_prev_name": "Durango"
             },
             {
               "name": "Great Sand Dunes View",
@@ -538,7 +598,9 @@
               ],
               "description": "Distant view of North America's tallest dunes against the Sangre de Cristos from US-160",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 5.8,
+              "drive_time_prev_name": "Wolf Creek Pass"
             }
           ]
         }
@@ -573,9 +635,11 @@
                 36.7284,
                 -118.1543
               ],
-              "description": "WWII Japanese American internment camp \u2014 outdoor grounds and walking tour are dog-friendly on leash",
+              "description": "WWII Japanese American internment camp — outdoor grounds and walking tour are dog-friendly on leash",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 7.0,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Alabama Hills",
@@ -583,9 +647,11 @@
                 36.6065,
                 -118.1118
               ],
-              "description": "Surreal granite boulder landscape at the foot of Mount Whitney \u2014 free to explore, dogs welcome everywhere",
+              "description": "Surreal granite boulder landscape at the foot of Mount Whitney — free to explore, dogs welcome everywhere",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.9,
+              "drive_time_prev_name": "Manzanar National Historic Site"
             }
           ],
           "lodging": [
@@ -607,7 +673,9 @@
               "dog_policy": "Dog-friendly with fenced yard, near Bishop Creek",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 73,
+          "lodging_drive_from": "Alabama Hills"
         },
         {
           "day": 2,
@@ -631,9 +699,11 @@
                 38.0678,
                 -117.2303
               ],
-              "description": "Walk among headframes and mining ruins on a hilltop overlooking the Nevada desert \u2014 outdoor, dog-friendly",
+              "description": "Walk among headframes and mining ruins on a hilltop overlooking the Nevada desert — outdoor, dog-friendly",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.0,
+              "drive_time_prev_name": "Bishop"
             },
             {
               "name": "Red Canyon",
@@ -641,20 +711,24 @@
                 37.7456,
                 -112.3306
               ],
-              "description": "Brilliant red hoodoos lining Highway 12 \u2014 short trails through the formations, dogs on leash welcome",
+              "description": "Brilliant red hoodoos lining Highway 12 — short trails through the formations, dogs on leash welcome",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 6.9,
+              "drive_time_prev_name": "Tonopah Historic Mining Park"
             }
           ],
           "camping": {
             "name": "Red Canyon Campground",
             "type": "campground",
-            "description": "USFS campground surrounded by vivid red hoodoos along Scenic Byway 12 \u2014 gateway to Bryce Canyon",
+            "description": "USFS campground surrounded by vivid red hoodoos along Scenic Byway 12 — gateway to Bryce Canyon",
             "coords": [
               37.7456,
               -112.3306
             ]
-          }
+          },
+          "lodging_drive_mins": 10,
+          "lodging_drive_from": "Red Canyon"
         },
         {
           "day": 3,
@@ -678,9 +752,11 @@
                 37.6283,
                 -112.1671
               ],
-              "description": "Walk along the rim between Sunrise and Sunset Points \u2014 dogs on leash allowed on the paved rim path above the hoodoos",
+              "description": "Walk along the rim between Sunrise and Sunset Points — dogs on leash allowed on the paved rim path above the hoodoos",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.6,
+              "drive_time_prev_name": "Panguitch"
             },
             {
               "name": "Bryce Canyon Shared Use Path",
@@ -688,9 +764,11 @@
                 37.64,
                 -112.165
               ],
-              "description": "5-mile paved path from Ruby's Inn to the park \u2014 dogs welcome on this connector trail with canyon views",
+              "description": "5-mile paved path from Ruby's Inn to the park — dogs welcome on this connector trail with canyon views",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Bryce Canyon Rim Trail"
             },
             {
               "name": "Red Canyon Trails",
@@ -698,20 +776,24 @@
                 37.7456,
                 -112.3306
               ],
-              "description": "Hike the Arches Trail or Thunder Mountain \u2014 red rock formations with a fraction of Bryce's crowds, dogs welcome",
+              "description": "Hike the Arches Trail or Thunder Mountain — red rock formations with a fraction of Bryce's crowds, dogs welcome",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.4,
+              "drive_time_prev_name": "Bryce Canyon Shared Use Path"
             }
           ],
           "camping": {
             "name": "Red Canyon Campground",
             "type": "campground",
-            "description": "Second night \u2014 full day to explore Bryce and Red Canyon trails",
+            "description": "Second night — full day to explore Bryce and Red Canyon trails",
             "coords": [
               37.7456,
               -112.3306
             ]
-          }
+          },
+          "lodging_drive_mins": 10,
+          "lodging_drive_from": "Red Canyon Trails"
         },
         {
           "day": 4,
@@ -735,9 +817,11 @@
                 38.2916,
                 -111.2628
               ],
-              "description": "Drive through the Waterpocket Fold along the Fremont River \u2014 dogs allowed in vehicle and at pulloffs",
+              "description": "Drive through the Waterpocket Fold along the Fremont River — dogs allowed in vehicle and at pulloffs",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.7,
+              "drive_time_prev_name": "Panguitch"
             },
             {
               "name": "San Rafael Swell Viewpoint",
@@ -745,9 +829,11 @@
                 38.95,
                 -110.65
               ],
-              "description": "Vast geologic uplift visible from I-70 \u2014 The Wedge overlook offers a mini Grand Canyon vista",
+              "description": "Vast geologic uplift visible from I-70 — The Wedge overlook offers a mini Grand Canyon vista",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.4,
+              "drive_time_prev_name": "Capitol Reef Scenic Drive"
             }
           ],
           "lodging": [
@@ -769,7 +855,9 @@
               "dog_policy": "Dog-friendly, private patio, near Yampa River Core Trail",
               "price_range": "$130-200/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 337,
+          "lodging_drive_from": "San Rafael Swell Viewpoint"
         },
         {
           "day": 5,
@@ -793,9 +881,11 @@
                 40.3844,
                 -106.6614
               ],
-              "description": "9,426-foot pass through dense spruce-fir forest \u2014 the distinctive twin rock formations are visible from the road",
+              "description": "9,426-foot pass through dense spruce-fir forest — the distinctive twin rock formations are visible from the road",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.4,
+              "drive_time_prev_name": "Steamboat Springs"
             },
             {
               "name": "Berthoud Pass",
@@ -803,9 +893,11 @@
                 39.7981,
                 -105.7775
               ],
-              "description": "11,315-foot Continental Divide crossing on US-40 with alpine tundra views \u2014 a stunning descent into the Front Range",
+              "description": "11,315-foot Continental Divide crossing on US-40 with alpine tundra views — a stunning descent into the Front Range",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.8,
+              "drive_time_prev_name": "Rabbit Ears Pass"
             }
           ]
         }
@@ -840,9 +932,11 @@
                 35.1414,
                 -115.5109
               ],
-              "description": "Kelso Depot visitor center and vast desert scenery \u2014 dogs on leash at pulloffs and picnic areas",
+              "description": "Kelso Depot visitor center and vast desert scenery — dogs on leash at pulloffs and picnic areas",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 8.7,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Route 66 Museum Kingman",
@@ -850,9 +944,11 @@
                 35.19,
                 -114.056
               ],
-              "description": "Housed in the 1907 Powerhouse, tracing Route 66 decade by decade \u2014 outdoor areas dog-friendly",
+              "description": "Housed in the 1907 Powerhouse, tracing Route 66 decade by decade — outdoor areas dog-friendly",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.0,
+              "drive_time_prev_name": "Mojave National Preserve"
             }
           ],
           "lodging": [
@@ -874,7 +970,9 @@
               "dog_policy": "Dog-friendly casita, fenced backyard, near Hualapai Mountain Park",
               "price_range": "$85-130/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 1,
+          "lodging_drive_from": "Route 66 Museum Kingman"
         },
         {
           "day": 2,
@@ -898,9 +996,11 @@
                 35.2494,
                 -112.1871
               ],
-              "description": "Last town bypassed by I-40 \u2014 original neon signs, diners, and the Grand Canyon Railway depot",
+              "description": "Last town bypassed by I-40 — original neon signs, diners, and the Grand Canyon Railway depot",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.7,
+              "drive_time_prev_name": "Kingman"
             },
             {
               "name": "Mather Point",
@@ -908,20 +1008,24 @@
                 36.06,
                 -112.1077
               ],
-              "description": "First jaw-dropping Grand Canyon viewpoint \u2014 paved overlook, dogs on leash at the rim",
+              "description": "First jaw-dropping Grand Canyon viewpoint — paved overlook, dogs on leash at the rim",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.2,
+              "drive_time_prev_name": "Route 66 Historic Downtown Williams"
             }
           ],
           "camping": {
             "name": "Mather Campground",
             "type": "campground",
-            "description": "Primary South Rim campground in ponderosa forest \u2014 walking distance to Rim Trail and village amenities",
+            "description": "Primary South Rim campground in ponderosa forest — walking distance to Rim Trail and village amenities",
             "coords": [
               36.0492,
               -112.118
             ]
-          }
+          },
+          "lodging_drive_mins": 7,
+          "lodging_drive_from": "Mather Point"
         },
         {
           "day": 3,
@@ -945,9 +1049,11 @@
                 36.0569,
                 -112.1432
               ],
-              "description": "13-mile paved rim path \u2014 dogs on leash welcome along the entire trail above the canyon",
+              "description": "13-mile paved rim path — dogs on leash welcome along the entire trail above the canyon",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.0,
+              "drive_time_prev_name": "Grand Canyon Village"
             },
             {
               "name": "Shoshone Point",
@@ -955,9 +1061,11 @@
                 36.0494,
                 -112.0876
               ],
-              "description": "Hidden viewpoint via a quiet 1-mile forest walk \u2014 peaceful, uncrowded, dogs on leash",
+              "description": "Hidden viewpoint via a quiet 1-mile forest walk — peaceful, uncrowded, dogs on leash",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.2,
+              "drive_time_prev_name": "Grand Canyon Rim Trail"
             },
             {
               "name": "Greenway Trail",
@@ -965,20 +1073,24 @@
                 36.052,
                 -112.13
               ],
-              "description": "Paved multi-use path connecting visitor center to Hermit's Rest \u2014 separate from the rim, less crowded for dog walks",
+              "description": "Paved multi-use path connecting visitor center to Hermit's Rest — separate from the rim, less crowded for dog walks",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Shoshone Point"
             }
           ],
           "camping": {
             "name": "Mather Campground",
             "type": "campground",
-            "description": "Second night \u2014 full day to walk the rim, catch sunset at Hopi Point, and enjoy the canyon at your pace",
+            "description": "Second night — full day to walk the rim, catch sunset at Hopi Point, and enjoy the canyon at your pace",
             "coords": [
               36.0492,
               -112.118
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Greenway Trail"
         },
         {
           "day": 4,
@@ -1002,9 +1114,11 @@
                 35.8598,
                 -111.4224
               ],
-              "description": "Historic 1916 Navajo trading post with galleries and restaurant \u2014 great Navajo tacos, outdoor areas dog-friendly",
+              "description": "Historic 1916 Navajo trading post with galleries and restaurant — great Navajo tacos, outdoor areas dog-friendly",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.1,
+              "drive_time_prev_name": "Grand Canyon Village"
             },
             {
               "name": "Navajo Bridge",
@@ -1012,9 +1126,11 @@
                 36.8114,
                 -111.6318
               ],
-              "description": "Pedestrian bridge 470 feet above the Colorado River \u2014 look for condors, dogs on leash on the walkway",
+              "description": "Pedestrian bridge 470 feet above the Colorado River — look for condors, dogs on leash on the walkway",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.3,
+              "drive_time_prev_name": "Cameron Trading Post"
             }
           ],
           "lodging": [
@@ -1036,7 +1152,9 @@
               "dog_policy": "Dog-friendly cabin with yard, near river trail",
               "price_range": "$120-170/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 378,
+          "lodging_drive_from": "Navajo Bridge"
         },
         {
           "day": 5,
@@ -1060,9 +1178,11 @@
                 37.4864,
                 -106.7967
               ],
-              "description": "10,857-foot Continental Divide crossing \u2014 alpine meadows and mountain views from pulloffs",
+              "description": "10,857-foot Continental Divide crossing — alpine meadows and mountain views from pulloffs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.5,
+              "drive_time_prev_name": "Pagosa Springs"
             },
             {
               "name": "Spanish Peaks Vista",
@@ -1070,9 +1190,11 @@
                 37.3755,
                 -104.9878
               ],
-              "description": "Twin volcanic peaks visible from I-25 corridor \u2014 the Great Dikes radiate like stone walls",
+              "description": "Twin volcanic peaks visible from I-25 corridor — the Great Dikes radiate like stone walls",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.2,
+              "drive_time_prev_name": "Wolf Creek Pass"
             }
           ]
         }
@@ -1107,9 +1229,11 @@
                 35.2872,
                 -115.538
               ],
-              "description": "Drive through the world's densest Joshua tree forest along Cima Road \u2014 pulloffs for photos with dogs",
+              "description": "Drive through the world's densest Joshua tree forest along Cima Road — pulloffs for photos with dogs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 8.0,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Seven Magic Mountains",
@@ -1117,9 +1241,11 @@
                 35.8625,
                 -115.2667
               ],
-              "description": "Colorful stacked boulder art installation in the desert south of Vegas \u2014 outdoor, dogs welcome",
+              "description": "Colorful stacked boulder art installation in the desert south of Vegas — outdoor, dogs welcome",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.6,
+              "drive_time_prev_name": "Mojave National Preserve - Cima Road"
             }
           ],
           "lodging": [
@@ -1141,7 +1267,9 @@
               "dog_policy": "Dog-friendly home near Summerlin trail system, fenced yard",
               "price_range": "$100-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 52,
+          "lodging_drive_from": "Seven Magic Mountains"
         },
         {
           "day": 2,
@@ -1165,9 +1293,11 @@
                 36.4419,
                 -114.5134
               ],
-              "description": "Brilliant red Aztec sandstone formations \u2014 dogs on leash on trails, spectacular sunrise or sunset drive",
+              "description": "Brilliant red Aztec sandstone formations — dogs on leash on trails, spectacular sunrise or sunset drive",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.1,
+              "drive_time_prev_name": "Las Vegas"
             },
             {
               "name": "Zion Canyon Scenic Drive",
@@ -1175,20 +1305,24 @@
                 37.25,
                 -112.95
               ],
-              "description": "Towering 2,000-foot canyon walls along the Virgin River \u2014 dogs in vehicles on the scenic drive",
+              "description": "Towering 2,000-foot canyon walls along the Virgin River — dogs in vehicles on the scenic drive",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.6,
+              "drive_time_prev_name": "Valley of Fire State Park"
             }
           ],
           "camping": {
             "name": "Watchman Campground",
             "type": "campground",
-            "description": "Zion's premier campground along the Virgin River \u2014 sites shaded by cottonwoods with canyon wall views",
+            "description": "Zion's premier campground along the Virgin River — sites shaded by cottonwoods with canyon wall views",
             "coords": [
               37.1965,
               -112.9869
             ]
-          }
+          },
+          "lodging_drive_mins": 11,
+          "lodging_drive_from": "Zion Canyon Scenic Drive"
         },
         {
           "day": 3,
@@ -1212,9 +1346,11 @@
                 37.2018,
                 -112.9861
               ],
-              "description": "3.5-mile paved riverside trail \u2014 one of only two Zion trails allowing dogs, with stunning canyon views",
+              "description": "3.5-mile paved riverside trail — one of only two Zion trails allowing dogs, with stunning canyon views",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Springdale"
             },
             {
               "name": "Springdale Town Walk",
@@ -1222,9 +1358,11 @@
                 37.189,
                 -112.9988
               ],
-              "description": "Walkable gateway town with galleries, restaurants, and outfitters \u2014 very dog-friendly atmosphere",
+              "description": "Walkable gateway town with galleries, restaurants, and outfitters — very dog-friendly atmosphere",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Pa'rus Trail"
             },
             {
               "name": "Grafton Ghost Town",
@@ -1232,20 +1370,24 @@
                 37.1657,
                 -113.0731
               ],
-              "description": "Abandoned 1859 Mormon settlement with photogenic buildings against Zion cliffs \u2014 open and dog-friendly",
+              "description": "Abandoned 1859 Mormon settlement with photogenic buildings against Zion cliffs — open and dog-friendly",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.2,
+              "drive_time_prev_name": "Springdale Town Walk"
             }
           ],
           "camping": {
             "name": "Watchman Campground",
             "type": "campground",
-            "description": "Second night \u2014 walk the Pa'rus Trail, explore Springdale, relax by the Virgin River",
+            "description": "Second night — walk the Pa'rus Trail, explore Springdale, relax by the Virgin River",
             "coords": [
               37.1965,
               -112.9869
             ]
-          }
+          },
+          "lodging_drive_mins": 12,
+          "lodging_drive_from": "Grafton Ghost Town"
         },
         {
           "day": 4,
@@ -1269,9 +1411,11 @@
                 38.2916,
                 -111.2628
               ],
-              "description": "Free-entry scenic drive along the Waterpocket Fold \u2014 dogs at pulloffs and picnic areas",
+              "description": "Free-entry scenic drive along the Waterpocket Fold — dogs at pulloffs and picnic areas",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.1,
+              "drive_time_prev_name": "Springdale"
             },
             {
               "name": "Goblin Valley State Park",
@@ -1279,9 +1423,11 @@
                 38.567,
                 -110.7077
               ],
-              "description": "Thousands of mushroom-shaped hoodoos \u2014 dogs on leash, and you can wander freely among the 'goblins'",
+              "description": "Thousands of mushroom-shaped hoodoos — dogs on leash, and you can wander freely among the 'goblins'",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.7,
+              "drive_time_prev_name": "Capitol Reef Scenic Drive"
             }
           ],
           "lodging": [
@@ -1303,7 +1449,9 @@
               "dog_policy": "Dog-friendly, private patio, near trailheads",
               "price_range": "$120-180/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 118,
+          "lodging_drive_from": "Goblin Valley State Park"
         },
         {
           "day": 5,
@@ -1327,9 +1475,11 @@
                 39.07,
                 -108.73
               ],
-              "description": "I-70 follows the Colorado River through red-walled canyons \u2014 scenic rest areas with river access for dogs",
+              "description": "I-70 follows the Colorado River through red-walled canyons — scenic rest areas with river access for dogs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.9,
+              "drive_time_prev_name": "Moab"
             },
             {
               "name": "Glenwood Canyon Rest Stop",
@@ -1339,7 +1489,9 @@
               ],
               "description": "Stop at the Grizzly Creek rest area for a short walk along the Colorado River in the heart of the canyon",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.8,
+              "drive_time_prev_name": "Colorado River Scenic Byway"
             }
           ]
         }
@@ -1374,9 +1526,11 @@
                 38.5832,
                 -121.5049
               ],
-              "description": "Gold Rush-era waterfront district with boardwalks and the California Railroad Museum \u2014 dogs welcome on streets",
+              "description": "Gold Rush-era waterfront district with boardwalks and the California Railroad Museum — dogs welcome on streets",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.3,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Donner Memorial State Park",
@@ -1384,9 +1538,11 @@
                 39.2389,
                 -120.2318
               ],
-              "description": "Alpine park on Donner Lake with hiking trails and the Emigrant Trail Museum \u2014 dogs on leash on trails",
+              "description": "Alpine park on Donner Lake with hiking trails and the Emigrant Trail Museum — dogs on leash on trails",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.5,
+              "drive_time_prev_name": "Sacramento Old Town"
             }
           ],
           "lodging": [
@@ -1408,7 +1564,9 @@
               "dog_policy": "Dog-friendly, fenced yard, walkable to Riverwalk",
               "price_range": "$90-140/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 81,
+          "lodging_drive_from": "Donner Memorial State Park"
         },
         {
           "day": 2,
@@ -1432,9 +1590,11 @@
                 39.2846,
                 -118.1311
               ],
-              "description": "600-foot singing sand dune in the Nevada desert \u2014 dogs welcome, bring water and enjoy the vast silence",
+              "description": "600-foot singing sand dune in the Nevada desert — dogs welcome, bring water and enjoy the vast silence",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.9,
+              "drive_time_prev_name": "Reno"
             },
             {
               "name": "Ward Charcoal Ovens",
@@ -1442,20 +1602,24 @@
                 39.0769,
                 -115.0422
               ],
-              "description": "Six perfectly preserved beehive-shaped stone kilns from the 1870s silver mining era \u2014 dogs on leash welcome",
+              "description": "Six perfectly preserved beehive-shaped stone kilns from the 1870s silver mining era — dogs on leash welcome",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 5.1,
+              "drive_time_prev_name": "Sand Mountain Recreation Area"
             }
           ],
           "camping": {
             "name": "Cave Lake State Park",
             "type": "campground",
-            "description": "Mountain lake campground at 7,300 feet in the Schell Creek Range near Ely \u2014 trout fishing, kayaking, pines",
+            "description": "Mountain lake campground at 7,300 feet in the Schell Creek Range near Ely — trout fishing, kayaking, pines",
             "coords": [
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 38,
+          "lodging_drive_from": "Ward Charcoal Ovens"
         },
         {
           "day": 3,
@@ -1479,9 +1643,11 @@
                 39.1672,
                 -114.8164
               ],
-              "description": "Walk the lakeshore through juniper and pine forest \u2014 calm water for dogs to swim, mountain views",
+              "description": "Walk the lakeshore through juniper and pine forest — calm water for dogs to swim, mountain views",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Ely"
             },
             {
               "name": "Nevada Northern Railway",
@@ -1489,9 +1655,11 @@
                 39.2461,
                 -114.8639
               ],
-              "description": "Ride behind a century-old steam locomotive \u2014 dogs allowed on select excursion cars, check schedules",
+              "description": "Ride behind a century-old steam locomotive — dogs allowed on select excursion cars, check schedules",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.2,
+              "drive_time_prev_name": "Cave Lake Shoreline Trail"
             },
             {
               "name": "Ely Renaissance Village",
@@ -1501,18 +1669,22 @@
               ],
               "description": "Walk through restored historic buildings representing Ely's diverse immigrant mining communities",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.0,
+              "drive_time_prev_name": "Nevada Northern Railway"
             }
           ],
           "camping": {
             "name": "Cave Lake State Park",
             "type": "campground",
-            "description": "Second night \u2014 swim, fish, hike the lakeshore, and ride the historic railroad",
+            "description": "Second night — swim, fish, hike the lakeshore, and ride the historic railroad",
             "coords": [
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Ely Renaissance Village"
         },
         {
           "day": 4,
@@ -1538,7 +1710,9 @@
               ],
               "description": "Sweeping views across the Great Basin's mountain ranges and valleys from US-93 pulloffs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.2,
+              "drive_time_prev_name": "Ely"
             },
             {
               "name": "San Rafael Swell - I-70",
@@ -1546,9 +1720,11 @@
                 38.95,
                 -110.65
               ],
-              "description": "Drive through the spectacular San Rafael Reef along I-70 \u2014 dramatic geology visible right from the highway",
+              "description": "Drive through the spectacular San Rafael Reef along I-70 — dramatic geology visible right from the highway",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 5.1,
+              "drive_time_prev_name": "Great Basin Highway Overlook"
             }
           ],
           "lodging": [
@@ -1570,7 +1746,9 @@
               "dog_policy": "Dog-friendly property with fenced yard, near Colorado National Monument",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 147,
+          "lodging_drive_from": "San Rafael Swell - I-70"
         },
         {
           "day": 5,
@@ -1594,9 +1772,11 @@
                 39.5647,
                 -107.2295
               ],
-              "description": "12-mile I-70 canyon with 1,300-foot walls \u2014 stop at Grizzly Creek rest area for riverside walks with dogs",
+              "description": "12-mile I-70 canyon with 1,300-foot walls — stop at Grizzly Creek rest area for riverside walks with dogs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.4,
+              "drive_time_prev_name": "Grand Junction"
             },
             {
               "name": "Eisenhower Tunnel Vista",
@@ -1604,9 +1784,11 @@
                 39.679,
                 -105.9107
               ],
-              "description": "Highest point on the US Interstate system at 11,158 feet \u2014 pull off for alpine tundra views",
+              "description": "Highest point on the US Interstate system at 11,158 feet — pull off for alpine tundra views",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.5,
+              "drive_time_prev_name": "Glenwood Canyon"
             }
           ]
         }
@@ -1641,9 +1823,11 @@
                 35.6265,
                 -120.691
               ],
-              "description": "Central Coast wine town with dog-friendly patio tastings \u2014 try Tablas Creek or Eberle",
+              "description": "Central Coast wine town with dog-friendly patio tastings — try Tablas Creek or Eberle",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.1,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Tehachapi Wind Farm",
@@ -1651,9 +1835,11 @@
                 35.078,
                 -118.371
               ],
-              "description": "Thousands of wind turbines stretching across the mountain pass \u2014 surreal industrial-meets-nature views from the highway",
+              "description": "Thousands of wind turbines stretching across the mountain pass — surreal industrial-meets-nature views from the highway",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.0,
+              "drive_time_prev_name": "Paso Robles Wine Country"
             }
           ],
           "lodging": [
@@ -1675,7 +1861,9 @@
               "dog_policy": "Dog-friendly, fully fenced yard, quiet street",
               "price_range": "$80-120/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 112,
+          "lodging_drive_from": "Tehachapi Wind Farm"
         },
         {
           "day": 2,
@@ -1699,9 +1887,11 @@
                 35.08,
                 -113.897
               ],
-              "description": "Pine-forested mountain park at 8,400 feet above Kingman \u2014 dog-friendly trails and cooler mountain air",
+              "description": "Pine-forested mountain park at 8,400 feet above Kingman — dog-friendly trails and cooler mountain air",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.3,
+              "drive_time_prev_name": "Barstow"
             },
             {
               "name": "Oak Creek Canyon Scenic Drive",
@@ -1709,20 +1899,24 @@
                 35.02,
                 -111.73
               ],
-              "description": "14-mile descent through red and white sandstone canyon walls \u2014 Arizona's mini Grand Canyon",
+              "description": "14-mile descent through red and white sandstone canyon walls — Arizona's mini Grand Canyon",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 3.2,
+              "drive_time_prev_name": "Hualapai Mountain Park"
             }
           ],
           "camping": {
             "name": "Cave Springs Campground",
             "type": "campground",
-            "description": "Shaded creekside campground in Oak Creek Canyon surrounded by red rock walls \u2014 dogs on leash, creek access",
+            "description": "Shaded creekside campground in Oak Creek Canyon surrounded by red rock walls — dogs on leash, creek access",
             "coords": [
               34.9667,
               -111.75
             ]
-          }
+          },
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Oak Creek Canyon Scenic Drive"
         },
         {
           "day": 3,
@@ -1746,9 +1940,11 @@
                 34.8072,
                 -111.7687
               ],
-              "description": "3.6-mile loop circling Sedona's iconic bell-shaped butte \u2014 dogs on leash, vortex energy site",
+              "description": "3.6-mile loop circling Sedona's iconic bell-shaped butte — dogs on leash, vortex energy site",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Sedona"
             },
             {
               "name": "Tlaquepaque Arts Village",
@@ -1756,9 +1952,11 @@
                 34.8597,
                 -111.7588
               ],
-              "description": "Spanish colonial arts village with fountains and galleries \u2014 dog-friendly courtyards and outdoor dining",
+              "description": "Spanish colonial arts village with fountains and galleries — dog-friendly courtyards and outdoor dining",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Bell Rock Pathway"
             },
             {
               "name": "Airport Mesa Overlook",
@@ -1766,20 +1964,24 @@
                 34.8586,
                 -111.779
               ],
-              "description": "360-degree panoramic views of all Sedona's red rock formations \u2014 famous sunset spot, dogs welcome",
+              "description": "360-degree panoramic views of all Sedona's red rock formations — famous sunset spot, dogs welcome",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Tlaquepaque Arts Village"
             }
           ],
           "camping": {
             "name": "Cave Springs Campground",
             "type": "campground",
-            "description": "Second night \u2014 full day to hike Bell Rock, explore Tlaquepaque, and catch sunset at Airport Mesa",
+            "description": "Second night — full day to hike Bell Rock, explore Tlaquepaque, and catch sunset at Airport Mesa",
             "coords": [
               34.9667,
               -111.75
             ]
-          }
+          },
+          "lodging_drive_mins": 4,
+          "lodging_drive_from": "Airport Mesa Overlook"
         },
         {
           "day": 4,
@@ -1803,9 +2005,11 @@
                 35.0275,
                 -111.0223
               ],
-              "description": "Best-preserved meteorite impact crater on Earth \u2014 outdoor viewing platform, dogs allowed on observation deck",
+              "description": "Best-preserved meteorite impact crater on Earth — outdoor viewing platform, dogs allowed on observation deck",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.3,
+              "drive_time_prev_name": "Sedona"
             },
             {
               "name": "Albuquerque Old Town",
@@ -1813,9 +2017,11 @@
                 35.0966,
                 -106.6691
               ],
-              "description": "Historic 1706 Spanish plaza with adobe shops and restaurants \u2014 walk the outdoor plazas with your dog",
+              "description": "Historic 1706 Spanish plaza with adobe shops and restaurants — walk the outdoor plazas with your dog",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.4,
+              "drive_time_prev_name": "Meteor Crater"
             }
           ],
           "lodging": [
@@ -1837,7 +2043,9 @@
               "dog_policy": "Dog-friendly adobe home with courtyard, walking distance to Canyon Road galleries",
               "price_range": "$130-200/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 66,
+          "lodging_drive_from": "Albuquerque Old Town"
         },
         {
           "day": 5,
@@ -1861,9 +2069,11 @@
                 35.687,
                 -105.9378
               ],
-              "description": "Walk the oldest public plaza in the US before hitting the road \u2014 artisan vendors under the Palace portal",
+              "description": "Walk the oldest public plaza in the US before hitting the road — artisan vendors under the Palace portal",
               "type": "town",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.0,
+              "drive_time_prev_name": "Santa Fe"
             },
             {
               "name": "Raton Pass",
@@ -1871,9 +2081,11 @@
                 36.9914,
                 -104.6962
               ],
-              "description": "Scenic mountain pass at the CO/NM border \u2014 historic Santa Fe Trail gateway with rest area overlook",
+              "description": "Scenic mountain pass at the CO/NM border — historic Santa Fe Trail gateway with rest area overlook",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 4.2,
+              "drive_time_prev_name": "Santa Fe Plaza Morning Walk"
             }
           ]
         }
@@ -1908,9 +2120,11 @@
                 35.3713,
                 -120.8659
               ],
-              "description": "576-foot volcanic plug at the harbor mouth \u2014 stop for photos and a walk along the Embarcadero with your dog",
+              "description": "576-foot volcanic plug at the harbor mouth — stop for photos and a walk along the Embarcadero with your dog",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.7,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Mojave National Preserve",
@@ -1918,9 +2132,11 @@
                 35.1414,
                 -115.5109
               ],
-              "description": "Kelso Dunes and vast desert scenery \u2014 dogs at pulloffs and parking areas along the preserve roads",
+              "description": "Kelso Dunes and vast desert scenery — dogs at pulloffs and parking areas along the preserve roads",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 7.4,
+              "drive_time_prev_name": "Morro Rock Vista"
             }
           ],
           "lodging": [
@@ -1942,7 +2158,9 @@
               "dog_policy": "Dog-friendly, pool, fenced backyard",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 132,
+          "lodging_drive_from": "Mojave National Preserve"
         },
         {
           "day": 2,
@@ -1966,9 +2184,11 @@
                 36.81,
                 -111.743
               ],
-              "description": "Massive 3,000-foot escarpment of red and orange sandstone \u2014 look for California condors soaring the cliffs",
+              "description": "Massive 3,000-foot escarpment of red and orange sandstone — look for California condors soaring the cliffs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 8.4,
+              "drive_time_prev_name": "Las Vegas"
             },
             {
               "name": "Horseshoe Bend",
@@ -1976,20 +2196,24 @@
                 36.8791,
                 -111.5104
               ],
-              "description": "Colorado River's famous 270-degree meander seen from 1,000 feet above \u2014 1.5-mile walk, dogs on leash",
+              "description": "Colorado River's famous 270-degree meander seen from 1,000 feet above — 1.5-mile walk, dogs on leash",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 5.8,
+              "drive_time_prev_name": "Vermilion Cliffs"
             }
           ],
           "camping": {
             "name": "Wahweap Campground",
             "type": "campground",
-            "description": "Campground on the shores of Lake Powell near Page \u2014 sunset views over the desert lake and red mesa country",
+            "description": "Campground on the shores of Lake Powell near Page — sunset views over the desert lake and red mesa country",
             "coords": [
               36.9967,
               -111.4856
             ]
-          }
+          },
+          "lodging_drive_mins": 8,
+          "lodging_drive_from": "Horseshoe Bend"
         },
         {
           "day": 3,
@@ -2015,7 +2239,9 @@
               ],
               "description": "Walk the rim above Lake Powell for panoramic views of the turquoise water and red rock canyons",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.3,
+              "drive_time_prev_name": "Page"
             },
             {
               "name": "Glen Canyon Dam Overlook",
@@ -2023,9 +2249,11 @@
                 36.9372,
                 -111.4836
               ],
-              "description": "Views of the 710-foot dam and the canyon below \u2014 outdoor walkway, dogs on leash",
+              "description": "Views of the 710-foot dam and the canyon below — outdoor walkway, dogs on leash",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.3,
+              "drive_time_prev_name": "Wahweap Overlook Trail"
             },
             {
               "name": "Chains Trail Area",
@@ -2033,20 +2261,24 @@
                 36.93,
                 -111.47
               ],
-              "description": "Short hikes in the sandstone formations near Page \u2014 slickrock walking with canyon views, dogs must stay at trailhead",
+              "description": "Short hikes in the sandstone formations near Page — slickrock walking with canyon views, dogs must stay at trailhead",
               "type": "attraction",
-              "dog_friendly": false
+              "dog_friendly": false,
+              "drive_time_from_prev": 0.1,
+              "drive_time_prev_name": "Glen Canyon Dam Overlook"
             }
           ],
           "camping": {
             "name": "Wahweap Campground",
             "type": "campground",
-            "description": "Second night \u2014 explore Lake Powell shoreline, Glen Canyon Dam, and the surrounding desert at your own pace",
+            "description": "Second night — explore Lake Powell shoreline, Glen Canyon Dam, and the surrounding desert at your own pace",
             "coords": [
               36.9967,
               -111.4856
             ]
-          }
+          },
+          "lodging_drive_mins": 3,
+          "lodging_drive_from": "Chains Trail Area"
         },
         {
           "day": 4,
@@ -2070,9 +2302,11 @@
                 36.9833,
                 -110.1135
               ],
-              "description": "Iconic sandstone buttes \u2014 self-drive loop is dog-friendly in your car, amazing valley floor views",
+              "description": "Iconic sandstone buttes — self-drive loop is dog-friendly in your car, amazing valley floor views",
               "type": "national_park",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.3,
+              "drive_time_prev_name": "Page"
             },
             {
               "name": "Four Corners Monument",
@@ -2080,9 +2314,11 @@
                 36.999,
                 -109.0452
               ],
-              "description": "Stand in four states simultaneously \u2014 outdoor monument, dogs on leash, Navajo vendor stalls",
+              "description": "Stand in four states simultaneously — outdoor monument, dogs on leash, Navajo vendor stalls",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.9,
+              "drive_time_prev_name": "Monument Valley"
             }
           ],
           "lodging": [
@@ -2104,7 +2340,9 @@
               "dog_policy": "Dog-friendly cabin with porch, mountain views",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 43,
+          "lodging_drive_from": "Four Corners Monument"
         },
         {
           "day": 5,
@@ -2128,9 +2366,11 @@
                 37.2753,
                 -107.8801
               ],
-              "description": "7-mile paved riverwalk through downtown Durango \u2014 dogs on leash, great for a leg-stretching break",
+              "description": "7-mile paved riverwalk through downtown Durango — dogs on leash, great for a leg-stretching break",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.8,
+              "drive_time_prev_name": "Cortez"
             },
             {
               "name": "Wolf Creek Pass",
@@ -2138,9 +2378,11 @@
                 37.4864,
                 -106.7967
               ],
-              "description": "Alpine pass at 10,857 feet crossing the Continental Divide \u2014 mountain meadows and panoramic pulloffs",
+              "description": "Alpine pass at 10,857 feet crossing the Continental Divide — mountain meadows and panoramic pulloffs",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 1.5,
+              "drive_time_prev_name": "Animas River Trail Durango"
             }
           ]
         }
@@ -2175,9 +2417,11 @@
                 36.7284,
                 -118.1543
               ],
-              "description": "WWII internment camp memorial \u2014 outdoor grounds with walking paths, dogs on leash on the grounds",
+              "description": "WWII internment camp memorial — outdoor grounds with walking paths, dogs on leash on the grounds",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 7.0,
+              "drive_time_prev_name": "Carmel-by-the-Sea"
             },
             {
               "name": "Alabama Hills",
@@ -2185,9 +2429,11 @@
                 36.6065,
                 -118.1118
               ],
-              "description": "Surreal granite boulders at Mount Whitney's base \u2014 free to explore, dogs welcome, incredible sunset spot",
+              "description": "Surreal granite boulders at Mount Whitney's base — free to explore, dogs welcome, incredible sunset spot",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.9,
+              "drive_time_prev_name": "Manzanar National Historic Site"
             }
           ],
           "lodging": [
@@ -2209,7 +2455,9 @@
               "dog_policy": "Dog-friendly, Mount Whitney views, near Alabama Hills",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Alabama Hills"
         },
         {
           "day": 2,
@@ -2233,9 +2481,11 @@
                 37.9403,
                 -119.0277
               ],
-              "description": "Otherworldly tufa towers rising from ancient alkaline lake \u2014 short boardwalk, dogs on leash at the trailhead area",
+              "description": "Otherworldly tufa towers rising from ancient alkaline lake — short boardwalk, dogs on leash at the trailhead area",
               "type": "attraction",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.2,
+              "drive_time_prev_name": "Lone Pine"
             },
             {
               "name": "Capitol Reef Scenic Drive",
@@ -2243,7 +2493,7 @@
                 38.2916,
                 -111.2628
               ],
-              "description": "Enter the Waterpocket Fold along the Fremont River \u2014 scenic drive with pulloffs, dogs at overlooks",
+              "description": "Enter the Waterpocket Fold along the Fremont River — scenic drive with pulloffs, dogs at overlooks",
               "type": "national_park",
               "dog_friendly": true,
               "drive_time_from_prev": 11.9,
@@ -2253,14 +2503,16 @@
           "camping": {
             "name": "Fruita Campground",
             "type": "campground",
-            "description": "Capitol Reef's main campground in a pioneer-era fruit orchard along the Fremont River \u2014 pick fruit in season, shaded sites",
+            "description": "Capitol Reef's main campground in a pioneer-era fruit orchard along the Fremont River — pick fruit in season, shaded sites",
             "coords": [
               38.2825,
               -111.2478
             ]
           },
           "drive_time_to_end": 0.3,
-          "drive_time_last_stop": "Capitol Reef Scenic Drive"
+          "drive_time_last_stop": "Capitol Reef Scenic Drive",
+          "lodging_drive_mins": 17,
+          "lodging_drive_from": "Capitol Reef Scenic Drive"
         },
         {
           "day": 3,
@@ -2284,7 +2536,7 @@
                 38.285,
                 -111.25
               ],
-              "description": "1.5-mile trail along the Fremont River through the orchard \u2014 flat, shaded, dogs on leash welcome",
+              "description": "1.5-mile trail along the Fremont River through the orchard — flat, shaded, dogs on leash welcome",
               "type": "national_park",
               "dog_friendly": true,
               "drive_time_from_prev": 0.3,
@@ -2308,7 +2560,7 @@
                 38.289,
                 -111.254
               ],
-              "description": "Fremont culture rock art panels visible from the roadside boardwalk \u2014 dogs welcome at the viewing area",
+              "description": "Fremont culture rock art panels visible from the roadside boardwalk — dogs welcome at the viewing area",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 0.0,
@@ -2318,14 +2570,16 @@
           "camping": {
             "name": "Fruita Campground",
             "type": "campground",
-            "description": "Second night \u2014 hike the river trail, view petroglyphs, pick fruit from the historic orchards",
+            "description": "Second night — hike the river trail, view petroglyphs, pick fruit from the historic orchards",
             "coords": [
               38.2825,
               -111.2478
             ]
           },
           "drive_time_to_end": 0.3,
-          "drive_time_last_stop": "Capitol Reef Petroglyphs"
+          "drive_time_last_stop": "Capitol Reef Petroglyphs",
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Capitol Reef Petroglyphs"
         },
         {
           "day": 4,
@@ -2349,7 +2603,7 @@
                 38.95,
                 -110.65
               ],
-              "description": "Drive through the San Rafael Reef \u2014 I-70 cuts through 1,000-foot sandstone walls in a dramatic geological corridor",
+              "description": "Drive through the San Rafael Reef — I-70 cuts through 1,000-foot sandstone walls in a dramatic geological corridor",
               "type": "scenic_drive",
               "dog_friendly": true,
               "drive_time_from_prev": 2.6,
@@ -2361,7 +2615,7 @@
                 39.1,
                 -108.69
               ],
-              "description": "Red rock canyons and monoliths along Rim Rock Drive near Grand Junction \u2014 dogs at overlooks on leash",
+              "description": "Red rock canyons and monoliths along Rim Rock Drive near Grand Junction — dogs at overlooks on leash",
               "type": "national_park",
               "dog_friendly": true,
               "drive_time_from_prev": 2.6,
@@ -2387,7 +2641,9 @@
               "dog_policy": "Dog-friendly, private yard, mountain views",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 13,
+          "lodging_drive_from": "Colorado National Monument"
         },
         {
           "day": 5,
@@ -2411,7 +2667,7 @@
                 39.5647,
                 -107.2295
               ],
-              "description": "12-mile canyon along I-70 \u2014 Grizzly Creek rest area has riverside walks perfect for dogs",
+              "description": "12-mile canyon along I-70 — Grizzly Creek rest area has riverside walks perfect for dogs",
               "type": "scenic_drive",
               "dog_friendly": true,
               "drive_time_from_prev": 1.7,
@@ -2464,7 +2720,7 @@
                 37.3857,
                 -118.1706
               ],
-              "description": "Oldest living trees on Earth (4,800+ years) at 10,000 feet \u2014 dogs on leash on the Schulman Grove trail",
+              "description": "Oldest living trees on Earth (4,800+ years) at 10,000 feet — dogs on leash on the Schulman Grove trail",
               "type": "national_park",
               "dog_friendly": true,
               "drive_time_from_prev": 9.0,
@@ -2476,7 +2732,7 @@
                 37.5889,
                 -118.8546
               ],
-              "description": "Glacial lake surrounded by colorful peaks \u2014 easy 2.5-mile dog-friendly loop trail around the lake",
+              "description": "Glacial lake surrounded by colorful peaks — easy 2.5-mile dog-friendly loop trail around the lake",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 2.2,
@@ -2504,7 +2760,9 @@
             }
           ],
           "drive_time_to_end": 0.3,
-          "drive_time_last_stop": "Convict Lake"
+          "drive_time_last_stop": "Convict Lake",
+          "lodging_drive_mins": 16,
+          "lodging_drive_from": "Convict Lake"
         },
         {
           "day": 2,
@@ -2528,7 +2786,7 @@
                 37.9403,
                 -119.0277
               ],
-              "description": "Tufa towers rising from alkaline water \u2014 short walk to formations, dogs on leash at the trailhead area",
+              "description": "Tufa towers rising from alkaline water — short walk to formations, dogs on leash at the trailhead area",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 0.7,
@@ -2540,7 +2798,7 @@
                 38.0678,
                 -117.2303
               ],
-              "description": "One of the darkest skies in the lower 48 \u2014 evening arrival means you can stargaze on the way through",
+              "description": "One of the darkest skies in the lower 48 — evening arrival means you can stargaze on the way through",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 2.7,
@@ -2550,12 +2808,14 @@
           "camping": {
             "name": "Cave Lake State Park",
             "type": "campground",
-            "description": "Mountain lake camp at 7,300 feet near Ely \u2014 pine forest, trout fishing, kayaking in clear mountain water",
+            "description": "Mountain lake camp at 7,300 feet near Ely — pine forest, trout fishing, kayaking in clear mountain water",
             "coords": [
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 203,
+          "lodging_drive_from": "Tonopah Stargazing Park"
         },
         {
           "day": 3,
@@ -2579,7 +2839,7 @@
                 39.1672,
                 -114.8164
               ],
-              "description": "Hike the lakeshore and surrounding hills through juniper forest \u2014 dogs welcome, great swimming spots",
+              "description": "Hike the lakeshore and surrounding hills through juniper forest — dogs welcome, great swimming spots",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 0.2,
@@ -2591,7 +2851,7 @@
                 39.0769,
                 -115.0422
               ],
-              "description": "Six photogenic 1870s stone kilns \u2014 short drive from camp, outdoor site, dogs welcome on leash",
+              "description": "Six photogenic 1870s stone kilns — short drive from camp, outdoor site, dogs welcome on leash",
               "type": "attraction",
               "dog_friendly": true,
               "drive_time_from_prev": 0.9,
@@ -2603,7 +2863,7 @@
                 39.25,
                 -114.87
               ],
-              "description": "Stroll the historic mining town's main strip \u2014 murals, small shops, and the Hotel Nevada",
+              "description": "Stroll the historic mining town's main strip — murals, small shops, and the Hotel Nevada",
               "type": "town",
               "dog_friendly": true,
               "drive_time_from_prev": 0.7,
@@ -2613,12 +2873,14 @@
           "camping": {
             "name": "Cave Lake State Park",
             "type": "campground",
-            "description": "Second night \u2014 swim, fish, hike, and visit the charcoal ovens at your own pace",
+            "description": "Second night — swim, fish, hike, and visit the charcoal ovens at your own pace",
             "coords": [
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Ely Main Street Walk"
         },
         {
           "day": 4,
@@ -2642,9 +2904,11 @@
                 39.005,
                 -113.85
               ],
-              "description": "Basin and range valleys stretching to the horizon \u2014 classic Nevada open-road driving with mountain ridges",
+              "description": "Basin and range valleys stretching to the horizon — classic Nevada open-road driving with mountain ridges",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 2.2,
+              "drive_time_prev_name": "Ely"
             },
             {
               "name": "Colorado National Monument",
@@ -2652,7 +2916,7 @@
                 39.1,
                 -108.69
               ],
-              "description": "Red rock canyons and monoliths along Rim Rock Drive \u2014 dogs at overlooks on leash",
+              "description": "Red rock canyons and monoliths along Rim Rock Drive — dogs at overlooks on leash",
               "type": "national_park",
               "dog_friendly": true,
               "drive_time_from_prev": 7.0,
@@ -2680,7 +2944,9 @@
             }
           ],
           "drive_time_to_end": 3.0,
-          "drive_time_last_stop": "Colorado National Monument"
+          "drive_time_last_stop": "Colorado National Monument",
+          "lodging_drive_mins": 149,
+          "lodging_drive_from": "Colorado National Monument"
         },
         {
           "day": 5,
@@ -2704,9 +2970,11 @@
                 38.4972,
                 -106.3258
               ],
-              "description": "11,312-foot mountain pass on US-50 with a scenic tram and Continental Divide views \u2014 quick stop for photos",
+              "description": "11,312-foot mountain pass on US-50 with a scenic tram and Continental Divide views — quick stop for photos",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.8,
+              "drive_time_prev_name": "Gunnison"
             },
             {
               "name": "Arkansas River Valley",
@@ -2714,9 +2982,11 @@
                 38.73,
                 -106.14
               ],
-              "description": "Follow the Arkansas River through Salida and Buena Vista \u2014 dog-friendly river towns with mountain backdrops",
+              "description": "Follow the Arkansas River through Salida and Buena Vista — dog-friendly river towns with mountain backdrops",
               "type": "scenic_drive",
-              "dog_friendly": true
+              "dog_friendly": true,
+              "drive_time_from_prev": 0.7,
+              "drive_time_prev_name": "Monarch Pass"
             }
           ]
         }
