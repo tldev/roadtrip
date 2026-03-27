@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Route Showcase — Sabby Roadtrip</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     :root {
       --bg: #0a0a1a;
@@ -358,6 +359,21 @@
     /* Loading */
     .loading { display: flex; align-items: center; justify-content: center; height: 100vh; font-size: 15px; color: var(--text-dim); }
 
+    /* ===== MINI-MAP ===== */
+    .mini-map-wrap {
+      position: fixed; bottom: 24px; right: 24px; z-index: 90;
+      width: 220px; height: 180px;
+      border-radius: var(--radius-sm); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+      background: #0a0a1a;
+    }
+    .mini-map-wrap.active { opacity: 1; pointer-events: auto; }
+    .mini-map-wrap .leaflet-control-zoom,
+    .mini-map-wrap .leaflet-control-attribution { display: none !important; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .route-grid { grid-template-columns: 1fr; }
@@ -378,6 +394,9 @@
       .lodging-sec { padding: 0 16px 30px; }
       .lodging-grid { grid-template-columns: 1fr; }
     }
+    @media (max-width: 768px) {
+      .mini-map-wrap { width: 160px; height: 130px; bottom: 16px; right: 16px; }
+    }
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
       .grid-view { padding: 96px 16px 60px; }
@@ -388,6 +407,7 @@
       .carousel-track img { max-height: 260px; }
       .lodging-card { padding: 16px; }
       .lodging-name { font-size: 14px; }
+      .mini-map-wrap { width: 140px; height: 110px; bottom: 12px; right: 12px; }
     }
   </style>
 </head>
@@ -407,7 +427,9 @@
 </nav>
 
 <main id="app"><div class="loading">Loading routes&hellip;</div></main>
+<div class="mini-map-wrap" id="miniMapWrap"><div id="miniMap" style="width:100%;height:100%"></div></div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 /* ── colour themes + hero/rest images per route (Wikimedia Commons) ── */
 const THEMES = {
@@ -429,6 +451,7 @@ const TYPE_LABEL = {
 };
 
 let routes = [], attractionData = {}, curIdx = -1, observer, rafId = null, carouselTimers = [];
+let miniMap = null, miniMapMarker = null, miniMapLine = null, miniMapObserver = null;
 
 /* ── helpers ── */
 function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
@@ -456,6 +479,7 @@ function stopCarousels(){ carouselTimers.forEach(clearInterval); carouselTimers=
 /* ── GRID VIEW ── */
 function showGrid(){
   stopCarousels();
+  teardownMiniMap();
   if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
   curIdx=-1;
   document.getElementById('backBtn').style.display='none';
@@ -532,7 +556,7 @@ function showRoute(idx){
     if(day.is_rest_day){
       const camp=day.camping||day.highlights.find(x=>x.type==='camping');
       const campDesc=camp?(camp.description||''):'A day to rest, recharge, and explore at your own pace.';
-      h+=`<div class="rest-sec reveal" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
+      h+=`<div class="rest-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
         <div class="rest-overlay"></div>
         <div class="rest-body">
           <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
@@ -553,7 +577,7 @@ function showRoute(idx){
     } else {
       const from=day.start.replace(/,.*$/,'');
       const to=day.end.replace(/,.*$/,'');
-      h+=`<div class="day-sec">
+      h+=`<div class="day-sec" data-geo="${day.start_coords[0]},${day.start_coords[1]}">
         <div class="day-hdr reveal">
           <div class="day-num">Day ${day.day}</div>
           <h2 class="day-title">${esc(from)} to ${esc(to)}</h2>
@@ -563,7 +587,7 @@ function showRoute(idx){
       h+=`</div>`;
       /* Lodging options for hotel nights */
       if(day.lodging&&day.lodging.length){
-        h+=`<div class="lodging-sec reveal">
+        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper">
           <div class="lodging-label">${BED_SVG} Where to Stay Tonight</div>
           <div class="lodging-grid">`;
@@ -580,7 +604,7 @@ function showRoute(idx){
       }
       /* Camping info for driving+camping days */
       if(day.camping){
-        h+=`<div class="lodging-sec reveal">
+        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper camp-wrapper">
           <div class="lodging-label">${TENT_SVG} Tonight's Campground</div>
           <div class="lodging-grid">
@@ -626,6 +650,7 @@ function showRoute(idx){
   wireObserver();
   wireParallax();
   initCarousels();
+  initMiniMap(route);
 }
 
 /* ── SVG icons ── */
@@ -640,7 +665,8 @@ function attractionHTML(highlight, routeId, index) {
   const desc = data ? data.desc : [highlight.description];
   const tag = TYPE_LABEL[highlight.type] || highlight.type;
 
-  let h = '<div class="attraction reveal">';
+  const geo = highlight.coords ? `data-geo="${highlight.coords[0]},${highlight.coords[1]}"` : '';
+  let h = `<div class="attraction reveal" ${geo}>`;
 
   /* Header: tag + name + dog badge (above carousel) */
   h += '<div class="attraction-header">';
@@ -753,6 +779,125 @@ function wireParallax(){
     rafId=requestAnimationFrame(tick);
   }
   rafId=requestAnimationFrame(tick);
+}
+
+/* ── mini-map: route overview with scroll-position marker ── */
+function teardownMiniMap(){
+  if(miniMapObserver){
+    if(miniMapObserver._scrollCleanup) miniMapObserver._scrollCleanup();
+    miniMapObserver.disconnect(); miniMapObserver=null;
+  }
+  document.getElementById('miniMapWrap').classList.remove('active');
+  if(miniMap){ miniMap.remove(); miniMap=null; }
+  miniMapMarker=null; miniMapLine=null;
+}
+
+function initMiniMap(route){
+  teardownMiniMap();
+  const wrap=document.getElementById('miniMapWrap');
+
+  /* Collect waypoints in order: start → all highlights → end for each day */
+  const waypoints=[];
+  route.days.forEach(day=>{
+    waypoints.push(day.start_coords);
+    day.highlights.forEach(hl=>{
+      if(hl.coords) waypoints.push(hl.coords);
+    });
+    waypoints.push(day.end_coords);
+  });
+
+  /* Deduplicate consecutive identical points */
+  const pts=waypoints.filter((p,i)=>i===0||p[0]!==waypoints[i-1][0]||p[1]!==waypoints[i-1][1]);
+
+  /* Create map */
+  miniMap=L.map('miniMap',{
+    zoomControl:false, attributionControl:false,
+    dragging:false, scrollWheelZoom:false, doubleClickZoom:false,
+    touchZoom:false, boxZoom:false, keyboard:false,
+    tap:false
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    subdomains:'abcd', maxZoom:19
+  }).addTo(miniMap);
+
+  /* Route polyline */
+  const latLngs=pts.map(p=>[p[0],p[1]]);
+  miniMapLine=L.polyline(latLngs,{
+    color:'#e94560', weight:2.5, opacity:0.7, smoothFactor:1
+  }).addTo(miniMap);
+
+  /* Start/end markers */
+  const dotIcon=function(color){
+    return L.divIcon({
+      className:'',
+      html:`<svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="${color}" stroke="#0a0a1a" stroke-width="1.5"/></svg>`,
+      iconSize:[12,12], iconAnchor:[6,6]
+    });
+  };
+  L.marker(latLngs[0],{icon:dotIcon('#6ab04c'),interactive:false}).addTo(miniMap);
+  L.marker(latLngs[latLngs.length-1],{icon:dotIcon('#e94560'),interactive:false}).addTo(miniMap);
+
+  /* Position marker (the moving pin) */
+  const pulseIcon=L.divIcon({
+    className:'',
+    html:`<svg width="20" height="20">
+      <circle cx="10" cy="10" r="8" fill="rgba(233,69,96,0.25)" stroke="none">
+        <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="10" cy="10" r="4" fill="#e94560" stroke="#fff" stroke-width="1.5"/>
+    </svg>`,
+    iconSize:[20,20], iconAnchor:[10,10]
+  });
+  miniMapMarker=L.marker(latLngs[0],{icon:pulseIcon,interactive:false}).addTo(miniMap);
+
+  /* Fit bounds with padding */
+  miniMap.fitBounds(miniMapLine.getBounds(),{padding:[14,14]});
+
+  /* Observe geo-tagged elements for scroll position */
+  const geoEls=document.querySelectorAll('[data-geo]');
+  const visibleGeos=new Set();
+  let lastGeo=null;
+
+  function updateMiniMapMarker(){
+    /* Pick the element closest to the vertical center of the viewport */
+    const mid=window.innerHeight/2;
+    let best=null, bestDist=Infinity;
+    visibleGeos.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      const elMid=r.top+r.height/2;
+      const dist=Math.abs(elMid-mid);
+      if(dist<bestDist){ bestDist=dist; best=el; }
+    });
+    if(best){
+      const geo=best.dataset.geo;
+      if(geo && geo!==lastGeo){
+        lastGeo=geo;
+        const [lat,lng]=geo.split(',').map(Number);
+        miniMapMarker.setLatLng([lat,lng]);
+      }
+    }
+  }
+
+  miniMapObserver=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) visibleGeos.add(e.target);
+      else visibleGeos.delete(e.target);
+    });
+    updateMiniMapMarker();
+  },{threshold:0.1, rootMargin:'-15% 0px -15% 0px'});
+
+  /* Also update on scroll for smooth tracking between observer callbacks */
+  const scrollUpdate=()=>{ if(visibleGeos.size>0) updateMiniMapMarker(); };
+  window.addEventListener('scroll',scrollUpdate,{passive:true});
+  /* Store cleanup reference */
+  miniMapObserver._scrollCleanup=()=>window.removeEventListener('scroll',scrollUpdate);
+
+  geoEls.forEach(el=>miniMapObserver.observe(el));
+
+  /* Show after a short delay to let the map tiles load */
+  setTimeout(()=>wrap.classList.add('active'),600);
 }
 
 /* ── keyboard navigation ── */
