@@ -206,7 +206,7 @@ routes = [
         "name": "Eastern Sierra & Bryce Canyon",
         "theme": "Chase the Sierra Nevada's dramatic eastern wall into Utah's hoodoo country",
         "total_days": 5,
-        "total_driving_hours": 22.5,
+        "total_driving_hours": 21.5,
         "days": [
             {
                 "day": 1,
@@ -261,10 +261,10 @@ routes = [
             {
                 "day": 4,
                 "start": "Panguitch, UT",
-                "end": "Grand Junction, CO",
+                "end": "Steamboat Springs, CO",
                 "start_coords": [37.8228, -112.4356],
-                "end_coords": [39.0639, -108.5506],
-                "driving_hours": 5.5,
+                "end_coords": [40.4850, -106.8317],
+                "driving_hours": 7,
                 "is_rest_day": False,
                 "is_camping": False,
                 "highlights": [
@@ -272,23 +272,23 @@ routes = [
                     {"name": "San Rafael Swell Viewpoint", "coords": [38.9500, -110.6500], "description": "Vast geologic uplift visible from I-70 — The Wedge overlook offers a mini Grand Canyon vista", "type": "scenic_drive"},
                 ],
                 "lodging": [
-                    {"name": "La Quinta Inn & Suites Grand Junction", "type": "hotel", "dog_policy": "Dogs welcome free, no weight limit", "price_range": "$90-130/night"},
-                    {"name": "DoubleTree by Hilton Grand Junction", "type": "hotel", "dog_policy": "Pets up to 75 lbs, $50 non-refundable fee", "price_range": "$120-170/night"},
-                    {"name": "Colorado River Bungalow (Airbnb)", "type": "airbnb", "dog_policy": "Dog-friendly, near Palisade wine country, yard access", "price_range": "$100-150/night"},
+                    {"name": "Holiday Inn Steamboat Springs", "type": "hotel", "dog_policy": "Dogs welcome with $35/night fee, near downtown and trails", "price_range": "$120-180/night"},
+                    {"name": "Rabbit Ears Motel", "type": "motel", "dog_policy": "Classic mountain motel, dogs welcome free, no size limit", "price_range": "$80-130/night"},
+                    {"name": "Mountain View Condo (Airbnb)", "type": "airbnb", "dog_policy": "Dog-friendly, private patio, near Yampa River Core Trail", "price_range": "$130-200/night"},
                 ],
             },
             {
                 "day": 5,
-                "start": "Grand Junction, CO",
+                "start": "Steamboat Springs, CO",
                 "end": "Parker, CO",
-                "start_coords": [39.0639, -108.5506],
+                "start_coords": [40.4850, -106.8317],
                 "end_coords": [39.5186, -104.7614],
-                "driving_hours": 4.5,
+                "driving_hours": 3.5,
                 "is_rest_day": False,
                 "is_camping": False,
                 "highlights": [
-                    {"name": "Glenwood Canyon", "coords": [39.5647, -107.2295], "description": "12-mile canyon with 1,300-foot walls along I-70 — stop at the rest areas for river views and short walks", "type": "scenic_drive"},
-                    {"name": "Vail Village", "coords": [39.6403, -106.3742], "description": "Bavarian-style pedestrian village with dog-friendly patios, summer hiking, and mountain gondola rides", "type": "town"},
+                    {"name": "Rabbit Ears Pass", "coords": [40.3844, -106.6614], "description": "9,426-foot pass through dense spruce-fir forest — the distinctive twin rock formations are visible from the road", "type": "scenic_drive"},
+                    {"name": "Berthoud Pass", "coords": [39.7981, -105.7775], "description": "11,315-foot Continental Divide crossing on US-40 with alpine tundra views — a stunning descent into the Front Range", "type": "scenic_drive"},
                 ],
             },
         ],
@@ -394,7 +394,7 @@ routes = [
         "name": "Zion to Canyonlands",
         "theme": "Two of Utah's crown jewels connected by the dramatic landscapes of canyon country",
         "total_days": 5,
-        "total_driving_hours": 22,
+        "total_driving_hours": 20.5,
         "days": [
             {
                 "day": 1,
@@ -488,7 +488,7 @@ routes = [
         "name": "The Loneliest Road",
         "theme": "Cross the emptiest stretch of highway in America through Nevada's basin and range",
         "total_days": 5,
-        "total_driving_hours": 22,
+        "total_driving_hours": 20.5,
         "days": [
             {
                 "day": 1,
@@ -770,7 +770,7 @@ routes = [
         "name": "Capitol Reef Crossing",
         "theme": "Utah's most underrated national park anchoring a journey through the state's canyon heartland",
         "total_days": 5,
-        "total_driving_hours": 22.5,
+        "total_driving_hours": 20.5,
         "days": [
             {
                 "day": 1,
@@ -864,7 +864,7 @@ routes = [
         "name": "Mono Lake & Colorado Rockies",
         "theme": "Ancient volcanic lakes, Great Basin emptiness, and a grand entrance into the Rocky Mountains",
         "total_days": 5,
-        "total_driving_hours": 22,
+        "total_driving_hours": 22.0,
         "days": [
             {
                 "day": 1,
@@ -919,39 +919,43 @@ routes = [
             {
                 "day": 4,
                 "start": "Ely, NV",
-                "end": "Grand Junction, CO",
+                "end": "Gunnison, CO",
                 "start_coords": [39.2533, -114.8764],
-                "end_coords": [39.0639, -108.5506],
-                "driving_hours": 5.5,
+                "end_coords": [38.5458, -106.9253],
+                "driving_hours": 7,
                 "is_rest_day": False,
                 "is_camping": False,
                 "highlights": [
                     {"name": "Great Basin Highway Views", "coords": [39.0050, -113.8500], "description": "Basin and range valleys stretching to the horizon — classic Nevada open-road driving with mountain ridges", "type": "scenic_drive"},
-                    {"name": "San Rafael Swell - I-70 Corridor", "coords": [38.9500, -110.6500], "description": "I-70 slices through the San Rafael Reef — dramatic geology visible from rest areas and pulloffs", "type": "scenic_drive"},
+                    {"name": "Colorado National Monument", "coords": [39.1000, -108.6900], "description": "Red rock canyons and monoliths along Rim Rock Drive — dogs at overlooks on leash", "type": "national_park"},
                 ],
                 "lodging": [
-                    {"name": "La Quinta Inn & Suites Grand Junction", "type": "hotel", "dog_policy": "Dogs welcome free, no weight limit", "price_range": "$90-130/night"},
-                    {"name": "DoubleTree by Hilton Grand Junction", "type": "hotel", "dog_policy": "Pets up to 75 lbs, $50 non-refundable fee", "price_range": "$120-170/night"},
-                    {"name": "Palisade Vineyard Cottage (Airbnb)", "type": "airbnb", "dog_policy": "Dog-friendly, near wine tasting rooms, garden", "price_range": "$110-160/night"},
+                    {"name": "Holiday Inn Express Gunnison", "type": "hotel", "dog_policy": "Dogs welcome with $25/night pet fee, mountain views", "price_range": "$100-150/night"},
+                    {"name": "The Inn at Tomichi Village", "type": "hotel", "dog_policy": "Pet-friendly, $15/night fee, spacious rooms near downtown", "price_range": "$80-120/night"},
+                    {"name": "Gunnison River Cabin (Airbnb)", "type": "airbnb", "dog_policy": "Dog-friendly cabin, fenced yard, near Blue Mesa Reservoir", "price_range": "$110-170/night"},
                 ],
             },
             {
                 "day": 5,
-                "start": "Grand Junction, CO",
+                "start": "Gunnison, CO",
                 "end": "Parker, CO",
-                "start_coords": [39.0639, -108.5506],
+                "start_coords": [38.5458, -106.9253],
                 "end_coords": [39.5186, -104.7614],
-                "driving_hours": 4.5,
+                "driving_hours": 4,
                 "is_rest_day": False,
                 "is_camping": False,
                 "highlights": [
-                    {"name": "Glenwood Canyon", "coords": [39.5647, -107.2295], "description": "12 miles of I-70 through 1,300-foot canyon walls — stop at Grizzly Creek for riverside walks with dogs", "type": "scenic_drive"},
-                    {"name": "Vail Pass Summit", "coords": [39.5311, -106.2167], "description": "10,662-foot pass with a recreation path at the summit — stretch legs at the rest area with mountain views", "type": "scenic_drive"},
+                    {"name": "Monarch Pass", "coords": [38.4972, -106.3258], "description": "11,312-foot mountain pass on US-50 with a scenic tram and Continental Divide views — quick stop for photos", "type": "scenic_drive"},
+                    {"name": "Arkansas River Valley", "coords": [38.7300, -106.1400], "description": "Follow the Arkansas River through Salida and Buena Vista — dog-friendly river towns with mountain backdrops", "type": "scenic_drive"},
                 ],
             },
         ],
     },
 ]
+
+# Recalculate totals from daily values
+for r in routes:
+    r["total_driving_hours"] = sum(d["driving_hours"] for d in r["days"])
 
 # Write the JSON file
 output = {"routes": routes}
