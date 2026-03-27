@@ -79,7 +79,9 @@
               "dog_policy": "Classic Route 66 motel, dogs welcome with $15 fee",
               "price_range": "$65-90/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 22,
+          "lodging_drive_from": "Calico Ghost Town"
         },
         {
           "day": 2,
@@ -130,7 +132,9 @@
               35.3558,
               -111.5372
             ]
-          }
+          },
+          "lodging_drive_mins": 71,
+          "lodging_drive_from": "Snow Cap Drive-In Seligman"
         },
         {
           "day": 3,
@@ -193,7 +197,9 @@
               35.3558,
               -111.5372
             ]
-          }
+          },
+          "lodging_drive_mins": 1,
+          "lodging_drive_from": "Mother Road Brewing Company"
         },
         {
           "day": 4,
@@ -255,7 +261,9 @@
               "dog_policy": "Fenced yard, dog-friendly, near Bosque trail",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 236,
+          "lodging_drive_from": "Standin' on the Corner Park Winslow"
         },
         {
           "day": 5,
@@ -368,7 +376,9 @@
               "dog_policy": "Fenced yard, dog bowls provided, quiet residential area",
               "price_range": "$85-120/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 90,
+          "lodging_drive_from": "Death Valley - Zabriskie Point"
         },
         {
           "day": 2,
@@ -419,7 +429,9 @@
               37.0357,
               -112.6514
             ]
-          }
+          },
+          "lodging_drive_mins": 114,
+          "lodging_drive_from": "Coral Pink Sand Dunes State Park"
         },
         {
           "day": 3,
@@ -482,7 +494,9 @@
               37.0357,
               -112.6514
             ]
-          }
+          },
+          "lodging_drive_mins": 22,
+          "lodging_drive_from": "Moqui Cave"
         },
         {
           "day": 4,
@@ -544,7 +558,9 @@
               "dog_policy": "Dog-friendly cabin near river trail, fenced area",
               "price_range": "$130-180/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 92,
+          "lodging_drive_from": "Four Corners Monument"
         },
         {
           "day": 5,
@@ -657,7 +673,9 @@
               "dog_policy": "Dog-friendly with fenced yard, near Bishop Creek",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 73,
+          "lodging_drive_from": "Alabama Hills"
         },
         {
           "day": 2,
@@ -708,7 +726,9 @@
               37.7456,
               -112.3306
             ]
-          }
+          },
+          "lodging_drive_mins": 10,
+          "lodging_drive_from": "Red Canyon"
         },
         {
           "day": 3,
@@ -771,7 +791,9 @@
               37.7456,
               -112.3306
             ]
-          }
+          },
+          "lodging_drive_mins": 10,
+          "lodging_drive_from": "Red Canyon Trails"
         },
         {
           "day": 4,
@@ -833,7 +855,9 @@
               "dog_policy": "Dog-friendly, private patio, near Yampa River Core Trail",
               "price_range": "$130-200/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 337,
+          "lodging_drive_from": "San Rafael Swell Viewpoint"
         },
         {
           "day": 5,
@@ -946,7 +970,9 @@
               "dog_policy": "Dog-friendly casita, fenced backyard, near Hualapai Mountain Park",
               "price_range": "$85-130/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 1,
+          "lodging_drive_from": "Route 66 Museum Kingman"
         },
         {
           "day": 2,
@@ -997,7 +1023,9 @@
               36.0492,
               -112.118
             ]
-          }
+          },
+          "lodging_drive_mins": 7,
+          "lodging_drive_from": "Mather Point"
         },
         {
           "day": 3,
@@ -1060,7 +1088,9 @@
               36.0492,
               -112.118
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Greenway Trail"
         },
         {
           "day": 4,
@@ -1122,7 +1152,9 @@
               "dog_policy": "Dog-friendly cabin with yard, near river trail",
               "price_range": "$120-170/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 378,
+          "lodging_drive_from": "Navajo Bridge"
         },
         {
           "day": 5,
@@ -1235,7 +1267,9 @@
               "dog_policy": "Dog-friendly home near Summerlin trail system, fenced yard",
               "price_range": "$100-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 52,
+          "lodging_drive_from": "Seven Magic Mountains"
         },
         {
           "day": 2,
@@ -1286,7 +1320,9 @@
               37.1965,
               -112.9869
             ]
-          }
+          },
+          "lodging_drive_mins": 11,
+          "lodging_drive_from": "Zion Canyon Scenic Drive"
         },
         {
           "day": 3,
@@ -1349,7 +1385,9 @@
               37.1965,
               -112.9869
             ]
-          }
+          },
+          "lodging_drive_mins": 12,
+          "lodging_drive_from": "Grafton Ghost Town"
         },
         {
           "day": 4,
@@ -1411,7 +1449,9 @@
               "dog_policy": "Dog-friendly, private patio, near trailheads",
               "price_range": "$120-180/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 118,
+          "lodging_drive_from": "Goblin Valley State Park"
         },
         {
           "day": 5,
@@ -1524,7 +1564,9 @@
               "dog_policy": "Dog-friendly, fenced yard, walkable to Riverwalk",
               "price_range": "$90-140/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 81,
+          "lodging_drive_from": "Donner Memorial State Park"
         },
         {
           "day": 2,
@@ -1575,7 +1617,9 @@
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 38,
+          "lodging_drive_from": "Ward Charcoal Ovens"
         },
         {
           "day": 3,
@@ -1638,7 +1682,9 @@
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Ely Renaissance Village"
         },
         {
           "day": 4,
@@ -1700,7 +1746,9 @@
               "dog_policy": "Dog-friendly property with fenced yard, near Colorado National Monument",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 147,
+          "lodging_drive_from": "San Rafael Swell - I-70"
         },
         {
           "day": 5,
@@ -1813,7 +1861,9 @@
               "dog_policy": "Dog-friendly, fully fenced yard, quiet street",
               "price_range": "$80-120/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 112,
+          "lodging_drive_from": "Tehachapi Wind Farm"
         },
         {
           "day": 2,
@@ -1864,7 +1914,9 @@
               34.9667,
               -111.75
             ]
-          }
+          },
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Oak Creek Canyon Scenic Drive"
         },
         {
           "day": 3,
@@ -1927,7 +1979,9 @@
               34.9667,
               -111.75
             ]
-          }
+          },
+          "lodging_drive_mins": 4,
+          "lodging_drive_from": "Airport Mesa Overlook"
         },
         {
           "day": 4,
@@ -1989,7 +2043,9 @@
               "dog_policy": "Dog-friendly adobe home with courtyard, walking distance to Canyon Road galleries",
               "price_range": "$130-200/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 66,
+          "lodging_drive_from": "Albuquerque Old Town"
         },
         {
           "day": 5,
@@ -2102,7 +2158,9 @@
               "dog_policy": "Dog-friendly, pool, fenced backyard",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 132,
+          "lodging_drive_from": "Mojave National Preserve"
         },
         {
           "day": 2,
@@ -2153,7 +2211,9 @@
               36.9967,
               -111.4856
             ]
-          }
+          },
+          "lodging_drive_mins": 8,
+          "lodging_drive_from": "Horseshoe Bend"
         },
         {
           "day": 3,
@@ -2216,7 +2276,9 @@
               36.9967,
               -111.4856
             ]
-          }
+          },
+          "lodging_drive_mins": 3,
+          "lodging_drive_from": "Chains Trail Area"
         },
         {
           "day": 4,
@@ -2278,7 +2340,9 @@
               "dog_policy": "Dog-friendly cabin with porch, mountain views",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 43,
+          "lodging_drive_from": "Four Corners Monument"
         },
         {
           "day": 5,
@@ -2391,7 +2455,9 @@
               "dog_policy": "Dog-friendly, Mount Whitney views, near Alabama Hills",
               "price_range": "$110-160/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Alabama Hills"
         },
         {
           "day": 2,
@@ -2442,7 +2508,9 @@
               38.2825,
               -111.2478
             ]
-          }
+          },
+          "lodging_drive_mins": 17,
+          "lodging_drive_from": "Capitol Reef Scenic Drive"
         },
         {
           "day": 3,
@@ -2505,7 +2573,9 @@
               38.2825,
               -111.2478
             ]
-          }
+          },
+          "lodging_drive_mins": 15,
+          "lodging_drive_from": "Capitol Reef Petroglyphs"
         },
         {
           "day": 4,
@@ -2567,7 +2637,9 @@
               "dog_policy": "Dog-friendly, private yard, mountain views",
               "price_range": "$100-150/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 13,
+          "lodging_drive_from": "Colorado National Monument"
         },
         {
           "day": 5,
@@ -2680,7 +2752,9 @@
               "dog_policy": "Dog-friendly cabin in the pines, near Lakes Basin",
               "price_range": "$130-190/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 16,
+          "lodging_drive_from": "Convict Lake"
         },
         {
           "day": 2,
@@ -2731,7 +2805,9 @@
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 203,
+          "lodging_drive_from": "Tonopah Stargazing Park"
         },
         {
           "day": 3,
@@ -2794,7 +2870,9 @@
               39.1672,
               -114.8164
             ]
-          }
+          },
+          "lodging_drive_mins": 2,
+          "lodging_drive_from": "Ely Main Street Walk"
         },
         {
           "day": 4,
@@ -2856,7 +2934,9 @@
               "dog_policy": "Dog-friendly cabin, fenced yard, near Blue Mesa Reservoir",
               "price_range": "$110-170/night"
             }
-          ]
+          ],
+          "lodging_drive_mins": 149,
+          "lodging_drive_from": "Colorado National Monument"
         },
         {
           "day": 5,

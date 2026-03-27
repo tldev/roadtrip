@@ -283,8 +283,9 @@
     .lodging-label {
       font-size: 11px; font-weight: 700; text-transform: uppercase;
       letter-spacing: 2px; color: #7b8cde; margin-bottom: 16px;
-      display: flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
     }
+    .lodging-label .drive-badge { text-transform: none; letter-spacing: 0.3px; }
     .lodging-label svg { width: 16px; height: 16px; fill: currentColor; }
     .lodging-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -615,9 +616,17 @@ function showRoute(idx){
       h+=`</div>`;
       /* Lodging options for hotel nights */
       if(day.lodging&&day.lodging.length){
+        const lodgeTown=day.end.split(',')[0];
+        const lodgeDrive=day.lodging_drive_mins!=null?day.lodging_drive_mins:null;
+        const lodgeFrom=day.lodging_drive_from||'';
+        let driveStr='';
+        if(lodgeDrive!=null){
+          driveStr=lodgeDrive<60?lodgeDrive+' min':Math.round(lodgeDrive/60*10)/10+'h';
+          driveStr=` <span class="drive-badge">${driveStr} from ${esc(lodgeFrom)}</span>`;
+        }
         h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper">
-          <div class="lodging-label">${BED_SVG} Where to Stay Tonight</div>
+          <div class="lodging-label">${BED_SVG} Where to Stay Tonight — ${esc(lodgeTown)}${driveStr}</div>
           <div class="lodging-grid">`;
         day.lodging.forEach(l=>{
           const ltype=l.type||'hotel';
@@ -632,9 +641,17 @@ function showRoute(idx){
       }
       /* Camping info for driving+camping days */
       if(day.camping){
+        const campTown=day.end.split(',')[0];
+        const campDrive=day.lodging_drive_mins!=null?day.lodging_drive_mins:null;
+        const campFrom=day.lodging_drive_from||'';
+        let campDriveStr='';
+        if(campDrive!=null){
+          campDriveStr=campDrive<60?campDrive+' min':Math.round(campDrive/60*10)/10+'h';
+          campDriveStr=` <span class="drive-badge">${campDriveStr} from ${esc(campFrom)}</span>`;
+        }
         h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper camp-wrapper">
-          <div class="lodging-label">${TENT_SVG} Tonight's Campground</div>
+          <div class="lodging-label">${TENT_SVG} Tonight's Campground — ${esc(campTown)}${campDriveStr}</div>
           <div class="lodging-grid">
             <div class="lodging-card">
               <div class="lodging-type campground">Campground</div>
