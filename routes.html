@@ -358,6 +358,45 @@
     /* Loading */
     .loading { display: flex; align-items: center; justify-content: center; height: 100vh; font-size: 15px; color: var(--text-dim); }
 
+    /* ===== MINI-MAP ===== */
+    .mini-map-wrap {
+      position: fixed; bottom: 24px; right: 24px; z-index: 90;
+      width: 320px; height: 260px;
+      border-radius: var(--radius-sm); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+      background: #0a0a1a;
+    }
+    .mini-map-wrap.active { opacity: 1; pointer-events: auto; }
+    .mini-map-wrap .leaflet-control-attribution {
+      font-size: 7px; background: rgba(10,10,26,0.6) !important;
+      color: rgba(255,255,255,0.35); padding: 1px 4px;
+    }
+    .mini-map-wrap .leaflet-control-attribution a { color: rgba(255,255,255,0.45); }
+    #miniMap { width: 100%; height: 100%; }
+    .mini-map-close {
+      position: absolute; top: 6px; right: 6px; z-index: 95;
+      width: 24px; height: 24px; border-radius: 50%; border: none;
+      background: rgba(10,10,26,0.7); color: rgba(255,255,255,0.7);
+      font-size: 14px; line-height: 24px; text-align: center;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .mini-map-close:hover { background: rgba(233,69,96,0.6); color: #fff; }
+    .mini-map-wrap .leaflet-control-zoom a {
+      background: rgba(10,10,26,0.85); color: #f0f0f0;
+      border-color: rgba(255,255,255,0.12);
+    }
+    .mini-map-wrap .leaflet-control-zoom a:hover { background: rgba(30,30,60,0.9); }
+    .minimap-tip {
+      font-size: 10px; padding: 2px 6px; background: rgba(10,10,26,0.85);
+      color: #f0f0f0; border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .route-grid { grid-template-columns: 1fr; }
@@ -377,6 +416,7 @@
       .carousel-track img { max-height: 300px; }
       .lodging-sec { padding: 0 16px 30px; }
       .lodging-grid { grid-template-columns: 1fr; }
+      .mini-map-wrap { width: 240px; height: 200px; bottom: 16px; right: 16px; }
     }
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
@@ -388,6 +428,7 @@
       .carousel-track img { max-height: 260px; }
       .lodging-card { padding: 16px; }
       .lodging-name { font-size: 14px; }
+      .mini-map-wrap { width: 200px; height: 160px; bottom: 12px; right: 12px; }
     }
   </style>
 </head>
@@ -407,6 +448,7 @@
 </nav>
 
 <main id="app"><div class="loading">Loading routes&hellip;</div></main>
+<div class="mini-map-wrap" id="miniMapWrap"><button class="mini-map-close" id="miniMapClose" aria-label="Close map">&times;</button><div id="miniMap"></div></div>
 
 <script>
 /* ── colour themes + hero/rest images per route (Wikimedia Commons) ── */
@@ -429,6 +471,7 @@ const TYPE_LABEL = {
 };
 
 let routes = [], attractionData = {}, curIdx = -1, observer, rafId = null, carouselTimers = [];
+let miniMap = null, miniMapMarker = null, miniMapLine = null, miniMapObserver = null;
 
 /* ── helpers ── */
 function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
@@ -456,6 +499,7 @@ function stopCarousels(){ carouselTimers.forEach(clearInterval); carouselTimers=
 /* ── GRID VIEW ── */
 function showGrid(){
   stopCarousels();
+  teardownMiniMap();
   if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
   curIdx=-1;
   document.getElementById('backBtn').style.display='none';
@@ -532,7 +576,7 @@ function showRoute(idx){
     if(day.is_rest_day){
       const camp=day.camping||day.highlights.find(x=>x.type==='camping');
       const campDesc=camp?(camp.description||''):'A day to rest, recharge, and explore at your own pace.';
-      h+=`<div class="rest-sec reveal" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
+      h+=`<div class="rest-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
         <div class="rest-overlay"></div>
         <div class="rest-body">
           <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
@@ -553,7 +597,7 @@ function showRoute(idx){
     } else {
       const from=day.start.replace(/,.*$/,'');
       const to=day.end.replace(/,.*$/,'');
-      h+=`<div class="day-sec">
+      h+=`<div class="day-sec" data-geo="${day.start_coords[0]},${day.start_coords[1]}">
         <div class="day-hdr reveal">
           <div class="day-num">Day ${day.day}</div>
           <h2 class="day-title">${esc(from)} to ${esc(to)}</h2>
@@ -563,7 +607,7 @@ function showRoute(idx){
       h+=`</div>`;
       /* Lodging options for hotel nights */
       if(day.lodging&&day.lodging.length){
-        h+=`<div class="lodging-sec reveal">
+        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper">
           <div class="lodging-label">${BED_SVG} Where to Stay Tonight</div>
           <div class="lodging-grid">`;
@@ -580,7 +624,7 @@ function showRoute(idx){
       }
       /* Camping info for driving+camping days */
       if(day.camping){
-        h+=`<div class="lodging-sec reveal">
+        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper camp-wrapper">
           <div class="lodging-label">${TENT_SVG} Tonight's Campground</div>
           <div class="lodging-grid">
@@ -626,6 +670,7 @@ function showRoute(idx){
   wireObserver();
   wireParallax();
   initCarousels();
+  initMiniMap(route);
 }
 
 /* ── SVG icons ── */
@@ -640,7 +685,8 @@ function attractionHTML(highlight, routeId, index) {
   const desc = data ? data.desc : [highlight.description];
   const tag = TYPE_LABEL[highlight.type] || highlight.type;
 
-  let h = '<div class="attraction reveal">';
+  const geo = highlight.coords ? `data-geo="${highlight.coords[0]},${highlight.coords[1]}"` : '';
+  let h = `<div class="attraction reveal" ${geo}>`;
 
   /* Header: tag + name + dog badge (above carousel) */
   h += '<div class="attraction-header">';
@@ -753,6 +799,168 @@ function wireParallax(){
     rafId=requestAnimationFrame(tick);
   }
   rafId=requestAnimationFrame(tick);
+}
+
+/* ── mini-map: route overview with scroll-position marker ── */
+function teardownMiniMap(){
+  if(miniMapObserver){
+    if(miniMapObserver._scrollCleanup) miniMapObserver._scrollCleanup();
+    miniMapObserver.disconnect(); miniMapObserver=null;
+  }
+  document.getElementById('miniMapWrap').classList.remove('active');
+  if(miniMap){ miniMap.remove(); miniMap=null; }
+  miniMapMarker=null; miniMapLine=null;
+}
+
+/* Lazy-load Leaflet CSS + JS (only when first route is opened) */
+let leafletReady=null;
+function loadLeaflet(){
+  if(leafletReady) return leafletReady;
+  leafletReady=new Promise(resolve=>{
+    const css=document.createElement('link');
+    css.rel='stylesheet';
+    css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+    const js=document.createElement('script');
+    js.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    js.onload=resolve;
+    document.head.appendChild(js);
+  });
+  return leafletReady;
+}
+
+async function initMiniMap(route){
+  teardownMiniMap();
+  await loadLeaflet();
+  const wrap=document.getElementById('miniMapWrap');
+
+  /* Wire close button */
+  document.getElementById('miniMapClose').onclick=()=>{
+    wrap.classList.remove('active');
+  };
+
+  /* Collect waypoints in order: start → all highlights → end for each day */
+  const waypoints=[];
+  route.days.forEach(day=>{
+    waypoints.push(day.start_coords);
+    day.highlights.forEach(hl=>{
+      if(hl.coords) waypoints.push(hl.coords);
+    });
+    waypoints.push(day.end_coords);
+  });
+
+  /* Deduplicate consecutive identical points */
+  const pts=waypoints.filter((p,i)=>i===0||p[0]!==waypoints[i-1][0]||p[1]!==waypoints[i-1][1]);
+
+  /* Create map — interactive (pannable + zoomable) */
+  miniMap=L.map('miniMap',{
+    zoomControl:true, attributionControl:true,
+    dragging:true, scrollWheelZoom:true, doubleClickZoom:true,
+    touchZoom:true, boxZoom:false, keyboard:false,
+    tap:true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
+  }).addTo(miniMap);
+
+  /* Route polyline */
+  const latLngs=pts.map(p=>[p[0],p[1]]);
+  miniMapLine=L.polyline(latLngs,{
+    color:'#e94560', weight:2.5, opacity:0.7, smoothFactor:1
+  }).addTo(miniMap);
+
+  /* Start/end markers */
+  const dotIcon=function(color){
+    return L.divIcon({
+      className:'',
+      html:`<svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="${color}" stroke="#0a0a1a" stroke-width="1.5"/></svg>`,
+      iconSize:[12,12], iconAnchor:[6,6]
+    });
+  };
+  L.marker(latLngs[0],{icon:dotIcon('#6ab04c'),interactive:false}).addTo(miniMap);
+  L.marker(latLngs[latLngs.length-1],{icon:dotIcon('#e94560'),interactive:false}).addTo(miniMap);
+
+  /* Stop markers (clickable — scroll page to section) */
+  const geoEls=Array.from(document.querySelectorAll('[data-geo]'));
+  geoEls.forEach((el,i)=>{
+    el.id='geo-'+i;
+    el._geoIdx=i;
+    const [lat,lng]=el.dataset.geo.split(',').map(Number);
+    const iscamp=el.classList.contains('rest-sec')||el.querySelector('.lodging-type.campground');
+    const islodge=el.classList.contains('lodging-sec');
+    const isattr=el.classList.contains('attraction');
+    let color='#5dade2'; // default: town/attraction blue
+    if(iscamp) color='#6ab04c'; // camping green
+    else if(islodge) color='#7b8cde'; // lodging purple
+    const stopIcon=L.divIcon({
+      className:'',
+      html:`<svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="${color}" stroke="#0a0a1a" stroke-width="1" opacity="0.8"/></svg>`,
+      iconSize:[10,10], iconAnchor:[5,5]
+    });
+    const m=L.marker([lat,lng],{icon:stopIcon}).addTo(miniMap);
+    m.on('click',()=>{
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    /* Tooltip with name on hover */
+    const nameEl=el.querySelector('.attraction-name,.rest-place,.lodging-name,.day-title');
+    if(nameEl) m.bindTooltip(nameEl.textContent.trim(),{direction:'top',className:'minimap-tip'});
+  });
+
+  /* Position marker (the moving pin) */
+  const pulseIcon=L.divIcon({
+    className:'',
+    html:`<svg width="20" height="20">
+      <circle cx="10" cy="10" r="8" fill="rgba(233,69,96,0.25)" stroke="none">
+        <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="10" cy="10" r="4" fill="#e94560" stroke="#fff" stroke-width="1.5"/>
+    </svg>`,
+    iconSize:[20,20], iconAnchor:[10,10]
+  });
+  miniMapMarker=L.marker(latLngs[0],{icon:pulseIcon,interactive:false}).addTo(miniMap);
+
+  /* Fit bounds with padding */
+  miniMap.fitBounds(miniMapLine.getBounds(),{padding:[14,14]});
+
+  /* Observe geo-tagged elements for scroll position (forward-only) */
+  const visibleGeos=new Set();
+  let highestIdx=-1;
+
+  function updateMiniMapMarker(){
+    /* Among all visible geo elements, find the one furthest down in DOM order.
+       Only advance forward — never move the pin backward as the user scrolls. */
+    let bestIdx=highestIdx, bestEl=null;
+    visibleGeos.forEach(el=>{
+      if(el._geoIdx>bestIdx){ bestIdx=el._geoIdx; bestEl=el; }
+    });
+    if(bestEl){
+      highestIdx=bestIdx;
+      const [lat,lng]=bestEl.dataset.geo.split(',').map(Number);
+      miniMapMarker.setLatLng([lat,lng]);
+    }
+  }
+
+  miniMapObserver=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) visibleGeos.add(e.target);
+      else visibleGeos.delete(e.target);
+    });
+    updateMiniMapMarker();
+  },{threshold:0.1, rootMargin:'-15% 0px -15% 0px'});
+
+  /* Also update on scroll for smooth tracking between observer callbacks */
+  const scrollUpdate=()=>{ if(visibleGeos.size>0) updateMiniMapMarker(); };
+  window.addEventListener('scroll',scrollUpdate,{passive:true});
+  /* Store cleanup reference */
+  miniMapObserver._scrollCleanup=()=>window.removeEventListener('scroll',scrollUpdate);
+
+  geoEls.forEach(el=>miniMapObserver.observe(el));
+
+  /* Show after a short delay to let the map tiles load */
+  setTimeout(()=>wrap.classList.add('active'),600);
 }
 
 /* ── keyboard navigation ── */
