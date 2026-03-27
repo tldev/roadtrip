@@ -160,26 +160,23 @@
     .day-meta { font-size: 15px; color: var(--text-dim); margin-bottom: 20px; }
 
     /* ===== ATTRACTION SECTIONS (card-style with header above image) ===== */
-    .attraction {
+    div.attraction {
       margin-bottom: 48px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
     }
-    .attraction.reveal {
+    div.attraction.reveal {
       opacity: 0; transform: translateY(48px);
       transition: opacity 0.75s ease, transform 0.75s ease;
     }
-    .attraction.reveal.vis { opacity: 1; transform: translateY(0); }
+    div.attraction.reveal.vis { opacity: 1; transform: translateY(0); }
 
     /* Attraction header (above carousel) */
     .attraction-header {
       padding: 20px 24px 16px;
       display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-    }
-    .badge-row {
-      display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
     }
     .dog-badge {
       display: inline-flex; align-items: center; gap: 5px;
@@ -434,7 +431,7 @@
       .day-sec { padding: 48px 16px 24px; padding-left: 20px; }
       .day-title { margin-bottom: 10px; }
       .day-meta { margin-bottom: 16px; }
-      .attraction { margin-bottom: 32px; }
+      div.attraction { margin-bottom: 32px; }
       .attraction-header { padding: 14px 14px 10px; gap: 8px; }
       .attraction-body { padding: 14px 14px 18px; }
       .attraction-name { margin-bottom: 10px; }
@@ -458,7 +455,7 @@
       .day-sec { padding: 40px 12px 20px; padding-left: 16px; }
       .day-num { font-size: 11px; margin-bottom: 6px; }
       .day-meta { font-size: 13px; margin-bottom: 12px; }
-      .attraction { border-radius: 10px; margin-bottom: 28px; }
+      div.attraction { border-radius: 10px; margin-bottom: 28px; }
       .attraction-header { padding: 12px 12px 8px; gap: 6px; }
       .attraction-body { padding: 12px 12px 16px; }
       .carousel-track img { max-height: 260px; }
@@ -766,12 +763,10 @@ function attractionHTML(highlight, routeId, index) {
 
   /* Header: tag + name + dog badge (above carousel) */
   h += '<div class="attraction-header">';
-  h += '<span class="badge-row">';
   h += `<span class="hl-tag ${highlight.type}">${tag}</span>`;
   if (highlight.dog_friendly !== false) {
     h += `<span class="dog-badge">${PAW_SVG} Dog-Friendly</span>`;
   }
-  h += '</span>';
   if (highlight.drive_time_from_prev != null && highlight.drive_time_prev_name) {
     const t = highlight.drive_time_from_prev;
     const label = t < 0.1 ? 'At' : t + 'h from';
