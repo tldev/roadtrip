@@ -587,7 +587,7 @@ function showRoute(idx){
             <div class="lodging-card">
               <div class="lodging-type campground">Campground</div>
               <div class="lodging-name">${esc(day.camping.name)}</div>
-              <div class="lodging-dog">${esc(day.camping.description)}</div>
+              <div class="lodging-dog">${PAW_SVG} ${esc(day.camping.description)}</div>
             </div>
           </div>
           </div>
@@ -645,7 +645,9 @@ function attractionHTML(highlight, routeId, index) {
   /* Header: tag + name + dog badge (above carousel) */
   h += '<div class="attraction-header">';
   h += `<span class="hl-tag ${highlight.type}">${tag}</span>`;
-  h += `<span class="dog-badge">${PAW_SVG} Dog-Friendly</span>`;
+  if (highlight.dog_friendly !== false) {
+    h += `<span class="dog-badge">${PAW_SVG} Dog-Friendly</span>`;
+  }
   h += '</div>';
 
   /* Carousel */
