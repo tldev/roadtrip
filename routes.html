@@ -138,7 +138,13 @@
     .st-lbl { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 2px; }
 
     /* Day section */
-    .day-sec { padding: 80px 24px 40px; max-width: 960px; margin: 0 auto; }
+    .day-sec { padding: 80px 24px 40px; max-width: 960px; margin: 0 auto;
+      border-left: 4px solid var(--day-color, var(--accent)); padding-left: 28px; }
+    .day-color-1 { --day-color: #5dade2; }
+    .day-color-2 { --day-color: #6ab04c; }
+    .day-color-3 { --day-color: #e0a846; }
+    .day-color-4 { --day-color: #e07bac; }
+    .day-color-5 { --day-color: #b07de8; }
     .day-hdr.reveal {
       opacity: 0; transform: translateY(40px);
       transition: opacity 0.7s ease, transform 0.7s ease;
@@ -272,6 +278,7 @@
     /* Lodging cards */
     .lodging-sec {
       padding: 0 24px 40px; max-width: 960px; margin: 0 auto;
+      border-left: 4px solid var(--day-color, transparent); padding-left: 28px;
     }
     .lodging-sec.reveal {
       opacity: 0; transform: translateY(32px);
@@ -417,7 +424,7 @@
       .st-val { font-size: 18px; }
       .sum-stats { gap: 28px; }
       .sum-val { font-size: 40px; }
-      .day-sec { padding: 60px 16px 30px; }
+      .day-sec { padding: 60px 16px 30px; padding-left: 20px; }
       .attraction { margin-bottom: 40px; }
       .attraction-header { padding: 16px 16px 12px; }
       .attraction-body { padding: 0 16px 20px; }
@@ -633,7 +640,7 @@ function showRoute(idx){
           driveStr=lodgeDrive<60?lodgeDrive+' min':Math.round(lodgeDrive/60*10)/10+'h';
           driveStr=` <span class="drive-badge">${driveStr} from ${esc(lodgeFrom)}</span>`;
         }
-        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
+        h+=`<div class="lodging-sec ${dayColorCls} reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper">
           <div class="lodging-label">${BED_SVG} Where to Stay Tonight — ${esc(lodgeTown)}${driveStr}</div>
           <div class="lodging-grid">`;
@@ -658,7 +665,7 @@ function showRoute(idx){
           campDriveStr=campDrive<60?campDrive+' min':Math.round(campDrive/60*10)/10+'h';
           campDriveStr=` <span class="drive-badge">${campDriveStr} from ${esc(campFrom)}</span>`;
         }
-        h+=`<div class="lodging-sec reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
+        h+=`<div class="lodging-sec ${dayColorCls} reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
           <div class="lodging-wrapper camp-wrapper">
           <div class="lodging-label">${TENT_SVG} Tonight's Campground — ${esc(campTown)}${campDriveStr}</div>
           <div class="lodging-grid">
@@ -668,6 +675,18 @@ function showRoute(idx){
               <div class="lodging-dog">${PAW_SVG} ${esc(day.camping.description)}</div>
             </div>
           </div>
+          </div>
+        </div>`;
+      }
+      /* Final destination — for days with no lodging/camping (e.g. Day 5 -> Parker) */
+      if(!day.lodging?.length && !day.camping && day.lodging_drive_mins!=null){
+        const destTown=day.end.split(',')[0];
+        const destDrive=day.lodging_drive_mins;
+        const destFrom=day.lodging_drive_from||'';
+        let destStr=destDrive<60?destDrive+' min':Math.round(destDrive/60*10)/10+'h';
+        h+=`<div class="lodging-sec ${dayColorCls} reveal" data-geo="${day.end_coords[0]},${day.end_coords[1]}">
+          <div class="lodging-wrapper" style="border-left-color:var(--accent)">
+          <div class="lodging-label" style="color:var(--accent)">Arriving in ${esc(destTown)} <span class="drive-badge">${destStr} from ${esc(destFrom)}</span></div>
           </div>
         </div>`;
       }
