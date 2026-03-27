@@ -176,7 +176,10 @@
     /* Attraction header (above carousel) */
     .attraction-header {
       padding: 20px 24px 16px;
-      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .badge-row {
+      display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
     }
     .dog-badge {
       display: inline-flex; align-items: center; gap: 5px;
@@ -762,10 +765,12 @@ function attractionHTML(highlight, routeId, index) {
 
   /* Header: tag + name + dog badge (above carousel) */
   h += '<div class="attraction-header">';
+  h += '<span class="badge-row">';
   h += `<span class="hl-tag ${highlight.type}">${tag}</span>`;
   if (highlight.dog_friendly !== false) {
     h += `<span class="dog-badge">${PAW_SVG} Dog-Friendly</span>`;
   }
+  h += '</span>';
   if (highlight.drive_time_from_prev != null && highlight.drive_time_prev_name) {
     const t = highlight.drive_time_from_prev;
     const label = t < 0.1 ? 'At' : t + 'h from';
