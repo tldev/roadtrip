@@ -638,8 +638,8 @@ function showRoute(idx){
         h+='</div>';
       }
     } else {
-      const from=day.start.replace(/,.*$/,'');
-      const to=day.end.replace(/,.*$/,'');
+      const from=day.start;
+      const to=day.end;
       const dayColorCls='day-color-'+day.day;
       h+=`<div class="day-sec ${dayColorCls}" data-geo="${day.start_coords[0]},${day.start_coords[1]}">
         <div class="day-hdr reveal">
