@@ -100,7 +100,7 @@
 
     /* Hero */
     .hero {
-      position: relative; height: 100vh; min-height: 560px;
+      position: relative; height: 60vh; min-height: 400px;
       display: flex; align-items: center; justify-content: center;
       text-align: center; overflow: hidden;
       background-size: cover; background-position: center;
@@ -148,9 +148,13 @@
     .day-title { font-size: clamp(26px, 5vw, 46px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px; }
     .day-meta { font-size: 15px; color: var(--text-dim); margin-bottom: 20px; }
 
-    /* ===== ATTRACTION SECTIONS (full-width, magazine-style) ===== */
+    /* ===== ATTRACTION SECTIONS (card-style with header above image) ===== */
     .attraction {
-      margin-bottom: 72px;
+      margin-bottom: 48px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
     .attraction.reveal {
       opacity: 0; transform: translateY(48px);
@@ -158,10 +162,23 @@
     }
     .attraction.reveal.vis { opacity: 1; transform: translateY(0); }
 
+    /* Attraction header (above carousel) */
+    .attraction-header {
+      padding: 20px 24px 16px;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .dog-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; padding: 3px 10px; border-radius: 5px;
+      background: #1a2e1a; color: #6ab04c;
+    }
+    .dog-badge svg { width: 14px; height: 14px; fill: currentColor; }
+
     /* Carousel */
     .carousel {
-      position: relative; width: 100%; border-radius: var(--radius);
-      overflow: hidden; margin-bottom: 28px; background: #0e0e24;
+      position: relative; width: 100%;
+      overflow: hidden; background: #0e0e24;
     }
     .carousel-track {
       display: flex;
@@ -169,7 +186,8 @@
     }
     .carousel-track img {
       flex: 0 0 100%; width: 100%;
-      aspect-ratio: 16/9; object-fit: cover;
+      aspect-ratio: 2/1; object-fit: cover;
+      max-height: 420px;
     }
     .carousel-prev, .carousel-next {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -197,11 +215,11 @@
     .carousel-dots .dot:hover { background: rgba(255,255,255,0.7); }
 
     /* Attraction body */
-    .attraction-body { padding: 0 4px; }
+    .attraction-body { padding: 20px 24px 24px; }
     .hl-tag {
       display: inline-block; font-size: 10px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.8px;
-      padding: 3px 9px; border-radius: 5px; margin-bottom: 10px;
+      padding: 3px 9px; border-radius: 5px;
     }
     .hl-tag.national_park { background: #0e2e24; color: #4ecdc4; }
     .hl-tag.scenic_drive   { background: #2e2a14; color: #d4a832; }
@@ -227,7 +245,7 @@
 
     /* Rest day breather */
     .rest-sec {
-      position: relative; min-height: 75vh;
+      position: relative; min-height: 50vh;
       display: flex; align-items: center; justify-content: center;
       text-align: center; margin: 20px 0;
       background-size: cover; background-position: center;
@@ -239,6 +257,72 @@
     .rest-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3.5px; color: var(--accent); margin-bottom: 18px; }
     .rest-place { font-size: clamp(30px, 6vw, 54px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 22px; }
     .rest-desc { font-size: 16px; color: var(--text-dim); line-height: 1.7; }
+
+    /* Lodging cards */
+    .lodging-sec {
+      padding: 0 24px 40px; max-width: 960px; margin: 0 auto;
+    }
+    .lodging-sec.reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .lodging-sec.reveal.vis { opacity: 1; transform: translateY(0); }
+    .lodging-wrapper {
+      background: rgba(18, 18, 42, 0.6);
+      border: 1px solid rgba(122, 140, 222, 0.15);
+      border-left: 3px solid #7b8cde;
+      border-radius: var(--radius-sm);
+      padding: 24px;
+    }
+    .lodging-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: #7b8cde; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .lodging-label svg { width: 16px; height: 16px; fill: currentColor; }
+    .lodging-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .lodging-card {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 20px;
+    }
+    .lodging-wrapper.camp-wrapper {
+      border-left-color: #6ab04c;
+      border-color: rgba(106, 176, 76, 0.15);
+    }
+    .lodging-wrapper.camp-wrapper .lodging-label { color: #6ab04c; }
+    .lodging-name {
+      font-size: 16px; font-weight: 600; letter-spacing: -0.2px;
+      margin-bottom: 6px;
+    }
+    .lodging-type {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 2px 8px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .lodging-type.hotel { background: #1a1a3a; color: #7b8cde; }
+    .lodging-type.motel { background: #1a1a3a; color: #7b8cde; }
+    .lodging-type.airbnb { background: #2e1a2a; color: #e07bac; }
+    .lodging-type.campground { background: #142e14; color: #6ab04c; }
+    .lodging-dog {
+      font-size: 13px; color: var(--text-dim); line-height: 1.5;
+      margin-bottom: 8px;
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+    .lodging-dog svg { width: 14px; height: 14px; fill: #6ab04c; flex-shrink: 0; margin-top: 2px; }
+    .lodging-price {
+      font-size: 14px; font-weight: 600; color: #6ab04c;
+    }
+
+    /* Camping card (inline with rest day) */
+    .camping-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 20px; margin-top: 20px;
+      text-align: left; max-width: 420px; margin-left: auto; margin-right: auto;
+    }
+    .camping-card .lodging-name { color: #6ab04c; }
 
     /* Summary */
     .summary-sec { padding: 100px 24px 60px; max-width: 760px; margin: 0 auto; text-align: center; }
@@ -283,12 +367,16 @@
       .sum-stats { gap: 28px; }
       .sum-val { font-size: 40px; }
       .day-sec { padding: 60px 16px 30px; }
-      .attraction { margin-bottom: 56px; }
-      .carousel { border-radius: var(--radius-sm); }
+      .attraction { margin-bottom: 40px; }
+      .attraction-header { padding: 16px 16px 12px; }
+      .attraction-body { padding: 0 16px 20px; }
       .carousel-prev, .carousel-next { opacity: 1; width: 38px; height: 38px; font-size: 18px; }
       .carousel-prev { left: 10px; }
       .carousel-next { right: 10px; }
       .attraction-bullets { font-size: 15px; }
+      .carousel-track img { max-height: 300px; }
+      .lodging-sec { padding: 0 16px 30px; }
+      .lodging-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
@@ -296,7 +384,10 @@
       .stats-row { gap: 14px; }
       .st-val { font-size: 16px; }
       .st-lbl { font-size: 9px; }
-      .carousel { border-radius: 10px; margin-bottom: 20px; }
+      .attraction { border-radius: 10px; }
+      .carousel-track img { max-height: 260px; }
+      .lodging-card { padding: 16px; }
+      .lodging-name { font-size: 14px; }
     }
   </style>
 </head>
@@ -320,16 +411,16 @@
 <script>
 /* ── colour themes + hero/rest images per route (Wikimedia Commons) ── */
 const THEMES = {
-  1:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Oak_Creek_Canyon_%2851030165942%29.jpg/1280px-Oak_Creek_Canyon_%2851030165942%29.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg/1280px-Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg' },
-  2:  { c1:'#3a1a00', c2:'#6a3000', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Grand_Canyon_South_Rim_at_Sunset.jpg/1280px-Grand_Canyon_South_Rim_at_Sunset.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg/1280px-Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg' },
-  3:  { c1:'#3a2500', c2:'#6a4500', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Double-O-Arch_Arches_National_Park_2.jpg/1280px-Double-O-Arch_Arches_National_Park_2.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/SLCSE_parent_Eric_Delphenich%2C_a_professional_photographer%2C_provided_fantastic_camp_photos%21_Moab%2C_UT_Photo_by_BLM_Utah_%2846986193645%29.jpg/1280px-SLCSE_parent_Eric_Delphenich%2C_a_professional_photographer%2C_provided_fantastic_camp_photos%21_Moab%2C_UT_Photo_by_BLM_Utah_%2846986193645%29.jpg' },
-  4:  { c1:'#3a3010', c2:'#5a4a1a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/White_Sands_Dunefield_Panorama_2021.jpg/1280px-White_Sands_Dunefield_Panorama_2021.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Camping_and_Picnicking_-_New_Mexico_-_DPLA_-_c028b8b9ac96a2fb11f9242296c470fc.jpg/1280px-Camping_and_Picnicking_-_New_Mexico_-_DPLA_-_c028b8b9ac96a2fb11f9242296c470fc.jpg' },
-  5:  { c1:'#0a2a20', c2:'#1a4a3a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Yellowstone_National_Park_%28WY%2C_USA%29%2C_Old_Faithful_Geyser_--_2022_--_2599.jpg/1280px-Yellowstone_National_Park_%28WY%2C_USA%29%2C_Old_Faithful_Geyser_--_2022_--_2599.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Camping_in_Gallatin_National_Forest_99-5718_%285878726022%29.jpg/1280px-Camping_in_Gallatin_National_Forest_99-5718_%285878726022%29.jpg' },
-  6:  { c1:'#2a1510', c2:'#4a2a1a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Zabriskie_Point_Death_Valley_December_2013_002.jpg/1280px-Zabriskie_Point_Death_Valley_December_2013_002.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wahweap_Formation_933.jpg/1280px-Wahweap_Formation_933.jpg' },
-  7:  { c1:'#0a2a1a', c2:'#1a4030', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Crater_Lake_winter_pano2.jpg/1280px-Crater_Lake_winter_pano2.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tumalo_State_Park%2C_Deschutes_River.jpg/1280px-Tumalo_State_Park%2C_Deschutes_River.jpg' },
-  8:  { c1:'#1a1540', c2:'#2a2060', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg/1280px-Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Twin_Lakes%2C_Bridgeport%2C_California.jpg/1280px-Twin_Lakes%2C_Bridgeport%2C_California.jpg' },
-  9:  { c1:'#0a1a2a', c2:'#152a40', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Winslow-Meteor_Crater-Meteor_Crater_Visitor_Center.jpg/1280px-Winslow-Meteor_Crater-Meteor_Crater_Visitor_Center.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/The_Peaks_%2816967306537%29.jpg/1280px-The_Peaks_%2816967306537%29.jpg' },
-  10: { c1:'#151a30', c2:'#253050', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Gates_of_the_Mountains3.JPG/1280px-Gates_of_the_Mountains3.JPG', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyalite_Reservoir.jpg/1280px-Hyalite_Reservoir.jpg' },
+  1:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Route66_seligman_az.jpg/1280px-Route66_seligman_az.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/The_Peaks_%2816967306537%29.jpg/1280px-The_Peaks_%2816967306537%29.jpg' },
+  2:  { c1:'#2a1510', c2:'#4a2a1a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Zabriskie_Point_Death_Valley_December_2013_002.jpg/1280px-Zabriskie_Point_Death_Valley_December_2013_002.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Coral_Pink_Sand_Dunes_State_Park_2.jpg/1280px-Coral_Pink_Sand_Dunes_State_Park_2.jpg' },
+  3:  { c1:'#1a1540', c2:'#2a2060', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg/1280px-Lone_Pine_Alabama_Hills_Mt_Whitney_2018-04-07_California_01.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Red_Canyon_-_Utah.jpg/1280px-Red_Canyon_-_Utah.jpg' },
+  4:  { c1:'#3a1a00', c2:'#6a3000', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Grand_Canyon_South_Rim_at_Sunset.jpg/1280px-Grand_Canyon_South_Rim_at_Sunset.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg/1280px-Grand_Canyon_Mather_Campground_SR_6043_%285752479424%29.jpg' },
+  5:  { c1:'#3a2500', c2:'#6a4500', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Zion_angels_702.jpg/1280px-Zion_angels_702.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Zion_Canyon_Scenic_Drive.jpg/1280px-Zion_Canyon_Scenic_Drive.jpg' },
+  6:  { c1:'#151a30', c2:'#253050', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/The_Loneliest_Road%2C_U.S._Route_50%2C_Nevada.jpg/1280px-The_Loneliest_Road%2C_U.S._Route_50%2C_Nevada.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
+  7:  { c1:'#3a1505', c2:'#5a2010', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Oak_Creek_Canyon_%2851030165942%29.jpg/1280px-Oak_Creek_Canyon_%2851030165942%29.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg/1280px-Man_Fly-Fishing_On_Oak_Creek_Sedona_Arizona_During_Winter.jpg' },
+  8:  { c1:'#0a1a2a', c2:'#152a40', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/GlenCanyonDam-June2009.JPG/1280px-GlenCanyonDam-June2009.JPG', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wahweap_Formation_933.jpg/1280px-Wahweap_Formation_933.jpg' },
+  9:  { c1:'#3a2500', c2:'#5a3a10', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Capitol_Reef_National_Park.jpg/1280px-Capitol_Reef_National_Park.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Fruita_Campground%2C_Capitol_Reef_NP.jpg/1280px-Fruita_Campground%2C_Capitol_Reef_NP.jpg' },
+  10: { c1:'#0a2a20', c2:'#1a4a3a', hero:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Monolake01.jpg/1280px-Monolake01.jpg', rest:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cave_Lake_State_Park.jpg/1280px-Cave_Lake_State_Park.jpg' },
 };
 
 const TYPE_LABEL = {
@@ -439,13 +530,18 @@ function showRoute(idx){
   /* Days */
   route.days.forEach(day=>{
     if(day.is_rest_day){
-      const camp=day.highlights.find(x=>x.type==='camping');
+      const camp=day.camping||day.highlights.find(x=>x.type==='camping');
+      const campDesc=camp?(camp.description||''):'A day to rest, recharge, and explore at your own pace.';
       h+=`<div class="rest-sec reveal" style="background:linear-gradient(135deg,${t.c1},${t.c2})" data-img="${t.rest}">
         <div class="rest-overlay"></div>
         <div class="rest-body">
           <div class="rest-label">Day ${day.day} &mdash; Rest Day</div>
           <h2 class="rest-place">${esc(day.end)}</h2>
-          <p class="rest-desc">${esc(camp?camp.description:'A day to rest, recharge, and explore at your own pace.')}</p>
+          <p class="rest-desc">${esc(campDesc)}</p>
+          ${camp?`<div class="camping-card">
+            <div class="lodging-type campground">Campground</div>
+            <div class="lodging-name">${esc(camp.name)}</div>
+          </div>`:''}
         </div>
       </div>`;
       const others=day.highlights.filter(x=>x.type!=='camping');
@@ -465,6 +561,38 @@ function showRoute(idx){
         </div>`;
       day.highlights.forEach(x=>{ h+=attractionHTML(x,route.id,hlIdx++); });
       h+=`</div>`;
+      /* Lodging options for hotel nights */
+      if(day.lodging&&day.lodging.length){
+        h+=`<div class="lodging-sec reveal">
+          <div class="lodging-wrapper">
+          <div class="lodging-label">${BED_SVG} Where to Stay Tonight</div>
+          <div class="lodging-grid">`;
+        day.lodging.forEach(l=>{
+          const ltype=l.type||'hotel';
+          h+=`<div class="lodging-card">
+            <div class="lodging-type ${ltype}">${esc(ltype)}</div>
+            <div class="lodging-name">${esc(l.name)}</div>
+            <div class="lodging-dog">${PAW_SVG} ${esc(l.dog_policy)}</div>
+            <div class="lodging-price">${esc(l.price_range)}</div>
+          </div>`;
+        });
+        h+=`</div></div></div>`;
+      }
+      /* Camping info for driving+camping days */
+      if(day.camping){
+        h+=`<div class="lodging-sec reveal">
+          <div class="lodging-wrapper camp-wrapper">
+          <div class="lodging-label">${TENT_SVG} Tonight's Campground</div>
+          <div class="lodging-grid">
+            <div class="lodging-card">
+              <div class="lodging-type campground">Campground</div>
+              <div class="lodging-name">${esc(day.camping.name)}</div>
+              <div class="lodging-dog">${PAW_SVG} ${esc(day.camping.description)}</div>
+            </div>
+          </div>
+          </div>
+        </div>`;
+      }
     }
   });
 
@@ -500,7 +628,12 @@ function showRoute(idx){
   initCarousels();
 }
 
-/* ── full-width attraction section with carousel ── */
+/* ── SVG icons ── */
+const PAW_SVG = '<svg viewBox="0 0 24 24"><path d="M12 21.35C8.5 18.83 2 14.5 2 9.5 2 7 4 5 6.5 5c.9 0 1.73.25 2.5.68V5a3 3 0 0 1 6 0v.68A4.46 4.46 0 0 1 17.5 5C20 5 22 7 22 9.5c0 5-6.5 9.33-10 11.85z" fill="none"/><ellipse cx="8" cy="7" rx="1.8" ry="2.2"/><ellipse cx="16" cy="7" rx="1.8" ry="2.2"/><ellipse cx="5.5" cy="11" rx="1.6" ry="2"/><ellipse cx="18.5" cy="11" rx="1.6" ry="2"/><path d="M12 19c-1.5-1.2-4-3.5-4.5-5.5-.3-1.2.3-2.5 1.5-3s2.3 0 3 1c.7-1 1.8-1.5 3-1s1.8 1.8 1.5 3C16 15.5 13.5 17.8 12 19z"/></svg>';
+const BED_SVG = '<svg viewBox="0 0 24 24"><path d="M3 13h18v5h-2v-2H5v2H3v-5zm0-2V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v1h4V7h-2V5H5v6H3zm4-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>';
+const TENT_SVG = '<svg viewBox="0 0 24 24"><path d="M12 3L2 20h20L12 3zm0 4l6.5 11h-13L12 7z"/></svg>';
+
+/* ── attraction card with header above image ── */
 function attractionHTML(highlight, routeId, index) {
   const data = attractionData[highlight.name];
   const photos = data ? data.photos : [];
@@ -508,6 +641,14 @@ function attractionHTML(highlight, routeId, index) {
   const tag = TYPE_LABEL[highlight.type] || highlight.type;
 
   let h = '<div class="attraction reveal">';
+
+  /* Header: tag + name + dog badge (above carousel) */
+  h += '<div class="attraction-header">';
+  h += `<span class="hl-tag ${highlight.type}">${tag}</span>`;
+  if (highlight.dog_friendly !== false) {
+    h += `<span class="dog-badge">${PAW_SVG} Dog-Friendly</span>`;
+  }
+  h += '</div>';
 
   /* Carousel */
   if (photos.length > 0) {
@@ -529,9 +670,8 @@ function attractionHTML(highlight, routeId, index) {
     h += '</div>';
   }
 
-  /* Body */
+  /* Body: name + description (below carousel) */
   h += '<div class="attraction-body">';
-  h += `<span class="hl-tag ${highlight.type}">${tag}</span>`;
   h += `<h3 class="attraction-name">${esc(highlight.name)}</h3>`;
   h += '<ul class="attraction-bullets">';
   desc.forEach(bullet => {
