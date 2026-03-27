@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Route Showcase — Sabby Roadtrip</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     :root {
       --bg: #0a0a1a;
@@ -371,12 +370,32 @@
       background: #0a0a1a;
     }
     .mini-map-wrap.active { opacity: 1; pointer-events: auto; }
-    .mini-map-wrap .leaflet-control-attribution { display: none !important; }
+    .mini-map-wrap .leaflet-control-attribution {
+      font-size: 7px; background: rgba(10,10,26,0.6) !important;
+      color: rgba(255,255,255,0.35); padding: 1px 4px;
+    }
+    .mini-map-wrap .leaflet-control-attribution a { color: rgba(255,255,255,0.45); }
+    #miniMap { width: 100%; height: 100%; }
+    .mini-map-close {
+      position: absolute; top: 6px; right: 6px; z-index: 95;
+      width: 24px; height: 24px; border-radius: 50%; border: none;
+      background: rgba(10,10,26,0.7); color: rgba(255,255,255,0.7);
+      font-size: 14px; line-height: 24px; text-align: center;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .mini-map-close:hover { background: rgba(233,69,96,0.6); color: #fff; }
     .mini-map-wrap .leaflet-control-zoom a {
       background: rgba(10,10,26,0.85); color: #f0f0f0;
       border-color: rgba(255,255,255,0.12);
     }
     .mini-map-wrap .leaflet-control-zoom a:hover { background: rgba(30,30,60,0.9); }
+    .minimap-tip {
+      font-size: 10px; padding: 2px 6px; background: rgba(10,10,26,0.85);
+      color: #f0f0f0; border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
@@ -397,8 +416,6 @@
       .carousel-track img { max-height: 300px; }
       .lodging-sec { padding: 0 16px 30px; }
       .lodging-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
       .mini-map-wrap { width: 240px; height: 200px; bottom: 16px; right: 16px; }
     }
     @media (max-width: 480px) {
@@ -431,9 +448,8 @@
 </nav>
 
 <main id="app"><div class="loading">Loading routes&hellip;</div></main>
-<div class="mini-map-wrap" id="miniMapWrap"><div id="miniMap" style="width:100%;height:100%"></div></div>
+<div class="mini-map-wrap" id="miniMapWrap"><button class="mini-map-close" id="miniMapClose" aria-label="Close map">&times;</button><div id="miniMap"></div></div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 /* ── colour themes + hero/rest images per route (Wikimedia Commons) ── */
 const THEMES = {
@@ -796,9 +812,32 @@ function teardownMiniMap(){
   miniMapMarker=null; miniMapLine=null;
 }
 
-function initMiniMap(route){
+/* Lazy-load Leaflet CSS + JS (only when first route is opened) */
+let leafletReady=null;
+function loadLeaflet(){
+  if(leafletReady) return leafletReady;
+  leafletReady=new Promise(resolve=>{
+    const css=document.createElement('link');
+    css.rel='stylesheet';
+    css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+    const js=document.createElement('script');
+    js.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    js.onload=resolve;
+    document.head.appendChild(js);
+  });
+  return leafletReady;
+}
+
+async function initMiniMap(route){
   teardownMiniMap();
+  await loadLeaflet();
   const wrap=document.getElementById('miniMapWrap');
+
+  /* Wire close button */
+  document.getElementById('miniMapClose').onclick=()=>{
+    wrap.classList.remove('active');
+  };
 
   /* Collect waypoints in order: start → all highlights → end for each day */
   const waypoints=[];
@@ -815,14 +854,15 @@ function initMiniMap(route){
 
   /* Create map — interactive (pannable + zoomable) */
   miniMap=L.map('miniMap',{
-    zoomControl:true, attributionControl:false,
+    zoomControl:true, attributionControl:true,
     dragging:true, scrollWheelZoom:true, doubleClickZoom:true,
     touchZoom:true, boxZoom:false, keyboard:false,
     tap:true
   });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
-    subdomains:'abcd', maxZoom:19
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
   }).addTo(miniMap);
 
   /* Route polyline */
@@ -842,6 +882,32 @@ function initMiniMap(route){
   L.marker(latLngs[0],{icon:dotIcon('#6ab04c'),interactive:false}).addTo(miniMap);
   L.marker(latLngs[latLngs.length-1],{icon:dotIcon('#e94560'),interactive:false}).addTo(miniMap);
 
+  /* Stop markers (clickable — scroll page to section) */
+  const geoEls=Array.from(document.querySelectorAll('[data-geo]'));
+  geoEls.forEach((el,i)=>{
+    el.id='geo-'+i;
+    el._geoIdx=i;
+    const [lat,lng]=el.dataset.geo.split(',').map(Number);
+    const iscamp=el.classList.contains('rest-sec')||el.querySelector('.lodging-type.campground');
+    const islodge=el.classList.contains('lodging-sec');
+    const isattr=el.classList.contains('attraction');
+    let color='#5dade2'; // default: town/attraction blue
+    if(iscamp) color='#6ab04c'; // camping green
+    else if(islodge) color='#7b8cde'; // lodging purple
+    const stopIcon=L.divIcon({
+      className:'',
+      html:`<svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="${color}" stroke="#0a0a1a" stroke-width="1" opacity="0.8"/></svg>`,
+      iconSize:[10,10], iconAnchor:[5,5]
+    });
+    const m=L.marker([lat,lng],{icon:stopIcon}).addTo(miniMap);
+    m.on('click',()=>{
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    /* Tooltip with name on hover */
+    const nameEl=el.querySelector('.attraction-name,.rest-place,.lodging-name,.day-title');
+    if(nameEl) m.bindTooltip(nameEl.textContent.trim(),{direction:'top',className:'minimap-tip'});
+  });
+
   /* Position marker (the moving pin) */
   const pulseIcon=L.divIcon({
     className:'',
@@ -860,9 +926,6 @@ function initMiniMap(route){
   miniMap.fitBounds(miniMapLine.getBounds(),{padding:[14,14]});
 
   /* Observe geo-tagged elements for scroll position (forward-only) */
-  const geoEls=Array.from(document.querySelectorAll('[data-geo]'));
-  /* Assign each element a DOM-order index so we can enforce forward-only movement */
-  geoEls.forEach((el,i)=>{ el._geoIdx=i; });
   const visibleGeos=new Set();
   let highestIdx=-1;
 
