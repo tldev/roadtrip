@@ -28,15 +28,18 @@ Frank → MediaServer hand-off. Everything you need to host the container at
 
 ### Environment variables
 
-| Var | Required | Slice | Notes |
-| --- | --- | --- | --- |
-| `PORT` | no | 1 | Defaults to 8080. |
-| `GIT_SHA` | no | 1 | Baked at build time; surfaced in `/healthz`. |
-| `TRIP_DATE_OVERRIDE` | no | 1 | `YYYY-MM-DD`; pin "today" for demos / testing. |
-| `ADMIN_TOKEN` | yes (slice 2) | 2 | Long random string. Anyone with this can push location pings. Rotate via redeploy. |
-| `COOKIE_SECRET` | yes (slice 2) | 2 | 32+ bytes; signs the admin cookie. Rotate via redeploy. |
-| `HCAPTCHA_SITEKEY` | yes (slice 2) | 2 | Public key, exposed to browser. |
-| `HCAPTCHA_SECRET` | yes (slice 2) | 2 | Server-side hCaptcha secret. |
+| Var | Required | Notes |
+| --- | --- | --- |
+| `PORT` | no | Defaults to 8080. |
+| `GIT_SHA` | no | Baked at build time; surfaced in `/healthz`. |
+| `DATA_DIR` | no | Defaults to `/data`. SQLite file lives here. |
+| `TRIP_DATE_OVERRIDE` | no | `YYYY-MM-DD`; pin "today" for demos / testing. |
+| `ADMIN_TOKEN` | **yes** | Long random string. Anyone with this can push location pings + moderate submissions. Rotate via redeploy. |
+| `COOKIE_SECRET` | **yes** | 32+ chars; signs the admin cookie. Rotate via redeploy. |
+| `HCAPTCHA_SITEKEY` | **yes (prod)** | Public key, exposed to browser. **If unset, captcha is bypassed and the public submission form will be spam-bombed within hours.** |
+| `HCAPTCHA_SECRET` | **yes (prod)** | Server-side hCaptcha secret. Same warning as above. |
+
+> ⚠️ **Production must set both `HCAPTCHA_SITEKEY` and `HCAPTCHA_SECRET`.** The server logs a stderr warning and accepts all submissions when either is missing — that's a dev convenience, not a production posture. Get the keys from <https://www.hcaptcha.com> (free tier covers our scale).
 
 ### Cookie policy (slice 2)
 
@@ -58,11 +61,10 @@ services:
     volumes:
       - sabby-roadtrip-data:/data
     environment:
-      # Slice 1 needs none. Slice 2 wires these in.
-      # ADMIN_TOKEN: "<set in MediaServer secrets>"
-      # COOKIE_SECRET: "<set in MediaServer secrets>"
-      # HCAPTCHA_SITEKEY: "<set in MediaServer secrets>"
-      # HCAPTCHA_SECRET: "<set in MediaServer secrets>"
+      ADMIN_TOKEN: "${ADMIN_TOKEN}"          # required
+      COOKIE_SECRET: "${COOKIE_SECRET}"      # required, 32+ chars
+      HCAPTCHA_SITEKEY: "${HCAPTCHA_SITEKEY}" # required in prod
+      HCAPTCHA_SECRET: "${HCAPTCHA_SECRET}"   # required in prod
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
       interval: 30s
@@ -93,7 +95,7 @@ watchtower:
     - /var/run/docker.sock:/var/run/docker.sock
 ```
 
-## iOS Shortcuts ping recipe (slice 2)
+## iOS Shortcuts ping recipe
 
 For Tom & Kay to push location from the lockscreen without opening the site.
 
@@ -115,9 +117,9 @@ For Tom & Kay to push location from the lockscreen without opening the site.
      ```
 4. Add to Lock Screen / Home Screen as a one-tap action.
 
-The slice-2 `POST /api/location` accepts both bearer-token and signed-cookie
-auth — the bearer path is for the iOS Shortcut, the cookie path is for the
-admin web button.
+`POST /api/location` accepts both bearer-token and signed-cookie auth —
+the bearer path is for the iOS Shortcut, the cookie path is for the
+admin web button at `/admin`.
 
 ## Rollback
 
@@ -134,4 +136,7 @@ Or skip the retag and edit the compose `image:` line to the pinned `sha-…` tag
 - [ ] `https://roadtrip.tomjohnell.com/healthz` returns 200 with current `version`
 - [ ] `https://roadtrip.tomjohnell.com/` loads, "Today / Tomorrow / Full Trip" tabs render
 - [ ] Map view draws all stops + polylines
+- [ ] `/admin` login flow works with the deployed `ADMIN_TOKEN`
+- [ ] iOS Shortcut posts a ping; the public footer reflects the new "Last ping" text within a minute
+- [ ] Submission form renders the hCaptcha widget; test submission lands in the moderation queue
 - [ ] Watchtower picks up a new `:latest` push within ~5 min (verify with one trivial commit)

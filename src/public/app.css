@@ -197,6 +197,112 @@ body {
   .day-card { margin-top: 24px; padding: 22px; }
 }
 
+/* ---- Day card extras (slice 2) ---- */
+.day-cta { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; }
+.btn-suggest {
+  background: transparent;
+  color: var(--theme-accent);
+  border: 1px solid color-mix(in oklab, var(--theme-accent) 60%, transparent);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-suggest:hover {
+  background: color-mix(in oklab, var(--theme-accent) 18%, transparent);
+  border-color: var(--theme-accent);
+}
+.btn-suggest-cta { margin-top: 18px; }
+
+.day-suggestions {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.day-suggestions h3 {
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-dim); margin: 0 0 12px;
+}
+.day-suggestions ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.day-suggestions li {
+  background: color-mix(in oklab, var(--theme-bg) 70%, white 6%);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.day-suggestions strong { color: var(--theme-accent); font-weight: 600; }
+.day-suggestions .suggester { color: var(--fg-dim); font-size: 12px; margin-left: 6px; }
+.suggestion-body { margin-top: 4px; color: var(--theme-fg); }
+.suggestion-link { display: inline-block; margin-top: 4px; font-size: 12px; color: var(--theme-accent-2); text-decoration: none; }
+.suggestion-link:hover { text-decoration: underline; }
+
+/* ---- Modal ---- */
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  background: color-mix(in oklab, black 65%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+.modal[hidden] { display: none; }
+.modal-card {
+  position: relative;
+  background: color-mix(in oklab, var(--theme-bg) 80%, white 6%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 86vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+.modal-card h2 { margin: 0 0 4px; font-size: 22px; color: var(--theme-fg); }
+.modal-card .muted { color: var(--fg-dim); font-size: 13px; margin: 0 0 18px; }
+.modal-close {
+  position: absolute; top: 12px; right: 14px;
+  background: transparent; border: none; color: var(--fg-dim);
+  font-size: 26px; line-height: 1; cursor: pointer;
+}
+.modal-close:hover { color: var(--theme-fg); }
+.modal label { display: block; margin: 12px 0; }
+.modal label > span { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-dim); margin-bottom: 6px; }
+.modal input, .modal textarea {
+  width: 100%;
+  background: color-mix(in oklab, var(--theme-bg) 90%, black);
+  color: var(--theme-fg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.modal input:focus, .modal textarea:focus { border-color: var(--theme-accent); }
+.modal textarea { resize: vertical; min-height: 70px; }
+.modal-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+.btn-primary {
+  background: var(--theme-accent);
+  color: #0f1620;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.9; }
+.modal-result { margin-top: 12px; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+.modal-result.error { background: color-mix(in oklab, #e2856a 22%, transparent); color: #f1a48a; }
+.modal-result.success { background: color-mix(in oklab, var(--theme-accent-2) 22%, transparent); color: var(--theme-accent-2); }
+#captcha-slot { margin-top: 14px; min-height: 0; }
+
 /* Leaflet popup overrides */
 .leaflet-popup-content-wrapper {
   background: var(--theme-bg);

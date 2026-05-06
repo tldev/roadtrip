@@ -1,0 +1,119 @@
+:root {
+  --bg: #0f1620;
+  --surface: #182230;
+  --surface-2: #21304a;
+  --fg: #e8edf2;
+  --fg-dim: #8a98ad;
+  --line: #2a3a52;
+  --accent: #6fb6ad;
+  --accent-2: #d18a4a;
+  --error: #e2856a;
+  --success: #6fb6ad;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  min-height: 100dvh;
+}
+
+.bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklab, var(--bg) 80%, black);
+  position: sticky; top: 0; z-index: 5;
+}
+.bar-title { font-weight: 600; letter-spacing: 0.3px; }
+.bar-actions { display: flex; align-items: center; gap: 16px; }
+.link-back { color: var(--fg-dim); text-decoration: none; font-size: 13px; }
+.link-back:hover { color: var(--fg); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  max-width: 880px;
+  margin: 22px auto;
+}
+.dashboard { padding: 22px 16px; }
+.dashboard .card { margin-bottom: 18px; }
+
+h1 { font-size: 22px; margin: 0 0 8px; }
+h2 { font-size: 17px; margin: 0 0 12px; color: var(--accent); letter-spacing: 0.2px; }
+.muted { color: var(--fg-dim); font-size: 13px; }
+.small { font-size: 12px; }
+
+label { display: block; margin: 14px 0; }
+label > span { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-dim); margin-bottom: 6px; }
+input[type=password], input[type=text], textarea {
+  width: 100%;
+  background: var(--surface-2);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+input:focus, textarea:focus { border-color: var(--accent); }
+textarea { min-height: 70px; resize: vertical; }
+
+.btn {
+  background: var(--accent);
+  color: #0f1620;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.05s ease;
+}
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-ghost { background: transparent; color: var(--fg-dim); border: 1px solid var(--line); }
+.btn-ghost:hover { color: var(--fg); border-color: var(--fg-dim); }
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.row > input[type=text] { flex: 1 1 240px; }
+
+.error { margin-top: 12px; padding: 8px 12px; background: color-mix(in oklab, var(--error) 18%, transparent); color: var(--error); border-radius: 8px; font-size: 13px; }
+.success { color: var(--success); font-size: 13px; }
+
+.tabs-row .tab-btn {
+  background: transparent; color: var(--fg-dim);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 14px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.tabs-row .tab-btn.active { background: color-mix(in oklab, var(--accent) 22%, transparent); color: var(--fg); border-color: var(--accent); }
+
+.sub {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  background: var(--surface-2);
+}
+.sub-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.sub-name { font-weight: 600; font-size: 16px; }
+.sub-meta { font-size: 12px; color: var(--fg-dim); }
+.sub-body { margin-top: 8px; font-size: 14px; line-height: 1.45; }
+.sub-link { display: inline-block; margin-top: 6px; font-size: 13px; color: var(--accent); text-decoration: none; }
+.sub-link:hover { text-decoration: underline; }
+.sub-actions { display: flex; gap: 8px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+.sub-actions textarea { flex: 1 1 200px; min-height: 38px; padding: 8px 10px; font-size: 13px; }
+
+.pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.pill.approved { background: color-mix(in oklab, var(--accent) 28%, transparent); color: var(--accent); }
+.pill.rejected { background: color-mix(in oklab, var(--error) 28%, transparent); color: var(--error); }
