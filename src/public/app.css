@@ -113,19 +113,30 @@ body {
   color: var(--gm-text-secondary);
   font: inherit;
   cursor: pointer;
+  outline: none;
   transition: all 0.15s ease;
 }
 .date-chip:hover { background: var(--gm-surface-alt); color: var(--gm-text); }
+.date-chip:focus-visible {
+  box-shadow: 0 0 0 2px var(--gm-blue);
+  border-color: var(--gm-blue);
+}
 .date-chip[aria-selected="true"] {
   background: var(--gm-blue);
   color: #fff;
   border-color: var(--gm-blue);
   box-shadow: var(--gm-shadow-1);
 }
+.date-chip[aria-selected="true"]:focus-visible {
+  box-shadow: var(--gm-shadow-1), 0 0 0 2px color-mix(in oklab, var(--gm-blue) 50%, white);
+}
 .date-chip.is-today {
   border-color: var(--gm-blue);
 }
 .date-chip[aria-selected="true"].is-today { box-shadow: 0 0 0 2px color-mix(in oklab, var(--gm-blue) 30%, transparent); }
+.date-chip.is-past { opacity: 0.55; }
+.date-chip.is-past:hover { opacity: 0.85; }
+.date-chip.is-past[aria-selected="true"] { opacity: 1; }
 .chip-dow { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; }
 .chip-day { font-size: 18px; font-weight: 500; line-height: 1.1; margin-top: 2px; }
 .chip-mon { font-size: 11px; opacity: 0.85; margin-top: 2px; }

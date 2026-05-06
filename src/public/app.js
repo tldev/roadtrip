@@ -108,7 +108,9 @@ function renderDateRail() {
     chip.className = "date-chip";
     chip.setAttribute("role", "tab");
     chip.setAttribute("aria-selected", String(i === selectedIndex));
+    chip.tabIndex = i === selectedIndex ? 0 : -1;
     if (d.date === todayIso) chip.classList.add("is-today");
+    if (d.date < todayIso) chip.classList.add("is-past");
     const dt = new Date(d.date + "T00:00:00Z");
     const dow = dt.toLocaleDateString(undefined, { weekday: "short", timeZone: "UTC" }).toUpperCase();
     const dayN = dt.getUTCDate();
@@ -121,15 +123,30 @@ function renderDateRail() {
     chip.querySelector(".chip-dow").textContent = dow;
     chip.querySelector(".chip-day").textContent = String(dayN);
     chip.querySelector(".chip-mon").textContent = mon;
-    chip.addEventListener("click", () => {
-      selectedIndex = i;
-      renderDateRail();
-      renderSelectedDay();
-      scrollChipIntoView(rail);
-    });
+    chip.addEventListener("click", () => selectChip(i, false));
+    chip.addEventListener("keydown", onChipKeydown);
     rail.appendChild(chip);
   });
   scrollChipIntoView(rail);
+}
+
+function selectChip(i, focus) {
+  selectedIndex = Math.max(0, Math.min(itinerary.days.length - 1, i));
+  renderDateRail();
+  renderSelectedDay();
+  const rail = document.getElementById("date-rail");
+  scrollChipIntoView(rail);
+  if (focus) rail.children[selectedIndex]?.focus();
+}
+
+function onChipKeydown(ev) {
+  const last = itinerary.days.length - 1;
+  switch (ev.key) {
+    case "ArrowRight": ev.preventDefault(); selectChip(selectedIndex + 1, true); break;
+    case "ArrowLeft":  ev.preventDefault(); selectChip(selectedIndex - 1, true); break;
+    case "Home":       ev.preventDefault(); selectChip(0, true); break;
+    case "End":        ev.preventDefault(); selectChip(last, true); break;
+  }
 }
 
 function scrollChipIntoView(rail) {
