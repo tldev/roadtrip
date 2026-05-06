@@ -104,9 +104,10 @@ body {
 
 .date-chip {
   flex: 0 0 auto;
+  position: relative;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   min-width: 64px;
-  padding: 8px 12px;
+  padding: 8px 12px 12px;
   border-radius: 12px;
   background: var(--gm-surface);
   border: 1px solid var(--gm-border);
@@ -115,6 +116,29 @@ body {
   cursor: pointer;
   outline: none;
   transition: all 0.15s ease;
+}
+.chip-bar {
+  position: absolute;
+  left: 10px; right: 10px; bottom: 5px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--chip-accent, var(--gm-blue));
+  transition: opacity 0.15s ease;
+}
+.date-chip.is-rest .chip-bar {
+  background: transparent;
+  border-top: 2px dashed var(--gm-border-strong);
+  border-radius: 0;
+  bottom: 6px;
+  height: 0;
+}
+.date-chip[aria-selected="true"] .chip-bar { background: rgba(255,255,255,0.85); }
+.date-chip[aria-selected="true"].is-rest .chip-bar { border-top-color: rgba(255,255,255,0.7); }
+.chip-camp {
+  position: absolute;
+  top: 4px; right: 6px;
+  font-size: 11px;
+  line-height: 1;
 }
 .date-chip:hover { background: var(--gm-surface-alt); color: var(--gm-text); }
 .date-chip:focus-visible {
@@ -175,14 +199,21 @@ body {
   margin-top: 4px;
 }
 .day-route .day-arrow { color: var(--gm-text-secondary); margin: 0 6px; }
-.rest-pill {
-  display: inline-block;
-  margin-left: 10px;
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-left: 6px;
   font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
   padding: 2px 8px;
   border-radius: var(--gm-radius-pill);
+}
+.badge-rest {
   background: color-mix(in oklab, var(--gm-green) 16%, transparent);
   color: var(--gm-green);
+}
+.badge-camp {
+  background: color-mix(in oklab, var(--gm-yellow) 22%, transparent);
+  color: #8b6a00;
+  letter-spacing: 0.08em;
 }
 
 .day-stats {
@@ -198,6 +229,16 @@ body {
   color: var(--gm-text-secondary); margin-bottom: 4px;
 }
 .stat-value { font-size: 14px; color: var(--gm-text); }
+
+.day-map {
+  margin-top: 22px;
+  height: 220px;
+  border-radius: var(--gm-radius);
+  overflow: hidden;
+  border: 1px solid var(--gm-border);
+  background: #e5e3df;
+}
+.day-map .leaflet-container { font-family: inherit; background: #e5e3df; }
 
 .day-cta { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--gm-border); display: flex; justify-content: flex-end; }
 

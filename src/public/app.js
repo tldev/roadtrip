@@ -111,6 +111,11 @@ function renderDateRail() {
     chip.tabIndex = i === selectedIndex ? 0 : -1;
     if (d.date === todayIso) chip.classList.add("is-today");
     if (d.date < todayIso) chip.classList.add("is-past");
+    if (d.isRestDay) chip.classList.add("is-rest");
+    else chip.classList.add("is-drive");
+    if (isCamping(d)) chip.classList.add("is-camping");
+    chip.style.setProperty("--chip-accent", biomeAccent(d));
+
     const dt = new Date(d.date + "T00:00:00Z");
     const dow = dt.toLocaleDateString(undefined, { weekday: "short", timeZone: "UTC" }).toUpperCase();
     const dayN = dt.getUTCDate();
@@ -119,6 +124,8 @@ function renderDateRail() {
       <span class="chip-dow"></span>
       <span class="chip-day"></span>
       <span class="chip-mon"></span>
+      ${isCamping(d) ? `<span class="chip-camp" aria-label="Camping" title="Camping">⛺</span>` : ""}
+      <span class="chip-bar" aria-hidden="true"></span>
     `;
     chip.querySelector(".chip-dow").textContent = dow;
     chip.querySelector(".chip-day").textContent = String(dayN);
@@ -128,6 +135,11 @@ function renderDateRail() {
     rail.appendChild(chip);
   });
   scrollChipIntoView(rail);
+}
+
+function isCamping(day) {
+  const lodging = (day?.lodging ?? "").toLowerCase();
+  return lodging.includes("camping") || lodging.includes("tent") || lodging.includes("campground");
 }
 
 function selectChip(i, focus) {
@@ -178,7 +190,12 @@ function renderSelectedDay() {
     <article class="day-card">
       <div class="day-stripe"></div>
       <div class="day-body">
-        <div class="day-eyebrow"><span class="dot"></span><span>${escapeHtml(day.day || prettyDate(day.date))}</span>${day.isRestDay ? '<span class="rest-pill">Rest</span>' : ""}</div>
+        <div class="day-eyebrow">
+          <span class="dot"></span>
+          <span>${escapeHtml(day.day || prettyDate(day.date))}</span>
+          ${day.isRestDay ? '<span class="badge badge-rest">Rest</span>' : ""}
+          ${isCamping(day) ? '<span class="badge badge-camp">⛺ Camping</span>' : ""}
+        </div>
         <h1 class="day-title">${prettyDate(day.date)}</h1>
         <div class="day-route">
           <span>${escapeHtml(day.start || "—")}</span>
@@ -190,6 +207,7 @@ function renderSelectedDay() {
           <div><div class="stat-label">Lodging</div><div class="stat-value">${escapeHtml(formatLodging(day.lodging))}</div></div>
           ${day.daytrip ? `<div><div class="stat-label">Daytrip</div><div class="stat-value">${escapeHtml(day.daytrip)}</div></div>` : ""}
         </div>
+        <div class="day-map" id="day-map"></div>
         <div class="day-cta">
           <button class="btn-suggest" data-date="${day.date}" data-stop="${escapeHtml(day.end || day.start || "")}">+ Suggest a place</button>
         </div>
@@ -201,6 +219,69 @@ function renderSelectedDay() {
     const b = ev.currentTarget;
     openSuggestModal({ date: b.dataset.date, stop: b.dataset.stop });
   });
+  drawDayMap(day);
+}
+
+let dayMapInstance = null;
+function drawDayMap(day) {
+  if (dayMapInstance) {
+    dayMapInstance.remove();
+    dayMapInstance = null;
+  }
+  const el = document.getElementById("day-map");
+  if (!el || !day.startCoords) return;
+
+  dayMapInstance = L.map(el, {
+    zoomControl: false,
+    attributionControl: false,
+    scrollWheelZoom: false,
+    dragging: window.matchMedia("(pointer: fine)").matches,
+  });
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+    subdomains: "abcd", maxZoom: 19,
+  }).addTo(dayMapInstance);
+
+  const isDrive = !day.isRestDay && day.endCoords && !coordsEqual(day.startCoords, day.endCoords);
+
+  if (isDrive) {
+    const seg = findDaySegment(day);
+    const line = seg?.geometry ?? [day.startCoords, day.endCoords];
+    L.polyline(line, { color: GM_BLUE, weight: 4, opacity: 0.9 }).addTo(dayMapInstance);
+    L.circleMarker(day.startCoords, {
+      radius: 7, color: "#fff", weight: 2, fillColor: GM_GREEN, fillOpacity: 1,
+    }).addTo(dayMapInstance);
+    L.circleMarker(day.endCoords, {
+      radius: 7, color: "#fff", weight: 2, fillColor: GM_RED, fillOpacity: 1,
+    }).addTo(dayMapInstance);
+    dayMapInstance.fitBounds(line, { padding: [24, 24] });
+  } else {
+    L.circleMarker(day.startCoords, {
+      radius: 8, color: "#fff", weight: 2, fillColor: GM_BLUE, fillOpacity: 1,
+    }).addTo(dayMapInstance);
+    dayMapInstance.setView(day.startCoords, 9);
+  }
+}
+
+function coordsEqual(a, b) {
+  return Math.abs(a[0] - b[0]) < 0.001 && Math.abs(a[1] - b[1]) < 0.001;
+}
+
+function coordsNear(stop, coords, tol = 0.05) {
+  return Math.abs(stop.lat - coords[0]) < tol && Math.abs(stop.lng - coords[1]) < tol;
+}
+
+function findDaySegment(day) {
+  if (!day.startCoords || !day.endCoords) return null;
+  for (let li = 0; li < trip.legs.length; li++) {
+    const leg = trip.legs[li];
+    for (let si = 0; si < leg.stops.length - 1; si++) {
+      if (coordsNear(leg.stops[si], day.startCoords) && coordsNear(leg.stops[si + 1], day.endCoords)) {
+        const geometry = geometries.trip?.[`${li}-${si}`];
+        return geometry ? { legIdx: li, segIdx: si, geometry } : null;
+      }
+    }
+  }
+  return null;
 }
 
 function biomeAccent(day) {
