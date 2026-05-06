@@ -38,4 +38,16 @@ TRIP_DATE_OVERRIDE=2026-05-12 bun run dev   # pin "today" for testing
 
 ## Visitor model
 
-Reads are public. Writes (location pings, submission moderation) are gated by `ADMIN_TOKEN` — exchanged for a signed `HttpOnly`/`Secure`/`SameSite=Lax` cookie on `/admin`. No user accounts; "us" is a single shared role for the family.
+Reads are public. Writes (location pings, submission moderation) are gated by `ADMIN_TOKEN` — exchanged for a signed `HttpOnly`/`Secure`/`SameSite=Lax` cookie on `/admin`. No user accounts; "us" is a single shared role for the family. `POST /api/location` also accepts the token via `Authorization: Bearer …` for the iOS Shortcut path.
+
+## Endpoints
+
+Public read: `GET /healthz`, `/api/today`, `/api/itinerary`, `/api/trip`, `/api/geometries`, `/api/location`, `/api/submissions?status=approved`, `/api/config`.
+
+Admin: `POST /admin/login` (rate-limited 5/min/IP), `POST /admin/logout`, `GET /admin/me`, `POST /api/location`, `GET /api/submissions?status=pending|rejected`, `POST /admin/submissions/:id` (approve/reject + reviewer note).
+
+Public write: `POST /api/submissions` (rate-limited 10/min/IP, hCaptcha-gated when `HCAPTCHA_*` env vars are set; otherwise bypassed in dev with stderr warning).
+
+## SQLite
+
+`/data/sabby.db` (configurable via `DATA_DIR`). Two tables: `location_pings` and `submissions`. Schema is created via `CREATE TABLE IF NOT EXISTS` on every boot — Watchtower restart cycles can't break it.

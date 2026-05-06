@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabby Admin</title>
+  <link rel="stylesheet" href="/admin/admin.css" />
+  <meta name="theme-color" content="#0f1620" />
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-title">Sabby Admin</div>
+    <div class="bar-actions">
+      <a href="/" class="link-back">← Public site</a>
+      <button id="logout" class="btn btn-ghost" hidden>Sign out</button>
+    </div>
+  </header>
+
+  <main id="login-card" class="card" hidden>
+    <h1>Sign in</h1>
+    <p class="muted">Enter the admin token. The cookie expires in 30 days.</p>
+    <form id="login-form">
+      <label>
+        <span>Admin token</span>
+        <input type="password" id="token" autocomplete="off" required />
+      </label>
+      <button class="btn" type="submit">Sign in</button>
+      <div id="login-error" class="error" hidden></div>
+    </form>
+  </main>
+
+  <main id="dashboard" class="dashboard" hidden>
+    <section class="card">
+      <h2>Push location</h2>
+      <p class="muted">Uses the browser's geolocation API. The browser may prompt for permission.</p>
+      <div class="row">
+        <input type="text" id="ping-label" placeholder="Optional label, e.g. 'Lunch in Marfa'" maxlength="120" />
+        <button id="ping-button" class="btn">Push current location</button>
+      </div>
+      <div id="ping-status" class="muted small"></div>
+    </section>
+
+    <section class="card">
+      <h2>Pending submissions</h2>
+      <div id="pending-empty" class="muted" hidden>Nothing waiting.</div>
+      <div id="pending-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Recent decisions</h2>
+      <div class="row tabs-row">
+        <button class="tab-btn active" data-status="approved">Approved</button>
+        <button class="tab-btn" data-status="rejected">Rejected</button>
+      </div>
+      <div id="reviewed-list"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/admin/admin.js"></script>
+</body>
+</html>
