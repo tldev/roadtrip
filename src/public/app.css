@@ -231,12 +231,15 @@ body {
 .stat-value { font-size: 14px; color: var(--gm-text); }
 
 .day-map {
+  position: relative;
+  isolation: isolate;
   margin-top: 22px;
   height: 220px;
   border-radius: var(--gm-radius);
   overflow: hidden;
   border: 1px solid var(--gm-border);
   background: #e5e3df;
+  z-index: 0;
 }
 .day-map .leaflet-container { font-family: inherit; background: #e5e3df; }
 
@@ -372,7 +375,7 @@ body {
 
 /* ---- Modal ---- */
 .modal {
-  position: fixed; inset: 0; z-index: 100;
+  position: fixed; inset: 0; z-index: 10000;
   background: rgba(32,33,36,0.45);
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
