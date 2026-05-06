@@ -59,10 +59,13 @@ async function init() {
 
   selectedIndex = pickInitialIndex();
   renderDateRail();
-  renderSelectedDay();
 
   setupTabs();
   setActiveView("day");
+  // Render the day card *after* the view is unhidden so Leaflet measures
+  // the day-map container correctly. Otherwise the map initializes inside
+  // a hidden (display:none) element and renders broken on first load.
+  renderSelectedDay();
 
   refreshPingStatus();
   pingTimer = setInterval(refreshPingStatus, 60_000);
