@@ -1,0 +1,725 @@
+{
+  "days": [
+    {
+      "date": "2026-05-08",
+      "day": "Day 1",
+      "start": "Destin, FL",
+      "end": "Lafayette, LA",
+      "drivingHours": "5.5 hrs",
+      "daytrip": "",
+      "lodging": "hotel: La Quinta Inn & Suites by Wyndham Lafayette Oil Center",
+      "startCoords": [
+        30.4055,
+        -86.4855
+      ],
+      "endCoords": [
+        30.2241,
+        -92.0198
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-09",
+      "day": "Day 2",
+      "start": "Lafayette, LA",
+      "end": "Houston, TX",
+      "drivingHours": "4.5 hrs",
+      "daytrip": "Nam Giao Restaurant & Bakery",
+      "lodging": "hotel: Red Roof Inn",
+      "startCoords": [
+        30.2241,
+        -92.0198
+      ],
+      "endCoords": [
+        29.7604,
+        -95.3698
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-10",
+      "day": "Day 3",
+      "start": "Houston, TX",
+      "end": "Fredericksburg, TX",
+      "drivingHours": "3.5 hrs",
+      "daytrip": "Austin, TX (on route)",
+      "lodging": "hotel: Hoffman Haus (emailed)",
+      "startCoords": [
+        29.7604,
+        -95.3698
+      ],
+      "endCoords": [
+        30.2752,
+        -98.872
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-11",
+      "day": "Day 4",
+      "start": "Fredericksburg, TX",
+      "end": "Marfa, TX",
+      "drivingHours": "5 hrs",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        30.2752,
+        -98.872
+      ],
+      "endCoords": [
+        30.3105,
+        -104.0215
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-12",
+      "day": "Day 5",
+      "start": "Marfa, TX",
+      "end": "Santa Fe, NM",
+      "drivingHours": "7 hrs",
+      "daytrip": "",
+      "lodging": "hotel: El Rey Court",
+      "startCoords": [
+        30.3105,
+        -104.0215
+      ],
+      "endCoords": [
+        35.687,
+        -105.9378
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-13",
+      "day": "Day 6",
+      "start": "Santa Fe, NM",
+      "end": "Santa Fe, NM",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "hotel: El Rey Court",
+      "startCoords": [
+        35.687,
+        -105.9378
+      ],
+      "endCoords": [
+        35.687,
+        -105.9378
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-14",
+      "day": "Day 7",
+      "start": "Santa Fe, NM",
+      "end": "Santa Fe, NM",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "hotel: El Rey Court",
+      "startCoords": [
+        35.687,
+        -105.9378
+      ],
+      "endCoords": [
+        35.687,
+        -105.9378
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-15",
+      "day": "Day 8",
+      "start": "Santa Fe, NM",
+      "end": "Sedona, AZ",
+      "drivingHours": "6.6 hrs",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        35.687,
+        -105.9378
+      ],
+      "endCoords": [
+        34.8697,
+        -111.761
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-16",
+      "day": "Day 9",
+      "start": "Sedona, AZ",
+      "end": "Sedona, AZ",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.8697,
+        -111.761
+      ],
+      "endCoords": [
+        34.8697,
+        -111.761
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-17",
+      "day": "Day 10",
+      "start": "Sedona, AZ",
+      "end": "Sedona, AZ",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.8697,
+        -111.761
+      ],
+      "endCoords": [
+        34.8697,
+        -111.761
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-18",
+      "day": "Day 11",
+      "start": "Sedona, AZ",
+      "end": "San Diego, CA",
+      "drivingHours": "7 hrs",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.8697,
+        -111.761
+      ],
+      "endCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-19",
+      "day": "Day 12",
+      "start": "San Diego, CA",
+      "end": "San Diego, CA",
+      "drivingHours": "N/A",
+      "daytrip": "Tom's Uncle",
+      "lodging": "airbnb",
+      "startCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "endCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-20",
+      "day": "Day 13",
+      "start": "San Diego, CA",
+      "end": "San Diego, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "endCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-21",
+      "day": "Day 14",
+      "start": "San Diego, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "2 hrs",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        32.7157,
+        -117.1611
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-22",
+      "day": "Day 15",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "Tom's other Uncle",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Day 16",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "Scott & Connie",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-24",
+      "day": "Day 17",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Day 18",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Day 19",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Day 20",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-28",
+      "day": "Day 21",
+      "start": "Los Angeles, CA",
+      "end": "Los Angeles, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-29",
+      "day": "Day 22",
+      "start": "Los Angeles, CA",
+      "end": "Cambria, CA",
+      "drivingHours": "4 hrs",
+      "daytrip": "Santa Barbara (on route)",
+      "lodging": "camping",
+      "startCoords": [
+        34.0522,
+        -118.2437
+      ],
+      "endCoords": [
+        35.5641,
+        -121.0808
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-05-30",
+      "day": "Day 23",
+      "start": "Cambria, CA",
+      "end": "Cambria, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "camping",
+      "startCoords": [
+        35.5641,
+        -121.0808
+      ],
+      "endCoords": [
+        35.5641,
+        -121.0808
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-05-31",
+      "day": "Day 24",
+      "start": "Cambria, CA",
+      "end": "Carmel-by-the-Sea, CA",
+      "drivingHours": "2.5 hrs",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        35.5641,
+        -121.0808
+      ],
+      "endCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-01",
+      "day": "Day 25",
+      "start": "Carmel-by-the-Sea, CA",
+      "end": "Carmel-by-the-Sea, CA",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "airbnb",
+      "startCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "endCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-02",
+      "day": "Day 26",
+      "start": "Carmel-by-the-Sea, CA",
+      "end": "Carmel-by-the-Sea, CA",
+      "drivingHours": "N/A",
+      "daytrip": "Big Sur Daytrip - Dog sitting/grooming",
+      "lodging": "airbnb",
+      "startCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "endCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-03",
+      "day": "Day 27",
+      "start": "Carmel-by-the-Sea, CA",
+      "end": "Carmel-by-the-Sea, CA",
+      "drivingHours": "N/A",
+      "daytrip": "Los Altos (1.5h to Steve)",
+      "lodging": "airbnb",
+      "startCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "endCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-04",
+      "day": "Day 28",
+      "start": "Carmel-by-the-Sea, CA",
+      "end": "Las Vegas, NV",
+      "drivingHours": "8 hrs",
+      "daytrip": "",
+      "lodging": "",
+      "startCoords": [
+        36.5554,
+        -121.9233
+      ],
+      "endCoords": [
+        36.1699,
+        -115.1398
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-05",
+      "day": "Day 29",
+      "start": "Las Vegas, NV",
+      "end": "Moab, UT",
+      "drivingHours": "6 hrs 21 min",
+      "daytrip": "",
+      "lodging": "camping",
+      "startCoords": [
+        36.1699,
+        -115.1398
+      ],
+      "endCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-06",
+      "day": "Day 30",
+      "start": "Moab, UT",
+      "end": "Moab, UT",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "camping",
+      "startCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "endCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-07",
+      "day": "Day 31",
+      "start": "Moab, UT",
+      "end": "Moab, UT",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "camping",
+      "startCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "endCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-08",
+      "day": "Day 32",
+      "start": "Moab, UT",
+      "end": "Parker, CO",
+      "drivingHours": "5 hrs 31 min",
+      "daytrip": "",
+      "lodging": "Nathan's",
+      "startCoords": [
+        38.5733,
+        -109.5498
+      ],
+      "endCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-09",
+      "day": "Day 33",
+      "start": "Parker, CO",
+      "end": "Parker, CO",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Nathan's",
+      "startCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "endCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-10",
+      "day": "Day 34",
+      "start": "Parker, CO",
+      "end": "Parker, CO",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Nathan's",
+      "startCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "endCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-11",
+      "day": "Day 35",
+      "start": "Parker, CO",
+      "end": "Parker, CO",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Nathan's",
+      "startCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "endCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-12",
+      "day": "Day 36",
+      "start": "Parker, CO",
+      "end": "Hastings, NE",
+      "drivingHours": "6 hrs",
+      "daytrip": "",
+      "lodging": "Abigail's or this",
+      "startCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "endCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-13",
+      "day": "Day 37",
+      "start": "Hastings, NE",
+      "end": "Hastings, NE",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Abigail's or this",
+      "startCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "endCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-14",
+      "day": "Day 38",
+      "start": "Hastings, NE",
+      "end": "Hastings, NE",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Abigail's or this ",
+      "startCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "endCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "isRestDay": true
+    },
+    {
+      "date": "2026-06-15",
+      "day": "Day 39",
+      "start": "Hastings, NE",
+      "end": "Little Rock, AR",
+      "drivingHours": "10 hrs",
+      "daytrip": "",
+      "lodging": "hotel",
+      "startCoords": [
+        40.5861,
+        -98.3887
+      ],
+      "endCoords": [
+        34.7465,
+        -92.2896
+      ],
+      "isRestDay": false
+    },
+    {
+      "date": "2026-06-16",
+      "day": "",
+      "start": "Little Rock, AR",
+      "end": "Destin, FL",
+      "drivingHours": "9 hrs",
+      "daytrip": "",
+      "lodging": "home",
+      "startCoords": [
+        34.7465,
+        -92.2896
+      ],
+      "endCoords": [
+        30.4055,
+        -86.4855
+      ],
+      "isRestDay": false
+    }
+  ],
+  "updatedFromSheet": "2026-05-06"
+}
