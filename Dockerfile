@@ -6,8 +6,17 @@ RUN bun install --frozen-lockfile --production
 
 FROM oven/bun:1.3-alpine AS runtime
 WORKDIR /app
-RUN addgroup -S app && adduser -S app -G app && \
-    mkdir -p /data && chown -R app:app /data
+
+# Pin UID/GID explicitly so bind-mount hosts can pre-chown to a known
+# numeric owner. UID 100 / GID 101 matches what Alpine's `adduser -S`
+# allocated on the prior unpinned build, so prod's existing bind-path
+# ownership remains valid through the Watchtower roll.
+ARG APP_UID=100
+ARG APP_GID=101
+RUN addgroup -g ${APP_GID} -S app \
+ && adduser -u ${APP_UID} -S app -G app \
+ && install -d -o app -g app -m 0755 /data
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json tsconfig.json ./
 COPY src ./src

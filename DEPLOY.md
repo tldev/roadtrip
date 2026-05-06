@@ -22,9 +22,11 @@ Frank → MediaServer hand-off. Everything you need to host the container at
 | Internal port | `8080` |
 | Healthcheck | `GET /healthz` → `{"status":"ok","version":"<sha>","ts":"..."}` |
 | Healthcheck interval | 30 s, 5 s timeout, 10 s start period |
-| User | non-root (`app`) |
-| Persistent volume | `/data` (SQLite lives here in slice 2; safe to create empty in slice 1) |
+| Runtime user | `app` (UID `100`, GID `101`) — pinned in Dockerfile via `ARG APP_UID/APP_GID` |
+| Persistent volume | `/data` (SQLite lives here) |
 | Logs | stdout / stderr |
+
+> ⚠️ **Bind-mount hosts must pre-own the host directory as `100:101`** before first start, e.g. `install -d -o 100 -g 101 -m 0755 /host/path` or `mkdir -p /host/path && chown 100:101 /host/path`. Docker creates bind paths as `root:root` which masks the in-image ownership and the container hits `SQLITE_CANTOPEN`. Named Docker volumes (the recommended path in the compose snippet below) inherit the in-image ownership automatically and don't need this step.
 
 ### Environment variables
 
