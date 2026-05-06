@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Sabby Roadtrip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="/app.css" />
-  <meta name="theme-color" content="#1c2a35" />
+  <meta name="theme-color" content="#ffffff" />
 </head>
 <body>
   <header class="topbar">
@@ -18,20 +21,22 @@
       </div>
     </div>
     <nav class="tabs" role="tablist">
-      <button class="tab" data-view="today" role="tab" aria-selected="true">Today</button>
-      <button class="tab" data-view="tomorrow" role="tab">Tomorrow</button>
+      <button class="tab" data-view="day" role="tab" aria-selected="true">Itinerary</button>
       <button class="tab" data-view="trip" role="tab">Full Trip</button>
     </nav>
   </header>
 
-  <main id="view-today" class="view view-day" hidden></main>
-  <main id="view-tomorrow" class="view view-day" hidden></main>
+  <main id="view-day" class="view view-day" hidden>
+    <div class="date-rail" id="date-rail" role="tablist" aria-label="Trip days"></div>
+    <div id="day-card-host"></div>
+  </main>
+
   <main id="view-trip" class="view view-trip" hidden>
-    <div id="map"></div>
     <aside class="trip-legend">
       <h2>Stops</h2>
       <div id="trip-stops"></div>
     </aside>
+    <div id="map"></div>
   </main>
 
   <footer class="footer">
