@@ -343,6 +343,9 @@ async function refreshPingStatus() {
   }
 }
 
+let segmentLines = [];
+let highlightedSegment = null;
+
 function drawTripMap() {
   mapDrawn = true;
   mapInstance = L.map("map", { zoomControl: false }).setView([36, -100], 5);
@@ -356,6 +359,9 @@ function drawTripMap() {
   const allCoords = [];
   const legend = document.getElementById("trip-stops");
   legend.innerHTML = "";
+  segmentLines = [];
+
+  const isLastLegIdx = trip.legs.length - 1;
 
   trip.legs.forEach((leg, li) => {
     const block = document.createElement("div");
@@ -374,11 +380,37 @@ function drawTripMap() {
       }).addTo(mapInstance);
       marker.bindPopup(`<b>${escapeHtml(stop.name)}</b><br>${escapeHtml(stop.address)}`);
 
+      const isLastInLastLeg = li === isLastLegIdx && si === leg.stops.length - 1;
+      const dateLabel = stopDateLabel(stop, li, si, leg, isLastInLastLeg);
+      const canHighlight = si > 0; // first stop of each leg has no inbound segment shown distinctly
+
       const row = document.createElement("div");
       row.className = `stop-row ${stop.type}`;
-      row.innerHTML = `<span class="stop-bullet"></span><span></span>`;
-      row.querySelector("span:nth-child(2)").textContent = stop.name;
-      row.addEventListener("click", () => mapInstance.flyTo([stop.lat, stop.lng], 9, { duration: 0.8 }));
+      row.innerHTML = `
+        <span class="stop-bullet"></span>
+        <div class="stop-text">
+          <span class="stop-name"></span>
+          <span class="stop-date"></span>
+        </div>
+        ${canHighlight ? `<button class="route-icon" type="button" data-leg="${li}" data-seg="${si - 1}" aria-label="Highlight route to ${escapeHtml(stop.name)}" title="Highlight route to ${escapeHtml(stop.name)}">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path d="M2 11 Q4 11 5.5 9.5 T9 5.5 L11.5 5.5 M9 3 L11.5 5.5 L9 8" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>` : ""}
+      `;
+      row.querySelector(".stop-name").textContent = stop.name;
+      row.querySelector(".stop-date").textContent = dateLabel;
+      row.querySelector(".stop-text").addEventListener("click", () => {
+        clearSegmentHighlight();
+        mapInstance.flyTo([stop.lat, stop.lng], 9, { duration: 0.8 });
+      });
+      const routeBtn = row.querySelector(".route-icon");
+      if (routeBtn) {
+        routeBtn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          toggleSegmentHighlight(li, si - 1);
+        });
+      }
       block.appendChild(row);
 
       if (si < leg.stops.length - 1) {
@@ -388,7 +420,10 @@ function drawTripMap() {
           [stop.lat, stop.lng],
           [next.lat, next.lng],
         ];
-        L.polyline(segCoords, { color: GM_BLUE, weight: 4, opacity: 0.85 }).addTo(mapInstance);
+        const polyline = L.polyline(segCoords, {
+          color: GM_BLUE, weight: 4, opacity: 0.85,
+        }).addTo(mapInstance);
+        segmentLines.push({ legIdx: li, segIdx: si, polyline });
       }
     });
     legend.appendChild(block);
@@ -402,6 +437,64 @@ function drawTripMap() {
   });
 
   mapInstance.fitBounds(allCoords, { padding: [40, 40] });
+}
+
+function toggleSegmentHighlight(legIdx, segIdx) {
+  const same = highlightedSegment && highlightedSegment.legIdx === legIdx && highlightedSegment.segIdx === segIdx;
+  if (same) {
+    clearSegmentHighlight();
+    return;
+  }
+  highlightedSegment = { legIdx, segIdx };
+  segmentLines.forEach(({ legIdx: li, segIdx: si, polyline }) => {
+    const match = li === legIdx && si === segIdx;
+    polyline.setStyle({
+      color: match ? GM_RED : GM_BLUE,
+      weight: match ? 6 : 4,
+      opacity: match ? 1 : 0.18,
+    });
+    if (match) polyline.bringToFront();
+  });
+  document.querySelectorAll(".route-icon").forEach((btn) => btn.classList.remove("active"));
+  document.querySelector(`.route-icon[data-leg="${legIdx}"][data-seg="${segIdx}"]`)?.classList.add("active");
+  const seg = segmentLines.find((s) => s.legIdx === legIdx && s.segIdx === segIdx);
+  if (seg) mapInstance.fitBounds(seg.polyline.getBounds(), { padding: [60, 60] });
+}
+
+function clearSegmentHighlight() {
+  highlightedSegment = null;
+  segmentLines.forEach(({ polyline }) => {
+    polyline.setStyle({ color: GM_BLUE, weight: 4, opacity: 0.85 });
+  });
+  document.querySelectorAll(".route-icon.active").forEach((btn) => btn.classList.remove("active"));
+}
+
+function stopDateLabel(stop, legIdx, stopIdx, leg, isLastInLastLeg) {
+  const days = itinerary.days;
+  if (legIdx === 0 && stopIdx === 0) return shortDate(days[0].date);
+  if (isLastInLastLeg) return shortDate(days[days.length - 1].date);
+  const sleepNights = days
+    .filter((d) => d.endCoords && coordsNear(stop, d.endCoords))
+    .map((d) => d.date)
+    .sort();
+  if (sleepNights.length === 0) return "";
+  if (sleepNights.length === 1) return shortDate(sleepNights[0]);
+  return shortDateRange(sleepNights[0], sleepNights[sleepNights.length - 1]);
+}
+
+function shortDate(iso) {
+  const d = new Date(iso + "T00:00:00Z");
+  return d.toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
+}
+
+function shortDateRange(isoA, isoB) {
+  const a = new Date(isoA + "T00:00:00Z");
+  const b = new Date(isoB + "T00:00:00Z");
+  if (a.getUTCMonth() === b.getUTCMonth()) {
+    const m = a.toLocaleDateString(undefined, { month: "short", timeZone: "UTC" });
+    return `${m} ${a.getUTCDate()} – ${b.getUTCDate()}`;
+  }
+  return `${shortDate(isoA)} – ${shortDate(isoB)}`;
 }
 
 // ---- Suggest modal ----

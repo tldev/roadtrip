@@ -295,9 +295,9 @@ body {
 .leg-block { margin-bottom: 18px; }
 .leg-block .leg-name { font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--gm-text); }
 .stop-row {
-  display: grid; grid-template-columns: 16px 1fr; gap: 8px; align-items: center;
+  display: grid; grid-template-columns: 16px 1fr auto; gap: 8px; align-items: center;
   padding: 6px 8px;
-  cursor: pointer; font-size: 13px; color: var(--gm-text);
+  font-size: 13px; color: var(--gm-text);
   border-radius: 6px;
   margin: 0 -8px;
 }
@@ -310,6 +310,42 @@ body {
 }
 .stop-row.start .stop-bullet { background: var(--gm-green); }
 .stop-row.end .stop-bullet { background: var(--gm-red); }
+.stop-text {
+  display: flex; flex-direction: column; gap: 1px;
+  cursor: pointer;
+  min-width: 0;
+}
+.stop-name { font-weight: 500; line-height: 1.2; }
+.stop-date {
+  font-size: 11px;
+  color: var(--gm-text-secondary);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.route-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: var(--gm-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+.route-icon:hover {
+  background: var(--gm-surface-alt);
+  color: var(--gm-blue);
+}
+.route-icon.active {
+  background: color-mix(in oklab, var(--gm-red) 14%, transparent);
+  color: var(--gm-red);
+  border-color: color-mix(in oklab, var(--gm-red) 35%, transparent);
+}
+.route-icon:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--gm-blue);
+}
 
 .footer {
   padding: 8px 20px;
