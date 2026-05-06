@@ -8,7 +8,7 @@ Public-facing site for tjohnell's sabbatical road trip (May 8 - June 16, 2026), 
 - **Frontend:** Vanilla TS/JS + Leaflet (`src/public/`). No framework. CSS variables drive a per-day color theme keyed off the day's biome.
 - **Data:** static JSON (`data/trip.json`, `data/itinerary.json`, `data/route-geometries.json`). SQLite on `/data` will land in slice 2 for location pings + visitor submissions.
 - **Image:** multi-stage Dockerfile on `oven/bun:1.3-alpine`, runs as non-root.
-- **CI/CD:** GitHub Actions builds and pushes `ghcr.io/tjohnell/sabbatical-roadtrip:latest` + `:sha-<short>` on every push to `master`. Watchtower on the host pulls `:latest` every 5 min.
+- **CI/CD:** GitHub Actions builds and pushes `ghcr.io/tldev/roadtrip:latest` + `:sha-<short>` on every push to `master`. Watchtower on the host pulls `:latest` every 5 min.
 - **Deploy contract:** see `DEPLOY.md`.
 
 ## Source of truth
