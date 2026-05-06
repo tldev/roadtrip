@@ -177,6 +177,16 @@ const adminHtml = (await Bun.file(`${DIST}/admin/index.html`).text())
 
 const NO_CACHE = "no-cache, must-revalidate";
 const IMMUTABLE = "public, max-age=31536000, immutable";
+const SHORT_404 = "public, max-age=60";
+
+function notFound(): Response {
+  return new Response("not found", {
+    status: 404,
+    headers: { "content-type": "text/plain; charset=utf-8", "cache-control": SHORT_404 },
+  });
+}
+
+app.notFound(() => notFound());
 
 app.get("/", (c) => c.html(indexHtml, 200, { "cache-control": NO_CACHE }));
 app.get("/admin", (c) => c.html(adminHtml, 200, { "cache-control": NO_CACHE }));
@@ -185,10 +195,10 @@ app.get("/favicon.ico", (c) => c.body(null, 204));
 
 app.get("/data/:file", async (c) => {
   const file = c.req.param("file");
-  if (!/^[a-zA-Z0-9._-]+\.json$/.test(file)) return c.notFound();
+  if (!/^[a-zA-Z0-9._-]+\.json$/.test(file)) return notFound();
   const path = `./data/${file}`;
   const f = Bun.file(path);
-  if (!(await f.exists())) return c.notFound();
+  if (!(await f.exists())) return notFound();
   return new Response(f, {
     headers: { "content-type": "application/json", "cache-control": NO_CACHE },
   });
@@ -199,14 +209,14 @@ app.get("/data/:file", async (c) => {
 const HASHED_PATTERN = /^\/(?:[a-zA-Z0-9_-]+\/)?[a-zA-Z0-9_-]+\.[0-9a-f]{8}\.(?:js|css)$/;
 app.get("/*", async (c) => {
   const path = c.req.path;
-  if (!HASHED_PATTERN.test(path)) return c.notFound();
+  if (!HASHED_PATTERN.test(path)) return notFound();
   const ext = path.endsWith(".js") ? "text/javascript; charset=utf-8" : "text/css; charset=utf-8";
   return assetResponse(`${DIST}${path}`, ext);
 });
 
 async function assetResponse(path: string, contentType: string): Promise<Response> {
   const f = Bun.file(path);
-  if (!(await f.exists())) return new Response("not found", { status: 404 });
+  if (!(await f.exists())) return notFound();
   return new Response(f, {
     headers: { "content-type": contentType, "cache-control": IMMUTABLE },
   });
