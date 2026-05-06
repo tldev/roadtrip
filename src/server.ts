@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { serveStatic } from "hono/bun";
 import itineraryData from "../data/itinerary.json" with { type: "json" };
 import tripData from "../data/trip.json" with { type: "json" };
 import geometriesData from "../data/route-geometries.json" with { type: "json" };
@@ -158,21 +157,55 @@ app.post("/admin/submissions/:id", async (c) => {
 });
 
 // ---- Static assets ----
+//
+// HTML is templated with __VERSION__ replaced by GIT_SHA at boot, so
+// every deploy generates fresh asset URLs (`/app.js?v=<sha>`). HTML
+// itself is no-cache so the next page load picks up the new version
+// immediately. The hashed asset URLs are immutable — safe to cache
+// for a year because a new deploy issues new URLs.
 
-app.get("/", serveStatic({ path: "./src/public/index.html" }));
-app.get("/admin", serveStatic({ path: "./src/public/admin/index.html" }));
-app.get("/app.js", serveStatic({ path: "./src/public/app.js" }));
-app.get("/app.css", serveStatic({ path: "./src/public/app.css" }));
-app.get("/admin/admin.js", serveStatic({ path: "./src/public/admin/admin.js" }));
-app.get("/admin/admin.css", serveStatic({ path: "./src/public/admin/admin.css" }));
+const indexHtml = (await Bun.file("./src/public/index.html").text()).replaceAll(
+  "__VERSION__",
+  encodeURIComponent(VERSION),
+);
+const adminHtml = (await Bun.file("./src/public/admin/index.html").text()).replaceAll(
+  "__VERSION__",
+  encodeURIComponent(VERSION),
+);
+
+const NO_CACHE = "no-cache, must-revalidate";
+const IMMUTABLE = "public, max-age=31536000, immutable";
+
+app.get("/", (c) =>
+  c.html(indexHtml, 200, { "cache-control": NO_CACHE }),
+);
+app.get("/admin", (c) =>
+  c.html(adminHtml, 200, { "cache-control": NO_CACHE }),
+);
+app.get("/app.js", (c) => assetResponse("./src/public/app.js", "text/javascript; charset=utf-8"));
+app.get("/app.css", (c) => assetResponse("./src/public/app.css", "text/css; charset=utf-8"));
+app.get("/admin/admin.js", (c) => assetResponse("./src/public/admin/admin.js", "text/javascript; charset=utf-8"));
+app.get("/admin/admin.css", (c) => assetResponse("./src/public/admin/admin.css", "text/css; charset=utf-8"));
+app.get("/favicon.svg", (c) => assetResponse("./src/public/favicon.svg", "image/svg+xml"));
+app.get("/favicon.ico", (c) => c.body(null, 204));
 app.get("/data/:file", async (c) => {
   const file = c.req.param("file");
   if (!/^[a-zA-Z0-9._-]+\.json$/.test(file)) return c.notFound();
   const path = `./data/${file}`;
   const f = Bun.file(path);
   if (!(await f.exists())) return c.notFound();
-  return new Response(f, { headers: { "content-type": "application/json" } });
+  return new Response(f, {
+    headers: { "content-type": "application/json", "cache-control": NO_CACHE },
+  });
 });
+
+async function assetResponse(path: string, contentType: string): Promise<Response> {
+  const f = Bun.file(path);
+  if (!(await f.exists())) return new Response("not found", { status: 404 });
+  return new Response(f, {
+    headers: { "content-type": contentType, "cache-control": IMMUTABLE },
+  });
+}
 
 // ---- Helpers ----
 
