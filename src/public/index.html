@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sabby Roadtrip</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/app.css" />
+  <meta name="theme-color" content="#1c2a35" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-title">Sabby Roadtrip</div>
+        <div class="brand-sub" id="trip-dates"></div>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab" data-view="today" role="tab" aria-selected="true">Today</button>
+      <button class="tab" data-view="tomorrow" role="tab">Tomorrow</button>
+      <button class="tab" data-view="trip" role="tab">Full Trip</button>
+    </nav>
+  </header>
+
+  <main id="view-today" class="view view-day" hidden></main>
+  <main id="view-tomorrow" class="view view-day" hidden></main>
+  <main id="view-trip" class="view view-trip" hidden>
+    <div id="map"></div>
+    <aside class="trip-legend">
+      <h2>Stops</h2>
+      <div id="trip-stops"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span id="ping-status">Last ping unknown</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

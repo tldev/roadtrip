@@ -1,0 +1,9 @@
+.git
+.github
+.claude
+node_modules
+*.md
+.gitignore
+.dockerignore
+.DS_Store
+serve.sh
