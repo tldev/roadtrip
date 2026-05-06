@@ -8,7 +8,7 @@ Frank → MediaServer hand-off. Everything you need to host the container at
 | Field | Value |
 | --- | --- |
 | Registry | `ghcr.io` |
-| Image | `ghcr.io/tjohnell/sabbatical-roadtrip` |
+| Image | `ghcr.io/tldev/roadtrip` |
 | Rolling tag | `:latest` |
 | Pinned tags | `:sha-<short>` per commit (rollback target) |
 | Visibility | Public (no pull token needed) |
@@ -49,7 +49,7 @@ app to recognise the connection as secure.
 ```yaml
 services:
   sabby-roadtrip:
-    image: ghcr.io/tjohnell/sabbatical-roadtrip:latest
+    image: ghcr.io/tldev/roadtrip:latest
     container_name: sabby-roadtrip
     restart: unless-stopped
     pull_policy: always
@@ -122,8 +122,8 @@ admin web button.
 ## Rollback
 
 ```sh
-docker pull ghcr.io/tjohnell/sabbatical-roadtrip:sha-<short>
-docker tag ghcr.io/tjohnell/sabbatical-roadtrip:sha-<short> ghcr.io/tjohnell/sabbatical-roadtrip:latest
+docker pull ghcr.io/tldev/roadtrip:sha-<short>
+docker tag ghcr.io/tldev/roadtrip:sha-<short> ghcr.io/tldev/roadtrip:latest
 docker compose up -d sabby-roadtrip
 ```
 
