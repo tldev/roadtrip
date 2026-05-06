@@ -327,28 +327,34 @@ body {
 }
 .route-icon {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 26px; height: 26px;
+  width: 32px; height: 32px;
   background: transparent;
-  border: 1px solid transparent;
+  border: none;
   border-radius: 50%;
-  color: var(--gm-text-secondary);
+  color: var(--gm-blue);
   cursor: pointer;
   padding: 0;
-  transition: all 0.15s ease;
+  opacity: 0.6;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.05s ease;
 }
+.route-icon svg { display: block; }
 .route-icon:hover {
-  background: var(--gm-surface-alt);
-  color: var(--gm-blue);
+  background: color-mix(in oklab, var(--gm-blue) 10%, transparent);
+  opacity: 1;
 }
+.route-icon:active { transform: scale(0.94); }
 .route-icon.active {
-  background: color-mix(in oklab, var(--gm-red) 14%, transparent);
-  color: var(--gm-red);
-  border-color: color-mix(in oklab, var(--gm-red) 35%, transparent);
+  background: var(--gm-blue);
+  color: #fff;
+  opacity: 1;
+  box-shadow: var(--gm-shadow-1);
 }
 .route-icon:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--gm-blue);
+  opacity: 1;
 }
+.stop-row:hover .route-icon { opacity: 1; }
 
 .footer {
   padding: 8px 20px;

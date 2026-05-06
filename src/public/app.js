@@ -393,8 +393,8 @@ function drawTripMap() {
           <span class="stop-date"></span>
         </div>
         ${canHighlight ? `<button class="route-icon" type="button" data-leg="${li}" data-seg="${si - 1}" aria-label="Highlight route to ${escapeHtml(stop.name)}" title="Highlight route to ${escapeHtml(stop.name)}">
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-            <path d="M2 11 Q4 11 5.5 9.5 T9 5.5 L11.5 5.5 M9 3 L11.5 5.5 L9 8" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M21.71 11.29l-9-9a.996.996 0 0 0-1.41 0l-9 9a.996.996 0 0 0 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/>
           </svg>
         </button>` : ""}
       `;
