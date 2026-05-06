@@ -158,36 +158,31 @@ app.post("/admin/submissions/:id", async (c) => {
 
 // ---- Static assets ----
 //
-// HTML is templated with __VERSION__ replaced by GIT_SHA at boot, so
-// every deploy generates fresh asset URLs (`/app.js?v=<sha>`). HTML
-// itself is no-cache so the next page load picks up the new version
-// immediately. The hashed asset URLs are immutable — safe to cache
-// for a year because a new deploy issues new URLs.
+// scripts/build.ts emits dist/public/<name>.<contenthash>.<ext> for each
+// JS/CSS bundle and writes a logical→hashed manifest. We read the manifest
+// + HTML templates at boot and substitute the hashed URLs into placeholder
+// tokens (__APP_JS__, __APP_CSS__, __ADMIN_JS__, __ADMIN_CSS__). HTML
+// goes out no-cache; hashed assets are immutable for a year — new builds
+// emit new filenames, so any caching layer treats them as fresh URLs.
 
-const indexHtml = (await Bun.file("./src/public/index.html").text()).replaceAll(
-  "__VERSION__",
-  encodeURIComponent(VERSION),
-);
-const adminHtml = (await Bun.file("./src/public/admin/index.html").text()).replaceAll(
-  "__VERSION__",
-  encodeURIComponent(VERSION),
-);
+const DIST = "./dist/public";
+const manifest = (await Bun.file(`${DIST}/manifest.json`).json()) as Record<string, string>;
+
+const indexHtml = (await Bun.file(`${DIST}/index.html`).text())
+  .replaceAll("__APP_JS__", manifest["app.js"]!)
+  .replaceAll("__APP_CSS__", manifest["app.css"]!);
+const adminHtml = (await Bun.file(`${DIST}/admin/index.html`).text())
+  .replaceAll("__ADMIN_JS__", manifest["admin/admin.js"]!)
+  .replaceAll("__ADMIN_CSS__", manifest["admin/admin.css"]!);
 
 const NO_CACHE = "no-cache, must-revalidate";
 const IMMUTABLE = "public, max-age=31536000, immutable";
 
-app.get("/", (c) =>
-  c.html(indexHtml, 200, { "cache-control": NO_CACHE }),
-);
-app.get("/admin", (c) =>
-  c.html(adminHtml, 200, { "cache-control": NO_CACHE }),
-);
-app.get("/app.js", (c) => assetResponse("./src/public/app.js", "text/javascript; charset=utf-8"));
-app.get("/app.css", (c) => assetResponse("./src/public/app.css", "text/css; charset=utf-8"));
-app.get("/admin/admin.js", (c) => assetResponse("./src/public/admin/admin.js", "text/javascript; charset=utf-8"));
-app.get("/admin/admin.css", (c) => assetResponse("./src/public/admin/admin.css", "text/css; charset=utf-8"));
-app.get("/favicon.svg", (c) => assetResponse("./src/public/favicon.svg", "image/svg+xml"));
+app.get("/", (c) => c.html(indexHtml, 200, { "cache-control": NO_CACHE }));
+app.get("/admin", (c) => c.html(adminHtml, 200, { "cache-control": NO_CACHE }));
+app.get("/favicon.svg", () => assetResponse(`${DIST}/favicon.svg`, "image/svg+xml"));
 app.get("/favicon.ico", (c) => c.body(null, 204));
+
 app.get("/data/:file", async (c) => {
   const file = c.req.param("file");
   if (!/^[a-zA-Z0-9._-]+\.json$/.test(file)) return c.notFound();
@@ -197,6 +192,16 @@ app.get("/data/:file", async (c) => {
   return new Response(f, {
     headers: { "content-type": "application/json", "cache-control": NO_CACHE },
   });
+});
+
+// Hashed asset paths: /<name>.<8-hex>.<ext> (top-level or under /admin/).
+// Registered last so /data/:file and the API/admin routes match first.
+const HASHED_PATTERN = /^\/(?:[a-zA-Z0-9_-]+\/)?[a-zA-Z0-9_-]+\.[0-9a-f]{8}\.(?:js|css)$/;
+app.get("/*", async (c) => {
+  const path = c.req.path;
+  if (!HASHED_PATTERN.test(path)) return c.notFound();
+  const ext = path.endsWith(".js") ? "text/javascript; charset=utf-8" : "text/css; charset=utf-8";
+  return assetResponse(`${DIST}${path}`, ext);
 });
 
 async function assetResponse(path: string, contentType: string): Promise<Response> {

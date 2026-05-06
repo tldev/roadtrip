@@ -7,3 +7,5 @@ node_modules
 .dockerignore
 .DS_Store
 serve.sh
+data-local
+dist
