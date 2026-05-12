@@ -44,6 +44,13 @@ let activeSuggestContext = null;
 let captchaWidgetId = null;
 let pingTimer = null;
 let selectedIndex = 0;
+// segmentMiles["<legIdx>-<segIdx>"] = number of driving miles in that segment.
+// cumulativeMilesByStop[legIdx][stopIdx] = miles driven up to and including that stop.
+// dayMiles[dayIndex] = miles for that itinerary day (0 if rest).
+let segmentMiles = {};
+let cumulativeMilesByStop = [];
+let dayMiles = [];
+let totalMiles = 0;
 
 async function init() {
   [trip, itinerary, geometries, todayPayload, config, approvedSubmissions] = await Promise.all([
@@ -56,6 +63,8 @@ async function init() {
   ]);
 
   document.getElementById("trip-dates").textContent = trip.dates;
+
+  computeDistances();
 
   selectedIndex = pickInitialIndex();
   renderDateRail();
@@ -207,6 +216,7 @@ function renderSelectedDay() {
         </div>
         <div class="day-stats">
           <div><div class="stat-label">Driving</div><div class="stat-value">${escapeHtml(driveLabel || "—")}</div></div>
+          ${dayMiles[selectedIndex] > 0 ? `<div><div class="stat-label">Distance</div><div class="stat-value">${formatMi(dayMiles[selectedIndex])}</div></div>` : ""}
           <div><div class="stat-label">Lodging</div><div class="stat-value">${escapeHtml(formatLodging(day.lodging))}</div></div>
           ${day.daytrip ? `<div><div class="stat-label">Daytrip</div><div class="stat-value">${escapeHtml(day.daytrip)}</div></div>` : ""}
         </div>
@@ -223,6 +233,34 @@ function renderSelectedDay() {
     openSuggestModal({ date: b.dataset.date, stop: b.dataset.stop });
   });
   drawDayMap(day);
+  renderProgressStrip();
+}
+
+function renderProgressStrip() {
+  const el = document.getElementById("progress-strip");
+  if (!el) return;
+  const totalDays = itinerary.days.length;
+  const dayIdx = selectedIndex; // 0-based; "Day N" = dayIdx + 1
+  const dayN = dayIdx + 1;
+  const dayPct = Math.min(100, (dayN / totalDays) * 100);
+  const milesSoFar = milesThroughDay(dayIdx);
+  const milePct = Math.min(100, totalMiles > 0 ? (milesSoFar / totalMiles) * 100 : 0);
+  el.innerHTML = `
+    <div class="progress-row">
+      <div class="progress-cell">
+        <div class="progress-label">Day</div>
+        <div class="progress-value">${dayN}<span class="progress-of"> / ${totalDays}</span></div>
+        <div class="progress-bar"><div class="progress-bar-fill" style="width:${dayPct.toFixed(1)}%"></div></div>
+        <div class="progress-pct">${dayPct.toFixed(0)}%</div>
+      </div>
+      <div class="progress-cell">
+        <div class="progress-label">Miles driven</div>
+        <div class="progress-value">${formatMi(milesSoFar)}<span class="progress-of"> / ${formatMi(totalMiles)}</span></div>
+        <div class="progress-bar"><div class="progress-bar-fill progress-bar-fill-miles" style="width:${milePct.toFixed(1)}%"></div></div>
+        <div class="progress-pct">${milePct.toFixed(0)}%</div>
+      </div>
+    </div>
+  `;
 }
 
 let dayMapInstance = null;
@@ -267,6 +305,77 @@ function drawDayMap(day) {
 
 function coordsEqual(a, b) {
   return Math.abs(a[0] - b[0]) < 0.001 && Math.abs(a[1] - b[1]) < 0.001;
+}
+
+function haversineMi(a, b) {
+  const R = 3958.7613; // Earth radius in miles
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(b[0] - a[0]);
+  const dLng = toRad(b[1] - a[1]);
+  const lat1 = toRad(a[0]);
+  const lat2 = toRad(b[0]);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function polylineMi(pts) {
+  let mi = 0;
+  for (let i = 0; i < pts.length - 1; i++) mi += haversineMi(pts[i], pts[i + 1]);
+  return mi;
+}
+
+function computeDistances() {
+  // segmentMiles is the single source of truth. Two derivations follow:
+  // cumulativeMilesByStop walks legs/segments in order (drives the Full Trip
+  // sidebar), and dayMiles walks itinerary days mapping each to a segment
+  // (drives the day-card stat + progress strip via milesThroughDay).
+  // Both must consume the same segmentMiles map — keep that invariant if
+  // ever editing.
+  segmentMiles = {};
+  totalMiles = 0;
+  for (const [key, pts] of Object.entries(geometries.trip ?? {})) {
+    const mi = polylineMi(pts);
+    segmentMiles[key] = mi;
+    totalMiles += mi;
+  }
+
+  cumulativeMilesByStop = trip.legs.map((leg, li) => {
+    const out = new Array(leg.stops.length).fill(0);
+    // Cumulative miles at each stop = sum of all segments traversed up to that point
+    // across all preceding legs + the current leg's segments up to (stopIdx - 1).
+    let running = 0;
+    for (let prevLeg = 0; prevLeg < li; prevLeg++) {
+      const prev = trip.legs[prevLeg];
+      for (let s = 0; s < prev.stops.length - 1; s++) {
+        running += segmentMiles[`${prevLeg}-${s}`] ?? 0;
+      }
+    }
+    out[0] = running;
+    for (let si = 1; si < leg.stops.length; si++) {
+      running += segmentMiles[`${li}-${si - 1}`] ?? 0;
+      out[si] = running;
+    }
+    return out;
+  });
+
+  dayMiles = itinerary.days.map((day) => {
+    if (day.isRestDay) return 0;
+    const seg = findDaySegment(day);
+    if (!seg) return 0;
+    return segmentMiles[`${seg.legIdx}-${seg.segIdx}`] ?? 0;
+  });
+}
+
+function milesThroughDay(idx) {
+  let mi = 0;
+  for (let i = 0; i <= idx; i++) mi += dayMiles[i] ?? 0;
+  return mi;
+}
+
+function formatMi(mi) {
+  if (mi < 1) return "0 mi";
+  if (mi < 10) return `${mi.toFixed(1)} mi`;
+  return `${Math.round(mi).toLocaleString()} mi`;
 }
 
 function coordsNear(stop, coords, tol = 0.05) {
@@ -385,6 +494,8 @@ function drawTripMap() {
 
       const isLastInLastLeg = li === isLastLegIdx && si === leg.stops.length - 1;
       const dateLabel = stopDateLabel(stop, li, si, leg, isLastInLastLeg);
+      const cumMiles = cumulativeMilesByStop[li]?.[si] ?? 0;
+      const milesLabel = cumMiles > 0 ? formatMi(cumMiles) : "";
       const canHighlight = si > 0; // first stop of each leg has no inbound segment shown distinctly
 
       const row = document.createElement("div");
@@ -402,7 +513,8 @@ function drawTripMap() {
         </button>` : ""}
       `;
       row.querySelector(".stop-name").textContent = stop.name;
-      row.querySelector(".stop-date").textContent = dateLabel;
+      row.querySelector(".stop-date").textContent =
+        milesLabel ? `${dateLabel} · ${milesLabel}` : dateLabel;
       row.querySelector(".stop-text").addEventListener("click", () => {
         clearSegmentHighlight();
         mapInstance.flyTo([stop.lat, stop.lng], 9, { duration: 0.8 });
