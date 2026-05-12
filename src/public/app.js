@@ -242,9 +242,9 @@ function renderProgressStrip() {
   const totalDays = itinerary.days.length;
   const dayIdx = selectedIndex; // 0-based; "Day N" = dayIdx + 1
   const dayN = dayIdx + 1;
-  const dayPct = (dayN / totalDays) * 100;
+  const dayPct = Math.min(100, (dayN / totalDays) * 100);
   const milesSoFar = milesThroughDay(dayIdx);
-  const milePct = totalMiles > 0 ? (milesSoFar / totalMiles) * 100 : 0;
+  const milePct = Math.min(100, totalMiles > 0 ? (milesSoFar / totalMiles) * 100 : 0);
   el.innerHTML = `
     <div class="progress-row">
       <div class="progress-cell">
@@ -325,6 +325,12 @@ function polylineMi(pts) {
 }
 
 function computeDistances() {
+  // segmentMiles is the single source of truth. Two derivations follow:
+  // cumulativeMilesByStop walks legs/segments in order (drives the Full Trip
+  // sidebar), and dayMiles walks itinerary days mapping each to a segment
+  // (drives the day-card stat + progress strip via milesThroughDay).
+  // Both must consume the same segmentMiles map — keep that invariant if
+  // ever editing.
   segmentMiles = {};
   totalMiles = 0;
   for (const [key, pts] of Object.entries(geometries.trip ?? {})) {
