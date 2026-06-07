@@ -544,24 +544,6 @@
       "date": "2026-06-07",
       "day": "Day 31",
       "start": "Moab, UT",
-      "end": "Moab, UT",
-      "drivingHours": "N/A",
-      "daytrip": "",
-      "lodging": "camping",
-      "startCoords": [
-        38.5733,
-        -109.5498
-      ],
-      "endCoords": [
-        38.5733,
-        -109.5498
-      ],
-      "isRestDay": true
-    },
-    {
-      "date": "2026-06-08",
-      "day": "Day 32",
-      "start": "Moab, UT",
       "end": "Parker, CO",
       "drivingHours": "5 hrs 31 min",
       "daytrip": "",
@@ -575,6 +557,24 @@
         -104.7614
       ],
       "isRestDay": false
+    },
+    {
+      "date": "2026-06-08",
+      "day": "Day 32",
+      "start": "Parker, CO",
+      "end": "Parker, CO",
+      "drivingHours": "N/A",
+      "daytrip": "",
+      "lodging": "Nathan's",
+      "startCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "endCoords": [
+        39.5186,
+        -104.7614
+      ],
+      "isRestDay": true
     },
     {
       "date": "2026-06-09",
@@ -616,24 +616,6 @@
       "date": "2026-06-11",
       "day": "Day 35",
       "start": "Parker, CO",
-      "end": "Parker, CO",
-      "drivingHours": "N/A",
-      "daytrip": "",
-      "lodging": "Nathan's",
-      "startCoords": [
-        39.5186,
-        -104.7614
-      ],
-      "endCoords": [
-        39.5186,
-        -104.7614
-      ],
-      "isRestDay": true
-    },
-    {
-      "date": "2026-06-12",
-      "day": "Day 36",
-      "start": "Parker, CO",
       "end": "Hastings, NE",
       "drivingHours": "6 hrs",
       "daytrip": "",
@@ -649,8 +631,8 @@
       "isRestDay": false
     },
     {
-      "date": "2026-06-13",
-      "day": "Day 37",
+      "date": "2026-06-12",
+      "day": "Day 36",
       "start": "Hastings, NE",
       "end": "Hastings, NE",
       "drivingHours": "N/A",
@@ -667,8 +649,8 @@
       "isRestDay": true
     },
     {
-      "date": "2026-06-14",
-      "day": "Day 38",
+      "date": "2026-06-13",
+      "day": "Day 37",
       "start": "Hastings, NE",
       "end": "Hastings, NE",
       "drivingHours": "N/A",
@@ -685,8 +667,8 @@
       "isRestDay": true
     },
     {
-      "date": "2026-06-15",
-      "day": "Day 39",
+      "date": "2026-06-14",
+      "day": "Day 38",
       "start": "Hastings, NE",
       "end": "Little Rock, AR",
       "drivingHours": "10 hrs",
@@ -703,7 +685,7 @@
       "isRestDay": false
     },
     {
-      "date": "2026-06-16",
+      "date": "2026-06-15",
       "day": "",
       "start": "Little Rock, AR",
       "end": "Destin, FL",
