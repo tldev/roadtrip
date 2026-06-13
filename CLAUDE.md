@@ -1,6 +1,6 @@
 # Sabbatical Roadtrip
 
-Public-facing site for tjohnell's sabbatical road trip (May 8 - June 16, 2026), shipped as a self-contained container.
+Public-facing site for tjohnell's sabbatical road trip (May 8 - June 14, 2026), shipped as a self-contained container.
 
 ## Stack
 

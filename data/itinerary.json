@@ -652,24 +652,6 @@
       "date": "2026-06-13",
       "day": "Day 37",
       "start": "Hastings, NE",
-      "end": "Hastings, NE",
-      "drivingHours": "N/A",
-      "daytrip": "",
-      "lodging": "Abigail's or this ",
-      "startCoords": [
-        40.5861,
-        -98.3887
-      ],
-      "endCoords": [
-        40.5861,
-        -98.3887
-      ],
-      "isRestDay": true
-    },
-    {
-      "date": "2026-06-14",
-      "day": "Day 38",
-      "start": "Hastings, NE",
       "end": "Little Rock, AR",
       "drivingHours": "10 hrs",
       "daytrip": "",
@@ -685,7 +667,7 @@
       "isRestDay": false
     },
     {
-      "date": "2026-06-15",
+      "date": "2026-06-14",
       "day": "",
       "start": "Little Rock, AR",
       "end": "Destin, FL",
