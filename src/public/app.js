@@ -806,6 +806,9 @@ function renderStats() {
   if (!host) return;
   const days = itinerary.days;
   const n = days.length;
+  // "Stay" stats exclude the homecoming night (arriving home isn't a trip stay);
+  // journey totals below keep all `days` so the final drive home still counts.
+  const stayDays = days.filter((d) => d.end !== HOME_LOCATION);
 
   // Derived series (cumulative arrays filled as a side effect of reduce).
   const driveMin = days.map((d) => (d.isRestDay ? 0 : driveMinutes(d.drivingHours)));
@@ -822,7 +825,7 @@ function renderStats() {
   // Nights per overnight (end) location; built in trip order then sorted desc.
   const nightIdx = new Map();
   const nights = [];
-  days.forEach((d) => {
+  stayDays.forEach((d) => {
     if (!nightIdx.has(d.end)) { nightIdx.set(d.end, nights.length); nights.push({ label: d.end, value: 0 }); }
     nights[nightIdx.get(d.end)].value++;
   });
@@ -837,7 +840,7 @@ function renderStats() {
 
   // Nights by lodging type.
   const lodgeCounts = new Map(LODGING_BUCKETS.map((b) => [b.key, 0]));
-  days.forEach((d) => {
+  stayDays.forEach((d) => {
     const k = lodgingBucket(d.lodging);
     lodgeCounts.set(k, lodgeCounts.get(k) + 1);
   });
@@ -845,7 +848,7 @@ function renderStats() {
 
   // Days per biome/region (by overnight location), sorted desc.
   const biomeCounts = new Map();
-  days.forEach((d) => {
+  stayDays.forEach((d) => {
     const key = LOCATION_BIOME[d.end] ?? LOCATION_BIOME[d.start];
     if (key) biomeCounts.set(key, (biomeCounts.get(key) ?? 0) + 1);
   });
@@ -884,7 +887,7 @@ function renderStats() {
     { title: "Nights per location", sub: "Frequency of overnight stays by stop",
       draw: (w) => hBarChart(nightsSorted, { homeLabel: HOME_LOCATION, w }) },
     { title: "Nights by lodging type", sub: "What kind of place we slept each night",
-      draw: () => donutChart(lodgeData, n, "nights") },
+      draw: () => donutChart(lodgeData, stayDays.length, "nights") },
     { title: "Days per region", sub: "Days spent in each biome/region",
       draw: (w) => hBarChart(biomeData, { w }) },
   ];
