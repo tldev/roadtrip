@@ -434,6 +434,63 @@ body {
   .day-body { padding: 20px; }
 }
 
+/* ---- Stats view ---- */
+.view-stats { display: block; overflow-y: auto; height: calc(100dvh - 57px); background: var(--gm-surface-2); }
+.stats-wrap { max-width: 980px; margin: 0 auto; padding: 24px 20px 48px; }
+.stats-title { font-size: clamp(22px, 3vw, 30px); font-weight: 500; margin: 4px 0 20px; color: var(--gm-text); }
+
+.stat-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.stat-tile {
+  background: var(--gm-surface);
+  border: 1px solid var(--gm-border);
+  border-radius: var(--gm-radius);
+  padding: 14px 16px;
+}
+.stat-tile-label {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gm-text-secondary); font-weight: 500; margin-bottom: 6px;
+}
+.stat-tile-value { font-size: 18px; font-weight: 500; color: var(--gm-text); line-height: 1.25; }
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+.chart-card {
+  margin: 0;
+  background: var(--gm-surface);
+  border: 1px solid var(--gm-border);
+  border-radius: var(--gm-radius);
+  padding: 16px 16px 12px;
+  box-shadow: var(--gm-shadow-1);
+  min-width: 0;
+}
+.chart-card figcaption { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
+.chart-title { font-size: 14px; font-weight: 500; color: var(--gm-text); }
+.chart-sub { font-size: 12px; color: var(--gm-text-secondary); }
+.chart-slot { width: 100%; }
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-grid-line { stroke: var(--gm-border); stroke-width: 1; }
+.chart-axis { font-size: 10px; fill: var(--gm-text-secondary); }
+.chart-row-label { font-size: 12px; fill: var(--gm-text); }
+.chart-home-tag { fill: var(--gm-red); font-size: 10px; }
+.chart-bar-value { font-size: 11px; fill: var(--gm-text-secondary); }
+.chart-end-label { font-size: 11px; fill: var(--gm-text); font-weight: 500; }
+.chart-legend { font-size: 12px; fill: var(--gm-text); }
+.donut-center-num { font-size: 22px; font-weight: 500; fill: var(--gm-text); }
+.donut-center-label { font-size: 11px; fill: var(--gm-text-secondary); }
+
+@media (max-width: 720px) {
+  .stats-wrap { padding: 18px 14px 40px; }
+  .chart-grid { grid-template-columns: 1fr; }
+}
+
 /* ---- Modal ---- */
 .modal {
   position: fixed; inset: 0; z-index: 10000;
