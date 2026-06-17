@@ -868,17 +868,19 @@ function renderStats() {
   // Each chart draws into a measured pixel width (viewBox == css px, so labels
   // stay crisp at any column width and on mobile) — the same measure-on-show
   // approach the maps use. Redrawn on resize and whenever the view re-shows.
+  // `wide` charts (time series) render 16:9 in the expand modal; the rest keep
+  // their natural aspect. draw(w, h) lets the modal request a larger size.
   const charts = [
-    { title: "Distance per day", sub: "Miles driven each day (rest days = 0)",
-      draw: (w) => barChart(dayMiles.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatMi(v)}` })),
-        { unit: "mi", color: "var(--gm-blue)", labels: dateShort, w }) },
-    { title: "Cumulative distance", sub: "Total miles driven over the trip",
-      draw: (w) => lineChart(cumMiles, { unit: "mi", labels: dateShort, color: "var(--gm-blue)", w }) },
-    { title: "Drive time per day", sub: "Planned drive time from the itinerary (human-entered)",
-      draw: (w) => barChart(driveMin.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatHrsMin(v)}` })),
-        { fmt: formatHrsMin, color: "var(--gm-green)", labels: dateShort, w }) },
-    { title: "Cumulative drive time", sub: "Planned drive time accumulated over the trip",
-      draw: (w) => lineChart(cumMin, { fmt: formatHrsMin, labels: dateShort, color: "var(--gm-green)", w }) },
+    { title: "Distance per day", sub: "Miles driven each day (rest days = 0)", wide: true,
+      draw: (w, h) => barChart(dayMiles.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatMi(v)}` })),
+        { unit: "mi", color: "var(--gm-blue)", labels: dateShort, w, h }) },
+    { title: "Cumulative distance", sub: "Total miles driven over the trip", wide: true,
+      draw: (w, h) => lineChart(cumMiles, { unit: "mi", labels: dateShort, color: "var(--gm-blue)", w, h }) },
+    { title: "Drive time per day", sub: "Planned drive time from the itinerary (human-entered)", wide: true,
+      draw: (w, h) => barChart(driveMin.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatHrsMin(v)}` })),
+        { fmt: formatHrsMin, color: "var(--gm-green)", labels: dateShort, w, h }) },
+    { title: "Cumulative drive time", sub: "Planned drive time accumulated over the trip", wide: true,
+      draw: (w, h) => lineChart(cumMin, { fmt: formatHrsMin, labels: dateShort, color: "var(--gm-green)", w, h }) },
     { title: "Nights per location", sub: "Frequency of overnight stays by stop",
       draw: (w) => hBarChart(nightsSorted, { homeLabel: HOME_LOCATION, w }) },
     { title: "Nights by lodging type", sub: "What kind of place we slept each night",
@@ -886,6 +888,7 @@ function renderStats() {
     { title: "Days per region", sub: "Days spent in each biome/region",
       draw: (w) => hBarChart(biomeData, { w }) },
   ];
+  modalCharts = charts;
 
   host.innerHTML = `
     <div class="stats-wrap">
@@ -899,7 +902,10 @@ function renderStats() {
       </section>
       <div class="chart-grid">
         ${charts.map((c, i) => `
-          <figure class="chart-card">
+          <figure class="chart-card" data-i="${i}" role="group" aria-label="${escapeHtml(c.title)}">
+            <button class="chart-expand" type="button" aria-label="Expand ${escapeHtml(c.title)}" title="Expand">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
             <figcaption><span class="chart-title">${escapeHtml(c.title)}</span><span class="chart-sub">${escapeHtml(c.sub)}</span></figcaption>
             <div class="chart-slot" data-i="${i}"></div>
           </figure>`).join("")}
@@ -912,6 +918,13 @@ function renderStats() {
     slot.innerHTML = charts[Number(slot.dataset.i)].draw(w);
   });
   redrawStats();
+
+  // Click anywhere on a card (or its expand button, which bubbles here) opens
+  // the chart in the lightbox.
+  host.querySelectorAll(".chart-card").forEach((card) => {
+    card.addEventListener("click", () => openChartModal(Number(card.dataset.i)));
+  });
+  setupChartModal();
 
   if (!statsResizeBound) {
     statsResizeBound = true;
@@ -936,7 +949,7 @@ function niceMax(v) {
 
 // Vertical bar chart. data = [{ value, title }].
 function barChart(data, opts = {}) {
-  const W = opts.w ?? 720, H = 240, padL = 52, padR = 10, padT = 14, padB = 26;
+  const W = opts.w ?? 720, H = opts.h ?? 240, padL = 52, padR = 10, padT = 14, padB = 26;
   const plotW = W - padL - padR, plotH = H - padT - padB;
   const unit = opts.unit ? " " + opts.unit : "";
   const fmt = opts.fmt ?? ((v) => `${Math.round(v).toLocaleString()}${unit}`);
@@ -961,7 +974,7 @@ function barChart(data, opts = {}) {
 
 // Cumulative line + area chart. values = number[].
 function lineChart(values, opts = {}) {
-  const W = opts.w ?? 720, H = 240, padL = 56, padR = 14, padT = 16, padB = 26;
+  const W = opts.w ?? 720, H = opts.h ?? 240, padL = 56, padR = 14, padT = 16, padB = 26;
   const plotW = W - padL - padR, plotH = H - padT - padB;
   const unit = opts.unit ? " " + opts.unit : "";
   const fmt = opts.fmt ?? ((v) => `${Math.round(v).toLocaleString()}${unit}`);
@@ -1032,6 +1045,137 @@ function donutArc(cx, cy, R, r, a0, a1) {
   const [ix1, iy1] = at(a1, r), [ix0, iy0] = at(a0, r);
   return `M ${ox0.toFixed(2)} ${oy0.toFixed(2)} A ${R} ${R} 0 ${laf} 1 ${ox1.toFixed(2)} ${oy1.toFixed(2)} ` +
     `L ${ix1.toFixed(2)} ${iy1.toFixed(2)} A ${r} ${r} 0 ${laf} 0 ${ix0.toFixed(2)} ${iy0.toFixed(2)} Z`;
+}
+
+// ---- Chart expand modal (lightbox) + PNG/SVG export ----
+let modalCharts = null;
+let modalChartIndex = null;
+let modalTrigger = null;
+let chartModalBound = false;
+
+function setupChartModal() {
+  if (chartModalBound) return;
+  const modal = document.getElementById("chart-modal");
+  if (!modal) return;
+  chartModalBound = true;
+  document.getElementById("chart-modal-close").addEventListener("click", closeChartModal);
+  modal.addEventListener("click", (ev) => { if (ev.target === modal) closeChartModal(); });
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && !modal.hidden) closeChartModal();
+  });
+  document.getElementById("chart-dl-png").addEventListener("click", downloadChartPng);
+  document.getElementById("chart-dl-svg").addEventListener("click", downloadChartSvg);
+  let t;
+  window.addEventListener("resize", () => {
+    if (modal.hidden) return;
+    clearTimeout(t);
+    t = setTimeout(renderModalChart, 150);
+  });
+}
+
+function openChartModal(i) {
+  if (!modalCharts || !modalCharts[i]) return;
+  const modal = document.getElementById("chart-modal");
+  modalChartIndex = i;
+  modalTrigger = document.activeElement; // restore focus here on close
+  document.getElementById("chart-modal-title").textContent = modalCharts[i].title;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden"; // lock background scroll
+  renderModalChart();
+  document.getElementById("chart-modal-close").focus();
+}
+
+function renderModalChart() {
+  if (modalChartIndex == null) return;
+  const body = document.getElementById("chart-modal-body");
+  const c = modalCharts[modalChartIndex];
+  // Render at a generous width so the exported PNG is slide-grade even on small
+  // screens; CSS fits the SVG to the modal (preserveAspectRatio). Time-series
+  // charts use a 16:9 height; horizontal bars / donut keep their natural aspect.
+  const w = Math.max(Math.round(body.clientWidth), 960);
+  const h = c.wide ? Math.round((w * 9) / 16) : undefined;
+  body.innerHTML = c.draw(w, h);
+}
+
+function closeChartModal() {
+  const modal = document.getElementById("chart-modal");
+  modal.hidden = true;
+  document.body.style.overflow = "";
+  document.getElementById("chart-modal-body").innerHTML = "";
+  modalChartIndex = null;
+  if (modalTrigger && modalTrigger.focus) modalTrigger.focus();
+}
+
+// The live chart SVG is styled via CSS classes + CSS variables, neither of which
+// survives serialization into a detached SVG (var(--gm-blue) etc. won't resolve,
+// so colors/text would drop to defaults). So we clone it and copy each node's
+// *computed* style — which has already resolved vars and class rules to literal
+// values — onto inline style attributes, making the SVG fully self-contained.
+const EXPORT_STYLE_PROPS = [
+  "fill", "stroke", "stroke-width", "stroke-linejoin",
+  "opacity", "font-family", "font-size", "font-weight",
+];
+function inlineComputedStyles(src, clone) {
+  const cs = getComputedStyle(src);
+  let style = clone.getAttribute("style") || "";
+  for (const p of EXPORT_STYLE_PROPS) {
+    const v = cs.getPropertyValue(p);
+    if (v) style += `${p}:${v};`;
+  }
+  clone.setAttribute("style", style);
+  for (let i = 0; i < src.children.length; i++) {
+    inlineComputedStyles(src.children[i], clone.children[i]);
+  }
+}
+function selfContainedSvgClone(liveSvg) {
+  const clone = liveSvg.cloneNode(true);
+  inlineComputedStyles(liveSvg, clone);
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  return clone;
+}
+function chartFileName(ext) {
+  const title = modalCharts?.[modalChartIndex]?.title ?? "chart";
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return `${slug || "chart"}.${ext}`;
+}
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function downloadChartSvg() {
+  const live = document.querySelector("#chart-modal-body svg");
+  if (!live) return;
+  const xml = new XMLSerializer().serializeToString(selfContainedSvgClone(live));
+  downloadBlob(new Blob([xml], { type: "image/svg+xml;charset=utf-8" }), chartFileName("svg"));
+}
+function downloadChartPng() {
+  const live = document.querySelector("#chart-modal-body svg");
+  if (!live) return;
+  const vb = (live.getAttribute("viewBox") || "0 0 960 540").split(/\s+/).map(Number);
+  const scale = 2; // 2x for crisp slide use
+  const W = Math.round(vb[2] * scale), H = Math.round(vb[3] * scale);
+  const clone = selfContainedSvgClone(live);
+  clone.setAttribute("width", W);
+  clone.setAttribute("height", H);
+  const xml = new XMLSerializer().serializeToString(clone);
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff"; // white background so the PNG embeds on any slide
+    ctx.fillRect(0, 0, W, H);
+    ctx.drawImage(img, 0, 0, W, H);
+    canvas.toBlob((blob) => { if (blob) downloadBlob(blob, chartFileName("png")); }, "image/png");
+  };
+  img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(xml);
 }
 
 init();

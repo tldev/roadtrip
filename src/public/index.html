@@ -79,6 +79,20 @@
     </div>
   </div>
 
+  <div id="chart-modal" class="modal chart-modal" hidden role="dialog" aria-modal="true" aria-labelledby="chart-modal-title">
+    <div class="modal-card chart-modal-card">
+      <div class="chart-modal-head">
+        <h2 id="chart-modal-title"></h2>
+        <button id="chart-modal-close" class="modal-close" aria-label="Close">×</button>
+      </div>
+      <div id="chart-modal-body" class="chart-modal-body"></div>
+      <div class="chart-modal-actions">
+        <button id="chart-dl-svg" class="btn-link" type="button">Download SVG</button>
+        <button id="chart-dl-png" class="btn-primary" type="button">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script id="hcaptcha-loader" defer></script>
   <script type="module" src="__APP_JS__"></script>
