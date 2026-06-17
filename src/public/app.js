@@ -39,6 +39,8 @@ const GM_RED = "#ea4335";
 
 let trip, itinerary, geometries, todayPayload, config;
 let mapInstance, mapDrawn = false;
+let dayRendered = false;
+let currentView = null;
 let approvedSubmissions = [];
 let activeSuggestContext = null;
 let captchaWidgetId = null;
@@ -70,11 +72,12 @@ async function init() {
   renderDateRail();
 
   setupTabs();
-  setActiveView("day");
-  // Render the day card *after* the view is unhidden so Leaflet measures
-  // the day-map container correctly. Otherwise the map initializes inside
-  // a hidden (display:none) element and renders broken on first load.
-  renderSelectedDay();
+  // Routing: open the view named by the URL (default = Full Trip). Views are
+  // rendered lazily on first show so each Leaflet map measures a visible
+  // container — the day card must render unhidden or its map breaks. popstate
+  // re-derives the view from the path without writing history.
+  window.addEventListener("popstate", () => applyView(viewFromPath(location.pathname)));
+  applyView(viewFromPath(location.pathname));
 
   refreshPingStatus();
   pingTimer = setInterval(refreshPingStatus, 60_000);
@@ -95,11 +98,31 @@ function pickInitialIndex() {
 
 function setupTabs() {
   document.querySelectorAll(".tab").forEach((tab) => {
-    tab.addEventListener("click", () => setActiveView(tab.dataset.view));
+    tab.addEventListener("click", () => navigateToView(tab.dataset.view));
   });
 }
 
-function setActiveView(view) {
+// Each view has its own URL slug. "/" is canonical for Full Trip (left as-is on
+// load); "/full-trip" is its explicit path; "/itinerary" is the day view.
+const VIEW_TO_PATH = { trip: "/full-trip", day: "/itinerary" };
+
+function viewFromPath(pathname) {
+  return pathname === "/itinerary" ? "day" : "trip";
+}
+
+// User-initiated switch: push a new history entry, then apply. pushState happens
+// ONLY here (tab clicks) — never on initial load or popstate — so browser
+// back/forward stay consistent.
+function navigateToView(view) {
+  if (view === currentView) return;
+  if (VIEW_TO_PATH[view]) history.pushState({}, "", VIEW_TO_PATH[view]);
+  applyView(view);
+}
+
+// Toggle tabs/panels and lazily render the now-visible view. Never touches the
+// URL, so it's safe to call from init and popstate.
+function applyView(view) {
+  currentView = view;
   document.querySelectorAll(".tab").forEach((t) =>
     t.setAttribute("aria-selected", String(t.dataset.view === view)),
   );
@@ -107,6 +130,13 @@ function setActiveView(view) {
   if (view === "trip") {
     if (!mapDrawn) drawTripMap();
     setTimeout(() => mapInstance?.invalidateSize(), 50);
+  } else if (view === "day") {
+    if (!dayRendered) {
+      renderSelectedDay();
+      dayRendered = true;
+    } else {
+      setTimeout(() => dayMapInstance?.invalidateSize(), 50);
+    }
   }
 }
 
