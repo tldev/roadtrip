@@ -40,6 +40,9 @@ const GM_RED = "#ea4335";
 let trip, itinerary, geometries, todayPayload, config;
 let mapInstance, mapDrawn = false;
 let dayRendered = false;
+let statsRendered = false;
+let redrawStats = null;
+let statsResizeBound = false;
 let currentView = null;
 let approvedSubmissions = [];
 let activeSuggestContext = null;
@@ -104,10 +107,12 @@ function setupTabs() {
 
 // Each view has its own URL slug. "/" is canonical for Full Trip (left as-is on
 // load); "/full-trip" is its explicit path; "/itinerary" is the day view.
-const VIEW_TO_PATH = { trip: "/full-trip", day: "/itinerary" };
+const VIEW_TO_PATH = { trip: "/full-trip", day: "/itinerary", stats: "/stats" };
 
 function viewFromPath(pathname) {
-  return pathname === "/itinerary" ? "day" : "trip";
+  if (pathname === "/itinerary") return "day";
+  if (pathname === "/stats") return "stats";
+  return "trip";
 }
 
 // User-initiated switch: push a new history entry, then apply. pushState happens
@@ -136,6 +141,13 @@ function applyView(view) {
       dayRendered = true;
     } else {
       setTimeout(() => dayMapInstance?.invalidateSize(), 50);
+    }
+  } else if (view === "stats") {
+    if (!statsRendered) {
+      renderStats();
+      statsRendered = true;
+    } else {
+      redrawStats?.(); // re-measure in case the window resized while hidden
     }
   }
 }
@@ -732,6 +744,294 @@ function showResult(el, text, kind) {
   el.textContent = text;
   el.classList.add(kind);
   el.hidden = false;
+}
+
+// ---- Trip Stats view ----
+// All charts are hand-rolled inline SVG drawn in a fixed viewBox and scaled to
+// 100% width (resolution-independent — no container measurement needed).
+// Rendered lazily on first show. Drive times are PLANNED values parsed from the
+// itinerary's free-text drivingHours (human-entered, some rounded) — surfaced as
+// "planned", never as measured.
+
+const DRIVE_RE = /^(\d+(?:\.\d+)?)\s*hrs?(?:\s+(\d+)\s*min)?$/i;
+function driveMinutes(raw) {
+  const m = DRIVE_RE.exec((raw ?? "").trim());
+  if (!m) return 0; // "N/A" (rest days) and anything unparseable -> 0
+  return Math.round(parseFloat(m[1]) * 60 + (m[2] ? parseInt(m[2], 10) : 0));
+}
+
+function formatHrsMin(min) {
+  const h = Math.floor(min / 60);
+  const m = Math.round(min % 60);
+  return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
+
+// Lodging categorizer — maps the itinerary's free-text lodging field to a small
+// set of buckets. Mapping (confirmed against the data, nights in parens):
+//   contains "camp"             -> camping  ("camping" x4)
+//   contains "airbnb"           -> airbnb   ("airbnb" x19)
+//   contains "hotel"            -> hotel    ("hotel" / "hotel: El Rey Court" ... x7)
+//   contains "nathan"/"abigail" -> family   ("Nathan's" x4, "Abigail's or this" x2)
+//   exactly "home"              -> home     ("home" x1, the Destin homecoming)
+//   "" or unrecognized          -> other    (the one blank Las Vegas night x1)
+const LODGING_BUCKETS = [
+  { key: "airbnb", label: "Airbnb", color: "#1e88a8" },
+  { key: "hotel", label: "Hotel", color: "#1a73e8" },
+  { key: "family", label: "Family/friends", color: "#34a853" },
+  { key: "camping", label: "Camping", color: "#c79a4a" },
+  { key: "home", label: "Home", color: "#ea4335" },
+  { key: "other", label: "Other", color: "#9aa0a6" },
+];
+function lodgingBucket(raw) {
+  const s = (raw ?? "").trim().toLowerCase();
+  if (!s) return "other";
+  if (s.includes("camp")) return "camping";
+  if (s.includes("airbnb")) return "airbnb";
+  if (s.includes("hotel")) return "hotel";
+  if (s.includes("nathan") || s.includes("abigail")) return "family";
+  if (s === "home") return "home";
+  return "other";
+}
+
+const BIOME_LABELS = {
+  gulf: "Gulf Coast", hill: "Hill Country", west_desert: "West TX Desert",
+  high_desert: "High Desert", red_rock: "Red Rock", pacific: "Pacific Coast",
+  mojave: "Mojave", rockies: "Rockies", plains: "Great Plains",
+};
+
+const HOME_LOCATION = "Destin, FL";
+
+function renderStats() {
+  const host = document.getElementById("view-stats");
+  if (!host) return;
+  const days = itinerary.days;
+  const n = days.length;
+
+  // Derived series (cumulative arrays filled as a side effect of reduce).
+  const driveMin = days.map((d) => (d.isRestDay ? 0 : driveMinutes(d.drivingHours)));
+  const cumMiles = [];
+  const cumMin = [];
+  dayMiles.reduce((acc, v, i) => (cumMiles[i] = acc + (v || 0)), 0);
+  driveMin.reduce((acc, v, i) => (cumMin[i] = acc + v), 0);
+  const totalDriveMin = cumMin[n - 1] ?? 0;
+
+  const driveDays = days.filter((d) => !d.isRestDay).length;
+  const restDays = n - driveDays;
+  const daytrips = days.filter((d) => d.daytrip).length;
+
+  // Nights per overnight (end) location; built in trip order then sorted desc.
+  const nightIdx = new Map();
+  const nights = [];
+  days.forEach((d) => {
+    if (!nightIdx.has(d.end)) { nightIdx.set(d.end, nights.length); nights.push({ label: d.end, value: 0 }); }
+    nights[nightIdx.get(d.end)].value++;
+  });
+  const overnightStops = nights.length;
+  const nightsSorted = [...nights].sort((a, b) => b.value - a.value);
+
+  // Longest planned drive day.
+  let longest = { min: 0, label: "" };
+  days.forEach((d, i) => {
+    if (driveMin[i] > longest.min) longest = { min: driveMin[i], label: `${d.start} → ${d.end}` };
+  });
+
+  // Nights by lodging type.
+  const lodgeCounts = new Map(LODGING_BUCKETS.map((b) => [b.key, 0]));
+  days.forEach((d) => {
+    const k = lodgingBucket(d.lodging);
+    lodgeCounts.set(k, lodgeCounts.get(k) + 1);
+  });
+  const lodgeData = LODGING_BUCKETS.map((b) => ({ ...b, value: lodgeCounts.get(b.key) })).filter((b) => b.value > 0);
+
+  // Days per biome/region (by overnight location), sorted desc.
+  const biomeCounts = new Map();
+  days.forEach((d) => {
+    const key = LOCATION_BIOME[d.end] ?? LOCATION_BIOME[d.start];
+    if (key) biomeCounts.set(key, (biomeCounts.get(key) ?? 0) + 1);
+  });
+  const biomeData = [...biomeCounts.entries()]
+    .map(([key, value]) => ({ label: BIOME_LABELS[key] ?? key, value, color: BIOME_ACCENTS[key] ?? GM_BLUE }))
+    .sort((a, b) => b.value - a.value);
+
+  const dateShort = days.map((d) => shortDate(d.date));
+
+  const tiles = [
+    ["Total distance", formatMi(totalMiles)],
+    ["Drive time (planned)", formatHrsMin(totalDriveMin)],
+    ["Days on the road", String(n)],
+    ["Driving vs rest", `${driveDays} drive · ${restDays} rest`],
+    ["Overnight stops", String(overnightStops)],
+    ["Daytrips", String(daytrips)],
+    ["Longest drive (planned)", `${formatHrsMin(longest.min)} · ${longest.label}`],
+  ];
+
+  // Each chart draws into a measured pixel width (viewBox == css px, so labels
+  // stay crisp at any column width and on mobile) — the same measure-on-show
+  // approach the maps use. Redrawn on resize and whenever the view re-shows.
+  const charts = [
+    { title: "Distance per day", sub: "Miles driven each day (rest days = 0)",
+      draw: (w) => barChart(dayMiles.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatMi(v)}` })),
+        { unit: "mi", color: "var(--gm-blue)", labels: dateShort, w }) },
+    { title: "Cumulative distance", sub: "Total miles driven over the trip",
+      draw: (w) => lineChart(cumMiles, { unit: "mi", labels: dateShort, color: "var(--gm-blue)", w }) },
+    { title: "Drive time per day", sub: "Planned drive time from the itinerary (human-entered)",
+      draw: (w) => barChart(driveMin.map((v, i) => ({ value: v, title: `${dateShort[i]}: ${formatHrsMin(v)}` })),
+        { fmt: formatHrsMin, color: "var(--gm-green)", labels: dateShort, w }) },
+    { title: "Cumulative drive time", sub: "Planned drive time accumulated over the trip",
+      draw: (w) => lineChart(cumMin, { fmt: formatHrsMin, labels: dateShort, color: "var(--gm-green)", w }) },
+    { title: "Nights per location", sub: "Frequency of overnight stays by stop",
+      draw: (w) => hBarChart(nightsSorted, { homeLabel: HOME_LOCATION, w }) },
+    { title: "Nights by lodging type", sub: "What kind of place we slept each night",
+      draw: () => donutChart(lodgeData, n, "nights") },
+    { title: "Days per region", sub: "Days spent in each biome/region",
+      draw: (w) => hBarChart(biomeData, { w }) },
+  ];
+
+  host.innerHTML = `
+    <div class="stats-wrap">
+      <h1 class="stats-title">Trip by the numbers</h1>
+      <section class="stat-tiles">
+        ${tiles.map(([k, v]) => `
+          <div class="stat-tile">
+            <div class="stat-tile-label">${escapeHtml(k)}</div>
+            <div class="stat-tile-value">${escapeHtml(v)}</div>
+          </div>`).join("")}
+      </section>
+      <div class="chart-grid">
+        ${charts.map((c, i) => `
+          <figure class="chart-card">
+            <figcaption><span class="chart-title">${escapeHtml(c.title)}</span><span class="chart-sub">${escapeHtml(c.sub)}</span></figcaption>
+            <div class="chart-slot" data-i="${i}"></div>
+          </figure>`).join("")}
+      </div>
+    </div>
+  `;
+
+  redrawStats = () => host.querySelectorAll(".chart-slot").forEach((slot) => {
+    const w = Math.max(280, Math.round(slot.clientWidth || 320));
+    slot.innerHTML = charts[Number(slot.dataset.i)].draw(w);
+  });
+  redrawStats();
+
+  if (!statsResizeBound) {
+    statsResizeBound = true;
+    let t;
+    window.addEventListener("resize", () => {
+      if (currentView !== "stats") return;
+      clearTimeout(t);
+      t = setTimeout(() => redrawStats?.(), 150);
+    });
+  }
+}
+
+// Round a max value up to a clean axis bound.
+function niceMax(v) {
+  if (v <= 0) return 1;
+  const pow = Math.pow(10, Math.floor(Math.log10(v)));
+  for (const s of [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10]) {
+    if (v <= s * pow) return s * pow;
+  }
+  return 10 * pow;
+}
+
+// Vertical bar chart. data = [{ value, title }].
+function barChart(data, opts = {}) {
+  const W = opts.w ?? 720, H = 240, padL = 52, padR = 10, padT = 14, padB = 26;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const unit = opts.unit ? " " + opts.unit : "";
+  const fmt = opts.fmt ?? ((v) => `${Math.round(v).toLocaleString()}${unit}`);
+  const n = data.length;
+  const max = niceMax(Math.max(1, ...data.map((d) => d.value)));
+  const slot = plotW / n;
+  const bw = Math.max(1, slot - (n > 30 ? 1 : 3));
+  const yOf = (v) => padT + plotH - (v / max) * plotH;
+  const labels = opts.labels ?? [];
+  const grid = [0, max / 2, max].map((t) =>
+    `<line x1="${padL}" y1="${yOf(t).toFixed(1)}" x2="${W - padR}" y2="${yOf(t).toFixed(1)}" class="chart-grid-line"/>` +
+    `<text x="${padL - 6}" y="${(yOf(t) + 3).toFixed(1)}" class="chart-axis" text-anchor="end">${escapeHtml(fmt(t))}</text>`).join("");
+  const bars = data.map((d, i) => {
+    if (d.value <= 0) return "";
+    const bx = padL + i * slot + (slot - bw) / 2;
+    return `<rect x="${bx.toFixed(1)}" y="${yOf(d.value).toFixed(1)}" width="${bw.toFixed(1)}" height="${((d.value / max) * plotH).toFixed(1)}" rx="1.5" fill="${opts.color ?? "var(--gm-blue)"}"><title>${escapeHtml(d.title ?? fmt(d.value))}</title></rect>`;
+  }).join("");
+  const xl = `<text x="${padL}" y="${H - 8}" class="chart-axis" text-anchor="start">${escapeHtml(labels[0] ?? "")}</text>` +
+    `<text x="${W - padR}" y="${H - 8}" class="chart-axis" text-anchor="end">${escapeHtml(labels[n - 1] ?? "")}</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img">${grid}${bars}${xl}</svg>`;
+}
+
+// Cumulative line + area chart. values = number[].
+function lineChart(values, opts = {}) {
+  const W = opts.w ?? 720, H = 240, padL = 56, padR = 14, padT = 16, padB = 26;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const unit = opts.unit ? " " + opts.unit : "";
+  const fmt = opts.fmt ?? ((v) => `${Math.round(v).toLocaleString()}${unit}`);
+  const n = values.length;
+  const max = niceMax(Math.max(1, ...values));
+  const xOf = (i) => padL + (n <= 1 ? 0 : (i / (n - 1)) * plotW);
+  const yOf = (v) => padT + plotH - (v / max) * plotH;
+  const grid = [0, max / 2, max].map((t) =>
+    `<line x1="${padL}" y1="${yOf(t).toFixed(1)}" x2="${W - padR}" y2="${yOf(t).toFixed(1)}" class="chart-grid-line"/>` +
+    `<text x="${padL - 6}" y="${(yOf(t) + 3).toFixed(1)}" class="chart-axis" text-anchor="end">${escapeHtml(fmt(t))}</text>`).join("");
+  const pts = values.map((v, i) => `${xOf(i).toFixed(1)},${yOf(v).toFixed(1)}`).join(" ");
+  const base = padT + plotH;
+  const area = `${padL},${base.toFixed(1)} ${pts} ${xOf(n - 1).toFixed(1)},${base.toFixed(1)}`;
+  const color = opts.color ?? "var(--gm-blue)";
+  const labels = opts.labels ?? [];
+  const xl = `<text x="${padL}" y="${H - 8}" class="chart-axis" text-anchor="start">${escapeHtml(labels[0] ?? "")}</text>` +
+    `<text x="${W - padR}" y="${H - 8}" class="chart-axis" text-anchor="end">${escapeHtml(labels[n - 1] ?? "")}</text>`;
+  const end = `<text x="${(xOf(n - 1) - 4).toFixed(1)}" y="${(yOf(values[n - 1]) - 6).toFixed(1)}" class="chart-end-label" text-anchor="end">${escapeHtml(fmt(values[n - 1] ?? 0))}</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img">${grid}` +
+    `<polygon points="${area}" fill="${color}" opacity="0.12"/>` +
+    `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>${end}${xl}</svg>`;
+}
+
+// Horizontal bar chart. data = [{ label, value, color? }].
+function hBarChart(data, opts = {}) {
+  const W = opts.w ?? 720, rowH = 26, padT = 8, padB = 8, padL = 152, padR = 44;
+  const H = padT + padB + data.length * rowH;
+  const plotW = W - padL - padR;
+  const max = Math.max(1, ...data.map((d) => d.value));
+  const rows = data.map((d, i) => {
+    const cy = padT + i * rowH;
+    const bw = Math.max(1, (d.value / max) * plotW);
+    const isHome = opts.homeLabel && d.label === opts.homeLabel;
+    const color = d.color ?? (isHome ? "var(--gm-red)" : "var(--gm-blue)");
+    const label = escapeHtml(d.label) + (isHome ? ` <tspan class="chart-home-tag">· home</tspan>` : "");
+    return `<text x="${padL - 8}" y="${(cy + rowH / 2 + 3).toFixed(1)}" class="chart-row-label" text-anchor="end">${label}</text>` +
+      `<rect x="${padL}" y="${(cy + 4).toFixed(1)}" width="${bw.toFixed(1)}" height="${rowH - 10}" rx="2" fill="${color}"><title>${escapeHtml(d.label)}: ${d.value}</title></rect>` +
+      `<text x="${(padL + bw + 6).toFixed(1)}" y="${(cy + rowH / 2 + 3).toFixed(1)}" class="chart-bar-value">${d.value}</text>`;
+  }).join("");
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img">${rows}</svg>`;
+}
+
+// Donut chart with side legend. data = [{ label, value, color }].
+function donutChart(data, total, unitLabel = "") {
+  const W = 360, H = 200, cx = 96, cy = 100, R = 78, r = 46;
+  let a0 = -90;
+  const arcs = data.map((d) => {
+    const a1 = a0 + (d.value / total) * 360;
+    const path = donutArc(cx, cy, R, r, a0, a1);
+    a0 = a1;
+    return `<path d="${path}" fill="${d.color}"><title>${escapeHtml(d.label)}: ${d.value} (${Math.round((d.value / total) * 100)}%)</title></path>`;
+  }).join("");
+  const legend = data.map((d, i) =>
+    `<g transform="translate(206, ${24 + i * 24})"><rect width="12" height="12" rx="2" fill="${d.color}"/>` +
+    `<text x="18" y="10" class="chart-legend">${escapeHtml(d.label)} · ${d.value}</text></g>`).join("");
+  return `<svg class="chart chart-donut" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img">${arcs}` +
+    `<text x="${cx}" y="${cy - 2}" class="donut-center-num" text-anchor="middle">${total}</text>` +
+    `<text x="${cx}" y="${cy + 15}" class="donut-center-label" text-anchor="middle">${escapeHtml(unitLabel)}</text>${legend}</svg>`;
+}
+
+function donutArc(cx, cy, R, r, a0, a1) {
+  const at = (ang, rad) => {
+    const a = (ang * Math.PI) / 180;
+    return [cx + rad * Math.cos(a), cy + rad * Math.sin(a)];
+  };
+  const laf = a1 - a0 > 180 ? 1 : 0;
+  const [ox0, oy0] = at(a0, R), [ox1, oy1] = at(a1, R);
+  const [ix1, iy1] = at(a1, r), [ix0, iy0] = at(a0, r);
+  return `M ${ox0.toFixed(2)} ${oy0.toFixed(2)} A ${R} ${R} 0 ${laf} 1 ${ox1.toFixed(2)} ${oy1.toFixed(2)} ` +
+    `L ${ix1.toFixed(2)} ${iy1.toFixed(2)} A ${r} ${r} 0 ${laf} 0 ${ix0.toFixed(2)} ${iy0.toFixed(2)} Z`;
 }
 
 init();

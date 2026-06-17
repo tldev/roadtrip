@@ -191,7 +191,7 @@ app.notFound(() => notFound());
 // SPA entry points — each view has its own URL but they all serve the same
 // shell; client-side routing in app.js picks the view from the path. Unknown
 // paths still fall through to the 404 handler above.
-for (const path of ["/", "/full-trip", "/itinerary"]) {
+for (const path of ["/", "/full-trip", "/itinerary", "/stats"]) {
   app.get(path, (c) => c.html(indexHtml, 200, { "cache-control": NO_CACHE }));
 }
 app.get("/admin", (c) => c.html(adminHtml, 200, { "cache-control": NO_CACHE }));
