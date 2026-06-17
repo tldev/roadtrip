@@ -493,7 +493,7 @@
       "end": "Las Vegas, NV",
       "drivingHours": "8 hrs",
       "daytrip": "",
-      "lodging": "",
+      "lodging": "hotel: The Cosmopolitan",
       "startCoords": [
         36.5554,
         -121.9233
@@ -511,7 +511,7 @@
       "end": "Moab, UT",
       "drivingHours": "6 hrs 21 min",
       "daytrip": "",
-      "lodging": "camping",
+      "lodging": "hotel: Red Cliffs Lodge",
       "startCoords": [
         36.1699,
         -115.1398
@@ -529,7 +529,7 @@
       "end": "Moab, UT",
       "drivingHours": "N/A",
       "daytrip": "",
-      "lodging": "camping",
+      "lodging": "hotel: Red Cliffs Lodge",
       "startCoords": [
         38.5733,
         -109.5498
